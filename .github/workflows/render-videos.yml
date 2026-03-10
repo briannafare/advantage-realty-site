@@ -1,0 +1,49 @@
+name: Render Remotion Videos
+
+on:
+  push:
+    branches: [preview]
+    paths:
+      - 'src/remotion/**'
+      - 'public/**'
+      - '.github/workflows/render-videos.yml'
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Render BrandHero (landscape)
+        run: npx remotion render src/remotion/index.ts BrandHero --output=public/videos/brand-hero-landscape.mp4
+
+      - name: Render BrandHero (portrait)
+        run: npx remotion render src/remotion/index.ts BrandHeroPortrait --output=public/videos/brand-hero-portrait.mp4
+
+      - name: Render BrandHero (square)
+        run: npx remotion render src/remotion/index.ts BrandHeroSquare --output=public/videos/brand-hero-square.mp4
+
+      - name: Render TestimonialReel (landscape)
+        run: npx remotion render src/remotion/index.ts TestimonialReel --output=public/videos/testimonial-reel-landscape.mp4
+
+      - name: Render TestimonialReel (portrait)
+        run: npx remotion render src/remotion/index.ts TestimonialReelPortrait --output=public/videos/testimonial-reel-portrait.mp4
+
+      - name: Render StatHighlight (landscape)
+        run: npx remotion render src/remotion/index.ts StatHighlight --output=public/videos/stat-highlight-landscape.mp4
+
+      - name: Commit rendered videos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/videos/
+          git diff --staged --quiet || git commit -m "chore: render Remotion videos [skip ci]"
+          git push
