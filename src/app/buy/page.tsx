@@ -45,7 +45,7 @@ const steps = [
 ];
 
 const benefits = [
-  "Multilingual support — English, Amharic, and Oromo so nothing gets lost in translation",
+  "Available in English, Amharic, and Oromo for your convenience",
   "Access to off-market and coming-soon listings before they hit the MLS",
   "Dedicated buyer consultation at no cost to you — the seller pays our commission",
   "Neighborhood-level market data so you never overpay",
@@ -88,7 +88,7 @@ function FaqAccordion({ items }: { items: { q: string; a: string }[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="divide-y divide-[#E8E2D8]">
+    <div className="divide-y divide-[#E5E7EB]">
       {items.map((item, i) => {
         const isOpen = openIndex === i;
         return (
@@ -100,7 +100,7 @@ function FaqAccordion({ items }: { items: { q: string; a: string }[] }) {
             >
               {item.q}
               <span
-                className="ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#E8E2D8] text-[#D4A853] transition-transform duration-300"
+                className="ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#E5E7EB] text-[#F5B800] transition-transform duration-300"
                 style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)" }}
               >
                 +
@@ -129,45 +129,60 @@ export default function BuyPage() {
   return (
     <main>
       {/* ━━ 1. HERO ━━ */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      <section className="bg-[#FFFFFF] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="max-w-3xl"
+            className="grid items-center gap-12 md:grid-cols-2 md:gap-16"
           >
-            <motion.p
-              variants={fadeUp}
-              className="mb-4 font-body text-sm font-medium uppercase tracking-widest text-[#D4A853]"
-            >
-              Portland Home Buyers
-            </motion.p>
-            <motion.h1
-              variants={fadeUp}
-              className="font-heading text-5xl font-bold tracking-tight text-[#0A1628] md:text-7xl"
-            >
-              Buy a Home in Portland — Expert Guidance in Your Language
-            </motion.h1>
-            <motion.p
-              variants={fadeUp}
-              className="mt-6 max-w-xl font-body text-lg leading-relaxed text-[#0A1628]/70 md:text-xl"
-            >
-              Whether you are a first-time buyer or upgrading to your next chapter, Advantage
-              Realty pairs local market expertise with multilingual support to make your purchase
-              smooth and strategic.
-            </motion.p>
-            <motion.div variants={fadeUp} className="mt-10 flex flex-wrap items-center gap-4">
-              <a
-                href="#cta"
-                className="inline-flex items-center rounded-lg bg-[#D4A853] px-7 py-3.5 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:opacity-90"
+            <div>
+              <motion.p
+                variants={fadeUp}
+                className="mb-4 font-body text-sm font-medium uppercase tracking-widest text-[#F5B800]"
               >
-                Start Your Home Search
-              </a>
-              <span className="font-body text-sm text-[#0A1628]/50">
-                No commitment &middot; Free consultation
-              </span>
+                Portland Home Buyers
+              </motion.p>
+              <motion.h1
+                variants={fadeUp}
+                className="font-heading text-5xl font-bold tracking-tight text-[#0A1628] md:text-7xl"
+              >
+                Buy a Home in Portland — Expert Guidance, Every Step
+              </motion.h1>
+              <motion.p
+                variants={fadeUp}
+                className="mt-6 max-w-xl font-body text-lg leading-relaxed text-[#0A1628]/70 md:text-xl"
+              >
+                Whether you are a first-time buyer or upgrading to your next chapter, Advantage
+                Realty pairs local market expertise with a hands-on approach to make your purchase
+                smooth and strategic.
+              </motion.p>
+              <motion.div variants={fadeUp} className="mt-10 flex flex-wrap items-center gap-4">
+                <a
+                  href="#cta"
+                  className="inline-flex items-center rounded-lg bg-[#F5B800] px-7 py-3.5 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:opacity-90"
+                >
+                  Start Your Home Search
+                </a>
+                <span className="font-body text-sm text-[#0A1628]/50">
+                  No commitment &middot; Free consultation
+                </span>
+              </motion.div>
+            </div>
+            <motion.div
+              variants={fadeUp}
+              className="relative aspect-[4/5] overflow-hidden rounded-xl shadow-2xl shadow-[#0A1628]/10"
+            >
+              <Image
+                src="/images/paper-cutout-key-handover.png"
+                alt="Paper cut-out illustration of home buying in Portland"
+                fill
+                className="object-cover object-top bright-cutout"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
             </motion.div>
           </motion.div>
         </div>
@@ -184,7 +199,7 @@ export default function BuyPage() {
           >
             <motion.h2
               variants={fadeUp}
-              className="font-heading text-3xl font-bold tracking-tight text-[#F5F0E8] md:text-5xl"
+              className="font-heading text-3xl font-bold tracking-tight text-[#F8F6F2] md:text-5xl"
             >
               Your Home Buying Journey — Simplified
             </motion.h2>
@@ -198,18 +213,18 @@ export default function BuyPage() {
                 >
                   {/* Timeline line */}
                   {i < steps.length - 1 && (
-                    <div className="absolute left-[27px] top-14 h-full w-px bg-[#D4A853]/20" />
+                    <div className="absolute left-[27px] top-14 h-full w-px bg-[#F5B800]/20" />
                   )}
                   {/* Number */}
-                  <span className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#D4A853]/30 font-heading text-2xl font-bold text-[#D4A853]">
+                  <span className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#F5B800]/30 font-heading text-2xl font-bold text-[#F5B800]">
                     {step.num}
                   </span>
                   {/* Content */}
                   <div className="pt-1">
-                    <h3 className="font-heading text-xl font-bold tracking-tight text-[#F5F0E8]">
+                    <h3 className="font-heading text-xl font-bold tracking-tight text-[#F8F6F2]">
                       {step.title}
                     </h3>
-                    <p className="mt-2 max-w-lg font-body leading-relaxed text-[#F5F0E8]/60">
+                    <p className="mt-2 max-w-lg font-body leading-relaxed text-[#F8F6F2]/60">
                       {step.desc}
                     </p>
                   </div>
@@ -221,7 +236,7 @@ export default function BuyPage() {
       </section>
 
       {/* ━━ 3. BENEFITS ━━ */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      <section className="bg-[#FFFFFF] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
             variants={staggerContainer}
@@ -242,7 +257,7 @@ export default function BuyPage() {
                 {benefits.map((b, i) => (
                   <motion.li key={i} variants={fadeUp} className="flex gap-3">
                     <svg
-                      className="mt-1 h-5 w-5 shrink-0 text-[#D4A853]"
+                      className="mt-1 h-5 w-5 shrink-0 text-[#F5B800]"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -259,7 +274,7 @@ export default function BuyPage() {
             {/* Right — Image Placeholder */}
             <motion.div
               variants={fadeUp}
-              className="relative aspect-[4/5] overflow-hidden rounded-xl border border-[#E8E2D8]"
+              className="relative aspect-[4/5] overflow-hidden rounded-xl border border-[#E5E7EB]"
             >
               <Image
                 src="/images/paper-cutout-key-handover.png"
@@ -274,7 +289,7 @@ export default function BuyPage() {
       </section>
 
       {/* ━━ 4. AREAS ━━ */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      <section className="bg-[#FFFFFF] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
             variants={staggerContainer}
@@ -300,12 +315,12 @@ export default function BuyPage() {
                 <motion.div
                   key={area.name}
                   variants={fadeUp}
-                  className="group rounded-xl border border-[#E8E2D8] bg-white p-6 transition hover:border-[#D4A853]/40 hover:shadow-sm"
+                  className="group rounded-xl border border-[#E5E7EB] bg-white p-6 transition hover:border-[#F5B800]/40 hover:shadow-sm"
                 >
                   <h3 className="font-heading text-lg font-bold tracking-tight text-[#0A1628]">
                     {area.name}
                   </h3>
-                  <p className="mt-1 font-heading text-sm font-bold text-[#D4A853]">
+                  <p className="mt-1 font-heading text-sm font-bold text-[#F5B800]">
                     {area.price}
                   </p>
                   <p className="mt-2 font-body text-sm leading-relaxed text-[#0A1628]/60">
@@ -319,7 +334,7 @@ export default function BuyPage() {
       </section>
 
       {/* ━━ 5. TESTIMONIAL ━━ */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      <section className="bg-[#FFFFFF] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
             variants={staggerContainer}
@@ -330,7 +345,7 @@ export default function BuyPage() {
           >
             <motion.span
               variants={fadeUp}
-              className="mb-6 block font-heading text-5xl text-[#D4A853]"
+              className="mb-6 block font-heading text-5xl text-[#F5B800]"
             >
               &ldquo;
             </motion.span>
@@ -341,7 +356,7 @@ export default function BuyPage() {
               They made buying our first home feel effortless. Every step was explained clearly, and
               we always felt like a priority — not just another transaction.
             </motion.blockquote>
-            <motion.p variants={fadeUp} className="mt-8 font-heading text-sm font-bold text-[#D4A853]">
+            <motion.p variants={fadeUp} className="mt-8 font-heading text-sm font-bold text-[#F5B800]">
               Tilahun S.
             </motion.p>
             <motion.p variants={fadeUp} className="font-body text-sm text-[#0A1628]/50">
@@ -352,7 +367,7 @@ export default function BuyPage() {
       </section>
 
       {/* ━━ 6. FAQ ━━ */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      <section className="bg-[#FFFFFF] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
             variants={staggerContainer}
@@ -385,13 +400,13 @@ export default function BuyPage() {
           >
             <motion.h2
               variants={fadeUp}
-              className="font-heading text-3xl font-bold tracking-tight text-[#F5F0E8] md:text-5xl"
+              className="font-heading text-3xl font-bold tracking-tight text-[#F8F6F2] md:text-5xl"
             >
               Your Portland Home Search Starts Here
             </motion.h2>
             <motion.p
               variants={fadeUp}
-              className="mt-6 font-body text-lg leading-relaxed text-[#F5F0E8]/60"
+              className="mt-6 font-body text-lg leading-relaxed text-[#F8F6F2]/60"
             >
               Tell us what you are looking for and we will send you personalized listings — no
               obligation, no pressure.
@@ -399,15 +414,15 @@ export default function BuyPage() {
             <motion.div variants={fadeUp} className="mt-10 flex flex-col items-center gap-4">
               <a
                 href="/contact"
-                className="inline-flex items-center rounded-lg bg-[#D4A853] px-8 py-4 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:opacity-90"
+                className="inline-flex items-center rounded-lg bg-[#F5B800] px-8 py-4 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:opacity-90"
               >
                 Start Your Home Search
               </a>
               <a
-                href="tel:+15035551234"
-                className="font-body text-sm text-[#F5F0E8]/50 transition hover:text-[#D4A853]"
+                href="tel:+15037937520"
+                className="font-body text-sm text-[#F8F6F2]/50 transition hover:text-[#F5B800]"
               >
-                Or call: [CLIENT TO PROVIDE: phone number]
+                Or call: (503) 793-7520
               </a>
             </motion.div>
           </motion.div>

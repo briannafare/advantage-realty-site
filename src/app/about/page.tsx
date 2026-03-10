@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   Phone,
@@ -29,11 +30,11 @@ const stagger = {
 };
 
 /* ───────────────────────────────────────────
-   Section 1 — Hero (paper cut-out community illustration)
+   Section 1 — Hero (text-only, white bg)
    ─────────────────────────────────────────── */
 function AboutHero() {
   return (
-    <section className="bg-[#FEFCF8] py-16 md:py-24">
+    <section className="bg-white py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
         <motion.div
           initial="hidden"
@@ -45,41 +46,21 @@ function AboutHero() {
           <motion.h1
             variants={fadeUp}
             custom={0}
-            className="font-heading font-bold tracking-tight text-4xl md:text-6xl lg:text-7xl text-foreground leading-[1.05]"
+            className="font-heading font-bold tracking-tight text-4xl md:text-6xl lg:text-7xl text-[#0A1628] leading-[1.05]"
           >
             Meet the Family Behind{" "}
-            <span className="text-[#D4A853]">Advantage</span>
+            <span className="text-[#F5B800]">Advantage</span>
           </motion.h1>
 
           <motion.p
             variants={fadeUp}
             custom={1}
-            className="mt-6 text-lg md:text-xl text-muted font-body leading-relaxed max-w-2xl"
+            className="mt-6 text-lg md:text-xl text-[#4B5563] font-body leading-relaxed max-w-2xl"
           >
             We&rsquo;re not a franchise. We&rsquo;re not a call center.
-            We&rsquo;re two brothers — Huluka and Hunde Abebe — who built a real
-            estate practice around the one thing Portland&rsquo;s diverse
-            communities deserve: an agent who speaks your language, knows your
-            neighborhood, and treats your home search like family business.
+            We&rsquo;re two brothers who built a real estate practice around
+            putting Portland families first.
           </motion.p>
-        </motion.div>
-
-        {/* Paper cut-out community illustration — DIFFERENT from homepage */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-14 relative rounded-2xl overflow-hidden aspect-[21/9]"
-        >
-          <Image
-            src="/images/paper-cutout-community.png"
-            alt="Paper cut-out illustration — community and homeownership in Portland, Oregon"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#D4A853]" />
         </motion.div>
       </div>
     </section>
@@ -87,11 +68,11 @@ function AboutHero() {
 }
 
 /* ───────────────────────────────────────────
-   Section 2 — Story
+   Section 2 — Story (surface bg + habesha pattern)
    ─────────────────────────────────────────── */
 function Story() {
   return (
-    <section className="bg-[#FEFCF8] py-20 md:py-28 habesha-pattern">
+    <section className="bg-[#F8F6F2] py-20 md:py-28 habesha-pattern">
       <div className="max-w-3xl mx-auto px-5 md:px-8 text-center">
         <motion.div
           initial="hidden"
@@ -102,21 +83,20 @@ function Story() {
           <motion.h2
             variants={fadeUp}
             custom={0}
-            className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-foreground"
+            className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-[#0A1628]"
           >
             Two Brothers,{" "}
-            <span className="text-[#D4A853]">One Vision</span>
+            <span className="text-[#F5B800]">One Vision</span>
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
             custom={1}
-            className="mt-8 text-lg md:text-xl text-muted font-body leading-relaxed"
+            className="mt-8 text-lg md:text-xl text-[#4B5563] font-body leading-relaxed"
           >
             Advantage Realty LLC was born from a simple frustration: watching
-            family and friends in Portland&rsquo;s Ethiopian and Oromo
-            communities struggle through real estate transactions with agents who
-            didn&rsquo;t understand their language, their culture, or their
+            family and friends struggle through real estate transactions with
+            agents who didn&rsquo;t understand their community or their
             priorities. Huluka and Hunde Abebe decided to change that — not by
             joining a big brokerage and hoping for the best, but by building
             something from scratch that put their community first.
@@ -125,28 +105,27 @@ function Story() {
           <motion.p
             variants={fadeUp}
             custom={2}
-            className="mt-6 text-lg md:text-xl text-muted font-body leading-relaxed"
+            className="mt-6 text-lg md:text-xl text-[#4B5563] font-body leading-relaxed"
           >
             Over 16 years later, that vision hasn&rsquo;t changed. Every
             transaction we handle — whether it&rsquo;s a first-time buyer in SE
             Portland, a growing family moving to Milwaukie, or an investor
             evaluating a care home opportunity — gets the same treatment: direct
-            access to us, transparent communication in your language, and the
-            kind of market knowledge that only comes from living and working in
-            these neighborhoods for over a decade.
+            access to us, transparent communication, and the kind of market
+            knowledge that only comes from living and working in these
+            neighborhoods for over a decade.
           </motion.p>
 
           <motion.div
             variants={fadeUp}
             custom={3}
-            className="mt-10 p-8 rounded-2xl bg-[#0A1628] text-[#F5F0E8]"
+            className="mt-10 p-8 rounded-2xl bg-[#0A1628] text-[#F8F6F2]"
           >
             <p className="font-accent text-xl md:text-2xl italic leading-relaxed">
               &ldquo;Our mission is simple: make Portland real estate accessible,
-              transparent, and personal — for every family, in every language we
-              speak.&rdquo;
+              transparent, and personal — for every family.&rdquo;
             </p>
-            <p className="mt-4 font-heading font-bold text-[#D4A853] text-sm tracking-wide uppercase">
+            <p className="mt-4 font-heading font-bold text-[#F5B800] text-sm tracking-wide uppercase">
               — Huluka &amp; Hunde Abebe, Founders
             </p>
           </motion.div>
@@ -157,7 +136,7 @@ function Story() {
 }
 
 /* ───────────────────────────────────────────
-   Section 3 — Team Grid (real photos from client site)
+   Section 3 — Team Bios (split layout, alternating)
    ─────────────────────────────────────────── */
 interface TeamMember {
   name: string;
@@ -199,83 +178,95 @@ const team: TeamMember[] = [
   },
 ];
 
-function TeamGrid() {
+function TeamBios() {
   return (
-    <section className="bg-[#FEFCF8] py-20 md:py-28">
+    <section className="bg-white py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-foreground text-center mb-16"
+          className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-[#0A1628] text-center mb-16"
         >
-          Your <span className="text-[#D4A853]">Team</span>
+          Your <span className="text-[#F5B800]">Team</span>
         </motion.h2>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
-          {team.map((member, i) => (
-            <motion.div
-              key={member.name}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.12, duration: 0.6 }}
-              className="group"
-            >
-              {/* Photo */}
-              <div className="relative rounded-xl overflow-hidden aspect-[3/4] mb-6">
-                <Image
-                  src={member.photo}
-                  alt={`${member.name} \u2014 ${member.role} at Advantage Realty LLC`}
-                  fill
-                  className="object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"
-                />
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#D4A853] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
+        <div className="space-y-16 md:space-y-24">
+          {team.map((member, i) => {
+            const photoLeft = i % 2 === 0;
 
-              {/* Info */}
-              <h3 className="font-heading font-bold text-xl text-foreground">
-                {member.name}
-              </h3>
-              <p className="mt-1 text-sm text-muted font-body">{member.role}</p>
+            return (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className={`flex flex-col ${
+                  photoLeft ? "md:flex-row" : "md:flex-row-reverse"
+                } gap-8 md:gap-12 items-center`}
+              >
+                {/* Photo — 40% */}
+                <div className="w-full md:w-[40%] flex-shrink-0">
+                  <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
+                    <Image
+                      src={member.photo}
+                      alt={`${member.name} — ${member.role} at Advantage Realty LLC`}
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width: 768px) 100vw, 40vw"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#F5B800]" />
+                  </div>
+                </div>
 
-              {/* Languages badge */}
-              <div className="mt-3 flex flex-wrap gap-2">
-                {member.languages.map((lang) => (
-                  <span
-                    key={lang}
-                    className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#D4A853]/10 text-xs font-heading font-bold text-[#D4A853]"
-                  >
-                    <Globe className="w-3 h-3" />
-                    {lang}
-                  </span>
-                ))}
-              </div>
+                {/* Bio — 60% */}
+                <div className="w-full md:w-[60%]">
+                  <h3 className="font-heading font-bold text-2xl md:text-3xl text-[#0A1628]">
+                    {member.name}
+                  </h3>
+                  <p className="mt-1 text-[#4B5563] font-body text-base">
+                    {member.role}
+                  </p>
 
-              {/* Contact */}
-              <div className="mt-4 space-y-1.5 text-sm text-muted font-body">
-                <a
-                  href={`tel:${member.phone.replace(/[^+\d]/g, "")}`}
-                  className="flex items-center gap-2 hover:text-[#D4A853] transition-colors"
-                >
-                  <Phone className="w-4 h-4" />
-                  {member.phone}
-                </a>
-                <a
-                  href={`mailto:${member.email}`}
-                  className="flex items-center gap-2 hover:text-[#D4A853] transition-colors"
-                >
-                  <Mail className="w-4 h-4" />
-                  {member.email}
-                </a>
-              </div>
+                  {/* Language badges — subtle */}
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {member.languages.map((lang) => (
+                      <span
+                        key={lang}
+                        className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#F5B800]/10 text-xs font-heading font-medium text-[#0A1628]/70"
+                      >
+                        <Globe className="w-3 h-3" />
+                        {lang}
+                      </span>
+                    ))}
+                  </div>
 
-              {/* Bio */}
-              <p className="mt-4 text-muted font-body text-[15px] leading-relaxed">
-                {member.bio}
-              </p>
-            </motion.div>
-          ))}
+                  <p className="mt-5 text-[#4B5563] font-body text-[15px] md:text-base leading-relaxed">
+                    {member.bio}
+                  </p>
+
+                  {/* Contact links */}
+                  <div className="mt-5 flex flex-wrap gap-5 text-sm text-[#4B5563] font-body">
+                    <a
+                      href={`tel:${member.phone.replace(/[^+\d]/g, "")}`}
+                      className="flex items-center gap-2 hover:text-[#F5B800] transition-colors"
+                    >
+                      <Phone className="w-4 h-4" />
+                      {member.phone}
+                    </a>
+                    <a
+                      href={`mailto:${member.email}`}
+                      className="flex items-center gap-2 hover:text-[#F5B800] transition-colors"
+                    >
+                      <Mail className="w-4 h-4" />
+                      {member.email}
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -283,82 +274,7 @@ function TeamGrid() {
 }
 
 /* ───────────────────────────────────────────
-   Section 4 — Languages
-   ─────────────────────────────────────────── */
-function Languages() {
-  return (
-    <section className="bg-[#0A1628] text-[#F5F0E8] py-20 md:py-28">
-      <div className="max-w-3xl mx-auto px-5 md:px-8 text-center">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={stagger}
-        >
-          <motion.h2
-            variants={fadeUp}
-            custom={0}
-            className="font-heading font-bold tracking-tight text-3xl md:text-5xl"
-          >
-            Three Languages,{" "}
-            <span className="text-[#D4A853]">One Promise</span>
-          </motion.h2>
-
-          <motion.p
-            variants={fadeUp}
-            custom={1}
-            className="mt-8 text-lg md:text-xl text-[#F5F0E8]/80 font-body leading-relaxed"
-          >
-            Portland is home to one of the largest Ethiopian and Eritrean
-            communities in the United States. For families who think in Amharic
-            or Oromo, buying a home shouldn&rsquo;t require a translator sitting
-            between you and your agent. At Advantage Realty, language
-            isn&rsquo;t a courtesy — it&rsquo;s the foundation of how we do
-            business.
-          </motion.p>
-
-          <motion.p
-            variants={fadeUp}
-            custom={2}
-            className="mt-6 text-lg md:text-xl text-[#F5F0E8]/80 font-body leading-relaxed"
-          >
-            From the first phone call to the closing table, every document
-            review, every negotiation, every market explanation happens in the
-            language you&rsquo;re most comfortable with. No misunderstandings.
-            No awkward pauses. No important details lost in translation.
-          </motion.p>
-
-          <motion.div
-            variants={fadeUp}
-            custom={3}
-            className="mt-12 grid grid-cols-3 gap-6"
-          >
-            {[
-              { lang: "Amharic", script: "አማርኛ" },
-              { lang: "Oromo", script: "Afaan Oromoo" },
-              { lang: "English", script: "English" },
-            ].map(({ lang, script }) => (
-              <div
-                key={lang}
-                className="rounded-xl border border-[#F5F0E8]/10 p-6"
-              >
-                <span className="block font-accent text-2xl md:text-3xl text-[#D4A853]">
-                  {script}
-                </span>
-                <span className="mt-2 block text-sm text-[#F5F0E8]/60 font-body">
-                  {lang}
-                </span>
-              </div>
-            ))}
-          </motion.div>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
-/* ───────────────────────────────────────────
-   Section 5 — Values
+   Section 4 — Values
    ─────────────────────────────────────────── */
 function Values() {
   const values = [
@@ -370,9 +286,9 @@ function Values() {
     },
     {
       icon: Users,
-      title: "Cultural Understanding",
+      title: "Community Roots",
       description:
-        "We don\u2019t just speak your language \u2014 we understand the cultural context behind your priorities, your timeline, and your decision-making process.",
+        "We live and work in the neighborhoods we serve. Our deep ties to Portland\u2019s communities mean we don\u2019t just know the market — we know the people.",
     },
     {
       icon: BookOpen,
@@ -384,20 +300,20 @@ function Values() {
       icon: Sparkles,
       title: "Personal Attention",
       description:
-        "No junior agents. No hand-offs. No automated emails pretending to be personal. You get Huluka and Hunde \u2014 directly, always.",
+        "No junior agents. No hand-offs. No automated emails pretending to be personal. You get Huluka and Hunde — directly, always.",
     },
   ];
 
   return (
-    <section className="bg-[#FEFCF8] py-20 md:py-28">
+    <section className="bg-[#F8F6F2] py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-foreground text-center mb-16"
+          className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-[#0A1628] text-center mb-16"
         >
-          What We <span className="text-[#D4A853]">Stand For</span>
+          What We <span className="text-[#F5B800]">Stand For</span>
         </motion.h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
@@ -408,15 +324,15 @@ function Values() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="bg-white rounded-2xl border border-border p-8 text-center hover:shadow-lg hover:border-[#D4A853]/40 transition-all duration-300"
+              className="bg-white rounded-2xl border border-[#E5E7EB] p-8 text-center hover:shadow-lg hover:border-[#F5B800]/40 transition-all duration-300"
             >
-              <div className="w-14 h-14 rounded-full bg-[#D4A853]/10 flex items-center justify-center mx-auto mb-5">
-                <Icon className="w-7 h-7 text-[#D4A853]" strokeWidth={1.5} />
+              <div className="w-14 h-14 rounded-full bg-[#F5B800]/10 flex items-center justify-center mx-auto mb-5">
+                <Icon className="w-7 h-7 text-[#F5B800]" strokeWidth={1.5} />
               </div>
-              <h3 className="font-heading font-bold text-lg text-foreground">
+              <h3 className="font-heading font-bold text-lg text-[#0A1628]">
                 {title}
               </h3>
-              <p className="mt-3 text-muted font-body text-[15px] leading-relaxed">
+              <p className="mt-3 text-[#4B5563] font-body text-[15px] leading-relaxed">
                 {description}
               </p>
             </motion.div>
@@ -428,11 +344,11 @@ function Values() {
 }
 
 /* ───────────────────────────────────────────
-   Section 6 — CTA
+   Section 5 — CTA (dark bg)
    ─────────────────────────────────────────── */
 function AboutCTA() {
   return (
-    <section className="bg-[#0A1628] text-[#F5F0E8] py-20 md:py-28">
+    <section className="bg-[#0A1628] text-[#F8F6F2] py-20 md:py-28">
       <div className="max-w-3xl mx-auto px-5 md:px-8 text-center">
         <motion.div
           initial="hidden"
@@ -446,13 +362,13 @@ function AboutCTA() {
             className="font-heading font-bold tracking-tight text-3xl md:text-5xl"
           >
             Let&rsquo;s Talk About{" "}
-            <span className="text-[#D4A853]">Your Goals</span>
+            <span className="text-[#F5B800]">Your Goals</span>
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
             custom={1}
-            className="mt-6 text-lg md:text-xl text-[#F5F0E8]/80 font-body leading-relaxed"
+            className="mt-6 text-lg md:text-xl text-[#F8F6F2]/80 font-body leading-relaxed"
           >
             Whether you&rsquo;re ready to buy, thinking about selling, or just
             want to understand what your Portland home is worth — we&rsquo;re
@@ -460,20 +376,20 @@ function AboutCTA() {
           </motion.p>
 
           <motion.div variants={fadeUp} custom={2} className="mt-10">
-            <a
-              href="/#contact"
-              className="inline-flex items-center justify-center rounded-full bg-[#D4A853] px-8 py-4 font-heading font-bold text-[#0A1628] text-lg hover:bg-[#C49A48] transition-colors"
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-full bg-[#F5B800] px-8 py-4 font-heading font-bold text-[#0A1628] text-lg hover:bg-[#E0A800] transition-colors"
             >
               Schedule Your Free Consultation
-            </a>
+            </Link>
           </motion.div>
 
           <motion.p
             variants={fadeUp}
             custom={3}
-            className="mt-6 text-sm text-[#F5F0E8]/50 font-body"
+            className="mt-6 text-sm text-[#F8F6F2]/50 font-body"
           >
-            Available in Amharic, Oromo, and English
+            Available in English, Amharic, and Oromo
           </motion.p>
         </motion.div>
       </div>
@@ -489,8 +405,7 @@ export default function AboutPage() {
     <main>
       <AboutHero />
       <Story />
-      <TeamGrid />
-      <Languages />
+      <TeamBios />
       <Values />
       <AboutCTA />
     </main>

@@ -100,7 +100,6 @@ export default function InvestPage() {
           ────────────────────────────────────────────────────────── */}
       <section className="relative bg-[#0A1628] py-20 md:py-32 overflow-hidden">
         <div className="grain-overlay" />
-        <div className="habesha-pattern absolute inset-0 opacity-40" />
         <div className="relative max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
           <motion.div
             initial="hidden"
@@ -112,14 +111,14 @@ export default function InvestPage() {
             <motion.p
               variants={fadeUp}
               custom={0}
-              className="text-[#D4A853] font-heading font-semibold tracking-widest uppercase text-sm mb-6"
+              className="text-[#F5B800] font-heading font-semibold tracking-widest uppercase text-sm mb-6"
             >
               Investment Properties
             </motion.p>
             <motion.h1
               variants={fadeUp}
               custom={1}
-              className="font-heading font-bold tracking-tight text-5xl md:text-7xl text-[#F5F0E8] mb-6"
+              className="font-heading font-bold tracking-tight text-5xl md:text-7xl text-[#F8F6F2] mb-6"
             >
               Portland Investment Properties —{" "}
               <span className="text-gradient-gold">
@@ -129,7 +128,7 @@ export default function InvestPage() {
             <motion.p
               variants={fadeUp}
               custom={2}
-              className="font-body text-lg md:text-xl text-[#F5F0E8]/70 mb-10 max-w-2xl"
+              className="font-body text-lg md:text-xl text-[#F8F6F2]/70 mb-10 max-w-2xl"
             >
               Whether you&apos;re acquiring your first rental or scaling a
               portfolio across the Portland metro, Advantage Realty finds
@@ -139,14 +138,14 @@ export default function InvestPage() {
             <motion.div variants={fadeUp} custom={3} className="flex flex-wrap gap-4">
               <Link
                 href="/contact?interest=Invest"
-                className="inline-flex items-center gap-2 bg-[#D4A853] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:bg-[#C49A48] transition-colors"
+                className="inline-flex items-center gap-2 bg-[#F5B800] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:bg-[#E0A800] transition-colors"
               >
                 Explore Investment Opportunities
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
                 href="tel:+15037937520"
-                className="inline-flex items-center gap-2 border border-[#F5F0E8]/20 text-[#F5F0E8] font-heading font-semibold px-8 py-4 rounded-lg hover:border-[#D4A853]/50 transition-colors"
+                className="inline-flex items-center gap-2 border border-[#F8F6F2]/20 text-[#F8F6F2] font-heading font-semibold px-8 py-4 rounded-lg hover:border-[#F5B800]/50 transition-colors"
               >
                 <Phone className="w-4 h-4" />
                 (503) 793-7520
@@ -159,7 +158,7 @@ export default function InvestPage() {
       {/* ──────────────────────────────────────────────────────────
           SECTION 2 — Investment Services
           ────────────────────────────────────────────────────────── */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      <section className="bg-[#FFFFFF] py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
           <motion.div
             initial="hidden"
@@ -170,7 +169,7 @@ export default function InvestPage() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-[#D4A853] font-heading font-semibold tracking-widest uppercase text-sm mb-4"
+              className="text-[#F5B800] font-heading font-semibold tracking-widest uppercase text-sm mb-4"
             >
               What We Do for Investors
             </motion.p>
@@ -194,15 +193,15 @@ export default function InvestPage() {
                 key={service.title}
                 variants={fadeUp}
                 custom={i}
-                className="group bg-[#F5F0E8] rounded-xl border border-[#E8E2D8] p-8 hover:border-[#D4A853]/40 transition-colors"
+                className="group bg-[#F8F6F2] rounded-xl border border-[#E5E7EB] p-8 hover:border-[#F5B800]/40 transition-colors"
               >
                 <div className="w-12 h-12 rounded-lg bg-[#0A1628] flex items-center justify-center mb-5">
-                  <service.icon className="w-5 h-5 text-[#D4A853]" strokeWidth={1.5} />
+                  <service.icon className="w-5 h-5 text-[#F5B800]" strokeWidth={1.5} />
                 </div>
                 <h3 className="font-heading font-bold text-xl text-[#0A1628] mb-3">
                   {service.title}
                 </h3>
-                <p className="font-body text-[#6B7280] leading-relaxed">
+                <p className="font-body text-[#4B5563] leading-relaxed">
                   {service.description}
                 </p>
               </motion.div>
@@ -214,7 +213,7 @@ export default function InvestPage() {
       {/* ──────────────────────────────────────────────────────────
           SECTION 3 — 1031 Exchange
           ────────────────────────────────────────────────────────── */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32 border-t border-[#E8E2D8]">
+      <section className="bg-[#FFFFFF] py-20 md:py-32 border-t border-[#E5E7EB]">
         <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
           <motion.div
             initial="hidden"
@@ -228,7 +227,7 @@ export default function InvestPage() {
               <motion.p
                 variants={fadeUp}
                 custom={0}
-                className="text-[#D4A853] font-heading font-semibold tracking-widest uppercase text-sm mb-4"
+                className="text-[#F5B800] font-heading font-semibold tracking-widest uppercase text-sm mb-4"
               >
                 Tax-Deferred Exchanges
               </motion.p>
@@ -242,7 +241,7 @@ export default function InvestPage() {
               <motion.p
                 variants={fadeUp}
                 custom={2}
-                className="font-body text-lg text-[#6B7280] leading-relaxed mb-6"
+                className="font-body text-lg text-[#4B5563] leading-relaxed mb-6"
               >
                 A 1031 exchange lets you defer capital gains taxes when you sell
                 an investment property and reinvest in a like-kind replacement —
@@ -252,7 +251,7 @@ export default function InvestPage() {
               <motion.p
                 variants={fadeUp}
                 custom={3}
-                className="font-body text-lg text-[#6B7280] leading-relaxed mb-8"
+                className="font-body text-lg text-[#4B5563] leading-relaxed mb-8"
               >
                 Jenni Anderson coordinates directly with your Qualified
                 Intermediary, identifies compliant replacement properties before
@@ -262,7 +261,7 @@ export default function InvestPage() {
               <motion.div variants={fadeUp} custom={4}>
                 <Link
                   href="/contact?interest=1031"
-                  className="inline-flex items-center gap-2 bg-[#D4A853] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:bg-[#C49A48] transition-colors"
+                  className="inline-flex items-center gap-2 bg-[#F5B800] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:bg-[#E0A800] transition-colors"
                 >
                   Ask Jenni About 1031 Exchanges
                   <ArrowRight className="w-4 h-4" />
@@ -274,7 +273,7 @@ export default function InvestPage() {
             <motion.div
               variants={fadeUp}
               custom={2}
-              className="relative aspect-[3/4] rounded-xl overflow-hidden bg-[#F5F0E8] border border-[#E8E2D8]"
+              className="relative aspect-[3/4] rounded-xl overflow-hidden bg-[#F8F6F2] border border-[#E5E7EB]"
             >
               <Image
                 src="/images/team/jenni-anderson.jpg"
@@ -284,10 +283,10 @@ export default function InvestPage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0A1628]/80 to-transparent p-6">
-                <p className="font-heading font-bold text-[#F5F0E8] text-lg">
+                <p className="font-heading font-bold text-[#F8F6F2] text-lg">
                   Jenni Anderson
                 </p>
-                <p className="font-body text-[#F5F0E8]/70 text-sm">
+                <p className="font-body text-[#F8F6F2]/70 text-sm">
                   1031 Exchange &amp; Investment Specialist
                 </p>
               </div>
@@ -311,13 +310,13 @@ export default function InvestPage() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-[#D4A853] font-heading font-semibold tracking-widest uppercase text-sm mb-4"
+              className="text-[#F5B800] font-heading font-semibold tracking-widest uppercase text-sm mb-4"
             >
               Local Market Intelligence
             </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-[#F5F0E8]"
+              className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-[#F8F6F2]"
             >
               Clackamas County Investment Snapshot — 2026
             </motion.h2>
@@ -335,15 +334,15 @@ export default function InvestPage() {
                 key={item.area}
                 variants={fadeUp}
                 custom={i}
-                className="bg-[#F5F0E8]/5 border border-[#F5F0E8]/10 rounded-xl p-8 text-center hover:border-[#D4A853]/30 transition-colors"
+                className="bg-[#F8F6F2]/5 border border-[#F8F6F2]/10 rounded-xl p-8 text-center hover:border-[#F5B800]/30 transition-colors"
               >
-                <p className="font-heading font-bold text-4xl md:text-5xl text-[#D4A853] mb-2">
+                <p className="font-heading font-bold text-4xl md:text-5xl text-[#F5B800] mb-2">
                   {item.median}
                 </p>
-                <p className="font-heading font-semibold text-[#F5F0E8] text-lg mb-3">
+                <p className="font-heading font-semibold text-[#F8F6F2] text-lg mb-3">
                   {item.area}
                 </p>
-                <p className="font-body text-sm text-[#F5F0E8]/50 leading-relaxed">
+                <p className="font-body text-sm text-[#F8F6F2]/50 leading-relaxed">
                   {item.note}
                 </p>
               </motion.div>
@@ -355,7 +354,7 @@ export default function InvestPage() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6 }}
-            className="text-center font-body text-xs text-[#F5F0E8]/30 mt-10"
+            className="text-center font-body text-xs text-[#F8F6F2]/30 mt-10"
           >
             Median prices sourced from RMLS / Redfin, Q4 2025. Market
             conditions change — contact us for current data.
@@ -366,7 +365,7 @@ export default function InvestPage() {
       {/* ──────────────────────────────────────────────────────────
           SECTION 5 — Testimonial
           ────────────────────────────────────────────────────────── */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      <section className="bg-[#FFFFFF] py-20 md:py-32">
         <div className="max-w-4xl mx-auto px-5 md:px-8 lg:px-12 text-center">
           <motion.div
             initial="hidden"
@@ -376,9 +375,9 @@ export default function InvestPage() {
           >
             <motion.div
               variants={fadeUp}
-              className="w-12 h-12 mx-auto mb-8 rounded-full bg-[#D4A853]/10 flex items-center justify-center"
+              className="w-12 h-12 mx-auto mb-8 rounded-full bg-[#F5B800]/10 flex items-center justify-center"
             >
-              <span className="font-accent text-[#D4A853] text-2xl">&ldquo;</span>
+              <span className="font-accent text-[#F5B800] text-2xl">&ldquo;</span>
             </motion.div>
             <motion.blockquote
               variants={fadeUp}
@@ -391,7 +390,7 @@ export default function InvestPage() {
               <p className="font-heading font-semibold text-[#0A1628]">
                 [CLIENT TO PROVIDE: Reviewer name]
               </p>
-              <p className="font-body text-sm text-[#6B7280]">
+              <p className="font-body text-sm text-[#4B5563]">
                 [CLIENT TO PROVIDE: Transaction type &amp; area]
               </p>
             </motion.div>
@@ -404,7 +403,6 @@ export default function InvestPage() {
           ────────────────────────────────────────────────────────── */}
       <section className="relative bg-[#0A1628] py-20 md:py-32 overflow-hidden">
         <div className="grain-overlay" />
-        <div className="habesha-pattern absolute inset-0 opacity-30" />
         <div className="relative max-w-4xl mx-auto px-5 md:px-8 lg:px-12 text-center">
           <motion.div
             initial="hidden"
@@ -414,13 +412,13 @@ export default function InvestPage() {
           >
             <motion.h2
               variants={fadeUp}
-              className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-[#F5F0E8] mb-6"
+              className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-[#F8F6F2] mb-6"
             >
               Your Next Investment Property Is Waiting
             </motion.h2>
             <motion.p
               variants={fadeUp}
-              className="font-body text-lg text-[#F5F0E8]/70 mb-10 max-w-2xl mx-auto"
+              className="font-body text-lg text-[#F8F6F2]/70 mb-10 max-w-2xl mx-auto"
             >
               Schedule a no-obligation investment strategy call. We&apos;ll walk
               through your goals, timeline, and the Portland-area markets best
@@ -432,14 +430,14 @@ export default function InvestPage() {
             >
               <Link
                 href="/contact?interest=Invest"
-                className="inline-flex items-center gap-2 bg-[#D4A853] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:bg-[#C49A48] transition-colors"
+                className="inline-flex items-center gap-2 bg-[#F5B800] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:bg-[#E0A800] transition-colors"
               >
                 Schedule Investment Consultation
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
                 href="tel:+15037937520"
-                className="inline-flex items-center gap-2 text-[#F5F0E8] font-heading font-semibold hover:text-[#D4A853] transition-colors"
+                className="inline-flex items-center gap-2 text-[#F8F6F2] font-heading font-semibold hover:text-[#F5B800] transition-colors"
               >
                 <Phone className="w-4 h-4" />
                 (503) 793-7520

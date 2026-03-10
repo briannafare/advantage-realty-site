@@ -10,19 +10,19 @@ const config: Config = {
     extend: {
       colors: {
         primary: "#0A1628",
-        secondary: "#2B7CB5",
+        secondary: "#2EC4B6",
         accent: {
-          DEFAULT: "#D4A853",
-          hover: "#C49A48",
+          DEFAULT: "#F5B800",
+          hover: "#E0A800",
         },
-        background: "#FEFCF8",
+        background: "#FFFFFF",
         surface: {
-          DEFAULT: "#F5F0E8",
+          DEFAULT: "#F8F6F2",
           alt: "#0A1628",
         },
-        foreground: "#1A1A2E",
-        muted: "#6B7280",
-        border: "#E8E2D8",
+        foreground: "#0A1628",
+        muted: "#4B5563",
+        border: "#E5E7EB",
       },
       fontFamily: {
         heading: ["Space Grotesk", "sans-serif"],
@@ -38,10 +38,20 @@ const config: Config = {
           "0%": { opacity: "0", transform: "translateX(40px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
+        "count-up": {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "bar-grow": {
+          "0%": { transform: "scaleY(0)" },
+          "100%": { transform: "scaleY(1)" },
+        },
       },
       animation: {
         "fade-in-up": "fade-in-up 0.6s ease-out forwards",
         "slide-in-right": "slide-in-right 0.5s ease-out forwards",
+        "count-up": "count-up 0.4s ease-out forwards",
+        "bar-grow": "bar-grow 0.8s ease-out forwards",
       },
     },
   },

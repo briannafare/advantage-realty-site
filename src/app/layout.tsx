@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     siteName: "Advantage Realty LLC",
     title: "Advantage Realty LLC — Portland Real Estate",
     description:
-      "Rooted in community, driven by results. Buy, sell, or invest in Portland real estate with a team that speaks your language.",
+      "Rooted in community, driven by results. Buy, sell, or invest in Portland real estate with a family team that knows your market.",
   },
 };
 

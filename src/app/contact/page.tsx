@@ -8,7 +8,6 @@ import {
   MapPin,
   Send,
   Clock,
-  Globe,
 } from "lucide-react";
 
 /* ============================================================
@@ -33,22 +32,22 @@ const staggerContainer = {
    ============================================================ */
 const teamContacts = [
   {
-    name: "[CLIENT TO PROVIDE: Principal Broker Name]",
-    role: "Principal Broker",
+    name: "Huluka Abebe",
+    role: "Principal Broker / Co-Founder",
     phone: "(503) 793-7520",
-    email: "info@advantagerealtypdx.com",
+    email: "huluka@advantageor.com",
+  },
+  {
+    name: "Hunde Abebe",
+    role: "Broker / Co-Founder",
+    phone: "(503) 449-4362",
+    email: "hunde@advantageor.com",
   },
   {
     name: "Jenni Anderson",
-    role: "1031 Exchange & Investment Specialist",
-    phone: "[CLIENT TO PROVIDE: Direct line]",
-    email: "[CLIENT TO PROVIDE: Email]",
-  },
-  {
-    name: "[CLIENT TO PROVIDE: Agent 3 Name]",
-    role: "[CLIENT TO PROVIDE: Role]",
-    phone: "[CLIENT TO PROVIDE: Direct line]",
-    email: "[CLIENT TO PROVIDE: Email]",
+    role: "Broker / 1031 Exchange Specialist",
+    phone: "(503) 508-8779",
+    email: "jenni@advantageor.com",
   },
 ];
 
@@ -102,18 +101,18 @@ function FloatingInput({
         onChange={(e) => onChange(e.target.value)}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
-        className="peer w-full bg-[#FEFCF8] border border-[#E8E2D8] rounded-lg px-4 pt-6 pb-2 font-body text-[#0A1628] outline-none focus:border-[#D4A853] focus:ring-2 focus:ring-[#D4A853]/20 transition-all"
+        className="peer w-full bg-[#FFFFFF] border border-[#E5E7EB] rounded-lg px-4 pt-6 pb-2 font-body text-[#0A1628] outline-none focus:border-[#F5B800] focus:ring-2 focus:ring-[#F5B800]/20 transition-all"
       />
       <label
         htmlFor={name}
         className={`absolute left-4 transition-all pointer-events-none font-body ${
           isActive
-            ? "top-2 text-xs text-[#D4A853]"
-            : "top-1/2 -translate-y-1/2 text-sm text-[#6B7280]"
+            ? "top-2 text-xs text-[#F5B800]"
+            : "top-1/2 -translate-y-1/2 text-sm text-[#4B5563]"
         }`}
       >
         {label}
-        {required && <span className="text-[#D4A853] ml-0.5">*</span>}
+        {required && <span className="text-[#F5B800] ml-0.5">*</span>}
       </label>
     </div>
   );
@@ -142,7 +141,7 @@ function FloatingSelect({
         required={required}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="peer w-full bg-[#FEFCF8] border border-[#E8E2D8] rounded-lg px-4 pt-6 pb-2 font-body text-[#0A1628] outline-none focus:border-[#D4A853] focus:ring-2 focus:ring-[#D4A853]/20 transition-all appearance-none cursor-pointer"
+        className="peer w-full bg-[#FFFFFF] border border-[#E5E7EB] rounded-lg px-4 pt-6 pb-2 font-body text-[#0A1628] outline-none focus:border-[#F5B800] focus:ring-2 focus:ring-[#F5B800]/20 transition-all appearance-none cursor-pointer"
       >
         {options.map((opt) => (
           <option key={opt.value} value={opt.value} disabled={opt.value === ""}>
@@ -152,15 +151,15 @@ function FloatingSelect({
       </select>
       <label
         htmlFor={name}
-        className="absolute left-4 top-2 text-xs text-[#D4A853] pointer-events-none font-body"
+        className="absolute left-4 top-2 text-xs text-[#F5B800] pointer-events-none font-body"
       >
         {label}
-        {required && <span className="text-[#D4A853] ml-0.5">*</span>}
+        {required && <span className="text-[#F5B800] ml-0.5">*</span>}
       </label>
       {/* Chevron */}
       <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
         <svg
-          className="w-4 h-4 text-[#6B7280]"
+          className="w-4 h-4 text-[#4B5563]"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -200,18 +199,18 @@ function FloatingTextarea({
         onChange={(e) => onChange(e.target.value)}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
-        className="peer w-full bg-[#FEFCF8] border border-[#E8E2D8] rounded-lg px-4 pt-6 pb-2 font-body text-[#0A1628] outline-none focus:border-[#D4A853] focus:ring-2 focus:ring-[#D4A853]/20 transition-all resize-none"
+        className="peer w-full bg-[#FFFFFF] border border-[#E5E7EB] rounded-lg px-4 pt-6 pb-2 font-body text-[#0A1628] outline-none focus:border-[#F5B800] focus:ring-2 focus:ring-[#F5B800]/20 transition-all resize-none"
       />
       <label
         htmlFor={name}
         className={`absolute left-4 transition-all pointer-events-none font-body ${
           isActive
-            ? "top-2 text-xs text-[#D4A853]"
-            : "top-4 text-sm text-[#6B7280]"
+            ? "top-2 text-xs text-[#F5B800]"
+            : "top-4 text-sm text-[#4B5563]"
         }`}
       >
         {label}
-        {required && <span className="text-[#D4A853] ml-0.5">*</span>}
+        {required && <span className="text-[#F5B800] ml-0.5">*</span>}
       </label>
     </div>
   );
@@ -238,7 +237,7 @@ export default function ContactPage() {
       {/* ──────────────────────────────────────────────────────────
           SECTION 1 — Hero Minimal
           ────────────────────────────────────────────────────────── */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      <section className="bg-[#FFFFFF] py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
           <motion.div
             initial="hidden"
@@ -250,7 +249,7 @@ export default function ContactPage() {
             <motion.p
               variants={fadeUp}
               custom={0}
-              className="text-[#D4A853] font-heading font-semibold tracking-widest uppercase text-sm mb-6"
+              className="text-[#F5B800] font-heading font-semibold tracking-widest uppercase text-sm mb-6"
             >
               Get in Touch
             </motion.p>
@@ -260,14 +259,14 @@ export default function ContactPage() {
               className="font-heading font-bold tracking-tight text-5xl md:text-7xl text-[#0A1628] mb-6"
             >
               Contact Advantage Realty —{" "}
-              <span className="text-[#D4A853]">
+              <span className="text-[#F5B800]">
                 Start Your Portland Real Estate Journey
               </span>
             </motion.h1>
             <motion.p
               variants={fadeUp}
               custom={2}
-              className="font-body text-lg md:text-xl text-[#6B7280]"
+              className="font-body text-lg md:text-xl text-[#4B5563]"
             >
               Whether you&apos;re buying your first home, selling a property,
               exploring investment opportunities, or navigating care home
@@ -293,7 +292,7 @@ export default function ContactPage() {
           >
             {/* Form — 60% */}
             <motion.div variants={fadeUp} className="lg:col-span-3">
-              <h2 className="font-heading font-bold tracking-tight text-3xl md:text-4xl text-[#F5F0E8] mb-8">
+              <h2 className="font-heading font-bold tracking-tight text-3xl md:text-4xl text-[#F8F6F2] mb-8">
                 Send Us a Message
               </h2>
 
@@ -357,7 +356,7 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 bg-[#D4A853] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:bg-[#C49A48] transition-colors w-full md:w-auto justify-center"
+                  className="inline-flex items-center gap-2 bg-[#F5B800] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:bg-[#E0A800] transition-colors w-full md:w-auto justify-center"
                 >
                   Send Message
                   <Send className="w-4 h-4" />
@@ -367,20 +366,20 @@ export default function ContactPage() {
 
             {/* Contact Info — 40% */}
             <motion.div variants={fadeUp} custom={2} className="lg:col-span-2">
-              <h2 className="font-heading font-bold tracking-tight text-3xl md:text-4xl text-[#F5F0E8] mb-8">
+              <h2 className="font-heading font-bold tracking-tight text-3xl md:text-4xl text-[#F8F6F2] mb-8">
                 Contact Info
               </h2>
 
               {/* Office Address */}
-              <div className="flex gap-4 mb-8 pb-8 border-b border-[#F5F0E8]/10">
-                <div className="w-10 h-10 rounded-lg bg-[#D4A853]/10 flex items-center justify-center shrink-0">
-                  <MapPin className="w-4 h-4 text-[#D4A853]" />
+              <div className="flex gap-4 mb-8 pb-8 border-b border-[#F8F6F2]/10">
+                <div className="w-10 h-10 rounded-lg bg-[#F5B800]/10 flex items-center justify-center shrink-0">
+                  <MapPin className="w-4 h-4 text-[#F5B800]" />
                 </div>
                 <div>
-                  <p className="font-heading font-semibold text-[#F5F0E8] mb-1">
+                  <p className="font-heading font-semibold text-[#F8F6F2] mb-1">
                     Office
                   </p>
-                  <p className="font-body text-sm text-[#F5F0E8]/60 leading-relaxed">
+                  <p className="font-body text-sm text-[#F8F6F2]/60 leading-relaxed">
                     13100 SE Sunnyside Rd Suite B
                     <br />
                     Clackamas, OR 97015
@@ -389,15 +388,15 @@ export default function ContactPage() {
               </div>
 
               {/* Hours */}
-              <div className="flex gap-4 mb-8 pb-8 border-b border-[#F5F0E8]/10">
-                <div className="w-10 h-10 rounded-lg bg-[#D4A853]/10 flex items-center justify-center shrink-0">
-                  <Clock className="w-4 h-4 text-[#D4A853]" />
+              <div className="flex gap-4 mb-8 pb-8 border-b border-[#F8F6F2]/10">
+                <div className="w-10 h-10 rounded-lg bg-[#F5B800]/10 flex items-center justify-center shrink-0">
+                  <Clock className="w-4 h-4 text-[#F5B800]" />
                 </div>
                 <div>
-                  <p className="font-heading font-semibold text-[#F5F0E8] mb-1">
+                  <p className="font-heading font-semibold text-[#F8F6F2] mb-1">
                     Hours
                   </p>
-                  <p className="font-body text-sm text-[#F5F0E8]/60">
+                  <p className="font-body text-sm text-[#F8F6F2]/60">
                     Monday – Friday: 9:00 AM – 6:00 PM
                     <br />
                     Weekends: By Appointment
@@ -405,45 +404,30 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Languages */}
-              <div className="flex gap-4 mb-8 pb-8 border-b border-[#F5F0E8]/10">
-                <div className="w-10 h-10 rounded-lg bg-[#D4A853]/10 flex items-center justify-center shrink-0">
-                  <Globe className="w-4 h-4 text-[#D4A853]" />
-                </div>
-                <div>
-                  <p className="font-heading font-semibold text-[#F5F0E8] mb-1">
-                    Languages
-                  </p>
-                  <p className="font-body text-sm text-[#F5F0E8]/60">
-                    We speak English, Oromo, and Amharic
-                  </p>
-                </div>
-              </div>
-
               {/* Team Contacts */}
               <div className="space-y-6">
-                <p className="font-heading font-semibold text-[#F5F0E8]/40 text-xs tracking-widest uppercase">
+                <p className="font-heading font-semibold text-[#F8F6F2]/40 text-xs tracking-widest uppercase">
                   Team
                 </p>
                 {teamContacts.map((member, i) => (
-                  <div key={i} className="border-l-2 border-[#D4A853]/30 pl-4">
-                    <p className="font-heading font-semibold text-[#F5F0E8]">
+                  <div key={i} className="border-l-2 border-[#F5B800]/30 pl-4">
+                    <p className="font-heading font-semibold text-[#F8F6F2]">
                       {member.name}
                     </p>
-                    <p className="font-body text-xs text-[#D4A853] mb-2">
+                    <p className="font-body text-xs text-[#F5B800] mb-2">
                       {member.role}
                     </p>
                     <div className="flex flex-col gap-1">
                       <a
                         href={`tel:${member.phone.replace(/[^\d+]/g, "")}`}
-                        className="flex items-center gap-2 font-body text-sm text-[#F5F0E8]/60 hover:text-[#D4A853] transition-colors"
+                        className="flex items-center gap-2 font-body text-sm text-[#F8F6F2]/60 hover:text-[#F5B800] transition-colors"
                       >
                         <Phone className="w-3 h-3" />
                         {member.phone}
                       </a>
                       <a
                         href={`mailto:${member.email}`}
-                        className="flex items-center gap-2 font-body text-sm text-[#F5F0E8]/60 hover:text-[#D4A853] transition-colors"
+                        className="flex items-center gap-2 font-body text-sm text-[#F8F6F2]/60 hover:text-[#F5B800] transition-colors"
                       >
                         <Mail className="w-3 h-3" />
                         {member.email}

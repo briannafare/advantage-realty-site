@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* ============================================================
-   Advantage Realty LLC — Global Styles
+   Advantage Realty LLC — Global Styles (FRESH & BRIGHT)
    ============================================================ */
 
 html {
@@ -12,63 +12,65 @@ html {
 
 body {
   font-family: "Inter", sans-serif;
-  color: #1a1a2e;
-  background-color: #fefcf8;
+  color: #0a1628;
+  background-color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* ============================================================
-   Habesha Geometric Textile Pattern
-   Inspired by Ethiopian/Eritrean woven motifs — diamond and
-   cross pattern rendered as a repeating SVG at low opacity.
+   Habesha Geometric Textile Pattern — brighter accent
    ============================================================ */
 .habesha-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%23D4A853' stroke-width='0.8' opacity='0.07'%3E%3C!-- Diamond --%3E%3Cpolygon points='30,5 55,30 30,55 5,30'/%3E%3C!-- Inner diamond --%3E%3Cpolygon points='30,15 45,30 30,45 15,30'/%3E%3C!-- Cross arms --%3E%3Cline x1='30' y1='0' x2='30' y2='15'/%3E%3Cline x1='30' y1='45' x2='30' y2='60'/%3E%3Cline x1='0' y1='30' x2='15' y2='30'/%3E%3Cline x1='45' y1='30' x2='60' y2='30'/%3E%3C!-- Corner dots --%3E%3Ccircle cx='0' cy='0' r='2'/%3E%3Ccircle cx='60' cy='0' r='2'/%3E%3Ccircle cx='0' cy='60' r='2'/%3E%3Ccircle cx='60' cy='60' r='2'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%23F5B800' stroke-width='0.8' opacity='0.06'%3E%3Cpolygon points='30,5 55,30 30,55 5,30'/%3E%3Cpolygon points='30,15 45,30 30,45 15,30'/%3E%3Cline x1='30' y1='0' x2='30' y2='15'/%3E%3Cline x1='30' y1='45' x2='30' y2='60'/%3E%3Cline x1='0' y1='30' x2='15' y2='30'/%3E%3Cline x1='45' y1='30' x2='60' y2='30'/%3E%3Ccircle cx='0' cy='0' r='2'/%3E%3Ccircle cx='60' cy='0' r='2'/%3E%3Ccircle cx='0' cy='60' r='2'/%3E%3Ccircle cx='60' cy='60' r='2'/%3E%3C/g%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 60px 60px;
 }
 
 /* ============================================================
    Film Grain Overlay
-   Adds subtle analog texture when layered over sections.
-   Usage: position a div with .grain-overlay absolutely inside
-   a relative container.
    ============================================================ */
 .grain-overlay {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.04;
+  opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 128px 128px;
 }
 
 /* ============================================================
-   Custom Scrollbar
+   Brighten paper cut-out images (counteract sepia/warm tones)
+   ============================================================ */
+.bright-cutout {
+  filter: brightness(1.12) saturate(1.25);
+}
+
+/* ============================================================
+   Custom Scrollbar — bright accent
    ============================================================ */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #fefcf8;
+  background: #ffffff;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #e8e2d8;
+  background: #e5e7eb;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #d4a853;
+  background: #f5b800;
 }
 
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #e8e2d8 #fefcf8;
+  scrollbar-color: #e5e7eb #ffffff;
 }
 
 /* ============================================================
@@ -80,7 +82,14 @@ body {
   }
 
   .text-gradient-gold {
-    background: linear-gradient(135deg, #d4a853 0%, #c49a48 50%, #d4a853 100%);
+    background: linear-gradient(135deg, #f5b800 0%, #e0a800 50%, #f5b800 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-teal {
+    background: linear-gradient(135deg, #2ec4b6 0%, #1a9e94 50%, #2ec4b6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -88,9 +97,9 @@ body {
 }
 
 /* ============================================================
-   Selection color
+   Selection color — vivid gold
    ============================================================ */
 ::selection {
-  background-color: #d4a85340;
+  background-color: #f5b80040;
   color: #0a1628;
 }

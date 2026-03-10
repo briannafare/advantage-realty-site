@@ -6,7 +6,7 @@ export const BRAND = {
   name: "Advantage Realty LLC",
   tagline: "Portland Real Estate — Rooted in Community, Driven by Results",
   phone: "(503) 793-7520",
-  email: "info@advantagerealtypdx.com",
+  email: "huluka@advantageor.com",
   address: "13100 SE Sunnyside Rd Suite B, Clackamas, OR 97015",
   languages: ["English", "Oromo", "Amharic"],
   social: {
@@ -17,15 +17,15 @@ export const BRAND = {
 
 export const COLORS = {
   primary: "#0A1628",
-  secondary: "#2B7CB5",
-  accent: "#D4A853",
-  accentHover: "#C49A48",
-  background: "#FEFCF8",
-  surface: "#F5F0E8",
+  secondary: "#2EC4B6",
+  accent: "#F5B800",
+  accentHover: "#E0A800",
+  background: "#FFFFFF",
+  surface: "#F8F6F2",
   surfaceAlt: "#0A1628",
-  foreground: "#1A1A2E",
-  muted: "#6B7280",
-  border: "#E8E2D8",
+  foreground: "#0A1628",
+  muted: "#4B5563",
+  border: "#E5E7EB",
 } as const;
 
 export const NAV_LINKS = [
@@ -81,18 +81,24 @@ export const TEAM = [
     name: "Huluka Abebe",
     role: "Principal Broker / Co-Founder",
     bio: "16+ years of Portland real estate experience. Specializes in buyer representation, market analysis, and care home property acquisitions.",
+    phone: "(503) 793-7520",
+    email: "huluka@advantageor.com",
     image: "/images/team/huluka-abebe.jpg",
   },
   {
     name: "Hunde Abebe",
     role: "Broker / Co-Founder",
     bio: "Sharp negotiation skills and detail-oriented approach. Handles listing strategy, contract negotiation, and goes above and beyond for every client.",
+    phone: "(503) 449-4362",
+    email: "hunde@advantageor.com",
     image: "/images/team/hunde-abebe.jpg",
   },
   {
     name: "Jenni Anderson",
     role: "Broker / 1031 Exchange Specialist",
     bio: "Native Oregonian with 10+ years experience. Specializes in 1031 tax-deferred property exchanges and relocation assistance.",
+    phone: "(503) 508-8779",
+    email: "jenni@advantageor.com",
     image: "/images/team/jenni-anderson.jpg",
   },
 ] as const;
@@ -115,6 +121,12 @@ export const TESTIMONIALS = [
     author: "Timothy & Tsehay Smith",
     location: "Portland Metro",
     type: "Investor" as const,
+  },
+  {
+    quote: "Tadesse Haile Hunde knows exactly what you want once you consult him what kind of home and what price range you want to invest. I am satisfied on the property I bought.",
+    author: "Verified Google Reviewer",
+    location: "Portland Metro",
+    type: "Buyer" as const,
   },
 ] as const;
 
@@ -146,7 +158,7 @@ export const FAQ_DATA = [
     question:
       "What neighborhoods in Portland do you specialize in?",
     answer:
-      "We serve the entire Portland metro area with deep expertise in Clackamas, Milwaukie, Happy Valley, Oregon City, and Southeast Portland. Our multilingual team also supports the East African community across the metro region.",
+      "We serve the entire Portland metro area with deep expertise in Clackamas, Milwaukie, Happy Valley, Oregon City, and Southeast Portland.",
   },
   {
     question:
@@ -159,12 +171,6 @@ export const FAQ_DATA = [
       "Do you work with first-time home buyers in Portland?",
     answer:
       "Absolutely. We walk first-time buyers through every step — from pre-approval to closing — and connect you with down payment assistance programs available in Oregon, including OHCS and Portland Housing Bureau programs.",
-  },
-  {
-    question:
-      "What languages does your team speak?",
-    answer:
-      "Our team is fluent in English, Oromo, and Amharic. We believe every client deserves to navigate one of the biggest financial decisions of their life in the language they're most comfortable with.",
   },
   {
     question:
@@ -204,7 +210,7 @@ export const LOCAL_BUSINESS_SCHEMA = {
   "@type": "RealEstateAgent",
   name: "Advantage Realty LLC",
   description:
-    "Portland-area real estate brokerage specializing in residential sales, investment properties, and adult care home consulting. Multilingual team fluent in English, Oromo, and Amharic.",
+    "Portland-area real estate brokerage specializing in residential sales, investment properties, and adult care home consulting.",
   url: "https://advantagerealtypdx.com",
   telephone: "+15037937520",
   address: {

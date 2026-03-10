@@ -36,8 +36,8 @@ export default function Nav() {
         className={cn(
           "fixed inset-x-0 top-0 z-50 h-20 transition-all duration-300",
           scrolled
-            ? "bg-background/95 shadow-sm shadow-border/50 backdrop-blur-md"
-            : "bg-background/80 backdrop-blur-sm"
+            ? "bg-white/95 shadow-sm shadow-[#E5E7EB]/50 backdrop-blur-md"
+            : "bg-white/80 backdrop-blur-sm"
         )}
       >
         <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-5 lg:px-8">
@@ -65,8 +65,8 @@ export default function Nav() {
           {/* Desktop Right Side */}
           <div className="hidden items-center gap-4 lg:flex">
             {/* Languages badge */}
-            <span className="rounded-full bg-surface px-3 py-1 font-body text-xs text-muted">
-              EN &middot; OR &middot; AM
+            <span className="rounded-full bg-[#F8F6F2] px-3 py-1 font-body text-xs text-[#4B5563]">
+              3 Languages
             </span>
 
             {/* Phone */}
@@ -80,7 +80,11 @@ export default function Nav() {
 
             {/* CTA */}
             <Link href="/contact">
-              <Button variant="default" size="sm">
+              <Button
+                variant="default"
+                size="sm"
+                className="bg-[#F5B800] text-[#0A1628] hover:bg-[#E0A800]"
+              >
                 Free Consultation
               </Button>
             </Link>
@@ -121,13 +125,13 @@ export default function Nav() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed inset-y-0 right-0 z-40 flex w-80 flex-col bg-background shadow-2xl lg:hidden"
+              className="fixed inset-y-0 right-0 z-40 flex w-80 flex-col bg-white shadow-2xl lg:hidden"
             >
               <div className="flex flex-1 flex-col gap-2 overflow-y-auto px-6 pb-8 pt-24">
                 {/* Language badge */}
                 <div className="mb-4">
-                  <span className="rounded-full bg-surface px-3 py-1 font-body text-xs text-muted">
-                    EN &middot; OR &middot; AM
+                  <span className="rounded-full bg-[#F8F6F2] px-3 py-1 font-body text-xs text-[#4B5563]">
+                    3 Languages
                   </span>
                 </div>
 
@@ -149,7 +153,7 @@ export default function Nav() {
                 ))}
 
                 {/* Divider */}
-                <div className="my-4 h-px bg-border" />
+                <div className="my-4 h-px bg-[#E5E7EB]" />
 
                 {/* Phone */}
                 <motion.a
@@ -171,7 +175,10 @@ export default function Nav() {
                   className="mt-4"
                 >
                   <Link href="/contact" onClick={() => setMobileOpen(false)}>
-                    <Button variant="default" className="w-full">
+                    <Button
+                      variant="default"
+                      className="w-full bg-[#F5B800] text-[#0A1628] hover:bg-[#E0A800]"
+                    >
                       Free Consultation
                     </Button>
                   </Link>
@@ -179,8 +186,8 @@ export default function Nav() {
               </div>
 
               {/* Bottom info */}
-              <div className="border-t border-border px-6 py-4">
-                <p className="font-body text-xs text-muted">
+              <div className="border-t border-[#E5E7EB] px-6 py-4">
+                <p className="font-body text-xs text-[#4B5563]">
                   {BRAND.address}
                 </p>
               </div>

@@ -19,7 +19,7 @@ export default function Footer() {
   return (
     <footer className="relative bg-[#0A1628]">
       {/* Habesha pattern overlay */}
-      <div className="habesha-pattern absolute inset-0 pointer-events-none" />
+      <div className="habesha-pattern absolute inset-0 pointer-events-none opacity-[0.03]" />
 
       <div className="relative mx-auto max-w-7xl px-5 pb-8 pt-16 lg:px-8">
         {/* Main Grid */}
@@ -33,16 +33,15 @@ export default function Footer() {
             variants={fadeInUp}
           >
             <Link href="/" className="inline-block">
-              <span className="font-heading text-xl font-bold tracking-tight text-[#F5F0E8]">
+              <span className="font-heading text-xl font-bold tracking-tight text-[#F8F6F2]">
                 Advantage
                 <span className="text-accent"> Realty</span>
               </span>
             </Link>
-            <p className="mt-4 font-body text-sm leading-relaxed text-[#F5F0E8]/70">
+            <p className="mt-4 font-body text-sm leading-relaxed text-[#F8F6F2]/70">
               Portland-area real estate brokerage rooted in community.
               Specializing in residential sales, investment properties, and
-              adult care home consulting. Proudly serving Oregon&apos;s East
-              African community in English, Oromo, and Amharic.
+              adult care home consulting.
             </p>
             {/* Social */}
             <div className="mt-6 flex gap-3">
@@ -51,7 +50,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#F5F0E8]/10 text-[#F5F0E8] transition-colors hover:bg-accent hover:text-primary"
+                className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#F8F6F2]/10 text-[#F8F6F2] transition-colors hover:bg-accent hover:text-primary"
               >
                 <Facebook className="h-4 w-4" />
               </a>
@@ -60,7 +59,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#F5F0E8]/10 text-[#F5F0E8] transition-colors hover:bg-accent hover:text-primary"
+                className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#F8F6F2]/10 text-[#F8F6F2] transition-colors hover:bg-accent hover:text-primary"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
@@ -83,7 +82,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="font-body text-sm text-[#F5F0E8]/70 transition-colors hover:text-accent"
+                    className="font-body text-sm text-[#F8F6F2]/70 transition-colors hover:text-accent"
                   >
                     {link.label}
                   </Link>
@@ -108,7 +107,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="font-body text-sm text-[#F5F0E8]/70 transition-colors hover:text-accent"
+                    className="font-body text-sm text-[#F8F6F2]/70 transition-colors hover:text-accent"
                   >
                     {link.label}
                   </Link>
@@ -132,7 +131,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`tel:${BRAND.phone.replace(/[^+\d]/g, "")}`}
-                  className="flex items-start gap-3 font-body text-sm text-[#F5F0E8]/70 transition-colors hover:text-accent"
+                  className="flex items-start gap-3 font-body text-sm text-[#F8F6F2]/70 transition-colors hover:text-accent"
                 >
                   <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent" />
                   {BRAND.phone}
@@ -141,7 +140,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${BRAND.email}`}
-                  className="flex items-start gap-3 font-body text-sm text-[#F5F0E8]/70 transition-colors hover:text-accent"
+                  className="flex items-start gap-3 font-body text-sm text-[#F8F6F2]/70 transition-colors hover:text-accent"
                 >
                   <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent" />
                   {BRAND.email}
@@ -152,36 +151,26 @@ export default function Footer() {
                   href="https://maps.google.com/?q=13100+SE+Sunnyside+Rd+Suite+B+Clackamas+OR+97015"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-3 font-body text-sm text-[#F5F0E8]/70 transition-colors hover:text-accent"
+                  className="flex items-start gap-3 font-body text-sm text-[#F8F6F2]/70 transition-colors hover:text-accent"
                 >
                   <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent" />
                   {BRAND.address}
                 </a>
               </li>
             </ul>
-
-            {/* Languages */}
-            <div className="mt-6 rounded-lg bg-[#F5F0E8]/5 px-4 py-3">
-              <p className="font-body text-xs text-[#F5F0E8]/60">
-                We speak{" "}
-                <span className="font-semibold text-accent">
-                  English, Oromo, and Amharic
-                </span>
-              </p>
-            </div>
           </motion.div>
         </div>
 
         {/* Divider */}
-        <div className="mt-12 h-px bg-[#F5F0E8]/10" />
+        <div className="mt-12 h-px bg-[#F8F6F2]/10" />
 
         {/* Bottom Bar */}
         <div className="mt-6 flex flex-col items-center justify-between gap-3 sm:flex-row">
-          <p className="font-body text-xs text-[#F5F0E8]/50">
+          <p className="font-body text-xs text-[#F8F6F2]/50">
             &copy; {new Date().getFullYear()} Advantage Realty LLC |{" "}
             {BRAND.address}
           </p>
-          <p className="font-body text-xs text-[#F5F0E8]/40">
+          <p className="font-body text-xs text-[#F8F6F2]/40">
             Built by{" "}
             <a
               href="https://eighty5labs.com"

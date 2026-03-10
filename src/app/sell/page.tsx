@@ -88,7 +88,7 @@ function FaqAccordion({ items }: { items: { q: string; a: string }[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="divide-y divide-[#E8E2D8]">
+    <div className="divide-y divide-[#E5E7EB]">
       {items.map((item, i) => {
         const isOpen = openIndex === i;
         return (
@@ -100,7 +100,7 @@ function FaqAccordion({ items }: { items: { q: string; a: string }[] }) {
             >
               {item.q}
               <span
-                className="ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#E8E2D8] text-[#D4A853] transition-transform duration-300"
+                className="ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#E5E7EB] text-[#F5B800] transition-transform duration-300"
                 style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)" }}
               >
                 +
@@ -129,51 +129,66 @@ export default function SellPage() {
   return (
     <main>
       {/* ━━ 1. HERO ━━ */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      <section className="bg-[#FFFFFF] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="max-w-3xl"
+            className="grid items-center gap-12 md:grid-cols-2 md:gap-16"
           >
-            <motion.p
-              variants={fadeUp}
-              className="mb-4 font-body text-sm font-medium uppercase tracking-widest text-[#D4A853]"
-            >
-              Portland Home Sellers
-            </motion.p>
-            <motion.h1
-              variants={fadeUp}
-              className="font-heading text-5xl font-bold tracking-tight text-[#0A1628] md:text-7xl"
-            >
-              Sell Your Portland Home — Strategic Pricing, Maximum Value
-            </motion.h1>
-            <motion.p
-              variants={fadeUp}
-              className="mt-6 max-w-xl font-body text-lg leading-relaxed text-[#0A1628]/70 md:text-xl"
-            >
-              Your home is likely your largest asset. Advantage Realty combines hyper-local market
-              knowledge with proven marketing strategies to get you the strongest possible return.
-            </motion.p>
-            <motion.div variants={fadeUp} className="mt-10 flex flex-wrap items-center gap-4">
-              <a
-                href="#cta"
-                className="inline-flex items-center rounded-lg bg-[#D4A853] px-7 py-3.5 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:opacity-90"
+            <div>
+              <motion.p
+                variants={fadeUp}
+                className="mb-4 font-body text-sm font-medium uppercase tracking-widest text-[#F5B800]"
               >
-                Get Your Free Property Evaluation
-              </a>
-              <span className="font-body text-sm text-[#0A1628]/50">
-                No obligation &middot; Takes 2 minutes
-              </span>
+                Portland Home Sellers
+              </motion.p>
+              <motion.h1
+                variants={fadeUp}
+                className="font-heading text-5xl font-bold tracking-tight text-[#0A1628] md:text-7xl"
+              >
+                Sell Your Portland Home — Strategic Pricing, Maximum Value
+              </motion.h1>
+              <motion.p
+                variants={fadeUp}
+                className="mt-6 max-w-xl font-body text-lg leading-relaxed text-[#0A1628]/70 md:text-xl"
+              >
+                Your home is likely your largest asset. Advantage Realty combines hyper-local market
+                knowledge with proven marketing strategies to get you the strongest possible return.
+              </motion.p>
+              <motion.div variants={fadeUp} className="mt-10 flex flex-wrap items-center gap-4">
+                <a
+                  href="#cta"
+                  className="inline-flex items-center rounded-lg bg-[#F5B800] px-7 py-3.5 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:opacity-90"
+                >
+                  Get Your Free Property Evaluation
+                </a>
+                <span className="font-body text-sm text-[#0A1628]/50">
+                  No obligation &middot; Takes 2 minutes
+                </span>
+              </motion.div>
+            </div>
+            <motion.div
+              variants={fadeUp}
+              className="relative aspect-[4/5] overflow-hidden rounded-xl shadow-2xl shadow-[#0A1628]/10"
+            >
+              <Image
+                src="/images/paper-cutout-neighborhood.png"
+                alt="Paper cut-out illustration of Portland neighborhood"
+                fill
+                className="object-cover object-top bright-cutout"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
             </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* ━━ 2. VALUE PROP + STAT ━━ */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      <section className="bg-[#FFFFFF] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
             variants={staggerContainer}
@@ -210,9 +225,9 @@ export default function SellPage() {
             {/* Right — Big Stat */}
             <motion.div
               variants={fadeUp}
-              className="flex flex-col items-center rounded-xl border border-[#E8E2D8] bg-white p-12 text-center"
+              className="flex flex-col items-center rounded-xl border border-[#E5E7EB] bg-white p-12 text-center"
             >
-              <span className="font-heading text-7xl font-bold tracking-tight text-[#D4A853] md:text-8xl">
+              <span className="font-heading text-7xl font-bold tracking-tight text-[#F5B800] md:text-8xl">
                 4.3
               </span>
               <span className="mt-2 font-heading text-xl font-bold tracking-tight text-[#0A1628]">
@@ -238,13 +253,13 @@ export default function SellPage() {
           >
             <motion.h2
               variants={fadeUp}
-              className="font-heading text-3xl font-bold tracking-tight text-[#F5F0E8] md:text-5xl"
+              className="font-heading text-3xl font-bold tracking-tight text-[#F8F6F2] md:text-5xl"
             >
               How We Sell Your Home
             </motion.h2>
             <motion.p
               variants={fadeUp}
-              className="mt-4 max-w-xl font-body text-lg text-[#F5F0E8]/60"
+              className="mt-4 max-w-xl font-body text-lg text-[#F8F6F2]/60"
             >
               A five-step process designed to maximize your sale price and minimize your stress.
             </motion.p>
@@ -254,15 +269,15 @@ export default function SellPage() {
                 <motion.div
                   key={step.num}
                   variants={fadeUp}
-                  className="rounded-xl border border-[#F5F0E8]/10 bg-[#F5F0E8]/5 p-6"
+                  className="rounded-xl border border-[#F8F6F2]/10 bg-[#F8F6F2]/5 p-6"
                 >
-                  <span className="font-heading text-3xl font-bold text-[#D4A853]">
+                  <span className="font-heading text-3xl font-bold text-[#F5B800]">
                     {step.num}
                   </span>
-                  <h3 className="mt-4 font-heading text-lg font-bold tracking-tight text-[#F5F0E8]">
+                  <h3 className="mt-4 font-heading text-lg font-bold tracking-tight text-[#F8F6F2]">
                     {step.title}
                   </h3>
-                  <p className="mt-2 font-body text-sm leading-relaxed text-[#F5F0E8]/50">
+                  <p className="mt-2 font-body text-sm leading-relaxed text-[#F8F6F2]/50">
                     {step.desc}
                   </p>
                 </motion.div>
@@ -273,7 +288,7 @@ export default function SellPage() {
       </section>
 
       {/* ━━ 4. MARKET DATA ━━ */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      <section className="bg-[#FFFFFF] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
             variants={staggerContainer}
@@ -293,10 +308,10 @@ export default function SellPage() {
                 <motion.div
                   key={i}
                   variants={fadeUp}
-                  className="rounded-xl border border-[#E8E2D8] bg-white p-8"
+                  className="rounded-xl border border-[#E5E7EB] bg-white p-8"
                 >
                   <div className="flex items-start gap-4">
-                    <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#D4A853]/10 font-heading text-sm font-bold text-[#D4A853]">
+                    <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F5B800]/10 font-heading text-sm font-bold text-[#F5B800]">
                       {i + 1}
                     </span>
                     <div>
@@ -316,7 +331,7 @@ export default function SellPage() {
       </section>
 
       {/* ━━ 5. TESTIMONIAL ━━ */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      <section className="bg-[#FFFFFF] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
             variants={staggerContainer}
@@ -327,7 +342,7 @@ export default function SellPage() {
           >
             <motion.span
               variants={fadeUp}
-              className="mb-6 block font-heading text-5xl text-[#D4A853]"
+              className="mb-6 block font-heading text-5xl text-[#F5B800]"
             >
               &ldquo;
             </motion.span>
@@ -339,7 +354,7 @@ export default function SellPage() {
               above asking and closed in under 30 days. Could not have asked for a better
               experience.
             </motion.blockquote>
-            <motion.p variants={fadeUp} className="mt-8 font-heading text-sm font-bold text-[#D4A853]">
+            <motion.p variants={fadeUp} className="mt-8 font-heading text-sm font-bold text-[#F5B800]">
               Guteta
             </motion.p>
             <motion.p variants={fadeUp} className="font-body text-sm text-[#0A1628]/50">
@@ -350,7 +365,7 @@ export default function SellPage() {
       </section>
 
       {/* ━━ 6. FAQ ━━ */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      <section className="bg-[#FFFFFF] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
             variants={staggerContainer}
@@ -383,13 +398,13 @@ export default function SellPage() {
           >
             <motion.h2
               variants={fadeUp}
-              className="font-heading text-3xl font-bold tracking-tight text-[#F5F0E8] md:text-5xl"
+              className="font-heading text-3xl font-bold tracking-tight text-[#F8F6F2] md:text-5xl"
             >
               Find Out What Your Home Is Worth — No Obligation
             </motion.h2>
             <motion.p
               variants={fadeUp}
-              className="mt-6 font-body text-lg leading-relaxed text-[#F5F0E8]/60"
+              className="mt-6 font-body text-lg leading-relaxed text-[#F8F6F2]/60"
             >
               Get a free, data-backed property evaluation from a team that knows Portland
               neighborhoods inside and out.
@@ -397,15 +412,15 @@ export default function SellPage() {
             <motion.div variants={fadeUp} className="mt-10 flex flex-col items-center gap-4">
               <a
                 href="/contact"
-                className="inline-flex items-center rounded-lg bg-[#D4A853] px-8 py-4 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:opacity-90"
+                className="inline-flex items-center rounded-lg bg-[#F5B800] px-8 py-4 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:opacity-90"
               >
                 Get Your Free Evaluation
               </a>
               <a
-                href="tel:+15035551234"
-                className="font-body text-sm text-[#F5F0E8]/50 transition hover:text-[#D4A853]"
+                href="tel:+15037937520"
+                className="font-body text-sm text-[#F8F6F2]/50 transition hover:text-[#F5B800]"
               >
-                Or call: [CLIENT TO PROVIDE: phone number]
+                Or call: (503) 793-7520
               </a>
             </motion.div>
           </motion.div>

@@ -163,7 +163,7 @@ export default function CareHomeInvestmentPage() {
       {/* ──────────────────────────────────────────────────────────
           SECTION 1 — Hero
           ────────────────────────────────────────────────────────── */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      <section className="bg-[#FFFFFF] py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
           <motion.div
             initial="hidden"
@@ -175,7 +175,7 @@ export default function CareHomeInvestmentPage() {
             <motion.span
               variants={fadeUp}
               custom={0}
-              className="inline-block bg-[#D4A853]/10 text-[#D4A853] font-heading font-semibold text-xs tracking-widest uppercase px-4 py-1.5 rounded-full mb-6"
+              className="inline-block bg-[#F5B800]/10 text-[#F5B800] font-heading font-semibold text-xs tracking-widest uppercase px-4 py-1.5 rounded-full mb-6"
             >
               Oregon Care Home Specialists
             </motion.span>
@@ -185,14 +185,14 @@ export default function CareHomeInvestmentPage() {
               className="font-heading font-bold tracking-tight text-5xl md:text-7xl text-[#0A1628] mb-6"
             >
               Care Home Investment in Portland —{" "}
-              <span className="text-[#D4A853]">
+              <span className="text-[#F5B800]">
                 Oregon&apos;s Compliance-Ready Real Estate Experts
               </span>
             </motion.h1>
             <motion.p
               variants={fadeUp}
               custom={2}
-              className="font-body text-lg md:text-xl text-[#6B7280] mb-10 max-w-3xl"
+              className="font-body text-lg md:text-xl text-[#4B5563] mb-10 max-w-3xl"
             >
               Most brokers show you houses. We show you properties that can
               actually be licensed as care homes in Oregon — pre-screened against
@@ -202,14 +202,14 @@ export default function CareHomeInvestmentPage() {
             <motion.div variants={fadeUp} custom={3} className="flex flex-wrap gap-4">
               <Link
                 href="/contact?interest=Care+Home"
-                className="inline-flex items-center gap-2 bg-[#D4A853] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:bg-[#C49A48] transition-colors"
+                className="inline-flex items-center gap-2 bg-[#F5B800] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:bg-[#E0A800] transition-colors"
               >
                 Schedule Care Home Consultation
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
                 href="tel:+15037937520"
-                className="inline-flex items-center gap-2 border border-[#E8E2D8] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:border-[#D4A853]/50 transition-colors"
+                className="inline-flex items-center gap-2 border border-[#E5E7EB] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:border-[#F5B800]/50 transition-colors"
               >
                 <Phone className="w-4 h-4" />
                 (503) 793-7520
@@ -222,7 +222,7 @@ export default function CareHomeInvestmentPage() {
       {/* ──────────────────────────────────────────────────────────
           SECTION 2 — Why a Specialist
           ────────────────────────────────────────────────────────── */}
-      <section className="relative bg-[#FEFCF8] py-20 md:py-32 border-t border-[#E8E2D8] overflow-hidden">
+      <section className="relative bg-[#FFFFFF] py-20 md:py-32 border-t border-[#E5E7EB] overflow-hidden">
         <div className="habesha-pattern absolute inset-0" />
         <div className="relative max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
           <motion.div
@@ -236,7 +236,7 @@ export default function CareHomeInvestmentPage() {
               <motion.p
                 variants={fadeUp}
                 custom={0}
-                className="text-[#D4A853] font-heading font-semibold tracking-widest uppercase text-sm mb-4"
+                className="text-[#F5B800] font-heading font-semibold tracking-widest uppercase text-sm mb-4"
               >
                 Not Just Another Broker
               </motion.p>
@@ -250,7 +250,7 @@ export default function CareHomeInvestmentPage() {
               <motion.p
                 variants={fadeUp}
                 custom={2}
-                className="font-body text-lg text-[#6B7280] leading-relaxed mb-6"
+                className="font-body text-lg text-[#4B5563] leading-relaxed mb-6"
               >
                 Oregon&apos;s care home regulations are among the most detailed
                 in the country. A beautiful 4-bedroom house can fail licensing
@@ -261,7 +261,7 @@ export default function CareHomeInvestmentPage() {
               <motion.p
                 variants={fadeUp}
                 custom={3}
-                className="font-body text-lg text-[#6B7280] leading-relaxed"
+                className="font-body text-lg text-[#4B5563] leading-relaxed"
               >
                 We know OAR 411-054 requirements by heart. We walk properties
                 with a licensing lens, not just a real estate one — so you buy
@@ -271,7 +271,7 @@ export default function CareHomeInvestmentPage() {
             </div>
 
             <motion.div variants={fadeUp} custom={2}>
-              <div className="bg-white rounded-xl border border-[#E8E2D8] p-8">
+              <div className="bg-white rounded-xl border border-[#E5E7EB] p-8">
                 <h3 className="font-heading font-bold text-lg text-[#0A1628] mb-5">
                   Key Building Requirements We Screen For
                 </h3>
@@ -284,8 +284,8 @@ export default function CareHomeInvestmentPage() {
                     "Commercial-grade kitchen ventilation and food storage for licensed meal service",
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-[#D4A853] shrink-0 mt-0.5" />
-                      <span className="font-body text-[#6B7280] leading-relaxed text-sm">
+                      <CheckCircle2 className="w-5 h-5 text-[#F5B800] shrink-0 mt-0.5" />
+                      <span className="font-body text-[#4B5563] leading-relaxed text-sm">
                         {item}
                       </span>
                     </li>
@@ -312,13 +312,13 @@ export default function CareHomeInvestmentPage() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-[#D4A853] font-heading font-semibold tracking-widest uppercase text-sm mb-4"
+              className="text-[#F5B800] font-heading font-semibold tracking-widest uppercase text-sm mb-4"
             >
               Compliance Categories
             </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-[#F5F0E8]"
+              className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-[#F8F6F2]"
             >
               What Oregon Requires — And What We Verify
             </motion.h2>
@@ -336,15 +336,15 @@ export default function CareHomeInvestmentPage() {
                 key={card.title}
                 variants={fadeUp}
                 custom={i}
-                className="bg-[#F5F0E8]/5 border border-[#F5F0E8]/10 rounded-xl p-8 hover:border-[#D4A853]/30 transition-colors"
+                className="bg-[#F8F6F2]/5 border border-[#F8F6F2]/10 rounded-xl p-8 hover:border-[#F5B800]/30 transition-colors"
               >
-                <div className="w-12 h-12 rounded-lg bg-[#D4A853]/10 flex items-center justify-center mb-5">
-                  <card.icon className="w-5 h-5 text-[#D4A853]" strokeWidth={1.5} />
+                <div className="w-12 h-12 rounded-lg bg-[#F5B800]/10 flex items-center justify-center mb-5">
+                  <card.icon className="w-5 h-5 text-[#F5B800]" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-heading font-bold text-lg text-[#F5F0E8] mb-3">
+                <h3 className="font-heading font-bold text-lg text-[#F8F6F2] mb-3">
                   {card.title}
                 </h3>
-                <p className="font-body text-sm text-[#F5F0E8]/60 leading-relaxed">
+                <p className="font-body text-sm text-[#F8F6F2]/60 leading-relaxed">
                   {card.description}
                 </p>
               </motion.div>
@@ -356,7 +356,7 @@ export default function CareHomeInvestmentPage() {
       {/* ──────────────────────────────────────────────────────────
           SECTION 4 — Who We Serve
           ────────────────────────────────────────────────────────── */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      <section className="bg-[#FFFFFF] py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
           <motion.div
             initial="hidden"
@@ -367,7 +367,7 @@ export default function CareHomeInvestmentPage() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-[#D4A853] font-heading font-semibold tracking-widest uppercase text-sm mb-4"
+              className="text-[#F5B800] font-heading font-semibold tracking-widest uppercase text-sm mb-4"
             >
               Who We Work With
             </motion.p>
@@ -391,11 +391,11 @@ export default function CareHomeInvestmentPage() {
                 key={audience.title}
                 variants={fadeUp}
                 custom={i}
-                className="bg-[#F5F0E8] rounded-xl border border-[#E8E2D8] p-8 hover:border-[#D4A853]/40 transition-colors"
+                className="bg-[#F8F6F2] rounded-xl border border-[#E5E7EB] p-8 hover:border-[#F5B800]/40 transition-colors"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#D4A853]/10 flex items-center justify-center shrink-0">
-                    <span className="font-heading font-bold text-sm text-[#D4A853]">
+                  <div className="w-10 h-10 rounded-full bg-[#F5B800]/10 flex items-center justify-center shrink-0">
+                    <span className="font-heading font-bold text-sm text-[#F5B800]">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                   </div>
@@ -403,7 +403,7 @@ export default function CareHomeInvestmentPage() {
                     <h3 className="font-heading font-bold text-xl text-[#0A1628] mb-2">
                       {audience.title}
                     </h3>
-                    <p className="font-body text-[#6B7280] leading-relaxed">
+                    <p className="font-body text-[#4B5563] leading-relaxed">
                       {audience.description}
                     </p>
                   </div>
@@ -417,7 +417,7 @@ export default function CareHomeInvestmentPage() {
       {/* ──────────────────────────────────────────────────────────
           SECTION 5 — Process Timeline
           ────────────────────────────────────────────────────────── */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32 border-t border-[#E8E2D8]">
+      <section className="bg-[#FFFFFF] py-20 md:py-32 border-t border-[#E5E7EB]">
         <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
           <motion.div
             initial="hidden"
@@ -430,7 +430,7 @@ export default function CareHomeInvestmentPage() {
             <div className="lg:col-span-4">
               <motion.p
                 variants={fadeUp}
-                className="text-[#D4A853] font-heading font-semibold tracking-widest uppercase text-sm mb-4"
+                className="text-[#F5B800] font-heading font-semibold tracking-widest uppercase text-sm mb-4"
               >
                 Our Process
               </motion.p>
@@ -442,7 +442,7 @@ export default function CareHomeInvestmentPage() {
               </motion.h2>
               <motion.p
                 variants={fadeUp}
-                className="font-body text-lg text-[#6B7280] leading-relaxed"
+                className="font-body text-lg text-[#4B5563] leading-relaxed"
               >
                 A structured, compliance-first approach that protects your
                 investment at every step.
@@ -459,7 +459,7 @@ export default function CareHomeInvestmentPage() {
                 className="relative"
               >
                 {/* Vertical line */}
-                <div className="absolute left-5 top-0 bottom-0 w-px bg-[#E8E2D8]" />
+                <div className="absolute left-5 top-0 bottom-0 w-px bg-[#E5E7EB]" />
 
                 {processSteps.map((step, i) => (
                   <motion.div
@@ -469,14 +469,14 @@ export default function CareHomeInvestmentPage() {
                     className="relative pl-14 pb-12 last:pb-0"
                   >
                     {/* Dot */}
-                    <div className="absolute left-3 top-1 w-4 h-4 rounded-full bg-[#D4A853] border-4 border-[#FEFCF8]" />
-                    <p className="font-heading font-bold text-xs text-[#D4A853] tracking-widest uppercase mb-1">
+                    <div className="absolute left-3 top-1 w-4 h-4 rounded-full bg-[#F5B800] border-4 border-[#FFFFFF]" />
+                    <p className="font-heading font-bold text-xs text-[#F5B800] tracking-widest uppercase mb-1">
                       Step {step.step}
                     </p>
                     <h3 className="font-heading font-bold text-xl text-[#0A1628] mb-2">
                       {step.title}
                     </h3>
-                    <p className="font-body text-[#6B7280] leading-relaxed">
+                    <p className="font-body text-[#4B5563] leading-relaxed">
                       {step.description}
                     </p>
                   </motion.div>
@@ -502,23 +502,23 @@ export default function CareHomeInvestmentPage() {
           >
             <motion.div
               variants={fadeUp}
-              className="w-16 h-16 mx-auto mb-8 rounded-full bg-[#D4A853]/10 flex items-center justify-center"
+              className="w-16 h-16 mx-auto mb-8 rounded-full bg-[#F5B800]/10 flex items-center justify-center"
             >
-              <span className="font-accent text-[#D4A853] text-3xl">&ldquo;</span>
+              <span className="font-accent text-[#F5B800] text-3xl">&ldquo;</span>
             </motion.div>
             <motion.blockquote
               variants={fadeUp}
-              className="font-accent text-2xl md:text-4xl lg:text-5xl text-[#F5F0E8] leading-snug mb-10"
+              className="font-accent text-2xl md:text-4xl lg:text-5xl text-[#F8F6F2] leading-snug mb-10"
             >
-              [CLIENT TO PROVIDE: Timothy &amp; Tsehay Smith testimonial quote —
-              this is the most important testimonial on the site]
+              You will be well served with Hunde and Huluka with your real estate
+              needs, especially in the adult care business.
             </motion.blockquote>
             <motion.div variants={fadeUp}>
-              <p className="font-heading font-bold text-[#D4A853] text-lg">
+              <p className="font-heading font-bold text-[#F5B800] text-lg">
                 Timothy &amp; Tsehay Smith
               </p>
-              <p className="font-body text-sm text-[#F5F0E8]/50">
-                [CLIENT TO PROVIDE: Transaction type &amp; area]
+              <p className="font-body text-sm text-[#F8F6F2]/50">
+                Care Home Investors, Portland
               </p>
             </motion.div>
           </motion.div>
@@ -528,7 +528,7 @@ export default function CareHomeInvestmentPage() {
       {/* ──────────────────────────────────────────────────────────
           SECTION 7 — FAQ
           ────────────────────────────────────────────────────────── */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      <section className="bg-[#FFFFFF] py-20 md:py-32">
         <div className="max-w-3xl mx-auto px-5 md:px-8 lg:px-12">
           <motion.div
             initial="hidden"
@@ -539,7 +539,7 @@ export default function CareHomeInvestmentPage() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-[#D4A853] font-heading font-semibold tracking-widest uppercase text-sm mb-4"
+              className="text-[#F5B800] font-heading font-semibold tracking-widest uppercase text-sm mb-4"
             >
               Common Questions
             </motion.p>
@@ -563,16 +563,16 @@ export default function CareHomeInvestmentPage() {
                 key={i}
                 variants={fadeUp}
                 custom={i}
-                className="group bg-[#F5F0E8] rounded-xl border border-[#E8E2D8] overflow-hidden"
+                className="group bg-[#F8F6F2] rounded-xl border border-[#E5E7EB] overflow-hidden"
               >
                 <summary className="flex items-center justify-between cursor-pointer p-6 font-heading font-semibold text-[#0A1628] text-lg list-none [&::-webkit-details-marker]:hidden">
                   {faq.question}
-                  <span className="ml-4 shrink-0 text-[#D4A853] group-open:rotate-45 transition-transform duration-200 text-2xl leading-none">
+                  <span className="ml-4 shrink-0 text-[#F5B800] group-open:rotate-45 transition-transform duration-200 text-2xl leading-none">
                     +
                   </span>
                 </summary>
                 <div className="px-6 pb-6">
-                  <p className="font-body text-[#6B7280] leading-relaxed">
+                  <p className="font-body text-[#4B5563] leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>
@@ -616,13 +616,13 @@ export default function CareHomeInvestmentPage() {
           >
             <motion.h2
               variants={fadeUp}
-              className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-[#F5F0E8] mb-6"
+              className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-[#F8F6F2] mb-6"
             >
               Ready to Invest in Oregon&apos;s Care Home Market?
             </motion.h2>
             <motion.p
               variants={fadeUp}
-              className="font-body text-lg text-[#F5F0E8]/70 mb-10 max-w-2xl mx-auto"
+              className="font-body text-lg text-[#F8F6F2]/70 mb-10 max-w-2xl mx-auto"
             >
               Whether you&apos;re buying your first care home or expanding a
               portfolio, we&apos;ll walk you through the compliance landscape
@@ -635,14 +635,14 @@ export default function CareHomeInvestmentPage() {
             >
               <Link
                 href="/contact?interest=Care+Home"
-                className="inline-flex items-center gap-2 bg-[#D4A853] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:bg-[#C49A48] transition-colors"
+                className="inline-flex items-center gap-2 bg-[#F5B800] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:bg-[#E0A800] transition-colors"
               >
                 Start Your Care Home Search
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
                 href="tel:+15037937520"
-                className="inline-flex items-center gap-2 text-[#F5F0E8] font-heading font-semibold hover:text-[#D4A853] transition-colors"
+                className="inline-flex items-center gap-2 text-[#F8F6F2] font-heading font-semibold hover:text-[#F5B800] transition-colors"
               >
                 <Phone className="w-4 h-4" />
                 (503) 793-7520
