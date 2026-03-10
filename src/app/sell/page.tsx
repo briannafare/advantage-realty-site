@@ -138,6 +138,7 @@ export default function SellPage() {
             viewport={{ once: true, amount: 0.3 }}
             className="grid items-center gap-12 md:grid-cols-2 md:gap-16"
           >
+            {/* Left — Text */}
             <div>
               <motion.p
                 variants={fadeUp}
@@ -161,7 +162,7 @@ export default function SellPage() {
               <motion.div variants={fadeUp} className="mt-10 flex flex-wrap items-center gap-4">
                 <a
                   href="#cta"
-                  className="inline-flex items-center rounded-lg bg-[#F5B800] px-7 py-3.5 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:opacity-90"
+                  className="inline-flex items-center rounded-lg bg-[#F5B800] px-7 py-3.5 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:bg-[#E0A800]"
                 >
                   Get Your Free Property Evaluation
                 </a>
@@ -170,15 +171,17 @@ export default function SellPage() {
                 </span>
               </motion.div>
             </div>
+
+            {/* Right — Paper Cut-Out Image */}
             <motion.div
               variants={fadeUp}
-              className="relative aspect-[4/5] overflow-hidden rounded-xl shadow-2xl shadow-[#0A1628]/10"
+              className="relative aspect-[4/5] overflow-hidden rounded-xl"
             >
               <Image
                 src="/images/paper-cutout-neighborhood.png"
                 alt="Paper cut-out illustration of Portland neighborhood"
                 fill
-                className="object-cover object-top bright-cutout"
+                className="bright-cutout object-cover object-center"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
@@ -227,7 +230,7 @@ export default function SellPage() {
               variants={fadeUp}
               className="flex flex-col items-center rounded-xl border border-[#E5E7EB] bg-white p-12 text-center"
             >
-              <span className="font-heading text-7xl font-bold tracking-tight text-[#F5B800] md:text-8xl">
+              <span className="font-heading text-8xl font-bold tracking-tight text-[#2EC4B6] md:text-9xl">
                 4.3
               </span>
               <span className="mt-2 font-heading text-xl font-bold tracking-tight text-[#0A1628]">
@@ -271,7 +274,7 @@ export default function SellPage() {
                   variants={fadeUp}
                   className="rounded-xl border border-[#F8F6F2]/10 bg-[#F8F6F2]/5 p-6"
                 >
-                  <span className="font-heading text-3xl font-bold text-[#F5B800]">
+                  <span className="font-heading text-6xl font-bold text-[#F5B800]/30">
                     {step.num}
                   </span>
                   <h3 className="mt-4 font-heading text-lg font-bold tracking-tight text-[#F8F6F2]">
@@ -412,7 +415,7 @@ export default function SellPage() {
             <motion.div variants={fadeUp} className="mt-10 flex flex-col items-center gap-4">
               <a
                 href="/contact"
-                className="inline-flex items-center rounded-lg bg-[#F5B800] px-8 py-4 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:opacity-90"
+                className="inline-flex items-center rounded-lg bg-[#F5B800] px-8 py-4 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:bg-[#E0A800]"
               >
                 Get Your Free Evaluation
               </a>

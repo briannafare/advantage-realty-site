@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Accessibility,
@@ -170,50 +171,68 @@ export default function CareHomeInvestmentPage() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="max-w-4xl"
+            className="grid items-center gap-12 md:grid-cols-2 md:gap-16"
           >
-            <motion.span
-              variants={fadeUp}
-              custom={0}
-              className="inline-block bg-[#F5B800]/10 text-[#F5B800] font-heading font-semibold text-xs tracking-widest uppercase px-4 py-1.5 rounded-full mb-6"
-            >
-              Oregon Care Home Specialists
-            </motion.span>
-            <motion.h1
-              variants={fadeUp}
-              custom={1}
-              className="font-heading font-bold tracking-tight text-5xl md:text-7xl text-[#0A1628] mb-6"
-            >
-              Care Home Investment in Portland —{" "}
-              <span className="text-[#F5B800]">
-                Oregon&apos;s Compliance-Ready Real Estate Experts
-              </span>
-            </motion.h1>
-            <motion.p
+            <div className="max-w-xl">
+              <motion.span
+                variants={fadeUp}
+                custom={0}
+                className="inline-block bg-[#F5B800]/10 text-[#F5B800] font-heading font-semibold text-xs tracking-widest uppercase px-4 py-1.5 rounded-full mb-6"
+              >
+                Oregon Care Home Specialists
+              </motion.span>
+              <motion.h1
+                variants={fadeUp}
+                custom={1}
+                className="font-heading font-bold tracking-tight text-5xl md:text-7xl text-[#0A1628] mb-6"
+              >
+                Care Home Investment in Portland —{" "}
+                <span className="text-[#F5B800]">
+                  Oregon&apos;s Compliance-Ready Real Estate Experts
+                </span>
+              </motion.h1>
+              <motion.p
+                variants={fadeUp}
+                custom={2}
+                className="font-body text-lg md:text-xl text-[#4B5563] mb-10 max-w-3xl"
+              >
+                Most brokers show you houses. We show you properties that can
+                actually be licensed as care homes in Oregon — pre-screened against
+                OAR 411-054 requirements, ADA standards, and local building code
+                so you invest with confidence, not guesswork.
+              </motion.p>
+              <motion.div variants={fadeUp} custom={3} className="flex flex-wrap gap-4">
+                <Link
+                  href="/contact?interest=Care+Home"
+                  className="inline-flex items-center gap-2 bg-[#F5B800] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:bg-[#E0A800] transition-colors"
+                >
+                  Schedule Care Home Consultation
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <a
+                  href="tel:+15037937520"
+                  className="inline-flex items-center gap-2 border border-[#E5E7EB] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:border-[#F5B800]/50 transition-colors"
+                >
+                  <Phone className="w-4 h-4" />
+                  (503) 793-7520
+                </a>
+              </motion.div>
+            </div>
+
+            {/* Right — Paper Cut-Out Image */}
+            <motion.div
               variants={fadeUp}
               custom={2}
-              className="font-body text-lg md:text-xl text-[#4B5563] mb-10 max-w-3xl"
+              className="relative aspect-[4/5] overflow-hidden rounded-xl"
             >
-              Most brokers show you houses. We show you properties that can
-              actually be licensed as care homes in Oregon — pre-screened against
-              OAR 411-054 requirements, ADA standards, and local building code
-              so you invest with confidence, not guesswork.
-            </motion.p>
-            <motion.div variants={fadeUp} custom={3} className="flex flex-wrap gap-4">
-              <Link
-                href="/contact?interest=Care+Home"
-                className="inline-flex items-center gap-2 bg-[#F5B800] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:bg-[#E0A800] transition-colors"
-              >
-                Schedule Care Home Consultation
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <a
-                href="tel:+15037937520"
-                className="inline-flex items-center gap-2 border border-[#E5E7EB] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:border-[#F5B800]/50 transition-colors"
-              >
-                <Phone className="w-4 h-4" />
-                (503) 793-7520
-              </a>
+              <Image
+                src="/images/paper-cutout-care-home.png"
+                alt="Paper cut-out illustration of an Oregon care home"
+                fill
+                className="bright-cutout object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
             </motion.div>
           </motion.div>
         </div>
@@ -222,9 +241,8 @@ export default function CareHomeInvestmentPage() {
       {/* ──────────────────────────────────────────────────────────
           SECTION 2 — Why a Specialist
           ────────────────────────────────────────────────────────── */}
-      <section className="relative bg-[#FFFFFF] py-20 md:py-32 border-t border-[#E5E7EB] overflow-hidden">
-        <div className="habesha-pattern absolute inset-0" />
-        <div className="relative max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+      <section className="bg-[#FFFFFF] py-20 md:py-32 border-t border-[#E5E7EB]">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -492,7 +510,6 @@ export default function CareHomeInvestmentPage() {
           ────────────────────────────────────────────────────────── */}
       <section className="relative bg-[#0A1628] py-20 md:py-32 overflow-hidden">
         <div className="grain-overlay" />
-        <div className="habesha-pattern absolute inset-0 opacity-30" />
         <div className="relative max-w-4xl mx-auto px-5 md:px-8 lg:px-12 text-center">
           <motion.div
             initial="hidden"
@@ -510,15 +527,14 @@ export default function CareHomeInvestmentPage() {
               variants={fadeUp}
               className="font-accent text-2xl md:text-4xl lg:text-5xl text-[#F8F6F2] leading-snug mb-10"
             >
-              You will be well served with Hunde and Huluka with your real estate
-              needs, especially in the adult care business.
+              You will be well served with Hunde and Huluka with your real estate needs, especially in the adult care business.
             </motion.blockquote>
             <motion.div variants={fadeUp}>
               <p className="font-heading font-bold text-[#F5B800] text-lg">
                 Timothy &amp; Tsehay Smith
               </p>
               <p className="font-body text-sm text-[#F8F6F2]/50">
-                Care Home Investors, Portland
+                Care Home Investors, Portland Metro
               </p>
             </motion.div>
           </motion.div>
@@ -606,7 +622,6 @@ export default function CareHomeInvestmentPage() {
           ────────────────────────────────────────────────────────── */}
       <section className="relative bg-[#0A1628] py-20 md:py-32 overflow-hidden">
         <div className="grain-overlay" />
-        <div className="habesha-pattern absolute inset-0 opacity-30" />
         <div className="relative max-w-4xl mx-auto px-5 md:px-8 lg:px-12 text-center">
           <motion.div
             initial="hidden"

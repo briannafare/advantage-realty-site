@@ -33,7 +33,7 @@ const staggerContainer = {
 const teamContacts = [
   {
     name: "Huluka Abebe",
-    role: "Principal Broker / Co-Founder",
+    role: "Principal Broker",
     phone: "(503) 793-7520",
     email: "huluka@advantageor.com",
   },
@@ -45,7 +45,7 @@ const teamContacts = [
   },
   {
     name: "Jenni Anderson",
-    role: "Broker / 1031 Exchange Specialist",
+    role: "1031 Exchange & Investment Specialist",
     phone: "(503) 508-8779",
     email: "jenni@advantageor.com",
   },

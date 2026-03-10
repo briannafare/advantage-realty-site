@@ -45,7 +45,7 @@ const steps = [
 ];
 
 const benefits = [
-  "Available in English, Amharic, and Oromo for your convenience",
+  "Multilingual support — English, Amharic, and Oromo so nothing gets lost in translation",
   "Access to off-market and coming-soon listings before they hit the MLS",
   "Dedicated buyer consultation at no cost to you — the seller pays our commission",
   "Neighborhood-level market data so you never overpay",
@@ -138,6 +138,7 @@ export default function BuyPage() {
             viewport={{ once: true, amount: 0.3 }}
             className="grid items-center gap-12 md:grid-cols-2 md:gap-16"
           >
+            {/* Left — Text */}
             <div>
               <motion.p
                 variants={fadeUp}
@@ -149,20 +150,20 @@ export default function BuyPage() {
                 variants={fadeUp}
                 className="font-heading text-5xl font-bold tracking-tight text-[#0A1628] md:text-7xl"
               >
-                Buy a Home in Portland — Expert Guidance, Every Step
+                Buy a Home in Portland — Expert Guidance in Your Language
               </motion.h1>
               <motion.p
                 variants={fadeUp}
                 className="mt-6 max-w-xl font-body text-lg leading-relaxed text-[#0A1628]/70 md:text-xl"
               >
                 Whether you are a first-time buyer or upgrading to your next chapter, Advantage
-                Realty pairs local market expertise with a hands-on approach to make your purchase
+                Realty pairs local market expertise with multilingual support to make your purchase
                 smooth and strategic.
               </motion.p>
               <motion.div variants={fadeUp} className="mt-10 flex flex-wrap items-center gap-4">
                 <a
                   href="#cta"
-                  className="inline-flex items-center rounded-lg bg-[#F5B800] px-7 py-3.5 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:opacity-90"
+                  className="inline-flex items-center rounded-lg bg-[#F5B800] px-7 py-3.5 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:bg-[#E0A800]"
                 >
                   Start Your Home Search
                 </a>
@@ -171,15 +172,17 @@ export default function BuyPage() {
                 </span>
               </motion.div>
             </div>
+
+            {/* Right — Paper Cut-Out Image */}
             <motion.div
               variants={fadeUp}
-              className="relative aspect-[4/5] overflow-hidden rounded-xl shadow-2xl shadow-[#0A1628]/10"
+              className="relative aspect-[4/5] overflow-hidden rounded-xl"
             >
               <Image
                 src="/images/paper-cutout-key-handover.png"
-                alt="Paper cut-out illustration of home buying in Portland"
+                alt="Paper cut-out illustration of home key handover"
                 fill
-                className="object-cover object-top bright-cutout"
+                className="bright-cutout object-cover object-center"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
@@ -213,14 +216,14 @@ export default function BuyPage() {
                 >
                   {/* Timeline line */}
                   {i < steps.length - 1 && (
-                    <div className="absolute left-[27px] top-14 h-full w-px bg-[#F5B800]/20" />
+                    <div className="absolute left-[39px] top-20 h-full w-px bg-[#F5B800]/20" />
                   )}
-                  {/* Number */}
-                  <span className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#F5B800]/30 font-heading text-2xl font-bold text-[#F5B800]">
+                  {/* Number — oversized */}
+                  <span className="relative z-10 flex h-20 w-20 shrink-0 items-center justify-center font-heading text-6xl font-bold text-[#F5B800]/30">
                     {step.num}
                   </span>
                   {/* Content */}
-                  <div className="pt-1">
+                  <div className="pt-3">
                     <h3 className="font-heading text-xl font-bold tracking-tight text-[#F8F6F2]">
                       {step.title}
                     </h3>
@@ -271,7 +274,7 @@ export default function BuyPage() {
               </ul>
             </div>
 
-            {/* Right — Image Placeholder */}
+            {/* Right — Image */}
             <motion.div
               variants={fadeUp}
               className="relative aspect-[4/5] overflow-hidden rounded-xl border border-[#E5E7EB]"
@@ -414,7 +417,7 @@ export default function BuyPage() {
             <motion.div variants={fadeUp} className="mt-10 flex flex-col items-center gap-4">
               <a
                 href="/contact"
-                className="inline-flex items-center rounded-lg bg-[#F5B800] px-8 py-4 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:opacity-90"
+                className="inline-flex items-center rounded-lg bg-[#F5B800] px-8 py-4 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:bg-[#E0A800]"
               >
                 Start Your Home Search
               </a>

@@ -106,50 +106,68 @@ export default function InvestPage() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="max-w-3xl"
+            className="grid items-center gap-12 md:grid-cols-2 md:gap-16"
           >
-            <motion.p
-              variants={fadeUp}
-              custom={0}
-              className="text-[#F5B800] font-heading font-semibold tracking-widest uppercase text-sm mb-6"
-            >
-              Investment Properties
-            </motion.p>
-            <motion.h1
-              variants={fadeUp}
-              custom={1}
-              className="font-heading font-bold tracking-tight text-5xl md:text-7xl text-[#F8F6F2] mb-6"
-            >
-              Portland Investment Properties —{" "}
-              <span className="text-gradient-gold">
-                Build Wealth Through Real Estate
-              </span>
-            </motion.h1>
-            <motion.p
+            <div>
+              <motion.p
+                variants={fadeUp}
+                custom={0}
+                className="text-[#F5B800] font-heading font-semibold tracking-widest uppercase text-sm mb-6"
+              >
+                Investment Properties
+              </motion.p>
+              <motion.h1
+                variants={fadeUp}
+                custom={1}
+                className="font-heading font-bold tracking-tight text-5xl md:text-7xl text-[#F8F6F2] mb-6"
+              >
+                Portland Investment Properties —{" "}
+                <span className="text-[#F5B800]">
+                  Build Wealth Through Real Estate
+                </span>
+              </motion.h1>
+              <motion.p
+                variants={fadeUp}
+                custom={2}
+                className="font-body text-lg md:text-xl text-[#F8F6F2]/70 mb-10 max-w-2xl"
+              >
+                Whether you&apos;re acquiring your first rental or scaling a
+                portfolio across the Portland metro, Advantage Realty finds
+                cash-flowing deals others miss — and structures every transaction
+                to protect your upside.
+              </motion.p>
+              <motion.div variants={fadeUp} custom={3} className="flex flex-wrap gap-4">
+                <Link
+                  href="/contact?interest=Invest"
+                  className="inline-flex items-center gap-2 bg-[#F5B800] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:bg-[#E0A800] transition-colors"
+                >
+                  Explore Investment Opportunities
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <a
+                  href="tel:+15037937520"
+                  className="inline-flex items-center gap-2 border border-[#F8F6F2]/20 text-[#F8F6F2] font-heading font-semibold px-8 py-4 rounded-lg hover:border-[#F5B800]/50 transition-colors"
+                >
+                  <Phone className="w-4 h-4" />
+                  (503) 793-7520
+                </a>
+              </motion.div>
+            </div>
+
+            {/* Right — Hero Image */}
+            <motion.div
               variants={fadeUp}
               custom={2}
-              className="font-body text-lg md:text-xl text-[#F8F6F2]/70 mb-10 max-w-2xl"
+              className="relative aspect-[4/5] rounded-xl overflow-hidden"
             >
-              Whether you&apos;re acquiring your first rental or scaling a
-              portfolio across the Portland metro, Advantage Realty finds
-              cash-flowing deals others miss — and structures every transaction
-              to protect your upside.
-            </motion.p>
-            <motion.div variants={fadeUp} custom={3} className="flex flex-wrap gap-4">
-              <Link
-                href="/contact?interest=Invest"
-                className="inline-flex items-center gap-2 bg-[#F5B800] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:bg-[#E0A800] transition-colors"
-              >
-                Explore Investment Opportunities
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <a
-                href="tel:+15037937520"
-                className="inline-flex items-center gap-2 border border-[#F8F6F2]/20 text-[#F8F6F2] font-heading font-semibold px-8 py-4 rounded-lg hover:border-[#F5B800]/50 transition-colors"
-              >
-                <Phone className="w-4 h-4" />
-                (503) 793-7520
-              </a>
+              <Image
+                src="/images/investment-multi-unit.webp"
+                alt="Portland multi-unit investment property"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
             </motion.div>
           </motion.div>
         </div>
