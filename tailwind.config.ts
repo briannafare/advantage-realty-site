@@ -9,20 +9,32 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#0A1628",
-        secondary: "#2EC4B6",
+        /* Brand Blues — derived from Advantage Realty logo */
+        primary: "#2563EB",       // Brand Blue 600 — primary
+        "primary-dark": "#1D4ED8", // Brand Blue 700 — hover
+        "primary-light": "#93C5FD", // Brand Blue 300 — secondary
+
+        /* Accent Lime — bright, cheerful highlight */
         accent: {
-          DEFAULT: "#F5B800",
-          hover: "#E0A800",
+          DEFAULT: "#84CC16",     // Lime 500 — CTAs, highlights
+          hover: "#65A30D",       // Lime 600 — hover state
+          light: "#D9F99D",       // Lime 200 — light badges
         },
+
+        /* Neutrals */
         background: "#FFFFFF",
         surface: {
-          DEFAULT: "#F8F6F2",
-          alt: "#0A1628",
+          DEFAULT: "#F3F4F6",     // Neutral 100
+          alt: "#F9FAFB",         // Neutral 50
         },
-        foreground: "#0A1628",
-        muted: "#4B5563",
-        border: "#E5E7EB",
+        foreground: "#111827",    // Neutral 900
+        muted: "#374151",         // Neutral 700
+        "muted-light": "#6B7280", // Neutral 500
+        border: "#E5E7EB",        // Neutral 200
+
+        /* Dark section backgrounds */
+        dark: "#111827",          // Neutral 900
+        "dark-alt": "#1F2937",    // Neutral 800
       },
       fontFamily: {
         heading: ["Space Grotesk", "sans-serif"],

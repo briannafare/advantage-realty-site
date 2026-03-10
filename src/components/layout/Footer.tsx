@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Facebook, Linkedin } from "lucide-react";
 import { BRAND, FOOTER_LINKS } from "@/lib/constants";
@@ -17,10 +18,7 @@ const fadeInUp = {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#0A1628]">
-      {/* Habesha pattern overlay */}
-      <div className="habesha-pattern absolute inset-0 pointer-events-none opacity-[0.03]" />
-
+    <footer className="relative bg-[#111827]">
       <div className="relative mx-auto max-w-7xl px-5 pb-8 pt-16 lg:px-8">
         {/* Main Grid */}
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -32,25 +30,31 @@ export default function Footer() {
             viewport={{ once: true, margin: "-50px" }}
             variants={fadeInUp}
           >
-            <Link href="/" className="inline-block">
-              <span className="font-heading text-xl font-bold tracking-tight text-[#F8F6F2]">
+            <Link href="/" className="inline-flex items-center gap-2">
+              <Image
+                src="/images/advantage-logo.png"
+                alt="Advantage Realty LLC"
+                width={36}
+                height={36}
+                className="h-9 w-9"
+              />
+              <span className="font-heading text-xl font-bold tracking-tight text-white">
                 Advantage
-                <span className="text-accent"> Realty</span>
+                <span className="text-[#93C5FD]"> Realty</span>
               </span>
             </Link>
-            <p className="mt-4 font-body text-sm leading-relaxed text-[#F8F6F2]/70">
+            <p className="mt-4 font-body text-sm leading-relaxed text-white/70">
               Portland-area real estate brokerage rooted in community.
               Specializing in residential sales, investment properties, and
-              adult care home consulting.
+              adult care home consulting — in English, Oromo, and Amharic.
             </p>
-            {/* Social */}
             <div className="mt-6 flex gap-3">
               <a
                 href={BRAND.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#F8F6F2]/10 text-[#F8F6F2] transition-colors hover:bg-accent hover:text-primary"
+                className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition-colors hover:bg-[#84CC16] hover:text-[#111827]"
               >
                 <Facebook className="h-4 w-4" />
               </a>
@@ -59,7 +63,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#F8F6F2]/10 text-[#F8F6F2] transition-colors hover:bg-accent hover:text-primary"
+                className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition-colors hover:bg-[#84CC16] hover:text-[#111827]"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
@@ -74,7 +78,7 @@ export default function Footer() {
             viewport={{ once: true, margin: "-50px" }}
             variants={fadeInUp}
           >
-            <h4 className="mb-4 font-heading text-sm font-bold uppercase tracking-wider text-accent">
+            <h4 className="mb-4 font-heading text-sm font-bold uppercase tracking-wider text-[#84CC16]">
               Quick Links
             </h4>
             <ul className="flex flex-col gap-3">
@@ -82,7 +86,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="font-body text-sm text-[#F8F6F2]/70 transition-colors hover:text-accent"
+                    className="font-body text-sm text-white/70 transition-colors hover:text-[#84CC16]"
                   >
                     {link.label}
                   </Link>
@@ -99,7 +103,7 @@ export default function Footer() {
             viewport={{ once: true, margin: "-50px" }}
             variants={fadeInUp}
           >
-            <h4 className="mb-4 font-heading text-sm font-bold uppercase tracking-wider text-accent">
+            <h4 className="mb-4 font-heading text-sm font-bold uppercase tracking-wider text-[#84CC16]">
               Services
             </h4>
             <ul className="flex flex-col gap-3">
@@ -107,7 +111,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="font-body text-sm text-[#F8F6F2]/70 transition-colors hover:text-accent"
+                    className="font-body text-sm text-white/70 transition-colors hover:text-[#84CC16]"
                   >
                     {link.label}
                   </Link>
@@ -124,25 +128,25 @@ export default function Footer() {
             viewport={{ once: true, margin: "-50px" }}
             variants={fadeInUp}
           >
-            <h4 className="mb-4 font-heading text-sm font-bold uppercase tracking-wider text-accent">
+            <h4 className="mb-4 font-heading text-sm font-bold uppercase tracking-wider text-[#84CC16]">
               Contact
             </h4>
             <ul className="flex flex-col gap-4">
               <li>
                 <a
                   href={`tel:${BRAND.phone.replace(/[^+\d]/g, "")}`}
-                  className="flex items-start gap-3 font-body text-sm text-[#F8F6F2]/70 transition-colors hover:text-accent"
+                  className="flex items-start gap-3 font-body text-sm text-white/70 transition-colors hover:text-[#84CC16]"
                 >
-                  <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent" />
+                  <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#93C5FD]" />
                   {BRAND.phone}
                 </a>
               </li>
               <li>
                 <a
                   href={`mailto:${BRAND.email}`}
-                  className="flex items-start gap-3 font-body text-sm text-[#F8F6F2]/70 transition-colors hover:text-accent"
+                  className="flex items-start gap-3 font-body text-sm text-white/70 transition-colors hover:text-[#84CC16]"
                 >
-                  <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent" />
+                  <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#93C5FD]" />
                   {BRAND.email}
                 </a>
               </li>
@@ -151,9 +155,9 @@ export default function Footer() {
                   href="https://maps.google.com/?q=13100+SE+Sunnyside+Rd+Suite+B+Clackamas+OR+97015"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-3 font-body text-sm text-[#F8F6F2]/70 transition-colors hover:text-accent"
+                  className="flex items-start gap-3 font-body text-sm text-white/70 transition-colors hover:text-[#84CC16]"
                 >
-                  <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent" />
+                  <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#93C5FD]" />
                   {BRAND.address}
                 </a>
               </li>
@@ -162,21 +166,21 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="mt-12 h-px bg-[#F8F6F2]/10" />
+        <div className="mt-12 h-px bg-white/10" />
 
         {/* Bottom Bar */}
         <div className="mt-6 flex flex-col items-center justify-between gap-3 sm:flex-row">
-          <p className="font-body text-xs text-[#F8F6F2]/50">
+          <p className="font-body text-xs text-white/50">
             &copy; {new Date().getFullYear()} Advantage Realty LLC |{" "}
             {BRAND.address}
           </p>
-          <p className="font-body text-xs text-[#F8F6F2]/40">
+          <p className="font-body text-xs text-white/40">
             Built by{" "}
             <a
               href="https://eighty5labs.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-accent/60 transition-colors hover:text-accent"
+              className="text-[#93C5FD]/60 transition-colors hover:text-[#93C5FD]"
             >
               eighty5labs
             </a>

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,7 +19,6 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (mobileOpen) {
       document.body.style.overflow = "hidden";
@@ -42,10 +42,17 @@ export default function Nav() {
       >
         <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-5 lg:px-8">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="font-heading text-xl font-bold tracking-tight text-primary lg:text-2xl">
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/images/advantage-logo.png"
+              alt="Advantage Realty LLC"
+              width={44}
+              height={44}
+              className="h-11 w-11"
+            />
+            <span className="font-heading text-xl font-bold tracking-tight text-[#111827] lg:text-2xl">
               Advantage
-              <span className="text-accent"> Realty</span>
+              <span className="text-[#2563EB]"> Realty</span>
             </span>
           </Link>
 
@@ -55,7 +62,7 @@ export default function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-lg px-4 py-2 font-body text-sm font-medium text-foreground transition-colors hover:bg-surface hover:text-accent"
+                className="rounded-lg px-4 py-2 font-body text-sm font-medium text-[#374151] transition-colors hover:bg-[#F3F4F6] hover:text-[#2563EB]"
               >
                 {link.label}
               </Link>
@@ -65,14 +72,14 @@ export default function Nav() {
           {/* Desktop Right Side */}
           <div className="hidden items-center gap-4 lg:flex">
             {/* Languages badge */}
-            <span className="rounded-full bg-[#F8F6F2] px-3 py-1 font-body text-xs text-[#4B5563]">
-              3 Languages
+            <span className="rounded-full bg-[#2563EB]/10 px-3 py-1 font-body text-xs font-medium text-[#2563EB]">
+              EN · OM · AM
             </span>
 
             {/* Phone */}
             <a
               href={`tel:${BRAND.phone.replace(/[^+\d]/g, "")}`}
-              className="flex items-center gap-2 font-body text-sm font-semibold text-primary transition-colors hover:text-accent"
+              className="flex items-center gap-2 font-body text-sm font-semibold text-[#111827] transition-colors hover:text-[#2563EB]"
             >
               <Phone className="h-4 w-4" />
               {BRAND.phone}
@@ -83,7 +90,7 @@ export default function Nav() {
               <Button
                 variant="default"
                 size="sm"
-                className="bg-[#F5B800] text-[#0A1628] hover:bg-[#E0A800]"
+                className="bg-[#84CC16] font-semibold text-[#111827] hover:bg-[#65A30D]"
               >
                 Free Consultation
               </Button>
@@ -93,7 +100,7 @@ export default function Nav() {
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="relative z-50 flex h-10 w-10 items-center justify-center rounded-lg text-primary transition-colors hover:bg-surface lg:hidden"
+            className="relative z-50 flex h-10 w-10 items-center justify-center rounded-lg text-[#111827] transition-colors hover:bg-[#F3F4F6] lg:hidden"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
             {mobileOpen ? (
@@ -109,17 +116,15 @@ export default function Nav() {
       <AnimatePresence>
         {mobileOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-40 bg-primary/60 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-40 bg-[#111827]/60 backdrop-blur-sm lg:hidden"
               onClick={() => setMobileOpen(false)}
             />
 
-            {/* Drawer */}
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
@@ -128,10 +133,9 @@ export default function Nav() {
               className="fixed inset-y-0 right-0 z-40 flex w-80 flex-col bg-white shadow-2xl lg:hidden"
             >
               <div className="flex flex-1 flex-col gap-2 overflow-y-auto px-6 pb-8 pt-24">
-                {/* Language badge */}
                 <div className="mb-4">
-                  <span className="rounded-full bg-[#F8F6F2] px-3 py-1 font-body text-xs text-[#4B5563]">
-                    3 Languages
+                  <span className="rounded-full bg-[#2563EB]/10 px-3 py-1 font-body text-xs font-medium text-[#2563EB]">
+                    EN · OM · AM
                   </span>
                 </div>
 
@@ -145,29 +149,26 @@ export default function Nav() {
                     <Link
                       href={link.href}
                       onClick={() => setMobileOpen(false)}
-                      className="block rounded-lg px-4 py-3 font-heading text-lg font-bold text-primary transition-colors hover:bg-surface hover:text-accent"
+                      className="block rounded-lg px-4 py-3 font-heading text-lg font-bold text-[#111827] transition-colors hover:bg-[#F3F4F6] hover:text-[#2563EB]"
                     >
                       {link.label}
                     </Link>
                   </motion.div>
                 ))}
 
-                {/* Divider */}
                 <div className="my-4 h-px bg-[#E5E7EB]" />
 
-                {/* Phone */}
                 <motion.a
                   href={`tel:${BRAND.phone.replace(/[^+\d]/g, "")}`}
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="flex items-center gap-3 rounded-lg px-4 py-3 font-body text-base font-semibold text-primary transition-colors hover:text-accent"
+                  className="flex items-center gap-3 rounded-lg px-4 py-3 font-body text-base font-semibold text-[#111827] transition-colors hover:text-[#2563EB]"
                 >
-                  <Phone className="h-5 w-5 text-accent" />
+                  <Phone className="h-5 w-5 text-[#2563EB]" />
                   {BRAND.phone}
                 </motion.a>
 
-                {/* CTA */}
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -177,7 +178,7 @@ export default function Nav() {
                   <Link href="/contact" onClick={() => setMobileOpen(false)}>
                     <Button
                       variant="default"
-                      className="w-full bg-[#F5B800] text-[#0A1628] hover:bg-[#E0A800]"
+                      className="w-full bg-[#84CC16] font-semibold text-[#111827] hover:bg-[#65A30D]"
                     >
                       Free Consultation
                     </Button>
@@ -185,9 +186,8 @@ export default function Nav() {
                 </motion.div>
               </div>
 
-              {/* Bottom info */}
               <div className="border-t border-[#E5E7EB] px-6 py-4">
-                <p className="font-body text-xs text-[#4B5563]">
+                <p className="font-body text-xs text-[#6B7280]">
                   {BRAND.address}
                 </p>
               </div>
@@ -196,7 +196,6 @@ export default function Nav() {
         )}
       </AnimatePresence>
 
-      {/* Spacer to prevent content from hiding under fixed nav */}
       <div className="h-20" />
     </>
   );

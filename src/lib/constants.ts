@@ -4,7 +4,7 @@
 
 export const BRAND = {
   name: "Advantage Realty LLC",
-  tagline: "Portland Real Estate — Rooted in Community, Driven by Results",
+  tagline: "Portland Real Estate — Your Language, Your Advantage",
   phone: "(503) 793-7520",
   email: "huluka@advantageor.com",
   address: "13100 SE Sunnyside Rd Suite B, Clackamas, OR 97015",
@@ -16,16 +16,21 @@ export const BRAND = {
 } as const;
 
 export const COLORS = {
-  primary: "#0A1628",
-  secondary: "#2EC4B6",
-  accent: "#F5B800",
-  accentHover: "#E0A800",
+  primary: "#2563EB",
+  primaryDark: "#1D4ED8",
+  primaryLight: "#93C5FD",
+  accent: "#84CC16",
+  accentHover: "#65A30D",
+  accentLight: "#D9F99D",
   background: "#FFFFFF",
-  surface: "#F8F6F2",
-  surfaceAlt: "#0A1628",
-  foreground: "#0A1628",
-  muted: "#4B5563",
+  surface: "#F3F4F6",
+  surfaceAlt: "#F9FAFB",
+  foreground: "#111827",
+  muted: "#374151",
+  mutedLight: "#6B7280",
   border: "#E5E7EB",
+  dark: "#111827",
+  darkAlt: "#1F2937",
 } as const;
 
 export const NAV_LINKS = [
@@ -33,7 +38,6 @@ export const NAV_LINKS = [
   { label: "Sell", href: "/sell" },
   { label: "Invest", href: "/invest" },
   { label: "Care Homes", href: "/care-home-investment" },
-  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
@@ -42,37 +46,37 @@ export const SERVICES = [
     title: "Buyer Representation",
     slug: "buy",
     description:
-      "From first showing to final walkthrough, we guide you through every step of buying a home in the Portland metro area.",
+      "Pre-vetted homes, expert negotiation, and a broker who answers your call — not an assistant.",
   },
   {
     title: "Seller Services",
     slug: "sell",
     description:
-      "Strategic pricing, professional staging guidance, and aggressive marketing to maximize your home's sale price.",
+      "Strategic pricing backed by real data, professional marketing, and aggressive negotiation to maximize your sale price.",
   },
   {
     title: "Investment Properties",
     slug: "invest",
     description:
-      "Identify high-yield rental properties, multi-family opportunities, and value-add investments across Clackamas, Multnomah, and Washington counties.",
+      "Multi-family, rentals, and value-add deals across Portland metro. We find the numbers that work.",
   },
   {
-    title: "Adult Care Home Consulting",
+    title: "Care Home Investment",
     slug: "care-homes",
     description:
-      "Specialized guidance for purchasing or selling licensed adult care homes in Oregon — a niche market requiring deep local knowledge.",
+      "Oregon's care home market is booming. We handle compliance, zoning, and licensing so you can focus on returns.",
   },
   {
-    title: "Relocation Assistance",
-    slug: "relocation",
+    title: "1031 Exchanges",
+    slug: "1031",
     description:
-      "Moving to Portland from out of state? We connect you with neighborhoods, schools, and communities that match your lifestyle.",
+      "Defer capital gains and build your portfolio faster. Jenni Anderson specializes in tax-deferred property exchanges.",
   },
   {
-    title: "Market Analysis",
-    slug: "market-analysis",
+    title: "Free Property Evaluation",
+    slug: "evaluation",
     description:
-      "Complimentary CMA reports so you know exactly what your home is worth in today's market — no obligation, no pressure.",
+      "Know what your home is actually worth — not a Zestimate. A real CMA from brokers who know your neighborhood.",
   },
 ] as const;
 
@@ -80,7 +84,7 @@ export const TEAM = [
   {
     name: "Huluka Abebe",
     role: "Principal Broker / Co-Founder",
-    bio: "16+ years of Portland real estate experience. Specializes in buyer representation, market analysis, and care home property acquisitions.",
+    bio: "16+ years of Portland real estate experience. Huluka is the broker who picks up the phone, walks the property with you, and negotiates like your investment is his own — because that's how he treats every deal.",
     phone: "(503) 793-7520",
     email: "huluka@advantageor.com",
     image: "/images/team/huluka-abebe.jpg",
@@ -88,7 +92,7 @@ export const TEAM = [
   {
     name: "Hunde Abebe",
     role: "Broker / Co-Founder",
-    bio: "Sharp negotiation skills and detail-oriented approach. Handles listing strategy, contract negotiation, and goes above and beyond for every client.",
+    bio: "Detail-driven and sharp at the negotiation table. Hunde manages listing strategy and contract negotiations — clients say he goes above and beyond because settling for 'good enough' isn't how he operates.",
     phone: "(503) 449-4362",
     email: "hunde@advantageor.com",
     image: "/images/team/hunde-abebe.jpg",
@@ -96,35 +100,39 @@ export const TEAM = [
   {
     name: "Jenni Anderson",
     role: "Broker / 1031 Exchange Specialist",
-    bio: "Native Oregonian with 10+ years experience. Specializes in 1031 tax-deferred property exchanges and relocation assistance.",
+    bio: "Native Oregonian with 10+ years in the business. Jenni specializes in 1031 tax-deferred exchanges and relocation — she knows every corner of the Portland metro because she grew up here.",
     phone: "(503) 508-8779",
     email: "jenni@advantageor.com",
-    image: "/images/team/jenni-anderson.jpg",
+    image: "/images/team/jenni-anderson.png",
   },
 ] as const;
 
 export const TESTIMONIALS = [
   {
-    quote: "Huluka and his team are very organized and have a good understanding of what a buyer\u2019s needs are in the home buying process. I\u2019m 100% satisfied with the home I purchased, and the fantastic deal Huluka helped me get.",
+    quote:
+      "Huluka and his team are very organized and have a good understanding of what a buyer\u2019s needs are in the home buying process. I\u2019m 100% satisfied with the home I purchased, and the fantastic deal Huluka helped me get.",
     author: "Tilahun S.",
     location: "Portland Metro",
     type: "Buyer" as const,
   },
   {
-    quote: "Hunde assisted me in finding the perfect home, and I couldn\u2019t be happier with my experience dealing with him. Look no farther than Hunde if you want a real estate professional that will go above and beyond.",
+    quote:
+      "Hunde assisted me in finding the perfect home, and I couldn\u2019t be happier with my experience dealing with him. Look no farther than Hunde if you want a real estate professional that will go above and beyond.",
     author: "Guteta",
     location: "Portland Metro",
     type: "Buyer" as const,
   },
   {
-    quote: "You will be well served with Hunde and Huluka with your real estate needs, especially in the adult care business.",
+    quote:
+      "You will be well served with Hunde and Huluka with your real estate needs, especially in the adult care business.",
     author: "Timothy & Tsehay Smith",
     location: "Portland Metro",
     type: "Investor" as const,
   },
   {
-    quote: "Tadesse Haile Hunde knows exactly what you want once you consult him what kind of home and what price range you want to invest. I am satisfied on the property I bought.",
-    author: "Verified Google Reviewer",
+    quote:
+      "Huluka was hands on from the beginning to the end. He is very dedicated and honest about his work.",
+    author: "Bezu",
     location: "Portland Metro",
     type: "Buyer" as const,
   },
@@ -146,11 +154,6 @@ export const MARKET_STATS = [
     value: "+4.2%",
     source: "Zillow Home Value Index, 2025",
   },
-  {
-    label: "Active Listings — Clackamas County",
-    value: "[CLIENT TO PROVIDE: current stat]",
-    source: "[CLIENT TO PROVIDE: source]",
-  },
 ] as const;
 
 export const FAQ_DATA = [
@@ -158,7 +161,7 @@ export const FAQ_DATA = [
     question:
       "What neighborhoods in Portland do you specialize in?",
     answer:
-      "We serve the entire Portland metro area with deep expertise in Clackamas, Milwaukie, Happy Valley, Oregon City, and Southeast Portland.",
+      "We serve the entire Portland metro area with deep expertise in Clackamas, Milwaukie, Happy Valley, Oregon City, Lake Oswego, West Linn, Tigard, Beaverton, Hillsboro, Gresham, and Tualatin.",
   },
   {
     question:
@@ -184,6 +187,12 @@ export const FAQ_DATA = [
     answer:
       "Buyer representation fees are typically covered by the seller's listing agreement. We'll explain the full fee structure transparently before you commit to anything. No surprises, ever.",
   },
+  {
+    question:
+      "Do you speak languages other than English?",
+    answer:
+      "Yes. Our team is fluent in English, Oromo, and Amharic. We serve Portland's diverse communities and ensure nothing gets lost in translation during your biggest financial decision.",
+  },
 ] as const;
 
 export const FOOTER_LINKS = {
@@ -192,15 +201,14 @@ export const FOOTER_LINKS = {
     { label: "Sell Your Home", href: "/sell" },
     { label: "Investment Properties", href: "/invest" },
     { label: "Care Home Consulting", href: "/care-home-investment" },
-    { label: "About Our Team", href: "/about" },
     { label: "Contact Us", href: "/contact" },
   ],
   services: [
     { label: "Buyer Representation", href: "/buy" },
     { label: "Seller Marketing", href: "/sell" },
-    { label: "Market Analysis", href: "/contact" },
-    { label: "Relocation Help", href: "/contact" },
+    { label: "1031 Exchanges", href: "/invest" },
     { label: "Care Home Sales", href: "/care-home-investment" },
+    { label: "Free Market Analysis", href: "/contact" },
   ],
 } as const;
 
@@ -210,7 +218,7 @@ export const LOCAL_BUSINESS_SCHEMA = {
   "@type": "RealEstateAgent",
   name: "Advantage Realty LLC",
   description:
-    "Portland-area real estate brokerage specializing in residential sales, investment properties, and adult care home consulting.",
+    "Portland-area real estate brokerage specializing in residential sales, investment properties, and adult care home consulting. Trilingual team — English, Oromo, Amharic.",
   url: "https://advantagerealtypdx.com",
   telephone: "+15037937520",
   address: {
@@ -232,6 +240,12 @@ export const LOCAL_BUSINESS_SCHEMA = {
     { "@type": "City", name: "Happy Valley" },
     { "@type": "City", name: "Milwaukie" },
     { "@type": "City", name: "Oregon City" },
+    { "@type": "City", name: "Lake Oswego" },
+    { "@type": "City", name: "West Linn" },
+    { "@type": "City", name: "Tigard" },
+    { "@type": "City", name: "Beaverton" },
+    { "@type": "City", name: "Gresham" },
+    { "@type": "City", name: "Tualatin" },
   ],
   knowsLanguage: ["en", "om", "am"],
   openingHoursSpecification: {

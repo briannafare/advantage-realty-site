@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* ============================================================
-   Advantage Realty LLC — Global Styles (FRESH & BRIGHT)
+   Advantage Realty LLC — Global Styles (Blue + Lime)
    ============================================================ */
 
 html {
@@ -12,19 +12,10 @@ html {
 
 body {
   font-family: "Inter", sans-serif;
-  color: #0a1628;
+  color: #111827;
   background-color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* ============================================================
-   Habesha Geometric Textile Pattern — brighter accent
-   ============================================================ */
-.habesha-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%23F5B800' stroke-width='0.8' opacity='0.06'%3E%3Cpolygon points='30,5 55,30 30,55 5,30'/%3E%3Cpolygon points='30,15 45,30 30,45 15,30'/%3E%3Cline x1='30' y1='0' x2='30' y2='15'/%3E%3Cline x1='30' y1='45' x2='30' y2='60'/%3E%3Cline x1='0' y1='30' x2='15' y2='30'/%3E%3Cline x1='45' y1='30' x2='60' y2='30'/%3E%3Ccircle cx='0' cy='0' r='2'/%3E%3Ccircle cx='60' cy='0' r='2'/%3E%3Ccircle cx='0' cy='60' r='2'/%3E%3Ccircle cx='60' cy='60' r='2'/%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 60px 60px;
 }
 
 /* ============================================================
@@ -41,14 +32,7 @@ body {
 }
 
 /* ============================================================
-   Brighten paper cut-out images (counteract sepia/warm tones)
-   ============================================================ */
-.bright-cutout {
-  filter: brightness(1.12) saturate(1.25);
-}
-
-/* ============================================================
-   Custom Scrollbar — bright accent
+   Custom Scrollbar — blue + lime accent
    ============================================================ */
 ::-webkit-scrollbar {
   width: 8px;
@@ -64,7 +48,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #f5b800;
+  background: #2563eb;
 }
 
 /* Firefox */
@@ -81,15 +65,15 @@ body {
     text-wrap: balance;
   }
 
-  .text-gradient-gold {
-    background: linear-gradient(135deg, #f5b800 0%, #e0a800 50%, #f5b800 100%);
+  .text-gradient-blue {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #2563eb 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .text-gradient-teal {
-    background: linear-gradient(135deg, #2ec4b6 0%, #1a9e94 50%, #2ec4b6 100%);
+  .text-gradient-lime {
+    background: linear-gradient(135deg, #84cc16 0%, #65a30d 50%, #84cc16 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -97,9 +81,9 @@ body {
 }
 
 /* ============================================================
-   Selection color — vivid gold
+   Selection color — lime highlight
    ============================================================ */
 ::selection {
-  background-color: #f5b80040;
-  color: #0a1628;
+  background-color: #84cc1640;
+  color: #111827;
 }

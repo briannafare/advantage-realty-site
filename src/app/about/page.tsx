@@ -46,10 +46,10 @@ function AboutHero() {
           <motion.h1
             variants={fadeUp}
             custom={0}
-            className="font-heading font-bold tracking-tight text-4xl md:text-6xl lg:text-7xl text-[#0A1628] leading-[1.05]"
+            className="font-heading font-bold tracking-tight text-4xl md:text-6xl lg:text-7xl text-[#111827] leading-[1.05]"
           >
             Meet the Family Behind{" "}
-            <span className="text-[#F5B800]">Advantage</span>
+            <span className="text-[#84CC16]">Advantage</span>
           </motion.h1>
 
           <motion.p
@@ -72,7 +72,7 @@ function AboutHero() {
    ─────────────────────────────────────────── */
 function Story() {
   return (
-    <section className="bg-[#F8F6F2] py-20 md:py-28 habesha-pattern">
+    <section className="bg-[#F3F4F6] py-20 md:py-28">
       <div className="max-w-3xl mx-auto px-5 md:px-8 text-center">
         <motion.div
           initial="hidden"
@@ -83,10 +83,10 @@ function Story() {
           <motion.h2
             variants={fadeUp}
             custom={0}
-            className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-[#0A1628]"
+            className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-[#111827]"
           >
             Two Brothers,{" "}
-            <span className="text-[#F5B800]">One Vision</span>
+            <span className="text-[#84CC16]">One Vision</span>
           </motion.h2>
 
           <motion.p
@@ -119,13 +119,13 @@ function Story() {
           <motion.div
             variants={fadeUp}
             custom={3}
-            className="mt-10 p-8 rounded-2xl bg-[#0A1628] text-[#F8F6F2]"
+            className="mt-10 p-8 rounded-2xl bg-[#111827] text-[#F3F4F6]"
           >
             <p className="font-accent text-xl md:text-2xl italic leading-relaxed">
               &ldquo;Our mission is simple: make Portland real estate accessible,
               transparent, and personal — for every family.&rdquo;
             </p>
-            <p className="mt-4 font-heading font-bold text-[#F5B800] text-sm tracking-wide uppercase">
+            <p className="mt-4 font-heading font-bold text-[#84CC16] text-sm tracking-wide uppercase">
               — Huluka &amp; Hunde Abebe, Founders
             </p>
           </motion.div>
@@ -186,9 +186,9 @@ function TeamBios() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-[#0A1628] text-center mb-16"
+          className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-[#111827] text-center mb-16"
         >
-          Your <span className="text-[#F5B800]">Team</span>
+          Your <span className="text-[#84CC16]">Team</span>
         </motion.h2>
 
         <div className="space-y-16 md:space-y-24">
@@ -216,13 +216,13 @@ function TeamBios() {
                       className="object-cover object-top"
                       sizes="(max-width: 768px) 100vw, 40vw"
                     />
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#F5B800]" />
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#84CC16]" />
                   </div>
                 </div>
 
                 {/* Bio — 60% */}
                 <div className="w-full md:w-[60%]">
-                  <h3 className="font-heading font-bold text-2xl md:text-3xl text-[#0A1628]">
+                  <h3 className="font-heading font-bold text-2xl md:text-3xl text-[#111827]">
                     {member.name}
                   </h3>
                   <p className="mt-1 text-[#4B5563] font-body text-base">
@@ -234,7 +234,7 @@ function TeamBios() {
                     {member.languages.map((lang) => (
                       <span
                         key={lang}
-                        className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#F5B800]/10 text-xs font-heading font-medium text-[#0A1628]/70"
+                        className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#84CC16]/10 text-xs font-heading font-medium text-[#111827]/70"
                       >
                         <Globe className="w-3 h-3" />
                         {lang}
@@ -250,14 +250,14 @@ function TeamBios() {
                   <div className="mt-5 flex flex-wrap gap-5 text-sm text-[#4B5563] font-body">
                     <a
                       href={`tel:${member.phone.replace(/[^+\d]/g, "")}`}
-                      className="flex items-center gap-2 hover:text-[#F5B800] transition-colors"
+                      className="flex items-center gap-2 hover:text-[#84CC16] transition-colors"
                     >
                       <Phone className="w-4 h-4" />
                       {member.phone}
                     </a>
                     <a
                       href={`mailto:${member.email}`}
-                      className="flex items-center gap-2 hover:text-[#F5B800] transition-colors"
+                      className="flex items-center gap-2 hover:text-[#84CC16] transition-colors"
                     >
                       <Mail className="w-4 h-4" />
                       {member.email}
@@ -305,15 +305,15 @@ function Values() {
   ];
 
   return (
-    <section className="bg-[#F8F6F2] py-20 md:py-28">
+    <section className="bg-[#F3F4F6] py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-[#0A1628] text-center mb-16"
+          className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-[#111827] text-center mb-16"
         >
-          What We <span className="text-[#F5B800]">Stand For</span>
+          What We <span className="text-[#84CC16]">Stand For</span>
         </motion.h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
@@ -324,12 +324,12 @@ function Values() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="bg-white rounded-2xl border border-[#E5E7EB] p-8 text-center hover:shadow-lg hover:border-[#F5B800]/40 transition-all duration-300"
+              className="bg-white rounded-2xl border border-[#E5E7EB] p-8 text-center hover:shadow-lg hover:border-[#84CC16]/40 transition-all duration-300"
             >
-              <div className="w-14 h-14 rounded-full bg-[#F5B800]/10 flex items-center justify-center mx-auto mb-5">
-                <Icon className="w-7 h-7 text-[#F5B800]" strokeWidth={1.5} />
+              <div className="w-14 h-14 rounded-full bg-[#84CC16]/10 flex items-center justify-center mx-auto mb-5">
+                <Icon className="w-7 h-7 text-[#84CC16]" strokeWidth={1.5} />
               </div>
-              <h3 className="font-heading font-bold text-lg text-[#0A1628]">
+              <h3 className="font-heading font-bold text-lg text-[#111827]">
                 {title}
               </h3>
               <p className="mt-3 text-[#4B5563] font-body text-[15px] leading-relaxed">
@@ -348,7 +348,7 @@ function Values() {
    ─────────────────────────────────────────── */
 function AboutCTA() {
   return (
-    <section className="bg-[#0A1628] text-[#F8F6F2] py-20 md:py-28">
+    <section className="bg-[#111827] text-[#F3F4F6] py-20 md:py-28">
       <div className="max-w-3xl mx-auto px-5 md:px-8 text-center">
         <motion.div
           initial="hidden"
@@ -362,13 +362,13 @@ function AboutCTA() {
             className="font-heading font-bold tracking-tight text-3xl md:text-5xl"
           >
             Let&rsquo;s Talk About{" "}
-            <span className="text-[#F5B800]">Your Goals</span>
+            <span className="text-[#84CC16]">Your Goals</span>
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
             custom={1}
-            className="mt-6 text-lg md:text-xl text-[#F8F6F2]/80 font-body leading-relaxed"
+            className="mt-6 text-lg md:text-xl text-[#F3F4F6]/80 font-body leading-relaxed"
           >
             Whether you&rsquo;re ready to buy, thinking about selling, or just
             want to understand what your Portland home is worth — we&rsquo;re
@@ -378,7 +378,7 @@ function AboutCTA() {
           <motion.div variants={fadeUp} custom={2} className="mt-10">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-[#F5B800] px-8 py-4 font-heading font-bold text-[#0A1628] text-lg hover:bg-[#E0A800] transition-colors"
+              className="inline-flex items-center justify-center rounded-full bg-[#84CC16] px-8 py-4 font-heading font-bold text-[#111827] text-lg hover:bg-[#65A30D] transition-colors"
             >
               Schedule Your Free Consultation
             </Link>
@@ -387,7 +387,7 @@ function AboutCTA() {
           <motion.p
             variants={fadeUp}
             custom={3}
-            className="mt-6 text-sm text-[#F8F6F2]/50 font-body"
+            className="mt-6 text-sm text-[#F3F4F6]/50 font-body"
           >
             Available in English, Amharic, and Oromo
           </motion.p>
