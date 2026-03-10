@@ -102,91 +102,104 @@ export default function InvestPage() {
         <div className="grain-overlay" />
         <div className="habesha-pattern absolute inset-0 opacity-40" />
         <div className="relative max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="max-w-3xl"
-          >
-            <motion.p
-              variants={fadeUp}
-              custom={0}
-              className="text-[#D4A853] font-heading font-semibold tracking-widest uppercase text-sm mb-6"
+          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="lg:col-span-3"
             >
-              Investment Properties
-            </motion.p>
-            <motion.h1
-              variants={fadeUp}
-              custom={1}
-              className="font-heading font-bold tracking-tight text-5xl md:text-7xl text-[#F5F0E8] mb-6"
-            >
-              Portland Investment Properties —{" "}
-              <span className="text-gradient-gold">
-                Build Wealth Through Real Estate
-              </span>
-            </motion.h1>
-            <motion.p
-              variants={fadeUp}
-              custom={2}
-              className="font-body text-lg md:text-xl text-[#F5F0E8]/70 mb-10 max-w-2xl"
-            >
-              Whether you&apos;re acquiring your first rental or scaling a
-              portfolio across the Portland metro, Advantage Realty finds
-              cash-flowing deals others miss — and structures every transaction
-              to protect your upside.
-            </motion.p>
-            <motion.div variants={fadeUp} custom={3} className="flex flex-wrap gap-4">
-              <Link
-                href="/contact?interest=Invest"
-                className="inline-flex items-center gap-2 bg-[#D4A853] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:bg-[#C49A48] transition-colors"
+              <motion.p
+                variants={fadeUp}
+                custom={0}
+                className="text-[#D4A853] font-heading font-semibold tracking-widest uppercase text-sm mb-6"
               >
-                Explore Investment Opportunities
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <a
-                href="tel:+15037937520"
-                className="inline-flex items-center gap-2 border border-[#F5F0E8]/20 text-[#F5F0E8] font-heading font-semibold px-8 py-4 rounded-lg hover:border-[#D4A853]/50 transition-colors"
+                Investment Properties
+              </motion.p>
+              <motion.h1
+                variants={fadeUp}
+                custom={1}
+                className="font-heading font-bold tracking-tight text-5xl md:text-7xl text-[#F5F0E8] mb-6"
               >
-                <Phone className="w-4 h-4" />
-                (503) 793-7520
-              </a>
+                Portland Investment Properties —{" "}
+                <span className="text-gradient-gold">
+                  Build Wealth Through Real Estate
+                </span>
+              </motion.h1>
+              <motion.p
+                variants={fadeUp}
+                custom={2}
+                className="font-body text-lg md:text-xl text-[#F5F0E8]/70 mb-10 max-w-2xl"
+              >
+                Whether you&apos;re acquiring your first rental or scaling a
+                portfolio across the Portland metro, Advantage Realty finds
+                cash-flowing deals others miss — and structures every transaction
+                to protect your upside.
+              </motion.p>
+              <motion.div variants={fadeUp} custom={3} className="flex flex-wrap gap-4">
+                <Link
+                  href="/contact?interest=Invest"
+                  className="inline-flex items-center gap-2 bg-[#D4A853] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:bg-[#C49A48] transition-colors"
+                >
+                  Explore Investment Opportunities
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <a
+                  href="tel:+15037937520"
+                  className="inline-flex items-center gap-2 border border-[#F5F0E8]/20 text-[#F5F0E8] font-heading font-semibold px-8 py-4 rounded-lg hover:border-[#D4A853]/50 transition-colors"
+                >
+                  <Phone className="w-4 h-4" />
+                  (503) 793-7520
+                </a>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        </div>
-      </section>
 
-      {/* Visual — Investment Property + Clackamas Aerial */}
-      <section className="bg-[#FEFCF8] pt-20 md:pt-28">
-        <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
-          <div className="grid md:grid-cols-5 gap-6">
+            {/* Paper cut-out growth illustration */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              className="lg:col-span-2 hidden lg:flex flex-col gap-4"
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="md:col-span-3 relative rounded-2xl overflow-hidden aspect-[16/10]"
+              transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <Image
-                src="/images/investment-multi-unit.webp"
-                alt="Multi-unit investment property in Portland metro"
-                fill
-                className="object-cover"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="md:col-span-2 relative rounded-2xl overflow-hidden aspect-[16/10]"
-            >
-              <Image
-                src="/images/clackamas-aerial.webp"
-                alt="Aerial view of Clackamas County investment neighborhoods"
-                fill
-                className="object-cover"
-              />
+              {/* Stacked property cards — paper cut style */}
+              <div className="bg-[#2EC4B6] rounded-xl p-5 relative" style={{ boxShadow: "5px 5px 0 rgba(212,168,83,0.4)", transform: "rotate(-1.5deg)" }}>
+                <div className="flex items-center gap-3">
+                  <Building2 className="w-8 h-8 text-white/90" strokeWidth={1.5} />
+                  <div>
+                    <p className="font-heading font-bold text-white text-sm">Multi-Family</p>
+                    <p className="font-body text-white/60 text-xs">Clackamas County</p>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-[#D4A853] rounded-xl p-5 relative" style={{ boxShadow: "5px 5px 0 rgba(10,22,40,0.2)", transform: "rotate(1deg)" }}>
+                <div className="flex items-center gap-3">
+                  <TrendingUp className="w-8 h-8 text-[#0A1628]/80" strokeWidth={1.5} />
+                  <div>
+                    <p className="font-heading font-bold text-[#0A1628] text-sm">1031 Exchange</p>
+                    <p className="font-body text-[#0A1628]/60 text-xs">Tax-deferred growth</p>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl p-5 border-2 border-[#E8E2D8] relative" style={{ boxShadow: "5px 5px 0 rgba(46,196,182,0.3)", transform: "rotate(-0.5deg)" }}>
+                <div className="flex items-center gap-3">
+                  <Search className="w-8 h-8 text-[#0A1628]" strokeWidth={1.5} />
+                  <div>
+                    <p className="font-heading font-bold text-[#0A1628] text-sm">Off-Market Deals</p>
+                    <p className="font-body text-[#0A1628]/50 text-xs">Before they hit MLS</p>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-[#0A1628] rounded-xl p-5 relative" style={{ boxShadow: "5px 5px 0 rgba(212,168,83,0.3)", transform: "rotate(1.5deg)" }}>
+                <div className="flex items-center gap-3">
+                  <Users className="w-8 h-8 text-[#D4A853]" strokeWidth={1.5} />
+                  <div>
+                    <p className="font-heading font-bold text-[#F5F0E8] text-sm">Portfolio Scale</p>
+                    <p className="font-body text-[#F5F0E8]/50 text-xs">Grow strategically</p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -313,7 +326,7 @@ export default function InvestPage() {
               className="relative aspect-[3/4] rounded-xl overflow-hidden bg-[#F5F0E8] border border-[#E8E2D8]"
             >
               <Image
-                src="/images/office-exterior-clackamas.webp"
+                src="/images/jenni-anderson.webp"
                 alt="Jenni Anderson — 1031 Exchange Specialist at Advantage Realty"
                 fill
                 className="object-cover object-top"

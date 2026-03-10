@@ -33,54 +33,78 @@ const stagger = {
    ─────────────────────────────────────────── */
 function AboutHero() {
   return (
-    <section className="bg-[#FEFCF8] py-20 md:py-32">
+    <section className="bg-[#FEFCF8] py-20 md:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={stagger}
-          className="max-w-4xl"
-        >
-          <motion.h1
-            variants={fadeUp}
-            custom={0}
-            className="font-heading font-bold tracking-tight text-5xl md:text-7xl lg:text-8xl text-foreground leading-[1.05]"
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+          <motion.div
+            className="lg:col-span-3"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={stagger}
           >
-            Meet the Family Behind{" "}
-            <span className="text-[#D4A853]">Advantage</span>
-          </motion.h1>
+            <motion.span
+              variants={fadeUp}
+              custom={0}
+              className="inline-block bg-[#2EC4B6]/10 text-[#2EC4B6] font-heading font-semibold text-xs tracking-widest uppercase px-4 py-1.5 rounded-full mb-6"
+              style={{ boxShadow: "2px 2px 0 rgba(46,196,182,0.2)" }}
+            >
+              Family-Run Since 2008
+            </motion.span>
+            <motion.h1
+              variants={fadeUp}
+              custom={0}
+              className="font-heading font-bold tracking-tight text-5xl md:text-7xl lg:text-8xl text-foreground leading-[1.05]"
+            >
+              Meet the Family Behind{" "}
+              <span className="text-[#D4A853]">Advantage</span>
+            </motion.h1>
 
-          <motion.p
-            variants={fadeUp}
-            custom={1}
-            className="mt-6 text-lg md:text-xl text-muted font-body leading-relaxed max-w-2xl"
+            <motion.p
+              variants={fadeUp}
+              custom={1}
+              className="mt-6 text-lg md:text-xl text-muted font-body leading-relaxed max-w-2xl"
+            >
+              We&rsquo;re not a franchise. We&rsquo;re not a call center. We&rsquo;re two
+              brothers — Huluka and Hunde Abebe — who built a real estate practice
+              around the one thing Portland&rsquo;s diverse communities deserve: an
+              agent who speaks your language, knows your neighborhood, and treats
+              your home search like family business.
+            </motion.p>
+          </motion.div>
+
+          {/* Team duo photo — paper cut-out style */}
+          <motion.div
+            className="lg:col-span-2"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
           >
-            We&rsquo;re not a franchise. We&rsquo;re not a call center. We&rsquo;re two
-            brothers — Senai and Benyam Huluka — who built a real estate practice
-            around the one thing Portland&rsquo;s diverse communities deserve: an
-            agent who speaks your language, knows your neighborhood, and treats
-            your home search like family business.
-          </motion.p>
-        </motion.div>
-
-        {/* Team group photo */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-16 relative rounded-2xl overflow-hidden aspect-[21/9]"
-        >
-          <Image
-            src="/images/portland-downtown-bridges.webp"
-            alt="Advantage Realty LLC team — Senai and Benyam Huluka with the Portland skyline"
-            fill
-            className="object-cover object-top"
-            priority
-          />
-          <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#D4A853]" />
-        </motion.div>
+            <div className="relative">
+              <div className="relative rounded-2xl overflow-hidden aspect-[3/4]" style={{ boxShadow: "8px 8px 0 #2EC4B6" }}>
+                <Image
+                  src="/images/team-duo.webp"
+                  alt="Huluka and Hunde Abebe — Advantage Realty LLC founders"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                />
+              </div>
+              {/* Paper cut-out label */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6 }}
+                className="absolute -bottom-3 -right-3 bg-[#D4A853] rounded-lg px-4 py-2"
+                style={{ boxShadow: "3px 3px 0 #0A1628", transform: "rotate(2deg)" }}
+              >
+                <span className="font-heading font-bold text-[#0A1628] text-sm">16+ Years in Portland</span>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -116,8 +140,8 @@ function Story() {
             Advantage Realty LLC was born from a simple frustration: watching
             family and friends in Portland&rsquo;s Ethiopian and Oromo communities
             struggle through real estate transactions with agents who didn&rsquo;t
-            understand their language, their culture, or their priorities. Senai
-            and Benyam Huluka decided to change that — not by joining a big
+            understand their language, their culture, or their priorities. Huluka
+            and Hunde Abebe decided to change that — not by joining a big
             brokerage and hoping for the best, but by building something from
             scratch that put their community first.
           </motion.p>
@@ -147,7 +171,7 @@ function Story() {
               speak.&rdquo;
             </p>
             <p className="mt-4 font-heading font-bold text-[#D4A853] text-sm tracking-wide uppercase">
-              — Senai &amp; Benyam Huluka, Founders
+              — Huluka &amp; Hunde Abebe, Founders
             </p>
           </motion.div>
         </motion.div>
@@ -172,34 +196,34 @@ interface TeamMember {
 
 const team: TeamMember[] = [
   {
-    name: "Senai Huluka",
+    name: "Huluka Abebe",
     role: "Principal Broker / Co-Founder",
     languages: ["Amharic", "Oromo", "English"],
-    phone: "[CLIENT TO PROVIDE: phone]",
+    phone: "(503) 793-7520",
     email: "[CLIENT TO PROVIDE: email]",
-    photo: "",
-    initials: "SH",
-    bio: "With over 16 years of Portland real estate experience, Senai leads the team's residential and investment practice. He specializes in buyer representation, market analysis, and care home property acquisitions across the metro. His deep roots in Portland's Ethiopian community and encyclopedic knowledge of Clackamas County neighborhoods make him a go-to resource for families navigating their biggest financial decision.",
+    photo: "/images/huluka-abebe.webp",
+    initials: "HA",
+    bio: "With over 16 years of Portland real estate experience, Huluka leads the team's residential and investment practice. He specializes in buyer representation, market analysis, and care home property acquisitions across the metro. His deep roots in Portland's Ethiopian community and encyclopedic knowledge of Clackamas County neighborhoods make him a go-to resource for families navigating their biggest financial decision.",
   },
   {
-    name: "Benyam Huluka",
+    name: "Hunde Abebe",
     role: "Broker / Co-Founder",
     languages: ["Amharic", "Oromo", "English"],
-    phone: "[CLIENT TO PROVIDE: phone]",
+    phone: "(503) 793-7520",
     email: "[CLIENT TO PROVIDE: email]",
-    photo: "",
-    initials: "BH",
-    bio: "Benyam brings sharp negotiation skills and a detail-oriented approach to every transaction. Whether he's helping sellers price competitively in a shifting market or guiding first-time buyers through the inspection process, his focus is always on clear communication and client advocacy. He handles listing strategy, contract negotiation, and the operational side of the team.",
+    photo: "/images/hunde-abebe.webp",
+    initials: "HA",
+    bio: "Hunde brings sharp negotiation skills and a detail-oriented approach to every transaction. Whether he's helping sellers price competitively in a shifting market or guiding first-time buyers through the inspection process, his focus is always on clear communication and client advocacy. He handles listing strategy, contract negotiation, and the operational side of the team.",
   },
   {
-    name: "[CLIENT TO PROVIDE: Third Team Member]",
-    role: "[CLIENT TO PROVIDE: role]",
-    languages: ["Amharic", "Oromo", "English"],
-    phone: "[CLIENT TO PROVIDE: phone]",
+    name: "Jenni Anderson",
+    role: "Agent / 1031 Exchange Specialist",
+    languages: ["English"],
+    phone: "(503) 793-7520",
     email: "[CLIENT TO PROVIDE: email]",
-    photo: "",
-    initials: "TM",
-    bio: "[CLIENT TO PROVIDE: bio for third team member. If there is no third member, this card can be removed.]",
+    photo: "/images/jenni-anderson.webp",
+    initials: "JA",
+    bio: "A native Oregonian, Jenni brings deep local knowledge and sharp attention to detail to every transaction. She specializes in investment property acquisitions and 1031 exchanges, coordinating directly with qualified intermediaries to protect your tax-deferred gains. Her organizational skills keep complex multi-property deals on track.",
   },
 ];
 
@@ -226,8 +250,8 @@ function TeamGrid() {
               transition={{ delay: i * 0.12, duration: 0.6 }}
               className="group"
             >
-              {/* Photo or Initials Placeholder */}
-              <div className="relative rounded-xl overflow-hidden aspect-[3/4] mb-6">
+              {/* Photo with paper cut-out shadow */}
+              <div className="relative rounded-xl overflow-hidden aspect-[3/4] mb-6" style={{ boxShadow: i === 0 ? "6px 6px 0 #2EC4B6" : i === 1 ? "6px 6px 0 #D4A853" : "6px 6px 0 #2EC4B6" }}>
                 {member.photo ? (
                   <Image
                     src={member.photo}
@@ -240,12 +264,8 @@ function TeamGrid() {
                     <span className="text-6xl md:text-7xl font-heading font-bold text-[#D4A853]/80">
                       {member.initials}
                     </span>
-                    <p className="absolute bottom-4 left-0 right-0 text-center text-xs text-white/40 font-body">
-                      [CLIENT TO PROVIDE: headshot]
-                    </p>
                   </div>
                 )}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#D4A853] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               {/* Info */}
@@ -399,7 +419,7 @@ function Values() {
       icon: Sparkles,
       title: "Personal Attention",
       description:
-        "No junior agents. No hand-offs. No automated emails pretending to be personal. You get Senai and Benyam — directly, always.",
+        "No junior agents. No hand-offs. No automated emails pretending to be personal. You get Huluka and Hunde — directly, always.",
     },
   ];
 
@@ -424,9 +444,10 @@ function Values() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
               className="bg-white rounded-2xl border border-border p-8 text-center hover:shadow-lg hover:border-[#D4A853]/40 transition-all duration-300"
+              style={{ boxShadow: i % 2 === 0 ? "4px 4px 0 rgba(46,196,182,0.2)" : "4px 4px 0 rgba(212,168,83,0.2)" }}
             >
-              <div className="w-14 h-14 rounded-full bg-[#D4A853]/10 flex items-center justify-center mx-auto mb-5">
-                <Icon className="w-7 h-7 text-[#D4A853]" strokeWidth={1.5} />
+              <div className={`w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5 ${i % 2 === 0 ? "bg-[#2EC4B6]/10" : "bg-[#D4A853]/10"}`}>
+                <Icon className={`w-7 h-7 ${i % 2 === 0 ? "text-[#2EC4B6]" : "text-[#D4A853]"}`} strokeWidth={1.5} />
               </div>
               <h3 className="font-heading font-bold text-lg text-foreground">
                 {title}

@@ -129,46 +129,96 @@ export default function SellPage() {
   return (
     <main>
       {/* ━━ 1. HERO ━━ */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      <section className="bg-[#FEFCF8] py-20 md:py-32 overflow-hidden">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="max-w-3xl"
-          >
-            <motion.p
-              variants={fadeUp}
-              className="mb-4 font-body text-sm font-medium uppercase tracking-widest text-[#D4A853]"
+          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+            <motion.div
+              className="lg:col-span-3"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
             >
-              Portland Home Sellers
-            </motion.p>
-            <motion.h1
-              variants={fadeUp}
-              className="font-heading text-5xl font-bold tracking-tight text-[#0A1628] md:text-7xl"
-            >
-              Sell Your Portland Home — Strategic Pricing, Maximum Value
-            </motion.h1>
-            <motion.p
-              variants={fadeUp}
-              className="mt-6 max-w-xl font-body text-lg leading-relaxed text-[#0A1628]/70 md:text-xl"
-            >
-              Your home is likely your largest asset. Advantage Realty combines hyper-local market
-              knowledge with proven marketing strategies to get you the strongest possible return.
-            </motion.p>
-            <motion.div variants={fadeUp} className="mt-10 flex flex-wrap items-center gap-4">
-              <a
-                href="#cta"
-                className="inline-flex items-center rounded-lg bg-[#D4A853] px-7 py-3.5 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:opacity-90"
+              <motion.p
+                variants={fadeUp}
+                className="mb-4 font-body text-sm font-medium uppercase tracking-widest text-[#D4A853]"
               >
-                Get Your Free Property Evaluation
-              </a>
-              <span className="font-body text-sm text-[#0A1628]/50">
-                No obligation &middot; Takes 2 minutes
-              </span>
+                Portland Home Sellers
+              </motion.p>
+              <motion.h1
+                variants={fadeUp}
+                className="font-heading text-5xl font-bold tracking-tight text-[#0A1628] md:text-7xl"
+              >
+                Sell Your Portland Home — Strategic Pricing, Maximum Value
+              </motion.h1>
+              <motion.p
+                variants={fadeUp}
+                className="mt-6 max-w-xl font-body text-lg leading-relaxed text-[#0A1628]/70 md:text-xl"
+              >
+                Your home is likely your largest asset. Advantage Realty combines hyper-local market
+                knowledge with proven marketing strategies to get you the strongest possible return.
+              </motion.p>
+              <motion.div variants={fadeUp} className="mt-10 flex flex-wrap items-center gap-4">
+                <a
+                  href="#cta"
+                  className="inline-flex items-center rounded-lg bg-[#D4A853] px-7 py-3.5 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:opacity-90"
+                >
+                  Get Your Free Property Evaluation
+                </a>
+                <span className="font-body text-sm text-[#0A1628]/50">
+                  No obligation &middot; Takes 2 minutes
+                </span>
+              </motion.div>
             </motion.div>
-          </motion.div>
+
+            {/* Paper cut-out rising chart illustration */}
+            <motion.div
+              className="lg:col-span-2 hidden lg:block"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="relative bg-[#0A1628] rounded-2xl p-8 overflow-hidden" style={{ boxShadow: "8px 8px 0 #2EC4B6" }}>
+                <div className="absolute inset-0 habesha-pattern opacity-30" />
+                <div className="relative">
+                  <p className="font-heading font-bold text-[#F5F0E8] text-sm tracking-widest uppercase mb-6">
+                    Portland Seller&apos;s Market
+                  </p>
+                  {/* Animated bar chart */}
+                  <div className="flex items-end gap-3 h-48">
+                    {[
+                      { h: "45%", label: "Q1", color: "#D4A853" },
+                      { h: "55%", label: "Q2", color: "#D4A853" },
+                      { h: "50%", label: "Q3", color: "#D4A853" },
+                      { h: "70%", label: "Q4", color: "#2EC4B6" },
+                      { h: "85%", label: "Now", color: "#D4A853" },
+                    ].map((bar, i) => (
+                      <motion.div
+                        key={bar.label}
+                        className="flex-1 flex flex-col items-center gap-2"
+                        initial={{ scaleY: 0 }}
+                        whileInView={{ scaleY: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.4 + i * 0.1, duration: 0.6, ease: "easeOut" }}
+                        style={{ originY: 1 }}
+                      >
+                        <div
+                          className="w-full rounded-t-md"
+                          style={{ height: bar.h, backgroundColor: bar.color, boxShadow: "3px 0 0 rgba(0,0,0,0.15)" }}
+                        />
+                        <span className="text-[#F5F0E8]/50 font-body text-xs">{bar.label}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                  <div className="mt-4 pt-4 border-t border-[#F5F0E8]/10 flex justify-between">
+                    <span className="font-heading font-bold text-[#D4A853] text-2xl">4.3</span>
+                    <span className="font-body text-[#F5F0E8]/50 text-sm self-end">months inventory</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -211,6 +261,7 @@ export default function SellPage() {
             <motion.div
               variants={fadeUp}
               className="flex flex-col items-center rounded-xl border border-[#E8E2D8] bg-white p-12 text-center"
+              style={{ boxShadow: "6px 6px 0 rgba(46,196,182,0.2)" }}
             >
               <span className="font-heading text-7xl font-bold tracking-tight text-[#D4A853] md:text-8xl">
                 4.3
@@ -256,7 +307,10 @@ export default function SellPage() {
                   variants={fadeUp}
                   className="rounded-xl border border-[#F5F0E8]/10 bg-[#F5F0E8]/5 p-6"
                 >
-                  <span className="font-heading text-3xl font-bold text-[#D4A853]">
+                  <span
+                    className={`inline-flex items-center justify-center w-10 h-10 rounded-lg font-heading text-lg font-bold ${Number(step.num) % 2 === 0 ? "bg-[#2EC4B6] text-white" : "bg-[#D4A853] text-[#0A1628]"}`}
+                    style={{ boxShadow: "3px 3px 0 rgba(255,255,255,0.1)" }}
+                  >
                     {step.num}
                   </span>
                   <h3 className="mt-4 font-heading text-lg font-bold tracking-tight text-[#F5F0E8]">

@@ -127,11 +127,11 @@ function Hero() {
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
-              {/* Saffron accent strip on left edge */}
-              <div className="absolute left-0 top-0 bottom-0 w-2 bg-[#D4A853] z-10" />
+              {/* Sage accent strip on left edge */}
+              <div className="absolute left-0 top-0 bottom-0 w-2 bg-[#2EC4B6] z-10" />
               <Image
-                src="/images/hero-portland-neighborhood.webp"
-                alt="The Huluka family — Advantage Realty LLC team in Portland, Oregon"
+                src="/images/team-duo.webp"
+                alt="Huluka and Hunde Abebe — Advantage Realty LLC team in Portland, Oregon"
                 fill
                 className="object-cover object-top"
                 priority
@@ -305,7 +305,7 @@ function ServicesOverview() {
             custom={1}
             className="mt-4 text-lg text-muted font-body max-w-2xl mx-auto"
           >
-            Six ways the Huluka family puts your real estate goals first — in the
+            Six ways the Abebe family puts your real estate goals first — in the
             language you think in.
           </motion.p>
         </motion.div>
@@ -319,9 +319,10 @@ function ServicesOverview() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.08, duration: 0.5 }}
               className="group relative bg-white rounded-2xl border border-border p-8 hover:shadow-lg hover:border-[#D4A853]/40 transition-all duration-300"
+              style={{ boxShadow: i % 3 === 1 ? "4px 4px 0 rgba(46,196,182,0.15)" : "4px 4px 0 rgba(212,168,83,0.12)" }}
             >
-              <div className="w-12 h-12 rounded-xl bg-[#D4A853]/10 flex items-center justify-center mb-5">
-                <Icon className="w-6 h-6 text-[#D4A853]" />
+              <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 ${i % 3 === 1 ? "bg-[#2EC4B6]/10" : "bg-[#D4A853]/10"}`}>
+                <Icon className={`w-6 h-6 ${i % 3 === 1 ? "text-[#2EC4B6]" : "text-[#D4A853]"}`} />
               </div>
               <h3 className="font-heading font-bold text-xl text-foreground">
                 {title}
@@ -351,7 +352,7 @@ function WhyAdvantage() {
     {
       title: "Family-Run, Not Corporate",
       description:
-        "You work directly with the Huluka brothers — no hand-offs to junior agents, no call centers, no runaround.",
+        "You work directly with the Abebe brothers — no hand-offs to junior agents, no call centers, no runaround.",
     },
     {
       title: "Trilingual From Day One",
@@ -397,7 +398,7 @@ function WhyAdvantage() {
                   custom={i + 1}
                   className="flex gap-4"
                 >
-                  <CheckCircle2 className="w-6 h-6 text-[#D4A853] shrink-0 mt-0.5" />
+                  <CheckCircle2 className={`w-6 h-6 shrink-0 mt-0.5 ${i % 2 === 1 ? "text-[#2EC4B6]" : "text-[#D4A853]"}`} />
                   <div>
                     <h3 className="font-heading font-bold text-lg">{title}</h3>
                     <p className="mt-1 text-[#F5F0E8]/70 font-body text-[15px] leading-relaxed">
@@ -432,7 +433,89 @@ function WhyAdvantage() {
 }
 
 /* ───────────────────────────────────────────
-   Section 6 — Testimonials
+   Section 6a — Meet the Team
+   ─────────────────────────────────────────── */
+function MeetTheTeam() {
+  const members = [
+    { name: "Huluka Abebe", role: "Principal Broker", photo: "/images/huluka-abebe.webp", accent: "#D4A853" },
+    { name: "Hunde Abebe", role: "Broker / Co-Founder", photo: "/images/hunde-abebe.webp", accent: "#2EC4B6" },
+    { name: "Jenni Anderson", role: "Agent / 1031 Specialist", photo: "/images/jenni-anderson.webp", accent: "#D4A853" },
+  ];
+
+  return (
+    <section className="bg-[#FEFCF8] py-20 md:py-32 habesha-pattern">
+      <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={stagger}
+          className="text-center mb-16"
+        >
+          <motion.h2
+            variants={fadeUp}
+            custom={0}
+            className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-foreground"
+          >
+            Your <span className="text-[#2EC4B6]">Team</span>
+          </motion.h2>
+          <motion.p
+            variants={fadeUp}
+            custom={1}
+            className="mt-4 text-lg text-muted font-body max-w-xl mx-auto"
+          >
+            Every call, every showing, every negotiation — you work directly with us.
+          </motion.p>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-3 gap-8 lg:gap-10">
+          {members.map((member, i) => (
+            <motion.div
+              key={member.name}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.12, duration: 0.6 }}
+              className="group text-center"
+            >
+              <div
+                className="relative rounded-xl overflow-hidden aspect-[3/4] mb-5 mx-auto max-w-[300px]"
+                style={{ boxShadow: `6px 6px 0 ${member.accent}` }}
+              >
+                <Image
+                  src={member.photo}
+                  alt={`${member.name} — ${member.role} at Advantage Realty LLC`}
+                  fill
+                  className="object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"
+                />
+              </div>
+              <h3 className="font-heading font-bold text-xl text-foreground">{member.name}</h3>
+              <p className="mt-1 text-sm text-muted font-body">{member.role}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="mt-12 text-center"
+        >
+          <Link
+            href="/about"
+            className="inline-flex items-center gap-2 font-heading font-bold text-[#0A1628] hover:text-[#D4A853] transition-colors"
+          >
+            Learn more about our team →
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+/* ───────────────────────────────────────────
+   Section 6b — Testimonials
    ─────────────────────────────────────────── */
 function Testimonials() {
   const testimonials = [
@@ -675,8 +758,8 @@ function FAQ() {
 
   const faqs = [
     {
-      q: "Do I really get to work directly with the Huluka brothers?",
-      a: "Yes — always. We're a family team, not a brokerage that passes you off to a junior agent. Senai and Benyam personally handle every transaction from first consultation to closing day.",
+      q: "Do I really get to work directly with the Abebe brothers?",
+      a: "Yes — always. We're a family team, not a brokerage that passes you off to a junior agent. Huluka and Hunde personally handle every transaction from first consultation to closing day.",
     },
     {
       q: "What languages do you conduct business in?",
@@ -847,6 +930,7 @@ export default function HomePage() {
       <ProblemAgitation />
       <ServicesOverview />
       <WhyAdvantage />
+      <MeetTheTeam />
       <Testimonials />
       <MarketSnapshot />
       <MultilingualCTA />
