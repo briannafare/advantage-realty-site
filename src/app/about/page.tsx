@@ -29,82 +29,58 @@ const stagger = {
 };
 
 /* ───────────────────────────────────────────
-   Section 1 — Hero
+   Section 1 — Hero (paper cut-out community illustration)
    ─────────────────────────────────────────── */
 function AboutHero() {
   return (
-    <section className="bg-[#FEFCF8] py-20 md:py-32 overflow-hidden">
+    <section className="bg-[#FEFCF8] py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
-          <motion.div
-            className="lg:col-span-3"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={stagger}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={stagger}
+          className="max-w-4xl"
+        >
+          <motion.h1
+            variants={fadeUp}
+            custom={0}
+            className="font-heading font-bold tracking-tight text-4xl md:text-6xl lg:text-7xl text-foreground leading-[1.05]"
           >
-            <motion.span
-              variants={fadeUp}
-              custom={0}
-              className="inline-block bg-[#2EC4B6]/10 text-[#2EC4B6] font-heading font-semibold text-xs tracking-widest uppercase px-4 py-1.5 rounded-full mb-6"
-              style={{ boxShadow: "2px 2px 0 rgba(46,196,182,0.2)" }}
-            >
-              Family-Run Since 2008
-            </motion.span>
-            <motion.h1
-              variants={fadeUp}
-              custom={0}
-              className="font-heading font-bold tracking-tight text-5xl md:text-7xl lg:text-8xl text-foreground leading-[1.05]"
-            >
-              Meet the Family Behind{" "}
-              <span className="text-[#D4A853]">Advantage</span>
-            </motion.h1>
+            Meet the Family Behind{" "}
+            <span className="text-[#D4A853]">Advantage</span>
+          </motion.h1>
 
-            <motion.p
-              variants={fadeUp}
-              custom={1}
-              className="mt-6 text-lg md:text-xl text-muted font-body leading-relaxed max-w-2xl"
-            >
-              We&rsquo;re not a franchise. We&rsquo;re not a call center. We&rsquo;re two
-              brothers — Huluka and Hunde Abebe — who built a real estate practice
-              around the one thing Portland&rsquo;s diverse communities deserve: an
-              agent who speaks your language, knows your neighborhood, and treats
-              your home search like family business.
-            </motion.p>
-          </motion.div>
-
-          {/* Team duo photo — paper cut-out style */}
-          <motion.div
-            className="lg:col-span-2"
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+          <motion.p
+            variants={fadeUp}
+            custom={1}
+            className="mt-6 text-lg md:text-xl text-muted font-body leading-relaxed max-w-2xl"
           >
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden aspect-[3/4]" style={{ boxShadow: "8px 8px 0 #2EC4B6" }}>
-                <Image
-                  src="/images/team-duo.webp"
-                  alt="Huluka and Hunde Abebe — Advantage Realty LLC founders"
-                  fill
-                  className="object-cover object-top"
-                  priority
-                />
-              </div>
-              {/* Paper cut-out label */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.6 }}
-                className="absolute -bottom-3 -right-3 bg-[#D4A853] rounded-lg px-4 py-2"
-                style={{ boxShadow: "3px 3px 0 #0A1628", transform: "rotate(2deg)" }}
-              >
-                <span className="font-heading font-bold text-[#0A1628] text-sm">16+ Years in Portland</span>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
+            We&rsquo;re not a franchise. We&rsquo;re not a call center.
+            We&rsquo;re two brothers — Huluka and Hunde Abebe — who built a real
+            estate practice around the one thing Portland&rsquo;s diverse
+            communities deserve: an agent who speaks your language, knows your
+            neighborhood, and treats your home search like family business.
+          </motion.p>
+        </motion.div>
+
+        {/* Paper cut-out community illustration — DIFFERENT from homepage */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="mt-14 relative rounded-2xl overflow-hidden aspect-[21/9]"
+        >
+          <Image
+            src="/images/paper-cutout-community.png"
+            alt="Paper cut-out illustration — community and homeownership in Portland, Oregon"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#D4A853]" />
+        </motion.div>
       </div>
     </section>
   );
@@ -115,7 +91,7 @@ function AboutHero() {
    ─────────────────────────────────────────── */
 function Story() {
   return (
-    <section className="bg-[#FEFCF8] py-20 md:py-32 habesha-pattern">
+    <section className="bg-[#FEFCF8] py-20 md:py-28 habesha-pattern">
       <div className="max-w-3xl mx-auto px-5 md:px-8 text-center">
         <motion.div
           initial="hidden"
@@ -138,12 +114,12 @@ function Story() {
             className="mt-8 text-lg md:text-xl text-muted font-body leading-relaxed"
           >
             Advantage Realty LLC was born from a simple frustration: watching
-            family and friends in Portland&rsquo;s Ethiopian and Oromo communities
-            struggle through real estate transactions with agents who didn&rsquo;t
-            understand their language, their culture, or their priorities. Huluka
-            and Hunde Abebe decided to change that — not by joining a big
-            brokerage and hoping for the best, but by building something from
-            scratch that put their community first.
+            family and friends in Portland&rsquo;s Ethiopian and Oromo
+            communities struggle through real estate transactions with agents who
+            didn&rsquo;t understand their language, their culture, or their
+            priorities. Huluka and Hunde Abebe decided to change that — not by
+            joining a big brokerage and hoping for the best, but by building
+            something from scratch that put their community first.
           </motion.p>
 
           <motion.p
@@ -151,13 +127,13 @@ function Story() {
             custom={2}
             className="mt-6 text-lg md:text-xl text-muted font-body leading-relaxed"
           >
-            Over 16 years later, that vision hasn&rsquo;t changed. Every transaction
-            we handle — whether it&rsquo;s a first-time buyer in SE Portland, a
-            growing family moving to Milwaukie, or an investor evaluating a care
-            home opportunity — gets the same treatment: direct access to us,
-            transparent communication in your language, and the kind of market
-            knowledge that only comes from living and working in these
-            neighborhoods for over a decade.
+            Over 16 years later, that vision hasn&rsquo;t changed. Every
+            transaction we handle — whether it&rsquo;s a first-time buyer in SE
+            Portland, a growing family moving to Milwaukie, or an investor
+            evaluating a care home opportunity — gets the same treatment: direct
+            access to us, transparent communication in your language, and the
+            kind of market knowledge that only comes from living and working in
+            these neighborhoods for over a decade.
           </motion.p>
 
           <motion.div
@@ -181,7 +157,7 @@ function Story() {
 }
 
 /* ───────────────────────────────────────────
-   Section 3 — Team Grid
+   Section 3 — Team Grid (real photos from client site)
    ─────────────────────────────────────────── */
 interface TeamMember {
   name: string;
@@ -190,7 +166,6 @@ interface TeamMember {
   phone: string;
   email: string;
   photo: string;
-  initials: string;
   bio: string;
 }
 
@@ -200,36 +175,33 @@ const team: TeamMember[] = [
     role: "Principal Broker / Co-Founder",
     languages: ["Amharic", "Oromo", "English"],
     phone: "(503) 793-7520",
-    email: "[CLIENT TO PROVIDE: email]",
-    photo: "/images/huluka-abebe.webp",
-    initials: "HA",
-    bio: "With over 16 years of Portland real estate experience, Huluka leads the team's residential and investment practice. He specializes in buyer representation, market analysis, and care home property acquisitions across the metro. His deep roots in Portland's Ethiopian community and encyclopedic knowledge of Clackamas County neighborhoods make him a go-to resource for families navigating their biggest financial decision.",
+    email: "huluka@advantageor.com",
+    photo: "/images/team/huluka-abebe.jpg",
+    bio: "With over 16 years of Portland real estate experience, Huluka leads the team\u2019s residential and investment practice. He specializes in buyer representation, market analysis, and care home property acquisitions across the metro. His deep roots in Portland\u2019s Ethiopian community and encyclopedic knowledge of Clackamas County neighborhoods make him a go-to resource for families navigating their biggest financial decision.",
   },
   {
     name: "Hunde Abebe",
     role: "Broker / Co-Founder",
     languages: ["Amharic", "Oromo", "English"],
-    phone: "(503) 793-7520",
-    email: "[CLIENT TO PROVIDE: email]",
-    photo: "/images/hunde-abebe.webp",
-    initials: "HA",
-    bio: "Hunde brings sharp negotiation skills and a detail-oriented approach to every transaction. Whether he's helping sellers price competitively in a shifting market or guiding first-time buyers through the inspection process, his focus is always on clear communication and client advocacy. He handles listing strategy, contract negotiation, and the operational side of the team.",
+    phone: "(503) 449-4362",
+    email: "hunde@advantageor.com",
+    photo: "/images/team/hunde-abebe.jpg",
+    bio: "Hunde brings sharp negotiation skills and a detail-oriented approach to every transaction. Whether he\u2019s helping sellers price competitively in a shifting market or guiding first-time buyers through the inspection process, his focus is always on clear communication and client advocacy. Known for going above and beyond, he handles listing strategy, contract negotiation, and the operational side of the team.",
   },
   {
     name: "Jenni Anderson",
-    role: "Agent / 1031 Exchange Specialist",
+    role: "Broker / 1031 Exchange Specialist",
     languages: ["English"],
-    phone: "(503) 793-7520",
-    email: "[CLIENT TO PROVIDE: email]",
-    photo: "/images/jenni-anderson.webp",
-    initials: "JA",
-    bio: "A native Oregonian, Jenni brings deep local knowledge and sharp attention to detail to every transaction. She specializes in investment property acquisitions and 1031 exchanges, coordinating directly with qualified intermediaries to protect your tax-deferred gains. Her organizational skills keep complex multi-property deals on track.",
+    phone: "(503) 508-8779",
+    email: "jenni@advantageor.com",
+    photo: "/images/team/jenni-anderson.jpg",
+    bio: "A native Oregonian with international experience, Jenni brings 10+ years of project management and client services expertise to the Advantage team. She specializes in 1031 tax-deferred property exchanges and relocation assistance, helping investors protect their wealth and families find their footing in Portland.",
   },
 ];
 
 function TeamGrid() {
   return (
-    <section className="bg-[#FEFCF8] py-20 md:py-32">
+    <section className="bg-[#FEFCF8] py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -250,22 +222,15 @@ function TeamGrid() {
               transition={{ delay: i * 0.12, duration: 0.6 }}
               className="group"
             >
-              {/* Photo with paper cut-out shadow */}
-              <div className="relative rounded-xl overflow-hidden aspect-[3/4] mb-6" style={{ boxShadow: i === 0 ? "6px 6px 0 #2EC4B6" : i === 1 ? "6px 6px 0 #D4A853" : "6px 6px 0 #2EC4B6" }}>
-                {member.photo ? (
-                  <Image
-                    src={member.photo}
-                    alt={`${member.name} — ${member.role} at Advantage Realty LLC`}
-                    fill
-                    className="object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"
-                  />
-                ) : (
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#0A1628] to-[#1a2a44] flex items-center justify-center">
-                    <span className="text-6xl md:text-7xl font-heading font-bold text-[#D4A853]/80">
-                      {member.initials}
-                    </span>
-                  </div>
-                )}
+              {/* Photo */}
+              <div className="relative rounded-xl overflow-hidden aspect-[3/4] mb-6">
+                <Image
+                  src={member.photo}
+                  alt={`${member.name} \u2014 ${member.role} at Advantage Realty LLC`}
+                  fill
+                  className="object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"
+                />
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#D4A853] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               {/* Info */}
@@ -290,7 +255,7 @@ function TeamGrid() {
               {/* Contact */}
               <div className="mt-4 space-y-1.5 text-sm text-muted font-body">
                 <a
-                  href={`tel:${member.phone}`}
+                  href={`tel:${member.phone.replace(/[^+\d]/g, "")}`}
                   className="flex items-center gap-2 hover:text-[#D4A853] transition-colors"
                 >
                   <Phone className="w-4 h-4" />
@@ -322,7 +287,7 @@ function TeamGrid() {
    ─────────────────────────────────────────── */
 function Languages() {
   return (
-    <section className="bg-[#0A1628] text-[#F5F0E8] py-20 md:py-32">
+    <section className="bg-[#0A1628] text-[#F5F0E8] py-20 md:py-28">
       <div className="max-w-3xl mx-auto px-5 md:px-8 text-center">
         <motion.div
           initial="hidden"
@@ -345,10 +310,11 @@ function Languages() {
             className="mt-8 text-lg md:text-xl text-[#F5F0E8]/80 font-body leading-relaxed"
           >
             Portland is home to one of the largest Ethiopian and Eritrean
-            communities in the United States. For families who think in Amharic or
-            Oromo, buying a home shouldn&rsquo;t require a translator sitting between
-            you and your agent. At Advantage Realty, language isn&rsquo;t a courtesy —
-            it&rsquo;s the foundation of how we do business.
+            communities in the United States. For families who think in Amharic
+            or Oromo, buying a home shouldn&rsquo;t require a translator sitting
+            between you and your agent. At Advantage Realty, language
+            isn&rsquo;t a courtesy — it&rsquo;s the foundation of how we do
+            business.
           </motion.p>
 
           <motion.p
@@ -356,11 +322,10 @@ function Languages() {
             custom={2}
             className="mt-6 text-lg md:text-xl text-[#F5F0E8]/80 font-body leading-relaxed"
           >
-            From the first phone call to the closing table, every document review,
-            every negotiation, every market explanation happens in the language
-            you&rsquo;re most comfortable with. No misunderstandings. No awkward
-            pauses. No important details lost in translation. That&rsquo;s not a
-            marketing line — it&rsquo;s the reason we started this firm.
+            From the first phone call to the closing table, every document
+            review, every negotiation, every market explanation happens in the
+            language you&rsquo;re most comfortable with. No misunderstandings.
+            No awkward pauses. No important details lost in translation.
           </motion.p>
 
           <motion.div
@@ -401,30 +366,30 @@ function Values() {
       icon: Heart,
       title: "Family First",
       description:
-        "Your home is your family's foundation. We treat every transaction with the same care and urgency we'd bring to our own family's move.",
+        "Your home is your family\u2019s foundation. We treat every transaction with the same care and urgency we\u2019d bring to our own family\u2019s move.",
     },
     {
       icon: Users,
       title: "Cultural Understanding",
       description:
-        "We don't just speak your language — we understand the cultural context behind your priorities, your timeline, and your decision-making process.",
+        "We don\u2019t just speak your language \u2014 we understand the cultural context behind your priorities, your timeline, and your decision-making process.",
     },
     {
       icon: BookOpen,
       title: "Expert Knowledge",
       description:
-        "16+ years in Portland's market, 11+ communities covered, and a care home niche no other local team can match. We know this metro inside and out.",
+        "16+ years in Portland\u2019s market, 11+ communities covered, and a care home niche no other local team can match.",
     },
     {
       icon: Sparkles,
       title: "Personal Attention",
       description:
-        "No junior agents. No hand-offs. No automated emails pretending to be personal. You get Huluka and Hunde — directly, always.",
+        "No junior agents. No hand-offs. No automated emails pretending to be personal. You get Huluka and Hunde \u2014 directly, always.",
     },
   ];
 
   return (
-    <section className="bg-[#FEFCF8] py-20 md:py-32">
+    <section className="bg-[#FEFCF8] py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -444,10 +409,9 @@ function Values() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
               className="bg-white rounded-2xl border border-border p-8 text-center hover:shadow-lg hover:border-[#D4A853]/40 transition-all duration-300"
-              style={{ boxShadow: i % 2 === 0 ? "4px 4px 0 rgba(46,196,182,0.2)" : "4px 4px 0 rgba(212,168,83,0.2)" }}
             >
-              <div className={`w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5 ${i % 2 === 0 ? "bg-[#2EC4B6]/10" : "bg-[#D4A853]/10"}`}>
-                <Icon className={`w-7 h-7 ${i % 2 === 0 ? "text-[#2EC4B6]" : "text-[#D4A853]"}`} strokeWidth={1.5} />
+              <div className="w-14 h-14 rounded-full bg-[#D4A853]/10 flex items-center justify-center mx-auto mb-5">
+                <Icon className="w-7 h-7 text-[#D4A853]" strokeWidth={1.5} />
               </div>
               <h3 className="font-heading font-bold text-lg text-foreground">
                 {title}
@@ -468,7 +432,7 @@ function Values() {
    ─────────────────────────────────────────── */
 function AboutCTA() {
   return (
-    <section className="bg-[#0A1628] text-[#F5F0E8] py-20 md:py-32">
+    <section className="bg-[#0A1628] text-[#F5F0E8] py-20 md:py-28">
       <div className="max-w-3xl mx-auto px-5 md:px-8 text-center">
         <motion.div
           initial="hidden"
@@ -490,17 +454,12 @@ function AboutCTA() {
             custom={1}
             className="mt-6 text-lg md:text-xl text-[#F5F0E8]/80 font-body leading-relaxed"
           >
-            Whether you&rsquo;re ready to buy, thinking about selling, or just want
-            to understand what your Portland home is worth — we&rsquo;re here. Your
-            first consultation is free, no strings attached. Let&rsquo;s start the
-            conversation.
+            Whether you&rsquo;re ready to buy, thinking about selling, or just
+            want to understand what your Portland home is worth — we&rsquo;re
+            here. Your first consultation is free, no strings attached.
           </motion.p>
 
-          <motion.div
-            variants={fadeUp}
-            custom={2}
-            className="mt-10"
-          >
+          <motion.div variants={fadeUp} custom={2} className="mt-10">
             <a
               href="/#contact"
               className="inline-flex items-center justify-center rounded-full bg-[#D4A853] px-8 py-4 font-heading font-bold text-[#0A1628] text-lg hover:bg-[#C49A48] transition-colors"

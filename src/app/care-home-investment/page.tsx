@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import {
   Accessibility,
@@ -164,96 +163,59 @@ export default function CareHomeInvestmentPage() {
       {/* ──────────────────────────────────────────────────────────
           SECTION 1 — Hero
           ────────────────────────────────────────────────────────── */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32 overflow-hidden">
+      <section className="bg-[#FEFCF8] py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
-          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-              className="lg:col-span-3"
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="max-w-4xl"
+          >
+            <motion.span
+              variants={fadeUp}
+              custom={0}
+              className="inline-block bg-[#D4A853]/10 text-[#D4A853] font-heading font-semibold text-xs tracking-widest uppercase px-4 py-1.5 rounded-full mb-6"
             >
-              <motion.span
-                variants={fadeUp}
-                custom={0}
-                className="inline-block bg-[#D4A853]/10 text-[#D4A853] font-heading font-semibold text-xs tracking-widest uppercase px-4 py-1.5 rounded-full mb-6"
-              >
-                Oregon Care Home Specialists
-              </motion.span>
-              <motion.h1
-                variants={fadeUp}
-                custom={1}
-                className="font-heading font-bold tracking-tight text-5xl md:text-7xl text-[#0A1628] mb-6"
-              >
-                Care Home Investment in Portland —{" "}
-                <span className="text-[#D4A853]">
-                  Oregon&apos;s Compliance-Ready Real Estate Experts
-                </span>
-              </motion.h1>
-              <motion.p
-                variants={fadeUp}
-                custom={2}
-                className="font-body text-lg md:text-xl text-[#6B7280] mb-10 max-w-3xl"
-              >
-                Most brokers show you houses. We show you properties that can
-                actually be licensed as care homes in Oregon — pre-screened against
-                OAR 411-054 requirements, ADA standards, and local building code
-                so you invest with confidence, not guesswork.
-              </motion.p>
-              <motion.div variants={fadeUp} custom={3} className="flex flex-wrap gap-4">
-                <Link
-                  href="/contact?interest=Care+Home"
-                  className="inline-flex items-center gap-2 bg-[#D4A853] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:bg-[#C49A48] transition-colors"
-                >
-                  Schedule Care Home Consultation
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <a
-                  href="tel:+15037937520"
-                  className="inline-flex items-center gap-2 border border-[#E8E2D8] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:border-[#D4A853]/50 transition-colors"
-                >
-                  <Phone className="w-4 h-4" />
-                  (503) 793-7520
-                </a>
-              </motion.div>
-            </motion.div>
-
-            {/* Paper cut-out compliance checklist + care home images */}
-            <motion.div
-              className="lg:col-span-2 hidden lg:block"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              Oregon Care Home Specialists
+            </motion.span>
+            <motion.h1
+              variants={fadeUp}
+              custom={1}
+              className="font-heading font-bold tracking-tight text-5xl md:text-7xl text-[#0A1628] mb-6"
             >
-              <div className="relative">
-                {/* Care home photo with paper cut shadow */}
-                <div className="relative rounded-xl overflow-hidden aspect-[4/3]" style={{ boxShadow: "8px 8px 0 #2EC4B6" }}>
-                  <Image
-                    src="/images/care-home-exterior.webp"
-                    alt="Licensed adult care home property in Portland, Oregon"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                {/* Floating compliance badge */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.6 }}
-                  className="absolute -bottom-4 -left-4 bg-[#0A1628] text-[#F5F0E8] rounded-lg px-4 py-3"
-                  style={{ boxShadow: "4px 4px 0 #D4A853" }}
-                >
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-[#2EC4B6]" />
-                    <span className="font-heading font-bold text-sm">OAR 411-054 Verified</span>
-                  </div>
-                </motion.div>
-              </div>
+              Care Home Investment in Portland —{" "}
+              <span className="text-[#D4A853]">
+                Oregon&apos;s Compliance-Ready Real Estate Experts
+              </span>
+            </motion.h1>
+            <motion.p
+              variants={fadeUp}
+              custom={2}
+              className="font-body text-lg md:text-xl text-[#6B7280] mb-10 max-w-3xl"
+            >
+              Most brokers show you houses. We show you properties that can
+              actually be licensed as care homes in Oregon — pre-screened against
+              OAR 411-054 requirements, ADA standards, and local building code
+              so you invest with confidence, not guesswork.
+            </motion.p>
+            <motion.div variants={fadeUp} custom={3} className="flex flex-wrap gap-4">
+              <Link
+                href="/contact?interest=Care+Home"
+                className="inline-flex items-center gap-2 bg-[#D4A853] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:bg-[#C49A48] transition-colors"
+              >
+                Schedule Care Home Consultation
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <a
+                href="tel:+15037937520"
+                className="inline-flex items-center gap-2 border border-[#E8E2D8] text-[#0A1628] font-heading font-semibold px-8 py-4 rounded-lg hover:border-[#D4A853]/50 transition-colors"
+              >
+                <Phone className="w-4 h-4" />
+                (503) 793-7520
+              </a>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -376,11 +338,8 @@ export default function CareHomeInvestmentPage() {
                 custom={i}
                 className="bg-[#F5F0E8]/5 border border-[#F5F0E8]/10 rounded-xl p-8 hover:border-[#D4A853]/30 transition-colors"
               >
-                <div
-                  className={`w-12 h-12 rounded-lg flex items-center justify-center mb-5 ${i % 2 === 0 ? "bg-[#D4A853]/10" : "bg-[#2EC4B6]/10"}`}
-                  style={{ boxShadow: i % 2 === 0 ? "3px 3px 0 rgba(212,168,83,0.2)" : "3px 3px 0 rgba(46,196,182,0.2)" }}
-                >
-                  <card.icon className={`w-5 h-5 ${i % 2 === 0 ? "text-[#D4A853]" : "text-[#2EC4B6]"}`} strokeWidth={1.5} />
+                <div className="w-12 h-12 rounded-lg bg-[#D4A853]/10 flex items-center justify-center mb-5">
+                  <card.icon className="w-5 h-5 text-[#D4A853]" strokeWidth={1.5} />
                 </div>
                 <h3 className="font-heading font-bold text-lg text-[#F5F0E8] mb-3">
                   {card.title}

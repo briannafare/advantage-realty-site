@@ -32,7 +32,7 @@ export const NAV_LINKS = [
   { label: "Buy", href: "/buy" },
   { label: "Sell", href: "/sell" },
   { label: "Invest", href: "/invest" },
-  { label: "Care Homes", href: "/care-homes" },
+  { label: "Care Homes", href: "/care-home-investment" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;
@@ -78,30 +78,42 @@ export const SERVICES = [
 
 export const TEAM = [
   {
-    name: "[CLIENT TO PROVIDE: Lead Agent Name]",
-    role: "Principal Broker",
-    bio: "[CLIENT TO PROVIDE: Bio paragraph]",
-    image: null,
+    name: "Huluka Abebe",
+    role: "Principal Broker / Co-Founder",
+    bio: "16+ years of Portland real estate experience. Specializes in buyer representation, market analysis, and care home property acquisitions.",
+    image: "/images/team/huluka-abebe.jpg",
+  },
+  {
+    name: "Hunde Abebe",
+    role: "Broker / Co-Founder",
+    bio: "Sharp negotiation skills and detail-oriented approach. Handles listing strategy, contract negotiation, and goes above and beyond for every client.",
+    image: "/images/team/hunde-abebe.jpg",
+  },
+  {
+    name: "Jenni Anderson",
+    role: "Broker / 1031 Exchange Specialist",
+    bio: "Native Oregonian with 10+ years experience. Specializes in 1031 tax-deferred property exchanges and relocation assistance.",
+    image: "/images/team/jenni-anderson.jpg",
   },
 ] as const;
 
 export const TESTIMONIALS = [
   {
-    quote: "[CLIENT TO PROVIDE: Testimonial quote]",
-    author: "[CLIENT TO PROVIDE: Client name]",
-    location: "[CLIENT TO PROVIDE: Transaction area]",
+    quote: "Huluka and his team are very organized and have a good understanding of what a buyer\u2019s needs are in the home buying process. I\u2019m 100% satisfied with the home I purchased, and the fantastic deal Huluka helped me get.",
+    author: "Tilahun S.",
+    location: "Portland Metro",
     type: "Buyer" as const,
   },
   {
-    quote: "[CLIENT TO PROVIDE: Testimonial quote]",
-    author: "[CLIENT TO PROVIDE: Client name]",
-    location: "[CLIENT TO PROVIDE: Transaction area]",
-    type: "Seller" as const,
+    quote: "Hunde assisted me in finding the perfect home, and I couldn\u2019t be happier with my experience dealing with him. Look no farther than Hunde if you want a real estate professional that will go above and beyond.",
+    author: "Guteta",
+    location: "Portland Metro",
+    type: "Buyer" as const,
   },
   {
-    quote: "[CLIENT TO PROVIDE: Testimonial quote]",
-    author: "[CLIENT TO PROVIDE: Client name]",
-    location: "[CLIENT TO PROVIDE: Transaction area]",
+    quote: "You will be well served with Hunde and Huluka with your real estate needs, especially in the adult care business.",
+    author: "Timothy & Tsehay Smith",
+    location: "Portland Metro",
     type: "Investor" as const,
   },
 ] as const;
@@ -173,7 +185,7 @@ export const FOOTER_LINKS = {
     { label: "Buy a Home", href: "/buy" },
     { label: "Sell Your Home", href: "/sell" },
     { label: "Investment Properties", href: "/invest" },
-    { label: "Care Home Consulting", href: "/care-homes" },
+    { label: "Care Home Consulting", href: "/care-home-investment" },
     { label: "About Our Team", href: "/about" },
     { label: "Contact Us", href: "/contact" },
   ],
@@ -182,7 +194,7 @@ export const FOOTER_LINKS = {
     { label: "Seller Marketing", href: "/sell" },
     { label: "Market Analysis", href: "/contact" },
     { label: "Relocation Help", href: "/contact" },
-    { label: "Care Home Sales", href: "/care-homes" },
+    { label: "Care Home Sales", href: "/care-home-investment" },
   ],
 } as const;
 

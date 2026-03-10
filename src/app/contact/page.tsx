@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Phone,
@@ -239,82 +238,43 @@ export default function ContactPage() {
       {/* ──────────────────────────────────────────────────────────
           SECTION 1 — Hero Minimal
           ────────────────────────────────────────────────────────── */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32 overflow-hidden">
+      <section className="bg-[#FEFCF8] py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
-          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
-            <motion.div
-              className="lg:col-span-3"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="max-w-3xl"
+          >
+            <motion.p
+              variants={fadeUp}
+              custom={0}
+              className="text-[#D4A853] font-heading font-semibold tracking-widest uppercase text-sm mb-6"
             >
-              <motion.p
-                variants={fadeUp}
-                custom={0}
-                className="text-[#D4A853] font-heading font-semibold tracking-widest uppercase text-sm mb-6"
-              >
-                Get in Touch
-              </motion.p>
-              <motion.h1
-                variants={fadeUp}
-                custom={1}
-                className="font-heading font-bold tracking-tight text-5xl md:text-7xl text-[#0A1628] mb-6"
-              >
-                Contact Advantage Realty —{" "}
-                <span className="text-[#D4A853]">
-                  Start Your Portland Real Estate Journey
-                </span>
-              </motion.h1>
-              <motion.p
-                variants={fadeUp}
-                custom={2}
-                className="font-body text-lg md:text-xl text-[#6B7280]"
-              >
-                Whether you&apos;re buying your first home, selling a property,
-                exploring investment opportunities, or navigating care home
-                acquisitions — we&apos;re here to talk. No pressure, no
-                obligation.
-              </motion.p>
-            </motion.div>
-
-            {/* Paper cut-out contact cards */}
-            <motion.div
-              className="lg:col-span-2 hidden lg:flex flex-col gap-4"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              Get in Touch
+            </motion.p>
+            <motion.h1
+              variants={fadeUp}
+              custom={1}
+              className="font-heading font-bold tracking-tight text-5xl md:text-7xl text-[#0A1628] mb-6"
             >
-              <div className="bg-[#0A1628] rounded-xl p-5" style={{ boxShadow: "5px 5px 0 #2EC4B6", transform: "rotate(-1deg)" }}>
-                <div className="flex items-center gap-3">
-                  <Phone className="w-6 h-6 text-[#D4A853]" />
-                  <div>
-                    <p className="font-heading font-bold text-[#F5F0E8] text-sm">(503) 793-7520</p>
-                    <p className="font-body text-[#F5F0E8]/50 text-xs">Call or text anytime</p>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-[#D4A853] rounded-xl p-5" style={{ boxShadow: "5px 5px 0 #0A1628", transform: "rotate(1.5deg)" }}>
-                <div className="flex items-center gap-3">
-                  <MapPin className="w-6 h-6 text-[#0A1628]" />
-                  <div>
-                    <p className="font-heading font-bold text-[#0A1628] text-sm">Clackamas, OR</p>
-                    <p className="font-body text-[#0A1628]/60 text-xs">13100 SE Sunnyside Rd Suite B</p>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-[#2EC4B6] rounded-xl p-5" style={{ boxShadow: "5px 5px 0 #D4A853", transform: "rotate(-0.5deg)" }}>
-                <div className="flex items-center gap-3">
-                  <Globe className="w-6 h-6 text-white" />
-                  <div>
-                    <p className="font-heading font-bold text-white text-sm">Amharic · Oromo · English</p>
-                    <p className="font-body text-white/70 text-xs">We speak your language</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+              Contact Advantage Realty —{" "}
+              <span className="text-[#D4A853]">
+                Start Your Portland Real Estate Journey
+              </span>
+            </motion.h1>
+            <motion.p
+              variants={fadeUp}
+              custom={2}
+              className="font-body text-lg md:text-xl text-[#6B7280]"
+            >
+              Whether you&apos;re buying your first home, selling a property,
+              exploring investment opportunities, or navigating care home
+              acquisitions — we&apos;re here to talk. No pressure, no
+              obligation.
+            </motion.p>
+          </motion.div>
         </div>
       </section>
 
@@ -493,26 +453,6 @@ export default function ContactPage() {
                 ))}
               </div>
             </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Office Exterior Photo */}
-      <section className="bg-[#FEFCF8] py-12">
-        <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative rounded-2xl overflow-hidden aspect-[21/9]"
-          >
-            <Image
-              src="/images/office-exterior-clackamas.webp"
-              alt="Advantage Realty LLC office exterior in Clackamas, Oregon"
-              fill
-              className="object-cover"
-            />
           </motion.div>
         </div>
       </section>

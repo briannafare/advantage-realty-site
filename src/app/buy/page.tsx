@@ -129,92 +129,47 @@ export default function BuyPage() {
   return (
     <main>
       {/* ━━ 1. HERO ━━ */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32 overflow-hidden">
+      <section className="bg-[#FEFCF8] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
-          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
-            <motion.div
-              className="lg:col-span-3"
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="max-w-3xl"
+          >
+            <motion.p
+              variants={fadeUp}
+              className="mb-4 font-body text-sm font-medium uppercase tracking-widest text-[#D4A853]"
             >
-              <motion.p
-                variants={fadeUp}
-                className="mb-4 font-body text-sm font-medium uppercase tracking-widest text-[#D4A853]"
-              >
-                Portland Home Buyers
-              </motion.p>
-              <motion.h1
-                variants={fadeUp}
-                className="font-heading text-5xl font-bold tracking-tight text-[#0A1628] md:text-7xl"
-              >
-                Buy a Home in Portland — Expert Guidance in Your Language
-              </motion.h1>
-              <motion.p
-                variants={fadeUp}
-                className="mt-6 max-w-xl font-body text-lg leading-relaxed text-[#0A1628]/70 md:text-xl"
-              >
-                Whether you are a first-time buyer or upgrading to your next chapter, Advantage
-                Realty pairs local market expertise with multilingual support to make your purchase
-                smooth and strategic.
-              </motion.p>
-              <motion.div variants={fadeUp} className="mt-10 flex flex-wrap items-center gap-4">
-                <a
-                  href="#cta"
-                  className="inline-flex items-center rounded-lg bg-[#D4A853] px-7 py-3.5 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:opacity-90"
-                >
-                  Start Your Home Search
-                </a>
-                <span className="font-body text-sm text-[#0A1628]/50">
-                  No commitment &middot; Free consultation
-                </span>
-              </motion.div>
-            </motion.div>
-
-            {/* Paper cut-out house stack illustration */}
-            <motion.div
-              className="lg:col-span-2 hidden lg:flex flex-col items-center gap-4"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              Portland Home Buyers
+            </motion.p>
+            <motion.h1
+              variants={fadeUp}
+              className="font-heading text-5xl font-bold tracking-tight text-[#0A1628] md:text-7xl"
             >
-              {[
-                { color: "#2EC4B6", label: "Happy Valley", rotate: "-2deg", delay: 0.1 },
-                { color: "#D4A853", label: "Clackamas", rotate: "1.5deg", delay: 0.2 },
-                { color: "#0A1628", label: "Portland", rotate: "-1deg", delay: 0.3 },
-              ].map((card, i) => (
-                <motion.div
-                  key={card.label}
-                  initial={{ opacity: 0, y: 20, rotate: card.rotate }}
-                  whileInView={{ opacity: 1, y: 0, rotate: card.rotate }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 + card.delay, duration: 0.5 }}
-                  className="w-full max-w-[280px] p-6 rounded-xl relative"
-                  style={{
-                    backgroundColor: card.color,
-                    boxShadow: "6px 6px 0 rgba(10, 22, 40, 0.15)",
-                    transform: `rotate(${card.rotate})`,
-                  }}
-                >
-                  <svg viewBox="0 0 80 50" className="w-16 h-10 mb-3" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M40 5L75 25V45H5V25L40 5Z" fill="white" fillOpacity="0.2" />
-                    <path d="M40 5L75 25V45H5V25L40 5Z" stroke="white" strokeWidth="2" strokeLinejoin="round" />
-                    <rect x="30" y="30" width="12" height="15" rx="1" fill="white" fillOpacity="0.3" />
-                    <rect x="50" y="28" width="10" height="8" rx="1" fill="white" fillOpacity="0.2" />
-                    <rect x="15" y="28" width="10" height="8" rx="1" fill="white" fillOpacity="0.2" />
-                  </svg>
-                  <p className={`font-heading font-bold text-lg tracking-tight ${i === 2 ? "text-[#F5F0E8]" : "text-white"}`}>
-                    {card.label}
-                  </p>
-                  <p className={`font-body text-xs mt-1 ${i === 2 ? "text-[#F5F0E8]/60" : "text-white/60"}`}>
-                    {i === 0 ? "$694K median" : i === 1 ? "$585K median" : "$510K–$549K median"}
-                  </p>
-                </motion.div>
-              ))}
+              Buy a Home in Portland — Expert Guidance in Your Language
+            </motion.h1>
+            <motion.p
+              variants={fadeUp}
+              className="mt-6 max-w-xl font-body text-lg leading-relaxed text-[#0A1628]/70 md:text-xl"
+            >
+              Whether you are a first-time buyer or upgrading to your next chapter, Advantage
+              Realty pairs local market expertise with multilingual support to make your purchase
+              smooth and strategic.
+            </motion.p>
+            <motion.div variants={fadeUp} className="mt-10 flex flex-wrap items-center gap-4">
+              <a
+                href="#cta"
+                className="inline-flex items-center rounded-lg bg-[#D4A853] px-7 py-3.5 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:opacity-90"
+              >
+                Start Your Home Search
+              </a>
+              <span className="font-body text-sm text-[#0A1628]/50">
+                No commitment &middot; Free consultation
+              </span>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -246,10 +201,7 @@ export default function BuyPage() {
                     <div className="absolute left-[27px] top-14 h-full w-px bg-[#D4A853]/20" />
                   )}
                   {/* Number */}
-                  <span
-                    className={`relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full font-heading text-2xl font-bold ${i % 2 === 0 ? "bg-[#D4A853] text-[#0A1628]" : "bg-[#2EC4B6] text-white"}`}
-                    style={{ boxShadow: "3px 3px 0 rgba(255,255,255,0.15)" }}
-                  >
+                  <span className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#D4A853]/30 font-heading text-2xl font-bold text-[#D4A853]">
                     {step.num}
                   </span>
                   {/* Content */}
@@ -310,7 +262,7 @@ export default function BuyPage() {
               className="relative aspect-[4/5] overflow-hidden rounded-xl border border-[#E8E2D8]"
             >
               <Image
-                src="/images/home-exterior-craftsman.webp"
+                src="/images/paper-cutout-key-handover.png"
                 alt="Portland home buyer consultation with Advantage Realty"
                 fill
                 className="object-cover object-top"
@@ -363,42 +315,6 @@ export default function BuyPage() {
               ))}
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Visual — Area Photos */}
-      <section className="bg-[#FEFCF8] pb-4">
-        <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
-          <div className="grid md:grid-cols-2 gap-4">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="relative rounded-xl overflow-hidden aspect-[16/9]"
-            >
-              <Image
-                src="/images/happy-valley-residential.webp"
-                alt="Happy Valley residential neighborhood — Portland metro area"
-                fill
-                className="object-cover"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="relative rounded-xl overflow-hidden aspect-[16/9]"
-            >
-              <Image
-                src="/images/lake-oswego-waterfront.webp"
-                alt="Lake Oswego waterfront — premium Portland suburb"
-                fill
-                className="object-cover"
-              />
-            </motion.div>
-          </div>
         </div>
       </section>
 
