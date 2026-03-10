@@ -389,7 +389,7 @@ function AboutCTA() {
             custom={3}
             className="mt-6 text-sm text-[#F3F4F6]/50 font-body"
           >
-            Available in English, Amharic, and Oromo
+            Direct broker access on every deal
           </motion.p>
         </motion.div>
       </div>

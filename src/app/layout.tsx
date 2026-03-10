@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     template: "%s | Advantage Realty LLC",
   },
   description:
-    "Portland-area real estate brokerage specializing in residential sales, investment properties, and adult care home consulting. Multilingual team — English, Oromo, Amharic. Serving Clackamas, Happy Valley, Milwaukie, and the greater Portland metro.",
+    "Family-run brokerage with 16+ years experience. Direct broker access on every deal. Also available in Oromo and Amharic. Serving Clackamas, Happy Valley, Milwaukie, and the greater Portland metro.",
   metadataBase: new URL("https://advantagerealtypdx.com"),
   openGraph: {
     type: "website",

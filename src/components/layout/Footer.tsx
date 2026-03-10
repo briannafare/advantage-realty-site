@@ -46,7 +46,7 @@ export default function Footer() {
             <p className="mt-4 font-body text-sm leading-relaxed text-white/70">
               Portland-area real estate brokerage rooted in community.
               Specializing in residential sales, investment properties, and
-              adult care home consulting — in English, Oromo, and Amharic.
+              adult care home consulting — with direct broker access on every deal. Also available in Oromo and Amharic.
             </p>
             <div className="mt-6 flex gap-3">
               <a

@@ -51,7 +51,7 @@ const stagger = {
 const STATS = [
   { value: "16+", label: "Years in Portland Real Estate" },
   { value: "11+", label: "Metro Communities Served" },
-  { value: "3", label: "Languages — English, Oromo, Amharic" },
+  { value: "3", label: "Brokers — Direct Access, Always" },
   { value: "1", label: "of Few Portland Brokerages Specializing in Care Homes" },
 ];
 
@@ -77,7 +77,7 @@ const STEPS = [
   {
     num: "01",
     title: "Tell Us What Matters",
-    body: "A 15-minute call \u2014 in English, Oromo, or Amharic \u2014 where you share your goals, timeline, and concerns. No pitch. Just listening.",
+    body: "A 15-minute call where you share your goals, timeline, and concerns. No pitch. Just listening. You\u2019ll talk to the broker who handles your deal \u2014 not a sales team.",
   },
   {
     num: "02",
@@ -182,9 +182,9 @@ const MARKET_STATS = [
 
 const FAQS = [
   {
-    question: "Do I need to speak Oromo or Amharic to work with you?",
+    question: "Do your brokers speak languages other than English?",
     answer:
-      "Not at all. We serve clients in English, Oromo, and Amharic. Our multilingual capability simply means more Portland families get expert representation in the language they\u2019re most comfortable with.",
+      "Yes. Huluka and Hunde speak Oromo and Amharic in addition to English. If you prefer to discuss your transaction in either language, they\u2019re happy to accommodate throughout the entire process.",
   },
   {
     question: "What areas of Portland do you cover?",
@@ -267,20 +267,21 @@ function HeroSection() {
           className="flex-1 text-center lg:text-left"
         >
           <span className="mb-4 inline-block rounded-full bg-[#D9F99D] px-4 py-1.5 font-body text-sm font-semibold text-[#111827]">
-            English &middot; Oromo &middot; Amharic
+            Family-Run &middot; Direct Broker Access &middot; 16+ Years
           </span>
 
           <h1 className="mt-4 font-heading text-4xl font-bold leading-[1.1] tracking-tight text-[#111827] sm:text-5xl lg:text-6xl">
-            Portland Real Estate,{" "}
-            <span className="text-gradient-blue">Your Language</span>,{" "}
-            <span className="text-gradient-lime">Your Advantage</span>
+            Portland Real Estate &mdash;{" "}
+            <span className="text-gradient-blue">Broker-Run</span>, Not
+            Corporate-Run
           </h1>
 
           <p className="mx-auto mt-6 max-w-xl font-body text-lg leading-relaxed text-[#374151] lg:mx-0">
-            Stop scrolling listings alone. Huluka and Hunde Abebe have spent
-            16+ years helping Portland families buy, sell, and invest &mdash; in
-            English, Oromo, and Amharic. You&rsquo;ll work directly with your
-            broker. Every call. Every showing. Every negotiation.
+            At big brokerages, you&rsquo;re a file number passed between junior
+            agents. At Advantage Realty, you work directly with your broker
+            &mdash; every call, every showing, every negotiation. Huluka and
+            Hunde Abebe have spent 16+ years getting Portland families into the
+            right homes at the right price.
           </p>
 
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row lg:items-start">
@@ -554,7 +555,7 @@ function TeamSection() {
           className="mx-auto max-w-3xl text-center"
         >
           <h2 className="font-heading text-3xl font-bold text-[#111827] sm:text-4xl lg:text-5xl">
-            Three Brokers. Three Languages.{" "}
+            Three Brokers. Zero Runaround.{" "}
             <span className="text-[#2563EB]">Zero Runaround.</span>
           </h2>
           <p className="mt-5 font-body text-lg text-[#374151]">
@@ -844,7 +845,7 @@ function FinalCtaSection() {
             <ArrowRight className="h-5 w-5" />
           </Link>
           <p className="mt-4 font-body text-sm text-[#93C5FD]">
-            No obligation. Available in English, Oromo &amp; Amharic.
+            No obligation. Talk directly to your broker.
           </p>
         </div>
       </motion.div>

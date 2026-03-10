@@ -4,7 +4,7 @@ import HomePageClient from "./HomePageClient";
 export const metadata: Metadata = {
   title: "Portland Real Estate Agent | Advantage Realty LLC",
   description:
-    "Portland's trilingual real estate team — English, Oromo & Amharic. 16+ years helping families buy, sell & invest across 11 Portland metro communities. Free consultation.",
+    "Family-run Portland brokerage — 16+ years of hands-on market expertise. Direct broker access on every deal. Buying, selling, investment & care home consulting across 11 metro communities.",
 };
 
 export default function HomePage() {

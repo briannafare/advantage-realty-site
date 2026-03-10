@@ -15,7 +15,7 @@ import {
 /* ============================================================
    Metadata (exported from layout or head — kept here for reference)
    title: "Contact Advantage Realty | Portland OR | Free Consultation"
-   description: "Schedule a free real estate consultation with Advantage Realty in Clackamas, OR. Call (503) 793-7520. English, Oromo & Amharic spoken."
+   description: "Schedule a free real estate consultation with Advantage Realty in Clackamas, OR. Call (503) 793-7520. Direct broker access on every deal."
    ============================================================ */
 
 /* ============================================================
@@ -289,7 +289,7 @@ export default function ContactPage() {
             >
               No call centers. No automated menus. No junior associates. When you
               reach out to Advantage Realty, you&apos;re talking to the broker
-              who&apos;ll handle your deal — in English, Oromo, or Amharic.
+              who&apos;ll handle your deal. No runaround. No junior agents.
             </motion.p>
           </motion.div>
         </div>
@@ -420,7 +420,7 @@ export default function ContactPage() {
                     Languages Spoken
                   </p>
                   <p className="text-sm text-[#6B7280]">
-                    English &middot; Oromo &middot; Amharic
+                    Also available in Oromo &amp; Amharic
                   </p>
                 </div>
               </div>

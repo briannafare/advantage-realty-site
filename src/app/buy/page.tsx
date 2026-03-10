@@ -62,7 +62,7 @@ const whyPoints = [
   {
     icon: Globe,
     title: "Trilingual Support",
-    desc: "Contracts, negotiations, and every conversation happen in English, Oromo, or Amharic — whichever you think in.",
+    desc: "Huluka and Hunde are brothers who built this brokerage together. They treat your deal like a family matter — because that's how they operate.",
   },
 ];
 
@@ -131,8 +131,8 @@ const faqs = [
     a: "In most Portland transactions, the seller pays the buyer's agent commission — meaning our guidance costs you nothing out of pocket. We disclose all compensation details upfront before you sign anything.",
   },
   {
-    q: "Can I get help in a language other than English?",
-    a: "Absolutely. We provide full service in English, Amharic, and Oromo — from the first consultation through closing day. Every document, negotiation, and conversation happens in the language you are most comfortable with.",
+    q: "Do your brokers speak languages other than English?",
+    a: "Yes. Huluka and Hunde speak Oromo and Amharic in addition to English. If you prefer to discuss your transaction in either language, they're happy to accommodate throughout the entire process.",
   },
 ];
 
@@ -226,7 +226,7 @@ export default function BuyPage() {
               </motion.div>
 
               <motion.p variants={fadeUp} className="mt-3 text-sm text-[#6B7280]">
-                15 minutes. No obligation. In English, Oromo, or Amharic.
+                15 minutes. No obligation. Talk directly with your broker.
               </motion.p>
             </motion.div>
 
@@ -449,7 +449,7 @@ export default function BuyPage() {
                   <a href="tel:+15037937520" className="font-medium text-[#2563EB] hover:underline">
                     (503) 793-7520
                   </a>{" "}
-                  — we answer in English, Oromo, and Amharic.
+                  — your broker picks up, not a junior agent.
                 </p>
               </div>
               <FaqAccordion items={faqs} />
@@ -512,7 +512,7 @@ export default function BuyPage() {
               </div>
 
               <p className="text-sm text-white/60">
-                English &middot; Oromo &middot; Amharic
+                Direct Broker Access &middot; Always
               </p>
             </motion.div>
           </motion.div>

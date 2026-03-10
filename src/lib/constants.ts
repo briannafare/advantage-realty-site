@@ -4,7 +4,7 @@
 
 export const BRAND = {
   name: "Advantage Realty LLC",
-  tagline: "Portland Real Estate — Your Language, Your Advantage",
+  tagline: "Portland Real Estate — Broker-Run, Not Corporate-Run",
   phone: "(503) 793-7520",
   email: "huluka@advantageor.com",
   address: "13100 SE Sunnyside Rd Suite B, Clackamas, OR 97015",
@@ -191,7 +191,7 @@ export const FAQ_DATA = [
     question:
       "Do you speak languages other than English?",
     answer:
-      "Yes. Our team is fluent in English, Oromo, and Amharic. We serve Portland's diverse communities and ensure nothing gets lost in translation during your biggest financial decision.",
+      "Yes. Huluka and Hunde speak Oromo and Amharic in addition to English. If you prefer to discuss your transaction in either language, they're happy to accommodate.",
   },
 ] as const;
 
@@ -218,7 +218,7 @@ export const LOCAL_BUSINESS_SCHEMA = {
   "@type": "RealEstateAgent",
   name: "Advantage Realty LLC",
   description:
-    "Portland-area real estate brokerage specializing in residential sales, investment properties, and adult care home consulting. Trilingual team — English, Oromo, Amharic.",
+    "Family-run brokerage with 16+ years experience. Direct broker access on every deal. Also available in Oromo and Amharic.",
   url: "https://advantagerealtypdx.com",
   telephone: "+15037937520",
   address: {
