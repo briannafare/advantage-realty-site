@@ -73,7 +73,7 @@ function AboutHero() {
           className="mt-16 relative rounded-2xl overflow-hidden aspect-[21/9]"
         >
           <Image
-            src="/images/team-group-photo.jpg"
+            src="/images/portland-downtown-bridges.webp"
             alt="Advantage Realty LLC team — Senai and Benyam Huluka with the Portland skyline"
             fill
             className="object-cover object-top"
@@ -166,6 +166,7 @@ interface TeamMember {
   phone: string;
   email: string;
   photo: string;
+  initials: string;
   bio: string;
 }
 
@@ -176,7 +177,8 @@ const team: TeamMember[] = [
     languages: ["Amharic", "Oromo", "English"],
     phone: "[CLIENT TO PROVIDE: phone]",
     email: "[CLIENT TO PROVIDE: email]",
-    photo: "/images/senai-huluka.jpg",
+    photo: "",
+    initials: "SH",
     bio: "With over 16 years of Portland real estate experience, Senai leads the team's residential and investment practice. He specializes in buyer representation, market analysis, and care home property acquisitions across the metro. His deep roots in Portland's Ethiopian community and encyclopedic knowledge of Clackamas County neighborhoods make him a go-to resource for families navigating their biggest financial decision.",
   },
   {
@@ -185,7 +187,8 @@ const team: TeamMember[] = [
     languages: ["Amharic", "Oromo", "English"],
     phone: "[CLIENT TO PROVIDE: phone]",
     email: "[CLIENT TO PROVIDE: email]",
-    photo: "/images/benyam-huluka.jpg",
+    photo: "",
+    initials: "BH",
     bio: "Benyam brings sharp negotiation skills and a detail-oriented approach to every transaction. Whether he's helping sellers price competitively in a shifting market or guiding first-time buyers through the inspection process, his focus is always on clear communication and client advocacy. He handles listing strategy, contract negotiation, and the operational side of the team.",
   },
   {
@@ -194,7 +197,8 @@ const team: TeamMember[] = [
     languages: ["Amharic", "Oromo", "English"],
     phone: "[CLIENT TO PROVIDE: phone]",
     email: "[CLIENT TO PROVIDE: email]",
-    photo: "/images/team-member-3.jpg",
+    photo: "",
+    initials: "TM",
     bio: "[CLIENT TO PROVIDE: bio for third team member. If there is no third member, this card can be removed.]",
   },
 ];
@@ -222,14 +226,25 @@ function TeamGrid() {
               transition={{ delay: i * 0.12, duration: 0.6 }}
               className="group"
             >
-              {/* Photo */}
+              {/* Photo or Initials Placeholder */}
               <div className="relative rounded-xl overflow-hidden aspect-[3/4] mb-6">
-                <Image
-                  src={member.photo}
-                  alt={`${member.name} — ${member.role} at Advantage Realty LLC`}
-                  fill
-                  className="object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"
-                />
+                {member.photo ? (
+                  <Image
+                    src={member.photo}
+                    alt={`${member.name} — ${member.role} at Advantage Realty LLC`}
+                    fill
+                    className="object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#0A1628] to-[#1a2a44] flex items-center justify-center">
+                    <span className="text-6xl md:text-7xl font-heading font-bold text-[#D4A853]/80">
+                      {member.initials}
+                    </span>
+                    <p className="absolute bottom-4 left-0 right-0 text-center text-xs text-white/40 font-body">
+                      [CLIENT TO PROVIDE: headshot]
+                    </p>
+                  </div>
+                )}
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#D4A853] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 

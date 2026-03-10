@@ -262,7 +262,7 @@ export default function BuyPage() {
               className="relative aspect-[4/5] overflow-hidden rounded-xl border border-[#E8E2D8]"
             >
               <Image
-                src="/images/buy-benefits.jpg"
+                src="/images/home-exterior-craftsman.webp"
                 alt="Portland home buyer consultation with Advantage Realty"
                 fill
                 className="object-cover object-top"

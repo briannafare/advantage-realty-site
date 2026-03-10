@@ -277,7 +277,7 @@ export default function InvestPage() {
               className="relative aspect-[3/4] rounded-xl overflow-hidden bg-[#F5F0E8] border border-[#E8E2D8]"
             >
               <Image
-                src="/images/jenni-anderson.jpg"
+                src="/images/office-exterior-clackamas.webp"
                 alt="Jenni Anderson — 1031 Exchange Specialist at Advantage Realty"
                 fill
                 className="object-cover object-top"

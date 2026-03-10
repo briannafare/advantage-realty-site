@@ -130,7 +130,7 @@ function Hero() {
               {/* Saffron accent strip on left edge */}
               <div className="absolute left-0 top-0 bottom-0 w-2 bg-[#D4A853] z-10" />
               <Image
-                src="/images/team-huluka.jpg"
+                src="/images/hero-portland-neighborhood.webp"
                 alt="The Huluka family — Advantage Realty LLC team in Portland, Oregon"
                 fill
                 className="object-cover object-top"
@@ -418,7 +418,7 @@ function WhyAdvantage() {
           >
             <div className="rounded-xl overflow-hidden aspect-[4/3] relative">
               <Image
-                src="/images/portland-neighborhood-aerial.webp"
+                src="/images/hero-portland-neighborhood.webp"
                 alt="Portland neighborhood aerial view — communities served by Advantage Realty"
                 fill
                 className="object-cover"
@@ -618,7 +618,7 @@ function MultilingualCTA() {
   return (
     <section className="relative bg-[#0A1628] text-[#F5F0E8] py-20 md:py-32 overflow-hidden">
       {/* Grain overlay */}
-      <div className="absolute inset-0 opacity-[0.04] pointer-events-none bg-[url('/images/grain.png')] bg-repeat" />
+      <div className="absolute inset-0 opacity-[0.04] pointer-events-none bg-[url('/images/grain-overlay-warm.webp')] bg-repeat" />
 
       <div className="relative max-w-3xl mx-auto px-5 md:px-8 text-center">
         <motion.div
