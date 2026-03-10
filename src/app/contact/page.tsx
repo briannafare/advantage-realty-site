@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Phone,
@@ -453,6 +454,26 @@ export default function ContactPage() {
                 ))}
               </div>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Office Exterior Photo */}
+      <section className="bg-[#FEFCF8] py-12">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative rounded-2xl overflow-hidden aspect-[21/9]"
+          >
+            <Image
+              src="/images/office-exterior-clackamas.webp"
+              alt="Advantage Realty LLC office exterior in Clackamas, Oregon"
+              fill
+              className="object-cover"
+            />
           </motion.div>
         </div>
       </section>

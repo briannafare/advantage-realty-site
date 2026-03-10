@@ -156,6 +156,42 @@ export default function InvestPage() {
         </div>
       </section>
 
+      {/* Visual — Investment Property + Clackamas Aerial */}
+      <section className="bg-[#FEFCF8] pt-20 md:pt-28">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
+          <div className="grid md:grid-cols-5 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="md:col-span-3 relative rounded-2xl overflow-hidden aspect-[16/10]"
+            >
+              <Image
+                src="/images/investment-multi-unit.webp"
+                alt="Multi-unit investment property in Portland metro"
+                fill
+                className="object-cover"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="md:col-span-2 relative rounded-2xl overflow-hidden aspect-[16/10]"
+            >
+              <Image
+                src="/images/clackamas-aerial.webp"
+                alt="Aerial view of Clackamas County investment neighborhoods"
+                fill
+                className="object-cover"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* ──────────────────────────────────────────────────────────
           SECTION 2 — Investment Services
           ────────────────────────────────────────────────────────── */}

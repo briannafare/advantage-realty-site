@@ -318,6 +318,42 @@ export default function BuyPage() {
         </div>
       </section>
 
+      {/* Visual — Area Photos */}
+      <section className="bg-[#FEFCF8] pb-4">
+        <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
+          <div className="grid md:grid-cols-2 gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="relative rounded-xl overflow-hidden aspect-[16/9]"
+            >
+              <Image
+                src="/images/happy-valley-residential.webp"
+                alt="Happy Valley residential neighborhood — Portland metro area"
+                fill
+                className="object-cover"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="relative rounded-xl overflow-hidden aspect-[16/9]"
+            >
+              <Image
+                src="/images/lake-oswego-waterfront.webp"
+                alt="Lake Oswego waterfront — premium Portland suburb"
+                fill
+                className="object-cover"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* ━━ 5. TESTIMONIAL ━━ */}
       <section className="bg-[#FEFCF8] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">

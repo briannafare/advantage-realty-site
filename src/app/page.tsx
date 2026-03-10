@@ -418,8 +418,8 @@ function WhyAdvantage() {
           >
             <div className="rounded-xl overflow-hidden aspect-[4/3] relative">
               <Image
-                src="/images/hero-portland-neighborhood.webp"
-                alt="Portland neighborhood aerial view — communities served by Advantage Realty"
+                src="/images/portland-downtown-bridges.webp"
+                alt="Portland downtown bridges — communities served by Advantage Realty"
                 fill
                 className="object-cover"
               />
