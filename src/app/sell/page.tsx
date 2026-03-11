@@ -3,15 +3,35 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import {
+  ChevronDown,
+  TrendingUp,
+  Users,
+  BarChart3,
+  Clock,
+  Search,
+  Target,
+  Camera,
+  Handshake,
+  PartyPopper,
+} from "lucide-react";
+import type { Metadata } from "next";
+
+/* ─── Animation Variants ─── */
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 28 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
 };
 
-const staggerContainer = {
+const stagger = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
+  visible: { transition: { staggerChildren: 0.1 } },
+};
+
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.92 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
 /* ─── Data ─── */
@@ -19,66 +39,79 @@ const staggerContainer = {
 const steps = [
   {
     num: "01",
-    title: "Free Evaluation",
-    desc: "We analyze your home, neighborhood comps, and current market conditions to give you an honest price range.",
+    icon: Search,
+    title: "Free Property Evaluation",
+    desc: "We walk your home, analyze neighborhood comps, and deliver an honest price range — no algorithms, no guesswork.",
   },
   {
     num: "02",
-    title: "Strategic Pricing",
-    desc: "Data-driven pricing that attracts qualified buyers fast — no overpricing that stales, no underpricing that leaves money behind.",
+    icon: Target,
+    title: "Strategic Price Positioning",
+    desc: "Data-driven pricing that generates urgency. We find the number that attracts the strongest offers in the shortest window.",
   },
   {
     num: "03",
+    icon: Camera,
     title: "Professional Marketing",
     desc: "HD photography, virtual tours, targeted digital ads, MLS syndication, and multilingual outreach to maximize exposure.",
   },
   {
     num: "04",
-    title: "Expert Negotiation",
-    desc: "We handle every offer, counter, and contingency — protecting your bottom line at each step.",
+    icon: Handshake,
+    title: "Offer Management & Negotiation",
+    desc: "Every offer, counter, and contingency handled with 16+ years of negotiation experience protecting your bottom line.",
   },
   {
     num: "05",
-    title: "Close with Confidence",
+    icon: PartyPopper,
+    title: "Close Without the Chaos",
     desc: "Full transaction management through closing day. No surprises, no delays, no loose ends.",
   },
 ];
 
 const marketInsights = [
   {
-    title: "Median Home Price Rising",
-    body: "Portland metro median sale price is trending upward year-over-year, signaling strong equity positions for current homeowners.",
+    icon: TrendingUp,
+    title: "Listings Have Doubled",
+    body: "Portland active listings have roughly doubled since December 2025. More competition means your pricing and marketing strategy matter more than ever.",
   },
   {
-    title: "Low Inventory = Seller Leverage",
-    body: "With only 4.3 months of available inventory, Portland remains a market where well-priced homes attract multiple offers.",
+    icon: Users,
+    title: "Buyers Are Still Active",
+    body: "Despite higher inventory, qualified buyers are actively searching. The demand is there — but they have more options to compare against.",
   },
   {
-    title: "Days on Market Shrinking",
-    body: "Competitively priced homes in desirable Portland neighborhoods are going under contract faster than the metro average.",
+    icon: BarChart3,
+    title: "Prices Are Stabilizing",
+    body: "After years of rapid appreciation, Portland prices are leveling. Strategic pricing based on current comps — not last year's gains — is essential.",
   },
   {
-    title: "Buyer Demand Remains Strong",
-    body: "Relocation interest in Portland continues to grow, with remote workers and out-of-state buyers expanding the qualified buyer pool.",
+    icon: Clock,
+    title: "First-Week Performance Is Critical",
+    body: "Homes that don't generate strong interest in the first 7–10 days often require price reductions. Getting it right on day one is everything.",
   },
 ];
 
 const faqs = [
   {
-    q: "How long does it take to sell a home in Portland?",
-    a: "The average days on market varies by neighborhood and price point, but competitively priced homes in the Portland metro typically receive offers within 2 to 4 weeks. From listing to closing, expect 45 to 75 days total.",
+    q: "How long does it take to sell a home in Portland right now?",
+    a: "It depends on pricing and location. Well-priced homes in desirable Portland neighborhoods are going under contract in 2–4 weeks. Overpriced homes are sitting 90+ days. Our job is to make sure yours is in the first category.",
   },
   {
-    q: "How do you determine my home's value?",
-    a: "We run a comparative market analysis (CMA) using recent closed sales, active listings, and expired listings in your immediate area. We also factor in your home's unique features, condition, and current buyer demand patterns.",
+    q: "How do you determine what my home is worth?",
+    a: "We run a broker-level comparative market analysis using recent closed sales, active competition, expired listings, and current buyer demand in your specific neighborhood. Then we walk your home in person to factor in condition, upgrades, and unique features no algorithm can see.",
   },
   {
-    q: "Do I need to make repairs before listing?",
-    a: "Not always. We walk through your home and recommend only high-ROI improvements — the ones that actually increase your net proceeds. Sometimes a deep clean and declutter is all you need.",
+    q: "Should I make repairs or upgrades before listing?",
+    a: "Sometimes — but only if they'll actually increase your net proceeds. During your free evaluation, we'll identify which improvements have real ROI and which ones you can skip. Often a deep clean and declutter is enough.",
   },
   {
     q: "What does it cost to sell with Advantage Realty?",
-    a: "Our commission structure is transparent and competitive. We explain all costs upfront during your free evaluation so there are no surprises at closing. You will know your estimated net proceeds before you list.",
+    a: "Our commission structure is transparent and competitive. We explain every cost upfront during your free evaluation so you know your estimated net proceeds before you ever list. No surprises at closing.",
+  },
+  {
+    q: "What makes Advantage Realty different from other Portland brokerages?",
+    a: "16+ years in the Portland market, multilingual service, and a pricing strategy obsession. We don't just list your home — we position it to sell fast and for top dollar. Every marketing plan is custom, every price recommendation is data-backed.",
   },
 ];
 
@@ -88,23 +121,22 @@ function FaqAccordion({ items }: { items: { q: string; a: string }[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="divide-y divide-[#E8E2D8]">
+    <div className="divide-y divide-[#E0DDD6]">
       {items.map((item, i) => {
         const isOpen = openIndex === i;
         return (
           <div key={i}>
             <button
               onClick={() => setOpenIndex(isOpen ? null : i)}
-              className="flex w-full items-center justify-between py-5 text-left font-heading text-lg font-bold tracking-tight text-[#0A1628] md:text-xl"
+              className="flex w-full items-center justify-between gap-4 py-6 text-left text-lg font-semibold text-[#141414] md:text-xl"
               aria-expanded={isOpen}
             >
               {item.q}
-              <span
-                className="ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#E8E2D8] text-[#D4A853] transition-transform duration-300"
-                style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)" }}
-              >
-                +
-              </span>
+              <ChevronDown
+                className={`h-5 w-5 shrink-0 text-[#C9E83A] transition-transform duration-300 ${
+                  isOpen ? "rotate-180" : ""
+                }`}
+              />
             </button>
             <motion.div
               initial={false}
@@ -112,9 +144,7 @@ function FaqAccordion({ items }: { items: { q: string; a: string }[] }) {
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className="overflow-hidden"
             >
-              <p className="pb-5 font-body text-[#0A1628]/70 leading-relaxed">
-                {item.a}
-              </p>
+              <p className="pb-6 text-[#505050] leading-relaxed">{item.a}</p>
             </motion.div>
           </div>
         );
@@ -128,105 +158,74 @@ function FaqAccordion({ items }: { items: { q: string; a: string }[] }) {
 export default function SellPage() {
   return (
     <main>
-      {/* ━━ 1. HERO ━━ */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32 overflow-hidden">
+      {/* ━━ HERO — Split Layout ━━ */}
+      <section className="bg-[#FFFFFF] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
-          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
-            <motion.div
-              className="lg:col-span-3"
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <motion.p
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="grid items-center gap-12 md:grid-cols-2 md:gap-16"
+          >
+            {/* Left — Text */}
+            <div>
+              <motion.div
                 variants={fadeUp}
-                className="mb-4 font-body text-sm font-medium uppercase tracking-widest text-[#D4A853]"
+                className="mb-5 inline-flex items-center rounded-full bg-[#F0F7DC] px-4 py-1.5 text-sm font-semibold text-[#505050]"
               >
                 Portland Home Sellers
-              </motion.p>
+              </motion.div>
               <motion.h1
                 variants={fadeUp}
-                className="font-heading text-5xl font-bold tracking-tight text-[#0A1628] md:text-7xl"
+                className="text-4xl font-bold leading-[1.1] tracking-tight text-[#141414] sm:text-5xl lg:text-6xl"
               >
-                Sell Your Portland Home — Strategic Pricing, Maximum Value
+                Sell Your Portland Home for What It&apos;s Actually Worth
               </motion.h1>
               <motion.p
                 variants={fadeUp}
-                className="mt-6 max-w-xl font-body text-lg leading-relaxed text-[#0A1628]/70 md:text-xl"
+                className="mt-6 max-w-lg text-lg leading-relaxed text-[#505050]"
               >
-                Your home is likely your largest asset. Advantage Realty combines hyper-local market
-                knowledge with proven marketing strategies to get you the strongest possible return.
+                Portland listings doubled since December 2025. In a market with more
+                competition, the difference between selling in 30 days and sitting for 90
+                comes down to one thing: pricing strategy. Get yours right from day one.
               </motion.p>
-              <motion.div variants={fadeUp} className="mt-10 flex flex-wrap items-center gap-4">
+              <motion.div variants={fadeUp} className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a
                   href="#cta"
-                  className="inline-flex items-center rounded-lg bg-[#D4A853] px-7 py-3.5 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:opacity-90"
+                  className="inline-flex items-center justify-center rounded-lg bg-[#C9E83A] px-7 py-3.5 text-sm font-bold text-[#1D3B22] transition hover:bg-[#B6D82A]"
                 >
                   Get Your Free Property Evaluation
                 </a>
-                <span className="font-body text-sm text-[#0A1628]/50">
-                  No obligation &middot; Takes 2 minutes
+                <span className="text-sm text-[#505050]">
+                  Broker-assessed. Data-driven. No obligation.
                 </span>
               </motion.div>
-            </motion.div>
+            </div>
 
-            {/* Paper cut-out rising chart illustration */}
+            {/* Right — Image */}
             <motion.div
-              className="lg:col-span-2 hidden lg:block"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              variants={scaleIn}
+              className="relative aspect-[4/5] overflow-hidden rounded-[22px]"
             >
-              <div className="relative bg-[#0A1628] rounded-2xl p-8 overflow-hidden" style={{ boxShadow: "8px 8px 0 #2EC4B6" }}>
-                <div className="absolute inset-0 habesha-pattern opacity-30" />
-                <div className="relative">
-                  <p className="font-heading font-bold text-[#F5F0E8] text-sm tracking-widest uppercase mb-6">
-                    Portland Seller&apos;s Market
-                  </p>
-                  {/* Animated bar chart */}
-                  <div className="flex items-end gap-3 h-48">
-                    {[
-                      { h: "45%", label: "Q1", color: "#D4A853" },
-                      { h: "55%", label: "Q2", color: "#D4A853" },
-                      { h: "50%", label: "Q3", color: "#D4A853" },
-                      { h: "70%", label: "Q4", color: "#2EC4B6" },
-                      { h: "85%", label: "Now", color: "#D4A853" },
-                    ].map((bar, i) => (
-                      <motion.div
-                        key={bar.label}
-                        className="flex-1 flex flex-col items-center gap-2"
-                        initial={{ scaleY: 0 }}
-                        whileInView={{ scaleY: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.4 + i * 0.1, duration: 0.6, ease: "easeOut" }}
-                        style={{ originY: 1 }}
-                      >
-                        <div
-                          className="w-full rounded-t-md"
-                          style={{ height: bar.h, backgroundColor: bar.color, boxShadow: "3px 0 0 rgba(0,0,0,0.15)" }}
-                        />
-                        <span className="text-[#F5F0E8]/50 font-body text-xs">{bar.label}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                  <div className="mt-4 pt-4 border-t border-[#F5F0E8]/10 flex justify-between">
-                    <span className="font-heading font-bold text-[#D4A853] text-2xl">4.3</span>
-                    <span className="font-body text-[#F5F0E8]/50 text-sm self-end">months inventory</span>
-                  </div>
-                </div>
-              </div>
+              <Image
+                src="/images/img-neighborhood-aerial.jpg"
+                alt="Aerial view of Portland residential neighborhood"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* ━━ 2. VALUE PROP + STAT ━━ */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      {/* ━━ PRICING SECTION ━━ */}
+      <section className="bg-[#FFFFFF] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
-            variants={staggerContainer}
+            variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
@@ -236,230 +235,242 @@ export default function SellPage() {
             <div>
               <motion.h2
                 variants={fadeUp}
-                className="font-heading text-3xl font-bold tracking-tight text-[#0A1628] md:text-5xl"
+                className="text-3xl font-bold tracking-tight text-[#141414] md:text-5xl"
               >
-                Pricing Your Home Right Is Everything
+                In Portland&apos;s 2026 Market, Pricing Is the Entire Game
               </motion.h2>
               <motion.p
                 variants={fadeUp}
-                className="mt-6 font-body text-lg leading-relaxed text-[#0A1628]/70"
+                className="mt-6 text-lg leading-relaxed text-[#505050]"
               >
-                Overprice and your listing sits — losing momentum and buyer trust. Underprice and
-                you leave real money on the table. Our comparative market analysis pinpoints the
-                price that attracts the strongest offers in the shortest time.
+                Overprice by even 3–5% and your listing stalls — losing momentum, buyer
+                interest, and ultimately selling for less than it would have at the right
+                price. Underprice and you leave real equity on the table.
               </motion.p>
               <motion.p
                 variants={fadeUp}
-                className="mt-4 font-body leading-relaxed text-[#0A1628]/70"
+                className="mt-4 leading-relaxed text-[#505050]"
               >
-                Every pricing recommendation is backed by neighborhood-level sales data, active
-                inventory analysis, and real buyer demand signals — not guesswork.
+                Our broker-level comparative market analysis pinpoints the price that
+                generates urgency and attracts the strongest offers in the shortest
+                window. Every recommendation is backed by neighborhood-level sales data,
+                active inventory analysis, and real buyer demand signals — not guesswork
+                and not an algorithm.
               </motion.p>
             </div>
 
             {/* Right — Big Stat */}
             <motion.div
-              variants={fadeUp}
-              className="flex flex-col items-center rounded-xl border border-[#E8E2D8] bg-white p-12 text-center"
-              style={{ boxShadow: "6px 6px 0 rgba(46,196,182,0.2)" }}
+              variants={scaleIn}
+              className="flex flex-col items-center rounded-[22px] border border-[#E0DDD6] bg-[#F8F6F1] p-12 text-center md:p-16"
             >
-              <span className="font-heading text-7xl font-bold tracking-tight text-[#D4A853] md:text-8xl">
-                4.3
+              <span className="text-8xl font-bold tracking-tight text-[#5BB5D8] md:text-9xl">
+                ~$525K
               </span>
-              <span className="mt-2 font-heading text-xl font-bold tracking-tight text-[#0A1628]">
-                months of inventory
+              <span className="mt-3 text-xl font-bold tracking-tight text-[#141414]">
+                Portland Metro Median
               </span>
-              <p className="mt-3 max-w-xs font-body text-sm leading-relaxed text-[#0A1628]/50">
-                Portland metro housing supply remains below the 6-month balanced market threshold —
-                giving sellers meaningful leverage.
+              <p className="mt-3 max-w-xs text-sm leading-relaxed text-[#505050]">
+                The median sale price as of early 2026. Where your home falls relative to
+                this number shapes everything — marketing strategy, buyer pool, and
+                timeline.
               </p>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* ━━ 3. PROCESS ━━ */}
-      <section className="bg-[#0A1628] py-20 md:py-32">
+      {/* ━━ 5-STEP PROCESS ━━ */}
+      <section className="bg-[#F2F0EA] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
-            variants={staggerContainer}
+            variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.15 }}
           >
             <motion.h2
               variants={fadeUp}
-              className="font-heading text-3xl font-bold tracking-tight text-[#F5F0E8] md:text-5xl"
+              className="text-3xl font-bold tracking-tight text-[#141414] md:text-5xl"
             >
-              How We Sell Your Home
+              From Evaluation to Closing — 5 Steps
             </motion.h2>
             <motion.p
               variants={fadeUp}
-              className="mt-4 max-w-xl font-body text-lg text-[#F5F0E8]/60"
+              className="mt-4 max-w-xl text-lg text-[#505050]"
             >
-              A five-step process designed to maximize your sale price and minimize your stress.
+              A clear, repeatable process designed to maximize your sale price and
+              minimize your stress.
             </motion.p>
 
-            <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-              {steps.map((step) => (
-                <motion.div
-                  key={step.num}
-                  variants={fadeUp}
-                  className="rounded-xl border border-[#F5F0E8]/10 bg-[#F5F0E8]/5 p-6"
-                >
-                  <span
-                    className={`inline-flex items-center justify-center w-10 h-10 rounded-lg font-heading text-lg font-bold ${Number(step.num) % 2 === 0 ? "bg-[#2EC4B6] text-white" : "bg-[#D4A853] text-[#0A1628]"}`}
-                    style={{ boxShadow: "3px 3px 0 rgba(255,255,255,0.1)" }}
+            <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+              {steps.map((step) => {
+                const Icon = step.icon;
+                return (
+                  <motion.div
+                    key={step.num}
+                    variants={fadeUp}
+                    className="group rounded-[22px] bg-[#FFFFFF] p-6 transition hover:shadow-lg"
                   >
-                    {step.num}
-                  </span>
-                  <h3 className="mt-4 font-heading text-lg font-bold tracking-tight text-[#F5F0E8]">
-                    {step.title}
-                  </h3>
-                  <p className="mt-2 font-body text-sm leading-relaxed text-[#F5F0E8]/50">
-                    {step.desc}
-                  </p>
-                </motion.div>
-              ))}
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#F0F7DC]">
+                      <Icon className="h-5 w-5 text-[#C9E83A]" />
+                    </div>
+                    <span className="mt-5 block text-4xl font-bold text-[#E0DDD6] group-hover:text-[#C9E83A] transition-colors">
+                      {step.num}
+                    </span>
+                    <h3 className="mt-2 text-lg font-bold tracking-tight text-[#141414]">
+                      {step.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-[#505050]">
+                      {step.desc}
+                    </p>
+                  </motion.div>
+                );
+              })}
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* ━━ 4. MARKET DATA ━━ */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      {/* ━━ MARKET CONTEXT — Dark Section ━━ */}
+      <section className="bg-[#1D3B22] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
-            variants={staggerContainer}
+            variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
             <motion.h2
               variants={fadeUp}
-              className="font-heading text-3xl font-bold tracking-tight text-[#0A1628] md:text-5xl"
+              className="text-3xl font-bold tracking-tight text-white md:text-5xl"
             >
-              What Portland Sellers Need to Know in 2026
+              What Portland Sellers Need to Know Right Now
             </motion.h2>
+            <motion.p
+              variants={fadeUp}
+              className="mt-4 max-w-xl text-lg text-white/50"
+            >
+              The market has shifted. Here&apos;s what the data says heading into spring
+              2026.
+            </motion.p>
 
-            <div className="mt-12 grid gap-4 sm:grid-cols-2">
-              {marketInsights.map((insight, i) => (
-                <motion.div
-                  key={i}
-                  variants={fadeUp}
-                  className="rounded-xl border border-[#E8E2D8] bg-white p-8"
-                >
-                  <div className="flex items-start gap-4">
-                    <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#D4A853]/10 font-heading text-sm font-bold text-[#D4A853]">
-                      {i + 1}
-                    </span>
-                    <div>
-                      <h3 className="font-heading text-lg font-bold tracking-tight text-[#0A1628]">
-                        {insight.title}
-                      </h3>
-                      <p className="mt-2 font-body text-sm leading-relaxed text-[#0A1628]/60">
-                        {insight.body}
-                      </p>
+            <div className="mt-14 grid gap-5 sm:grid-cols-2">
+              {marketInsights.map((insight, i) => {
+                const Icon = insight.icon;
+                return (
+                  <motion.div
+                    key={i}
+                    variants={fadeUp}
+                    className="rounded-[22px] border border-white/10 bg-white/5 p-8"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#C9E83A]/15">
+                        <Icon className="h-5 w-5 text-[#C9E83A]" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold tracking-tight text-white">
+                          {insight.title}
+                        </h3>
+                        <p className="mt-2 text-sm leading-relaxed text-white/50">
+                          {insight.body}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                );
+              })}
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* ━━ 5. TESTIMONIAL ━━ */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      {/* ━━ TESTIMONIAL ━━ */}
+      <section className="bg-[#FFFFFF] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
-            variants={staggerContainer}
+            variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="mx-auto max-w-3xl text-center"
+            className="mx-auto max-w-3xl"
           >
-            <motion.span
+            <motion.div
               variants={fadeUp}
-              className="mb-6 block font-heading text-5xl text-[#D4A853]"
+              className="rounded-[22px] border-l-4 border-[#2A5430] bg-[#F8F6F1] p-10 md:p-14"
             >
-              &ldquo;
-            </motion.span>
-            <motion.blockquote
-              variants={fadeUp}
-              className="font-accent text-2xl leading-snug text-[#0A1628] md:text-3xl"
-            >
-              They handled everything — pricing, staging advice, marketing, negotiations. We sold
-              above asking and closed in under 30 days. Could not have asked for a better
-              experience.
-            </motion.blockquote>
-            <motion.p variants={fadeUp} className="mt-8 font-heading text-sm font-bold text-[#D4A853]">
-              Guteta
-            </motion.p>
-            <motion.p variants={fadeUp} className="font-body text-sm text-[#0A1628]/50">
-              Home Seller, Portland
-            </motion.p>
+              <blockquote className="text-2xl font-medium leading-snug text-[#141414] md:text-3xl">
+                &ldquo;They handled everything — pricing, staging advice, marketing,
+                negotiations. We sold above asking and closed in under 30 days. Could not
+                have asked for a better experience.&rdquo;
+              </blockquote>
+              <div className="mt-8">
+                <p className="text-sm font-bold text-[#2A5430]">Bezu</p>
+                <p className="text-sm text-[#505050]">Home Seller, Portland</p>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* ━━ 6. FAQ ━━ */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      {/* ━━ FAQ ━━ */}
+      <section className="bg-[#F8F6F1] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
-            variants={staggerContainer}
+            variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
             <motion.h2
               variants={fadeUp}
-              className="font-heading text-3xl font-bold tracking-tight text-[#0A1628] md:text-5xl"
+              className="text-3xl font-bold tracking-tight text-[#141414] md:text-5xl"
             >
-              Common Seller Questions
+              Selling in Portland — Your Questions Answered
             </motion.h2>
-            <motion.div variants={fadeUp} className="mt-12 max-w-2xl">
+            <motion.div variants={fadeUp} className="mt-12 max-w-3xl rounded-[22px] bg-[#FFFFFF] p-8 md:p-10">
               <FaqAccordion items={faqs} />
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* ━━ 7. CTA ━━ */}
-      <section id="cta" className="bg-[#0A1628] py-20 md:py-32">
+      {/* ━━ FINAL CTA ━━ */}
+      <section id="cta" className="bg-[#FFFFFF] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
-            variants={staggerContainer}
+            variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="mx-auto max-w-2xl text-center"
+            className="bg-[#141414] rounded-[22px] max-w-5xl mx-auto px-8 py-20 md:py-24 text-center"
           >
             <motion.h2
               variants={fadeUp}
-              className="font-heading text-3xl font-bold tracking-tight text-[#F5F0E8] md:text-5xl"
+              className="text-3xl font-bold tracking-tight text-white md:text-5xl"
             >
-              Find Out What Your Home Is Worth — No Obligation
+              A 15-Minute Conversation Could Be Worth Thousands
             </motion.h2>
             <motion.p
               variants={fadeUp}
-              className="mt-6 font-body text-lg leading-relaxed text-[#F5F0E8]/60"
+              className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70"
             >
-              Get a free, data-backed property evaluation from a team that knows Portland
-              neighborhoods inside and out.
+              Get a free, broker-assessed property evaluation from a team with 16+ years
+              of Portland market expertise. No pressure, no obligation — just a clear
+              picture of what your home is worth and the best strategy to sell it.
             </motion.p>
             <motion.div variants={fadeUp} className="mt-10 flex flex-col items-center gap-4">
               <a
                 href="/contact"
-                className="inline-flex items-center rounded-lg bg-[#D4A853] px-8 py-4 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:opacity-90"
+                className="inline-flex items-center justify-center rounded-lg border border-white bg-transparent px-8 py-4 text-sm font-bold text-white transition hover:bg-white hover:text-[#141414]"
               >
                 Get Your Free Evaluation
               </a>
               <a
-                href="tel:+15035551234"
-                className="font-body text-sm text-[#F5F0E8]/50 transition hover:text-[#D4A853]"
+                href="tel:+15037937520"
+                className="text-sm text-white/50 transition hover:text-white"
               >
-                Or call: [CLIENT TO PROVIDE: phone number]
+                Or call: (503) 793-7520
               </a>
             </motion.div>
           </motion.div>

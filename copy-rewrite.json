@@ -1,0 +1,735 @@
+{
+  "meta": {
+    "client_slug": "advantage-realty",
+    "created_date": "2026-03-10",
+    "copy_version": "2.0",
+    "hero_formulas_used": {
+      "home": "Problem → Solution",
+      "buy": "Transformation Promise",
+      "sell": "Bold Outcome Statement",
+      "invest": "Contrarian Hook",
+      "care_home": "Problem → Solution",
+      "contact": "Transformation Promise"
+    },
+    "tone": "Warm but direct. Client-centric ('you/your' default). Benefits over features. Portland-rooted. Culturally grounded without being heavy-handed. Every section drives toward conversion.",
+    "seo_notes": "All H1s geo-targeted and under 60 chars. Meta titles under 60 chars. Meta descriptions under 160 chars. FAQ answers 40-60 words, answer-first. Entity signals woven throughout."
+  },
+  "home": {
+    "meta_title": "Portland Real Estate Agent | Advantage Realty LLC",
+    "meta_description": "Family-run Portland brokerage — 16+ years of hands-on market expertise. Direct broker access on every deal. Buying, selling, investment & care home consulting across 11 metro communities.",
+    "hero": {
+      "h1": "Portland Real Estate — Broker-Run, Not Corporate-Run",
+      "subheadline": "At big brokerages, you're a file number passed between junior agents. At Advantage Realty, you work directly with your broker — every call, every showing, every negotiation. Huluka and Hunde Abebe have spent 16+ years getting Portland families into the right homes at the right price.",
+      "cta_text": "Schedule Your Free Consultation",
+      "cta_subtext": "No obligation. Just a 15-minute conversation about your goals."
+    },
+    "social_proof_bar": {
+      "stats": [
+        { "number": "16+", "label": "Years in Portland Real Estate" },
+        { "number": "11+", "label": "Metro Communities Served" },
+        { "number": "3", "label": "Brokers — Direct Access, Always" },
+        { "number": "1", "label": "of Few Portland Teams Specializing in Care Homes" }
+      ]
+    },
+    "problem_section": {
+      "headline": "Portland's Market Is Shifting. Most Agents Haven't Caught Up.",
+      "body": "Inventory doubled since December 2025. Buyers are writing 38% more offers. And yet — most agents are still running the same playbook from 2021. If you've been handed a generic MLS search, ghosted after your first showing, or told to 'just be patient' while your dream home sells to someone else — that's not bad luck. That's the wrong agent.",
+      "points": [
+        {
+          "icon": "search-x",
+          "title": "Wasting weekends on homes that don't fit",
+          "description": "You spend Saturday touring 6 houses. Three are wrong before you walk in the door. Your agent never previewed them."
+        },
+        {
+          "icon": "users-x",
+          "title": "Feeling like transaction #47, not a person",
+          "description": "Big brokerages pass you to junior associates. You leave voicemails that get returned two days later."
+        },
+        {
+          "icon": "clock",
+          "title": "Waiting days for your agent to return a call",
+          "description": "The listing you loved just went pending while your agent was 'in a meeting.' When the market moves fast, access to your broker isn't optional — it's everything."
+        }
+      ]
+    },
+    "solution_section": {
+      "headline": "Three Steps to Confident Real Estate Decisions",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Tell Us What Matters",
+          "description": "A 15-minute call where you share your goals, timeline, and concerns. No pitch. Just listening. You'll talk to the broker who handles your deal — not a sales team."
+        },
+        {
+          "number": "02",
+          "title": "Get a Strategy Built Around You",
+          "description": "Not a template. A personalized plan backed by 16+ years of Portland market data, built for your specific situation."
+        },
+        {
+          "number": "03",
+          "title": "Move Forward with Expert Support",
+          "description": "Your dedicated broker handles previews, negotiations, paperwork, and every detail through closing. You focus on your life."
+        }
+      ],
+      "cta_text": "Start With Step One →"
+    },
+    "services": {
+      "headline": "Six Ways to Win in Portland Real Estate",
+      "items": [
+        {
+          "title": "Find Your Portland Home",
+          "description": "Skip the wasted weekends. Your broker previews every property first — so every showing is worth your time. From Happy Valley to Lake Oswego, you'll see only homes that match your criteria and your budget.",
+          "cta": "Explore Buying →"
+        },
+        {
+          "title": "Sell for Maximum Value",
+          "description": "In a market where listings doubled overnight, pricing strategy is everything. Get a data-driven property evaluation — not an algorithm guess — and a marketing plan designed to attract serious buyers fast.",
+          "cta": "Get Your Free Evaluation →"
+        },
+        {
+          "title": "Build Your Investment Portfolio",
+          "description": "Whether it's your first rental in Gresham or a multi-unit play in Clackamas, you'll get deal analysis focused on cash flow, appreciation, and long-term wealth — not hype.",
+          "cta": "Explore Investing →"
+        },
+        {
+          "title": "Navigate Care Home Investment",
+          "description": "Oregon's care home licensing requirements trip up most investors and most agents. You'll work with one of the only Portland teams that understands OAR 411-054, ADA compliance, and what inspectors actually look for.",
+          "cta": "See Care Home Services →"
+        },
+        {
+          "title": "Execute a 1031 Exchange",
+          "description": "Defer capital gains and keep your investment capital moving. Jenni Anderson handles the strict IRS timelines and property identification rules so nothing falls through the cracks.",
+          "cta": "Ask About 1031 Exchanges →"
+        },
+        {
+          "title": "Know Your Home's Real Value",
+          "description": "Curious what your Portland home is worth right now? Get a broker-assessed property evaluation — based on actual comparable sales and current market conditions. Free. No strings.",
+          "cta": "Request Your Evaluation →"
+        }
+      ]
+    },
+    "team": {
+      "headline": "Three Brokers. Zero Runaround.",
+      "subheadline": "When you call, the person who answers is the person handling your deal. That's how a family-run brokerage works. Also available in Oromo and Amharic.",
+      "members": [
+        {
+          "name": "Huluka Abebe",
+          "role": "Principal Broker",
+          "experience": "16+ years",
+          "languages": "English, Oromo, Amharic",
+          "phone": "(503) 793-7520",
+          "email": "huluka@advantageor.com",
+          "bio": "Huluka co-founded Advantage Realty because families deserve more than a corporate experience. As Principal Broker, he oversees every transaction with the same hands-on attention — whether you're buying your first condo in Milwaukie or investing in care home properties across Clackamas County. His clients describe him as organized, honest, and relentless at negotiation.",
+          "license": "[CLIENT TO PROVIDE: Oregon license number]"
+        },
+        {
+          "name": "Hunde Abebe",
+          "role": "Broker & Co-Founder",
+          "experience": "16+ years",
+          "languages": "English, Oromo, Amharic",
+          "phone": "(503) 449-4362",
+          "email": "hunde@advantageor.com",
+          "bio": "Hunde has one reputation in Portland real estate: he goes above and beyond. Every time. He takes the time to understand your goals before showing you a single property — then doesn't stop until you've achieved them. His expertise spans residential buying, investment properties, and care home facility acquisition.",
+          "license": "[CLIENT TO PROVIDE: Oregon license number]"
+        },
+        {
+          "name": "Jenni Anderson",
+          "role": "Broker & 1031 Exchange Specialist",
+          "experience": "10+ years in project management & client services",
+          "languages": "English",
+          "phone": "(503) 508-8779",
+          "email": "jenni@advantageor.com",
+          "bio": "A native Oregonian with international experience, Jenni brings a project manager's precision to real estate. Her specialty — 1031 tax-deferred exchanges — demands exactness with IRS timelines and qualification rules. She's the person who makes sure nothing falls through the cracks in your transaction.",
+          "license": "[CLIENT TO PROVIDE: Oregon license number]"
+        }
+      ]
+    },
+    "testimonials": {
+      "headline": "Don't Take Our Word for It",
+      "items": [
+        {
+          "quote": "Huluka and his team are very organized and have a good understanding of what a buyer's needs are in the home buying process. The process went efficiently and effectively with inspections, appraisal, and escrow. I'm 100% satisfied with the home I purchased, and the fantastic deal Huluka helped me get.",
+          "author": "Tilahun S.",
+          "context": "Home Buyer"
+        },
+        {
+          "quote": "Hunde assisted me in finding the perfect home, and I couldn't be happier with my experience dealing with him. Look no farther than Hunde if you want a real estate professional that will go above and beyond to achieve your goals.",
+          "author": "Guteta",
+          "context": "Home Buyer"
+        },
+        {
+          "quote": "You will be well served with Hunde and Huluka with your real estate needs, especially in the adult care business.",
+          "author": "Timothy & Tsehay Smith",
+          "context": "Care Home Investors"
+        }
+      ]
+    },
+    "market_snapshot": {
+      "headline": "Portland Market — What Smart Buyers and Sellers Know Right Now",
+      "stats": [
+        { "label": "Portland Metro Median Home Price", "value": "$510K–$549K", "source": "Zillow, Redfin — Q1 2026" },
+        { "label": "Current Inventory", "value": "4.3 months", "note": "Most buyer-friendly level in years" },
+        { "label": "Happy Valley Median", "value": "$694K", "source": "Zillow Home Value Index 2026" },
+        { "label": "Clackamas Median", "value": "$585K", "source": "Zillow Home Value Index 2026" },
+        { "label": "New Listing Growth", "value": "2x", "note": "Listings doubled from Dec 2025" }
+      ],
+      "insight": "Portland's 2026 market is the most balanced it's been in years. Prices are stabilizing, inventory is rising, and buyers put 38% more homes under contract in early 2026. Whether you're buying, selling, or investing — the window is open. The question is what you do with it.",
+      "cta_text": "Talk Strategy With a Local Expert →"
+    },
+    "faq": {
+      "headline": "Portland Real Estate — Answers to Your Questions",
+      "items": [
+        {
+          "question": "How much does it cost to work with a buyer's agent in Portland?",
+          "answer": "In most Portland transactions, buyer's agent compensation is covered by the seller's side — meaning no out-of-pocket cost to you as a buyer. During your free consultation, we'll explain exactly how compensation works for your specific situation so there are no surprises."
+        },
+        {
+          "question": "What Portland metro neighborhoods does Advantage Realty serve?",
+          "answer": "We serve the entire Portland metropolitan area from our Clackamas office — including Portland, Happy Valley, Lake Oswego, West Linn, Tigard, Beaverton, Hillsboro, Milwaukie, Oregon City, Gresham, and Tualatin. That's roughly a 30-mile radius covering 11+ communities."
+        },
+        {
+          "question": "Do your brokers speak languages other than English?",
+          "answer": "Yes. Huluka and Hunde Abebe speak Oromo and Amharic in addition to English. If you prefer to discuss your transaction in either language, they're happy to accommodate — from initial consultation through closing day."
+        },
+        {
+          "question": "Is now a good time to buy a home in Portland in 2026?",
+          "answer": "Portland's 2026 market is the most buyer-friendly in years. Inventory hit 4.3 months, new listings doubled from December 2025, and prices are stabilizing. If you've been waiting for better conditions to buy or invest, this is the window. Schedule a free consultation and we'll assess your specific timing."
+        },
+        {
+          "question": "What makes Advantage Realty different from larger Portland brokerages?",
+          "answer": "Direct broker access — you always work with the person handling your deal, never a junior associate or call center. A family-run team with 16+ years of Portland market knowledge. And specialized care home investment expertise that most brokerages can't offer. We also speak Oromo and Amharic."
+        },
+        {
+          "question": "Do you help with care home property investment in Oregon?",
+          "answer": "Care home investment is one of our core specialties. We help investors find properties meeting Oregon's OAR 411-054 licensing requirements, ADA accessibility standards, and building codes. Very few Portland brokerages understand these regulations — we've studied them for 16+ years."
+        }
+      ]
+    },
+    "final_cta": {
+      "headline": "Your Next Move Starts With a Conversation",
+      "body": "Buying, selling, investing, or exploring care home properties — whatever brought you here, the next step is the same. A free, no-pressure consultation where you talk and your broker listens.",
+      "cta_text": "Schedule Your Free Consultation",
+      "cta_subtext": "Or call Huluka directly: (503) 793-7520"
+    }
+  },
+  "buy": {
+    "meta_title": "Buy a Home in Portland OR | Advantage Realty",
+    "meta_description": "Find your Portland home with a dedicated buyer's broker. Pre-vetted showings, expert negotiation & 16+ years of local market knowledge. Free buyer consultation — call (503) 793-7520.",
+    "hero": {
+      "h1": "Buy a Home in Portland — Without the Stress",
+      "subheadline": "Your weekends shouldn't be spent touring homes that were wrong before you walked in. With Advantage Realty, every showing is pre-vetted by your broker, every offer is strategic, and you'll never be passed to a junior agent mid-deal.",
+      "cta_text": "Schedule a Free Buyer Consultation",
+      "cta_subtext": "15 minutes. No obligation. Talk directly with your broker."
+    },
+    "why_local_agent": {
+      "headline": "Portland Is 11 Markets in One. You Need a Guide Who Knows Them All.",
+      "body": "Happy Valley's $694K median is a different world from Gresham's entry-level market. Lake Oswego's lakefront lots play by different rules than Oregon City's historic neighborhoods. Beaverton's tech-driven demand shifts quarterly. A Portland buyer's agent who actually lives in this market — who has spent 16+ years tracking these micro-markets — spots the right opportunity before it hits your inbox.",
+      "points": [
+        {
+          "title": "Pre-vetted showings save your time",
+          "description": "Your broker tours properties before you do. If it doesn't match your criteria, you'll never waste a Saturday on it."
+        },
+        {
+          "title": "Negotiation backed by local data",
+          "description": "Not gut feelings — actual comparable sales, days-on-market trends, and seller motivation signals specific to your target neighborhood."
+        },
+        {
+          "title": "Direct broker access, always",
+          "description": "When a new listing drops at 9 PM on a Tuesday, you're texting your actual broker — not leaving a message with a receptionist."
+        },
+        {
+          "title": "Family-run means family-level attention",
+          "description": "Huluka and Hunde are brothers who built this brokerage together. They treat your deal like a family matter — because that's how they operate."
+        }
+      ],
+      "cta_text": "Start Your Home Search →"
+    },
+    "process": {
+      "headline": "Five Steps From Search to Keys in Hand",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Discovery Call",
+          "description": "Share your goals, budget, preferred neighborhoods, and non-negotiables. You're talking to the broker who handles your deal — not a sales team."
+        },
+        {
+          "number": "02",
+          "title": "Custom Search Strategy",
+          "description": "No generic MLS alerts. We build a targeted search based on your specific criteria, market timing, and 16 years of neighborhood knowledge."
+        },
+        {
+          "number": "03",
+          "title": "Pre-Vetted Showings",
+          "description": "Your broker tours properties before you do. You'll only visit homes that genuinely match what you're looking for — no filler."
+        },
+        {
+          "number": "04",
+          "title": "Strategic Offer & Negotiation",
+          "description": "When you find the one, we craft an offer backed by real-time market data — competitive enough to win, smart enough to protect your interests."
+        },
+        {
+          "number": "05",
+          "title": "Inspections to Keys",
+          "description": "Inspections, appraisals, title, escrow — your broker manages every detail through closing day. You plan your move-in."
+        }
+      ]
+    },
+    "neighborhoods": {
+      "headline": "Portland Communities We Know Street by Street",
+      "areas": [
+        { "name": "Happy Valley", "median": "$694K", "highlight": "Top-rated schools, premium east-side living. Families willing to invest in quality of life." },
+        { "name": "Clackamas", "median": "$585K", "highlight": "Our home base. We know every street, every development, every trend." },
+        { "name": "Oregon City", "median": "$597K", "highlight": "Historic character with growing infrastructure and strong value." },
+        { "name": "Lake Oswego", "median": "Premium", "highlight": "Upscale lakefront community. Competitive market that rewards prepared buyers." },
+        { "name": "West Linn", "median": "Premium", "highlight": "Excellent schools, tight-knit community feel, strong long-term appreciation." },
+        { "name": "Beaverton", "median": "Varies", "highlight": "Tech hub near Nike and Intel. Strong demand, fast-moving inventory." },
+        { "name": "Tigard", "median": "Mid-range", "highlight": "Accessible pricing with easy highway access to Portland and suburbs." },
+        { "name": "Gresham", "median": "Entry-level", "highlight": "Best value in the metro for first-time buyers. Growing east-side community." },
+        { "name": "Hillsboro", "median": "Varies", "highlight": "Intel campus proximity drives steady demand and appreciation." },
+        { "name": "Milwaukie", "median": "Mid-range", "highlight": "MAX Orange Line access. Walkable downtown. Rising demand." },
+        { "name": "Tualatin", "median": "Mid-range", "highlight": "Family-friendly suburb with strong schools and park access." }
+      ]
+    },
+    "testimonial": {
+      "quote": "Huluka and his team are very organized and have a good understanding of what a buyer's needs are in the home buying process. The process went efficiently and effectively with inspections, appraisal, and escrow. I'm 100% satisfied with the home I purchased, and the fantastic deal Huluka helped me get.",
+      "author": "Tilahun S.",
+      "context": "Home Buyer, Portland Metro"
+    },
+    "faq": {
+      "headline": "Portland Home Buying — Your Questions Answered",
+      "items": [
+        {
+          "question": "How long does it take to buy a home in Portland in 2026?",
+          "answer": "Most Portland buyers go from first showing to closing in 45-90 days, depending on financing and market conditions. With inventory at 4.3 months in 2026, buyers have more negotiating time than in previous years. Your timeline depends on your readiness and target neighborhoods."
+        },
+        {
+          "question": "What credit score do I need to buy in Portland?",
+          "answer": "Conventional loans typically require a 620 minimum credit score. FHA loans may accept lower scores with compensating factors. During your free consultation, we'll connect you with trusted local lenders who assess your full financial picture — not just one number."
+        },
+        {
+          "question": "Are there first-time buyer programs available in Oregon?",
+          "answer": "Yes. Oregon Housing and Community Services offers down payment assistance and below-market rate programs for qualifying buyers. We guide first-time buyers through every available option — including FHA, VA, and USDA loan paths — during your consultation."
+        },
+        {
+          "question": "Do I pay anything to use a buyer's agent in Portland?",
+          "answer": "In most Portland transactions, buyer's agent compensation is covered through the seller's side — no out-of-pocket cost to you. We explain exactly how compensation works for your specific purchase during your free consultation. No surprises."
+        },
+        {
+          "question": "What's the most competitive Portland neighborhood for buyers right now?",
+          "answer": "Happy Valley and Lake Oswego remain the most competitive due to school ratings and lifestyle appeal. Gresham and Milwaukie offer the best value and less competition. We'll match you with the right neighborhood based on your priorities and budget."
+        }
+      ]
+    },
+    "final_cta": {
+      "headline": "Your Portland Home Search Starts With One Call",
+      "body": "Tell us what you're looking for. We'll tell you what's actually out there — and only show you homes worth seeing.",
+      "cta_text": "Schedule a Free Buyer Consultation",
+      "cta_subtext": "Call Huluka: (503) 793-7520 · Hunde: (503) 449-4362"
+    }
+  },
+  "sell": {
+    "meta_title": "Sell Your Portland Home | Free Evaluation | Advantage Realty",
+    "meta_description": "Sell your Portland home for top dollar. Free broker-assessed property evaluation, strategic pricing & professional marketing. 16+ years of Portland market expertise.",
+    "hero": {
+      "h1": "Sell Your Portland Home for What It's Actually Worth",
+      "subheadline": "Portland listings doubled since December 2025. In a market with more competition, the difference between selling in 30 days and sitting for 90 comes down to one thing: pricing strategy. Get yours right from day one.",
+      "cta_text": "Get Your Free Property Evaluation",
+      "cta_subtext": "Broker-assessed. Data-driven. No obligation."
+    },
+    "pricing_section": {
+      "headline": "In Portland's 2026 Market, Pricing Is the Entire Game",
+      "body": "Here's the truth most agents won't tell you: overpricing your home by even 5% can add 60+ days to your time on market. And every day your listing sits, buyers assume something is wrong. Portland's median home price sits at approximately $525K — but that number means nothing for your specific home, on your specific street, in your specific neighborhood. A real pricing strategy analyzes comparable recent sales, current competition, buyer demand in your micro-market, and seasonal timing. That's what you get with Advantage Realty — not a number pulled from Zillow.",
+      "stat": {
+        "value": "~$525K",
+        "label": "Portland Metro Median Home Price — 2026",
+        "source": "Zillow/Redfin composite, Q1 2026"
+      },
+      "cta_text": "Find Out What Your Home Is Really Worth →"
+    },
+    "process": {
+      "headline": "How We Get Your Portland Home Sold",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Free Property Evaluation",
+          "description": "We walk through your home and analyze it against actual comparable sales, current inventory, and neighborhood trends. You'll get a real number — not an algorithm's guess."
+        },
+        {
+          "number": "02",
+          "title": "Strategic Price Positioning",
+          "description": "We position your home to generate maximum interest in the first week — when buyer attention peaks. No overpricing-then-reducing. No leaving money on the table."
+        },
+        {
+          "number": "03",
+          "title": "Professional Marketing",
+          "description": "Professional photography, compelling listing copy, and targeted exposure across the platforms Portland buyers actually use. Your home looks as good online as it does in person."
+        },
+        {
+          "number": "04",
+          "title": "Offer Management & Negotiation",
+          "description": "Multiple offers? One lowball? No offers yet? We've handled every scenario across 16 years. Your broker protects your bottom line at every turn."
+        },
+        {
+          "number": "05",
+          "title": "Close Without the Chaos",
+          "description": "Buyer qualification, inspections, appraisals, title, escrow — all managed by your dedicated broker. You focus on your next chapter."
+        }
+      ]
+    },
+    "market_context": {
+      "headline": "What Portland Sellers Need to Know Right Now",
+      "insights": [
+        {
+          "title": "Listings doubled",
+          "detail": "New listings in Portland doubled from December 2025. Your home faces more competition than last year — pricing and presentation matter more than ever."
+        },
+        {
+          "title": "Buyers are active",
+          "detail": "Portland buyers put 38% more homes under contract in early 2026. Demand is real — but it's selective. Well-priced, well-presented homes sell. Overpriced homes sit."
+        },
+        {
+          "title": "Prices are stabilizing",
+          "detail": "The dramatic appreciation of 2020-2022 is over. Prices are flat to slightly growing. Strategic pricing means pricing for today's market, not last year's."
+        },
+        {
+          "title": "First-week performance is critical",
+          "detail": "Homes that generate interest in the first 7-10 days sell faster and for more. A stale listing loses negotiating power every week it sits."
+        }
+      ],
+      "cta_text": "Get Your Home's Current Value →"
+    },
+    "testimonial": {
+      "quote": "Huluka was hands on from the beginning to the end. He is very dedicated and honest about his work...",
+      "author": "Bezu",
+      "context": "Client, Portland Metro"
+    },
+    "faq": {
+      "headline": "Selling Your Portland Home — Answers You Need",
+      "items": [
+        {
+          "question": "How do I find out what my Portland home is worth in 2026?",
+          "answer": "Request our free property evaluation. Unlike Zillow estimates, we analyze actual comparable sales within your specific neighborhood, current inventory levels, and your home's unique features. You'll get a broker-assessed valuation based on real data — no obligation, no pressure."
+        },
+        {
+          "question": "How long does it take to sell a home in Portland right now?",
+          "answer": "Properly priced homes in desirable Portland neighborhoods are selling in 30-60 days. Overpriced homes are sitting 90+ days. The single biggest factor in your timeline is pricing strategy from day one — which is why our evaluation process matters."
+        },
+        {
+          "question": "What should I fix before listing my Portland home?",
+          "answer": "Not everything needs fixing. During your property evaluation, we identify the specific, high-ROI improvements that matter to Portland buyers — and skip the expensive renovations that don't move the needle. Targeted upgrades beat full renovations every time."
+        },
+        {
+          "question": "Do you handle everything from listing through closing?",
+          "answer": "Yes — pricing, photography, listing, showings, offer review, negotiation, inspections, appraisals, and closing coordination. All handled by your dedicated broker. You'll never be passed to a junior associate or left wondering what's happening next."
+        },
+        {
+          "question": "What fees are involved in selling my home with Advantage Realty?",
+          "answer": "Seller commission structures vary by transaction. During your free evaluation, we'll walk through exactly what the costs look like for your specific sale — no hidden fees, no surprises. Transparency is how we operate."
+        }
+      ]
+    },
+    "final_cta": {
+      "headline": "A 15-Minute Conversation Could Be Worth Thousands",
+      "body": "Find out what your Portland home is actually worth — and what a strategic pricing plan looks like. Free evaluation. No obligation. Just data and expert insight.",
+      "cta_text": "Request Your Free Property Evaluation",
+      "cta_subtext": "Or call Huluka: (503) 793-7520"
+    }
+  },
+  "invest": {
+    "meta_title": "Portland Investment Properties | Advantage Realty",
+    "meta_description": "Build real estate wealth in Portland. Rental properties, portfolio growth, 1031 exchanges & care home investment. Expert guidance from brokers with 16+ years in the market.",
+    "hero": {
+      "h1": "Portland Investment Properties — Smarter Deals, Real Returns",
+      "subheadline": "Most agents sell houses. We build portfolios. From your first rental in Clackamas to a 1031 exchange into a multi-unit property, you'll work with brokers who analyze cash flow, not just curb appeal.",
+      "cta_text": "Schedule an Investment Consultation",
+      "cta_subtext": "Free. No obligation. Bring your numbers — we'll bring ours."
+    },
+    "investment_services": {
+      "headline": "Investment Services That Go Beyond 'Finding a Property'",
+      "items": [
+        {
+          "title": "Residential Rental Acquisition",
+          "description": "Cash flow is king. We analyze cap rates, rental demand, vacancy trends, and long-term appreciation potential for every property — so you invest on math, not optimism.",
+          "cta": "Find Rental Properties →"
+        },
+        {
+          "title": "Portfolio Growth Strategy",
+          "description": "Already own one or two properties? We help you scale strategically — identifying the right next acquisition based on where your portfolio has gaps and where Portland's market is heading.",
+          "cta": "Grow Your Portfolio →"
+        },
+        {
+          "title": "1031 Tax-Deferred Exchanges",
+          "description": "Sell a property and defer all capital gains by reinvesting in qualifying real estate. Strict IRS timelines. Complex identification rules. Jenni Anderson handles every detail so your capital stays in motion.",
+          "cta": "Ask About 1031 Exchanges →"
+        },
+        {
+          "title": "Care Home Property Investment",
+          "description": "A high-demand niche that most brokerages can't touch. We specialize in finding properties that meet Oregon's OAR 411-054 licensing requirements and ADA compliance standards.",
+          "cta": "Explore Care Home Investing →"
+        },
+        {
+          "title": "Deal Sourcing & Market Timing",
+          "description": "16+ years of Portland market knowledge means access to opportunities before they hit the general market. Undervalued properties, motivated sellers, and strategic timing you won't find on Zillow.",
+          "cta": "See What's Available →"
+        }
+      ]
+    },
+    "jenni_1031_spotlight": {
+      "headline": "1031 Exchanges — Precision Matters",
+      "body": "A 1031 exchange is one of the most powerful wealth-building tools in real estate: sell an investment property and defer all capital gains by reinvesting in a like-kind property. But the rules are unforgiving. You have 45 days to identify replacement properties. 180 days to close. Miss a deadline by one day and the entire tax benefit disappears.",
+      "specialist": {
+        "name": "Jenni Anderson",
+        "role": "Broker & 1031 Exchange Specialist",
+        "phone": "(503) 508-8779",
+        "email": "jenni@advantageor.com"
+      },
+      "key_points": [
+        "45-day identification window — every day counts",
+        "180-day closing deadline — no extensions",
+        "Like-kind property rules are specific and strict",
+        "Qualified intermediary coordination required",
+        "One missed step = full capital gains tax liability"
+      ],
+      "cta_text": "Talk to Jenni About Your 1031 Strategy →"
+    },
+    "market_context": {
+      "headline": "Portland Investment Snapshot — Why 2026 Creates Opportunity",
+      "body": "Prices are stabilizing after years of rapid appreciation. Inventory is rising. Buyer competition is lower than it's been since 2019. For investors, this means better negotiating leverage, more selection, and entry points that weren't available 18 months ago.",
+      "data_points": [
+        { "area": "Portland Metro", "median": "$510K–$549K", "note": "Stabilizing — entry points reopening for investors" },
+        { "area": "Happy Valley", "median": "$694K", "note": "Premium market — strong appreciation, family rental demand" },
+        { "area": "Clackamas", "median": "$585K", "note": "Strong rental demand, proximity to Portland core" },
+        { "area": "Oregon City", "median": "$597K", "note": "Infrastructure growth driving long-term value" },
+        { "area": "Gresham", "median": "Entry-level", "note": "Best value metro market — highest cash-flow potential" }
+      ],
+      "cta_text": "Discuss Your Investment Strategy →"
+    },
+    "testimonial": {
+      "quote": "Tadesse Haile Hunde knows exactly what you want once you consult him what kind of home and what price range you want to invest. I am satisfied on the property i bought.",
+      "author": "GBP Reviewer",
+      "context": "Investor, Portland Metro"
+    },
+    "faq": {
+      "headline": "Portland Real Estate Investment — Your Questions",
+      "items": [
+        {
+          "question": "Is Portland a good market for rental property investment in 2026?",
+          "answer": "Portland's rental demand remains strong, driven by population growth and housing affordability constraints. With home prices stabilizing and inventory rising, 2026 offers better entry points than investors have seen in years. The key is neighborhood selection and accurate cash-flow analysis."
+        },
+        {
+          "question": "What is a 1031 exchange and how does it work in Oregon?",
+          "answer": "A 1031 exchange lets you sell an investment property and defer capital gains taxes by reinvesting proceeds into a like-kind property. You have 45 days to identify replacements and 180 days to close. Oregon conforms to federal 1031 rules. Jenni Anderson guides investors through every requirement."
+        },
+        {
+          "question": "What areas of Portland have the best investment potential?",
+          "answer": "It depends on your strategy. Gresham and Milwaukie offer the best cash-flow potential at lower entry points. Happy Valley and West Linn offer stronger appreciation. Clackamas and Oregon City balance both. We'll match you to the right market based on your goals."
+        },
+        {
+          "question": "Can you help me find care home investment properties?",
+          "answer": "Care home investment is one of our core specialties. We find properties meeting Oregon's OAR 411-054 licensing requirements and ADA accessibility standards — requirements that most brokerages have never studied. See our dedicated care home investment page for full details."
+        },
+        {
+          "question": "How much do I need to invest in Portland real estate?",
+          "answer": "Investment property down payments typically range from 15-25% depending on loan type and property class. For a $500K property, that's $75K-$125K plus closing costs. During your consultation, we'll discuss financing options and strategies that match your capital position."
+        }
+      ]
+    },
+    "final_cta": {
+      "headline": "Smart Investors Start With Smart Conversations",
+      "body": "Whether it's your first rental or a 1031 exchange into your tenth property — a clear strategy starts here. Bring your questions. We'll bring 16 years of Portland market data.",
+      "cta_text": "Schedule Your Free Investment Consultation",
+      "cta_subtext": "Call Huluka: (503) 793-7520 · Jenni (1031): (503) 508-8779"
+    }
+  },
+  "care_home": {
+    "meta_title": "Care Home Investment Portland OR | Advantage Realty",
+    "meta_description": "Portland's care home real estate specialists. ADA-compliant properties meeting Oregon OAR 411-054 licensing requirements. 16+ years of care home investment expertise.",
+    "hero": {
+      "h1": "Care Home Investment in Portland — Done Right",
+      "subheadline": "Finding a residential care facility property isn't hard. Finding one that passes Oregon's licensing inspection on the first try — that's where most investors lose time, money, and momentum. You don't have to.",
+      "cta_text": "Schedule a Care Home Consultation",
+      "cta_subtext": "Talk to a specialist — not a generalist."
+    },
+    "problem_section": {
+      "headline": "Why 'Any Agent' Won't Work for Care Home Investment",
+      "body": "Oregon's residential care facility requirements aren't suggestions — they're law. OAR Chapter 411, Division 54 governs everything from bedroom dimensions to elevator codes to fire egress routes. Buy the wrong property and you're looking at six figures in mandatory renovations before you can apply for a license. Most Portland real estate agents have never opened these regulations. We've spent 16+ years studying them, applying them, and helping investors avoid the costly mistakes that come from working with a generalist."
+    },
+    "compliance_section": {
+      "headline": "Oregon Care Home Requirements We Navigate for You",
+      "items": [
+        {
+          "title": "ADA Accessibility — Non-Negotiable",
+          "description": "Every resident bedroom must be fully ADA accessible — not adaptable, not 'close enough.' We evaluate doorway widths, bathroom layouts, hallway clearances, and common area accessibility against actual ADA standards.",
+          "icon": "accessibility"
+        },
+        {
+          "title": "OAR 411-054 Licensing Compliance",
+          "description": "Oregon DHS inspectors follow a detailed checklist. Max 2 residents per unit. Lockable doors with lever-type handles. 64 cubic feet of wardrobe storage per resident minimum. We know what they look for because we've seen it for 16 years.",
+          "icon": "document"
+        },
+        {
+          "title": "Building Code & Fire Safety",
+          "description": "Multi-floor facilities need elevators meeting Oregon Elevator Specialty Code. Entry drives must allow vehicle pickup without backing. Fire egress, sprinkler systems, smoke detection — all must meet current code before licensing.",
+          "icon": "building"
+        },
+        {
+          "title": "Memory Care Additional Requirements",
+          "description": "Memory care communities face regulations beyond standard care homes — including secured outdoor areas, wandering prevention systems, and specialized common space requirements. We help you understand the full scope.",
+          "icon": "shield"
+        }
+      ],
+      "source_note": "Requirements per Oregon Administrative Rules, OAR 411-054-0200"
+    },
+    "who_its_for": {
+      "headline": "Whether You're Opening Your First Facility or Your Fifth",
+      "audiences": [
+        {
+          "title": "First-Time Care Home Operators",
+          "description": "Entering the care home business is complex enough without buying a property that needs $200K in renovations to meet code. We find properties that are licensing-ready or close to it — saving you months and massive expense."
+        },
+        {
+          "title": "Experienced Operators Expanding",
+          "description": "You know what works operationally. We find properties that match your model — right capacity, right layout, right location — so you can scale without reinventing your process."
+        },
+        {
+          "title": "Real Estate Investors Entering Care Homes",
+          "description": "Care homes offer strong returns, but the regulatory layer scares off most investors and most agents. We provide the compliance expertise that turns uncertainty into confidence."
+        },
+        {
+          "title": "Operators Upgrading or Relocating",
+          "description": "Need a larger facility or more compliant building? We help you transition without disrupting your residents, your staff, or your licensing status."
+        }
+      ]
+    },
+    "process": {
+      "headline": "How We Find Your Care Home Property",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Specialist Consultation",
+          "description": "We learn about your operation — capacity needs, budget, preferred locations, licensing status, and timeline. This isn't a generic intake call. It's a care-home-specific conversation."
+        },
+        {
+          "number": "02",
+          "title": "Requirements Mapping",
+          "description": "We map your needs against Oregon's OAR 411-054 requirements, identifying the non-negotiable property features your facility must have. This becomes your search filter."
+        },
+        {
+          "number": "03",
+          "title": "Compliance-First Property Search",
+          "description": "Every property we present has been evaluated for licensing feasibility. You won't tour a single property that can't realistically meet Oregon's standards."
+        },
+        {
+          "number": "04",
+          "title": "ADA & Code Review Before You're Under Contract",
+          "description": "Before you make an offer, we conduct a thorough ADA and building code assessment — identifying any required modifications and their estimated costs."
+        },
+        {
+          "number": "05",
+          "title": "Acquisition Through Closing",
+          "description": "Offer, negotiation, due diligence, inspections, closing — all handled by your broker. You focus on planning your operation; we secure your property."
+        }
+      ]
+    },
+    "testimonial": {
+      "quote": "You will be well served with Hunde and Huluka with your real estate needs, especially in the adult care business.",
+      "author": "Timothy & Tsehay Smith",
+      "context": "Care Home Investors"
+    },
+    "faq": {
+      "headline": "Care Home Investment in Oregon — Your Questions",
+      "items": [
+        {
+          "question": "What Oregon regulations apply to residential care facility properties?",
+          "answer": "Oregon's residential care facilities are governed by OAR Chapter 411, Division 54, administered by the Department of Human Services. These rules cover building requirements, ADA accessibility, fire safety, room dimensions, staffing ratios, and operational standards. We help you navigate all of them before you buy."
+        },
+        {
+          "question": "Do care home properties in Oregon need to be fully ADA compliant?",
+          "answer": "Yes. Oregon requires all resident bedrooms to be accessible — not merely adaptable. Doorways, hallways, bathrooms, and common areas must meet specific ADA dimensional requirements. We evaluate every property against these standards before presenting it to you."
+        },
+        {
+          "question": "How much does a care home property cost in Portland metro?",
+          "answer": "Care home properties in Portland metro range from $500K to over $1M depending on size, location, and current condition. The real cost question isn't purchase price alone — it's whether the property meets licensing requirements or needs expensive renovations first."
+        },
+        {
+          "question": "Can you help a first-time care home operator find a property?",
+          "answer": "Absolutely — first-time operators are a significant portion of our care home clients. We guide you through the full process: understanding Oregon's requirements, finding a property that meets them, and closing the deal. Your first facility doesn't have to be a gamble."
+        },
+        {
+          "question": "What makes Advantage Realty different for care home investment?",
+          "answer": "Most Portland agents have never read OAR 411-054. We have — in detail, for 16+ years. We evaluate every property against actual Oregon licensing requirements and ADA standards before showing it to you. This due diligence saves you from six-figure surprises after closing."
+        },
+        {
+          "question": "What are the biggest mistakes care home investors make?",
+          "answer": "The most expensive mistake is buying a property without a compliance assessment. A home that looks perfect may have doorways too narrow for wheelchair access, bathrooms that don't meet ADA layout requirements, or fire egress issues. We catch these before you're under contract."
+        }
+      ]
+    },
+    "final_cta": {
+      "headline": "Ready to Invest in Oregon's Care Home Market?",
+      "body": "Stop wondering if a property will pass inspection. Start working with a team that knows the answer before you make an offer. Free consultation — bring your questions, your numbers, and your timeline.",
+      "cta_text": "Schedule a Care Home Consultation",
+      "cta_subtext": "Call Huluka: (503) 793-7520 · Hunde: (503) 449-4362"
+    }
+  },
+  "contact": {
+    "meta_title": "Contact Advantage Realty | Portland OR | Free Consultation",
+    "meta_description": "Schedule a free real estate consultation with Advantage Realty in Clackamas, OR. Call (503) 793-7520. Direct broker access on every deal. Buying, selling, investing.",
+    "hero": {
+      "h1": "Talk to a Portland Broker Who Answers Their Phone",
+      "subheadline": "No call centers. No automated menus. No junior associates. When you reach out to Advantage Realty, you're talking directly to the broker who'll handle your deal."
+    },
+    "team_contacts": {
+      "headline": "Reach Your Broker Directly",
+      "members": [
+        {
+          "name": "Huluka Abebe",
+          "role": "Principal Broker",
+          "phone": "(503) 793-7520",
+          "email": "huluka@advantageor.com",
+          "specialties": "Buying, selling, care home investment, team oversight"
+        },
+        {
+          "name": "Hunde Abebe",
+          "role": "Broker & Co-Founder",
+          "phone": "(503) 449-4362",
+          "email": "hunde@advantageor.com",
+          "specialties": "Buying, selling, investment properties, care homes"
+        },
+        {
+          "name": "Jenni Anderson",
+          "role": "Broker & 1031 Exchange Specialist",
+          "phone": "(503) 508-8779",
+          "email": "jenni@advantageor.com",
+          "specialties": "1031 exchanges, buying, selling"
+        }
+      ]
+    },
+    "office": {
+      "name": "Advantage Realty LLC",
+      "address": "13100 SE Sunnyside Rd Suite B",
+      "city_state_zip": "Clackamas, OR 97015",
+      "languages": "English · Oromo · Amharic",
+      "note": "Located in Sunnyside Marketplace, off I-205 and SE Sunnyside Road."
+    },
+    "form": {
+      "headline": "Send Us a Message",
+      "subheadline": "Tell us what you're looking for — we'll respond within 24 hours.",
+      "fields": [
+        { "name": "name", "label": "Your Name", "type": "text", "required": true },
+        { "name": "email", "label": "Email Address", "type": "email", "required": true },
+        { "name": "phone", "label": "Phone Number", "type": "tel", "required": false },
+        { "name": "interest", "label": "I'm Interested In", "type": "select", "options": ["Buying a Home", "Selling a Home", "Investment Properties", "Care Home Investment", "1031 Exchange", "Free Property Evaluation", "Other"], "required": true },
+        { "name": "language", "label": "Preferred Language", "type": "select", "options": ["English", "Oromo", "Amharic"], "required": false },
+        { "name": "message", "label": "Tell Us About Your Goals", "type": "textarea", "required": false }
+      ],
+      "submit_text": "Send Message",
+      "confirmation": "Thank you! We'll be in touch within 24 hours."
+    },
+    "final_cta": {
+      "headline": "Prefer to Talk? Pick Up the Phone.",
+      "body": "The best conversations happen in real time. Call any of our brokers directly — no gatekeepers, no phone trees. Just the person who'll help you.",
+      "cta_text": "Call (503) 793-7520"
+    }
+  }
+}

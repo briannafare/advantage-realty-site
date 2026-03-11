@@ -1,12 +1,12 @@
 // ============================================================
-// Advantage Realty LLC — Single Source of Truth
+// Advantage Realty LLC — Single Source of Truth (Design System v2)
 // ============================================================
 
 export const BRAND = {
   name: "Advantage Realty LLC",
-  tagline: "Portland Real Estate — Rooted in Community, Driven by Results",
+  tagline: "Portland Real Estate — Broker-Run, Not Corporate-Run",
   phone: "(503) 793-7520",
-  email: "info@advantagerealtypdx.com",
+  email: "huluka@advantageor.com",
   address: "13100 SE Sunnyside Rd Suite B, Clackamas, OR 97015",
   languages: ["English", "Oromo", "Amharic"],
   social: {
@@ -16,25 +16,30 @@ export const BRAND = {
 } as const;
 
 export const COLORS = {
-  primary: "#0A1628",
-  secondary: "#2B7CB5",
-  accent: "#D4A853",
-  accentHover: "#C49A48",
-  background: "#FEFCF8",
-  surface: "#F5F0E8",
-  surfaceAlt: "#0A1628",
-  foreground: "#1A1A2E",
-  muted: "#6B7280",
-  border: "#E8E2D8",
+  green800: "#1D3B22",
+  green700: "#2A5430",
+  lime: "#C9E83A",
+  limeTint: "#F0F7DC",
+  orange: "#E8622A",
+  orangeHover: "#D4551F",
+  orangeTint: "#FDF0EB",
+  blue: "#5BB5D8",
+  blueSurface: "#EBF6FC",
+  blueBorder: "#C4E4F2",
+  bg: "#F8F6F1",
+  surface: "#FFFFFF",
+  surfaceAlt: "#F2F0EA",
+  border: "#E0DDD6",
+  t1: "#141414",
+  t2: "#505050",
+  t3: "#909090",
 } as const;
 
 export const NAV_LINKS = [
   { label: "Buy", href: "/buy" },
   { label: "Sell", href: "/sell" },
   { label: "Invest", href: "/invest" },
-  { label: "Care Homes", href: "/care-homes" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
 ] as const;
 
 export const SERVICES = [
@@ -42,67 +47,95 @@ export const SERVICES = [
     title: "Buyer Representation",
     slug: "buy",
     description:
-      "From first showing to final walkthrough, we guide you through every step of buying a home in the Portland metro area.",
+      "Pre-vetted homes, expert negotiation, and a broker who answers your call — not an assistant.",
   },
   {
     title: "Seller Services",
     slug: "sell",
     description:
-      "Strategic pricing, professional staging guidance, and aggressive marketing to maximize your home's sale price.",
+      "Strategic pricing backed by real data, professional marketing, and aggressive negotiation to maximize your sale price.",
   },
   {
     title: "Investment Properties",
     slug: "invest",
     description:
-      "Identify high-yield rental properties, multi-family opportunities, and value-add investments across Clackamas, Multnomah, and Washington counties.",
+      "Multi-family, rentals, and value-add deals across Portland metro. We find the numbers that work.",
   },
   {
-    title: "Adult Care Home Consulting",
+    title: "Care Home Investment",
     slug: "care-homes",
     description:
-      "Specialized guidance for purchasing or selling licensed adult care homes in Oregon — a niche market requiring deep local knowledge.",
+      "Oregon's care home market is booming. We handle compliance, zoning, and licensing so you can focus on returns.",
   },
   {
-    title: "Relocation Assistance",
-    slug: "relocation",
+    title: "1031 Exchanges",
+    slug: "1031",
     description:
-      "Moving to Portland from out of state? We connect you with neighborhoods, schools, and communities that match your lifestyle.",
+      "Defer capital gains and build your portfolio faster. Jenni Anderson specializes in tax-deferred property exchanges.",
   },
   {
-    title: "Market Analysis",
-    slug: "market-analysis",
+    title: "Free Property Evaluation",
+    slug: "evaluation",
     description:
-      "Complimentary CMA reports so you know exactly what your home is worth in today's market — no obligation, no pressure.",
+      "Know what your home is actually worth — not a Zestimate. A real CMA from brokers who know your neighborhood.",
   },
 ] as const;
 
 export const TEAM = [
   {
-    name: "[CLIENT TO PROVIDE: Lead Agent Name]",
-    role: "Principal Broker",
-    bio: "[CLIENT TO PROVIDE: Bio paragraph]",
-    image: null,
+    name: "Hunde Abebe",
+    role: "Principal Broker / Co-Founder",
+    bio: "Detail-driven and sharp at the negotiation table. Hunde manages listing strategy and contract negotiations — clients say he goes above and beyond because settling for 'good enough' isn't how he operates.",
+    phone: "(503) 449-4362",
+    email: "hunde@advantageor.com",
+    image: "/images/team/hunde-abebe.jpg",
+  },
+  {
+    name: "Huluka Abebe",
+    role: "Broker / Co-Founder",
+    bio: "16+ years of Portland real estate experience. Huluka is the broker who picks up the phone, walks the property with you, and negotiates like your investment is his own — because that's how he treats every deal.",
+    phone: "(503) 793-7520",
+    email: "huluka@advantageor.com",
+    image: "/images/team/huluka-abebe.jpg",
+  },
+  {
+    name: "Jenni Anderson",
+    role: "Broker / 1031 Exchange Specialist",
+    bio: "Native Oregonian with 10+ years in the business. Jenni specializes in 1031 tax-deferred exchanges and relocation — she knows every corner of the Portland metro because she grew up here.",
+    phone: "(503) 508-8779",
+    email: "jenni@advantageor.com",
+    image: "/images/team/jenni-anderson.png",
   },
 ] as const;
 
 export const TESTIMONIALS = [
   {
-    quote: "[CLIENT TO PROVIDE: Testimonial quote]",
-    author: "[CLIENT TO PROVIDE: Client name]",
-    location: "[CLIENT TO PROVIDE: Transaction area]",
+    quote:
+      "Huluka and his team are very organized and have a good understanding of what a buyer\u2019s needs are in the home buying process. I\u2019m 100% satisfied with the home I purchased, and the fantastic deal Huluka helped me get.",
+    author: "Tilahun S.",
+    location: "Portland Metro",
     type: "Buyer" as const,
   },
   {
-    quote: "[CLIENT TO PROVIDE: Testimonial quote]",
-    author: "[CLIENT TO PROVIDE: Client name]",
-    location: "[CLIENT TO PROVIDE: Transaction area]",
-    type: "Seller" as const,
+    quote:
+      "Hunde assisted me in finding the perfect home, and I couldn\u2019t be happier with my experience dealing with him. Look no farther than Hunde if you want a real estate professional that will go above and beyond.",
+    author: "Guteta",
+    location: "Portland Metro",
+    type: "Buyer" as const,
   },
   {
-    quote: "[CLIENT TO PROVIDE: Testimonial quote]",
-    author: "[CLIENT TO PROVIDE: Client name]",
-    location: "[CLIENT TO PROVIDE: Transaction area]",
+    quote:
+      "You will be well served with Hunde and Huluka with your real estate needs, especially in the adult care business.",
+    author: "Timothy & Tsehay Smith",
+    location: "Portland Metro",
     type: "Investor" as const,
+  },
+  {
+    quote:
+      "Huluka was hands on from the beginning to the end. He is very dedicated and honest about his work.",
+    author: "Bezu",
+    location: "Portland Metro",
+    type: "Buyer" as const,
   },
 ] as const;
 
@@ -122,11 +155,6 @@ export const MARKET_STATS = [
     value: "+4.2%",
     source: "Zillow Home Value Index, 2025",
   },
-  {
-    label: "Active Listings — Clackamas County",
-    value: "[CLIENT TO PROVIDE: current stat]",
-    source: "[CLIENT TO PROVIDE: source]",
-  },
 ] as const;
 
 export const FAQ_DATA = [
@@ -134,7 +162,7 @@ export const FAQ_DATA = [
     question:
       "What neighborhoods in Portland do you specialize in?",
     answer:
-      "We serve the entire Portland metro area with deep expertise in Clackamas, Milwaukie, Happy Valley, Oregon City, and Southeast Portland. Our multilingual team also supports the East African community across the metro region.",
+      "We serve the entire Portland metro area with deep expertise in Clackamas, Milwaukie, Happy Valley, Oregon City, Lake Oswego, West Linn, Tigard, Beaverton, Hillsboro, Gresham, and Tualatin.",
   },
   {
     question:
@@ -150,12 +178,6 @@ export const FAQ_DATA = [
   },
   {
     question:
-      "What languages does your team speak?",
-    answer:
-      "Our team is fluent in English, Oromo, and Amharic. We believe every client deserves to navigate one of the biggest financial decisions of their life in the language they're most comfortable with.",
-  },
-  {
-    question:
       "How do you price my home for sale?",
     answer:
       "We prepare a complimentary Comparative Market Analysis (CMA) using recent sales, active listings, and neighborhood trends. We price strategically — not too high to sit, not too low to leave money on the table.",
@@ -166,6 +188,12 @@ export const FAQ_DATA = [
     answer:
       "Buyer representation fees are typically covered by the seller's listing agreement. We'll explain the full fee structure transparently before you commit to anything. No surprises, ever.",
   },
+  {
+    question:
+      "Do you speak languages other than English?",
+    answer:
+      "Yes. Huluka and Hunde speak Oromo and Amharic in addition to English. If you prefer to discuss your transaction in either language, they're happy to accommodate.",
+  },
 ] as const;
 
 export const FOOTER_LINKS = {
@@ -173,16 +201,15 @@ export const FOOTER_LINKS = {
     { label: "Buy a Home", href: "/buy" },
     { label: "Sell Your Home", href: "/sell" },
     { label: "Investment Properties", href: "/invest" },
-    { label: "Care Home Consulting", href: "/care-homes" },
-    { label: "About Our Team", href: "/about" },
+    { label: "Care Home Consulting", href: "/care-home-investment" },
     { label: "Contact Us", href: "/contact" },
   ],
   services: [
     { label: "Buyer Representation", href: "/buy" },
     { label: "Seller Marketing", href: "/sell" },
-    { label: "Market Analysis", href: "/contact" },
-    { label: "Relocation Help", href: "/contact" },
-    { label: "Care Home Sales", href: "/care-homes" },
+    { label: "1031 Exchanges", href: "/invest" },
+    { label: "Care Home Sales", href: "/care-home-investment" },
+    { label: "Free Market Analysis", href: "/contact" },
   ],
 } as const;
 
@@ -192,7 +219,7 @@ export const LOCAL_BUSINESS_SCHEMA = {
   "@type": "RealEstateAgent",
   name: "Advantage Realty LLC",
   description:
-    "Portland-area real estate brokerage specializing in residential sales, investment properties, and adult care home consulting. Multilingual team fluent in English, Oromo, and Amharic.",
+    "Family-run brokerage with 16+ years experience. Direct broker access on every deal. Also available in Oromo and Amharic.",
   url: "https://advantagerealtypdx.com",
   telephone: "+15037937520",
   address: {
@@ -214,6 +241,12 @@ export const LOCAL_BUSINESS_SCHEMA = {
     { "@type": "City", name: "Happy Valley" },
     { "@type": "City", name: "Milwaukie" },
     { "@type": "City", name: "Oregon City" },
+    { "@type": "City", name: "Lake Oswego" },
+    { "@type": "City", name: "West Linn" },
+    { "@type": "City", name: "Tigard" },
+    { "@type": "City", name: "Beaverton" },
+    { "@type": "City", name: "Gresham" },
+    { "@type": "City", name: "Tualatin" },
   ],
   knowsLanguage: ["en", "om", "am"],
   openingHoursSpecification: {

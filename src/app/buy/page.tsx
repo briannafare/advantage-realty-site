@@ -3,82 +3,136 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import {
+  Search,
+  Target,
+  Eye,
+  Handshake,
+  KeyRound,
+  MapPin,
+  Phone,
+  MessageCircle,
+  ChevronDown,
+  CheckCircle2,
+  Globe,
+  BarChart3,
+  UserCheck,
+} from "lucide-react";
+
+/* ─── Animations ─── */
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] } },
 };
 
-const staggerContainer = {
+const fadeIn = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.6 } },
+};
+
+const stagger = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
+  visible: { transition: { staggerChildren: 0.1 } },
+};
+
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
 /* ─── Data ─── */
 
+const whyPoints = [
+  {
+    icon: Eye,
+    title: "Pre-Vetted Showings",
+    desc: "We tour properties before you do. You only visit homes that genuinely match your criteria, budget, and lifestyle.",
+  },
+  {
+    icon: BarChart3,
+    title: "Negotiation Backed by Local Data",
+    desc: "Every offer we write is informed by neighborhood-level comps, days-on-market trends, and seller motivation signals.",
+  },
+  {
+    icon: UserCheck,
+    title: "Direct Broker Access",
+    desc: "You work directly with the managing broker — no hand-offs to junior agents, no phone tag, no lost details.",
+  },
+  {
+    icon: Globe,
+    title: "Trilingual Support",
+    desc: "Huluka and Hunde are brothers who built this brokerage together. They treat your deal like a family matter — because that's how they operate.",
+  },
+];
+
 const steps = [
   {
     num: "01",
+    icon: Phone,
     title: "Discovery Call",
-    desc: "We learn your goals, budget, timeline, and must-haves so every recommendation is tailored to you.",
+    desc: "15 minutes to understand your goals, budget, timeline, and non-negotiables. We listen before we search.",
   },
   {
     num: "02",
-    title: "Personalized Home Search",
-    desc: "Curated listings sent to you daily — filtered by your criteria, not generic auto-alerts.",
+    icon: Search,
+    title: "Custom Search Strategy",
+    desc: "A tailored search built around your criteria — not generic MLS alerts. Includes off-market and coming-soon properties.",
   },
   {
     num: "03",
-    title: "We Preview First",
-    desc: "Our team previews properties before your visit so you only tour homes worth your time.",
+    icon: Eye,
+    title: "Pre-Vetted Showings",
+    desc: "We preview properties first so your weekends are spent in homes worth your time, not dead ends.",
   },
   {
     num: "04",
-    title: "Tour & Offer Strategy",
-    desc: "Guided showings with real-time market context, followed by a data-backed offer strategy.",
+    icon: Target,
+    title: "Strategic Offer & Negotiation",
+    desc: "Data-backed offers with aggressive negotiation on price, repairs, and terms. We protect your position at every turn.",
   },
   {
     num: "05",
-    title: "Negotiation & Close",
-    desc: "Aggressive negotiation on price, repairs, and terms — protecting your interests through closing day.",
+    icon: KeyRound,
+    title: "Inspections to Keys",
+    desc: "Full transaction coordination through inspections, appraisal, lending, and closing — until you hold the keys.",
   },
 ];
 
-const benefits = [
-  "Multilingual support — English, Amharic, and Oromo so nothing gets lost in translation",
-  "Access to off-market and coming-soon listings before they hit the MLS",
-  "Dedicated buyer consultation at no cost to you — the seller pays our commission",
-  "Neighborhood-level market data so you never overpay",
-  "Full transaction coordination from offer through keys in hand",
-];
-
-const areas = [
-  { name: "Portland", price: "$510K – $549K", note: "Metro-wide inventory across all quadrants" },
-  { name: "Happy Valley", price: "$694K", note: "Top-rated schools, newer construction" },
-  { name: "Clackamas", price: "$585K", note: "Suburban feel, easy freeway access" },
-  { name: "Oregon City", price: "$597K", note: "Historic charm, river-adjacent living" },
-  { name: "Beaverton", price: "$520K – $570K", note: "Tech corridor, light rail connected" },
-  { name: "Lake Oswego", price: "$750K+", note: "Lakefront luxury and top schools" },
-  { name: "Gresham", price: "$430K – $480K", note: "Affordable entry point, east-side access" },
-  { name: "West Linn", price: "$650K – $720K", note: "Hilltop views, outdoor recreation" },
+const neighborhoods = [
+  { name: "Happy Valley", price: "$694K", tier: "Premium" },
+  { name: "Clackamas", price: "$585K", tier: "Mid-range" },
+  { name: "Oregon City", price: "$597K", tier: "Mid-range" },
+  { name: "Lake Oswego", price: "Premium", tier: "Premium" },
+  { name: "West Linn", price: "Premium", tier: "Premium" },
+  { name: "Beaverton", price: "Varies", tier: "Varies" },
+  { name: "Tigard", price: "Mid-range", tier: "Mid-range" },
+  { name: "Gresham", price: "Entry-level", tier: "Entry-level" },
+  { name: "Hillsboro", price: "Varies", tier: "Varies" },
+  { name: "Milwaukie", price: "Mid-range", tier: "Mid-range" },
+  { name: "Tualatin", price: "Mid-range", tier: "Mid-range" },
 ];
 
 const faqs = [
   {
-    q: "How long does it take to buy a home in Portland?",
-    a: "Most buyers close within 30 to 60 days once an offer is accepted. The total search timeline depends on your criteria and market conditions — first-time buyers typically spend 2 to 4 months from first search to closing.",
+    q: "How long does it take to buy a home in Portland right now?",
+    a: "Most buyers close within 30 to 60 days once an offer is accepted. The full search timeline depends on your criteria and how competitive your target neighborhoods are — first-time buyers typically spend 2 to 4 months from first search to closing.",
   },
   {
-    q: "What credit score do I need to buy a home in Oregon?",
-    a: "Conventional loans generally require a 620+ credit score. FHA loans may accept scores as low as 580 with a 3.5% down payment. We connect you with trusted local lenders who can assess your specific situation at no cost.",
+    q: "What credit score do I need to buy in the Portland metro?",
+    a: "Conventional loans generally require a 620+ credit score. FHA loans may accept scores as low as 580 with 3.5% down. We connect you with trusted local lenders who assess your specific situation at no cost.",
   },
   {
-    q: "Are there first-time home buyer programs in Portland?",
-    a: "Yes. Oregon Housing and Community Services (OHCS) offers down payment assistance and below-market rate loans for qualifying buyers. Multnomah County and the City of Portland also run targeted programs. We help you identify every program you qualify for.",
+    q: "Are there first-time buyer programs in Oregon?",
+    a: "Yes. Oregon Housing and Community Services (OHCS) offers down payment assistance and below-market rate loans. Multnomah County and the City of Portland run additional targeted programs. We help you identify every program you qualify for.",
   },
   {
-    q: "How much does it cost to use a buyer's agent?",
-    a: "In most transactions, the seller pays the buyer's agent commission — meaning our expert guidance costs you nothing out of pocket. We disclose all compensation details upfront before you sign anything.",
+    q: "Does it cost me anything to work with a buyer's agent?",
+    a: "In most Portland transactions, the seller pays the buyer's agent commission — meaning our guidance costs you nothing out of pocket. We disclose all compensation details upfront before you sign anything.",
+  },
+  {
+    q: "Do your brokers speak languages other than English?",
+    a: "Yes. Huluka and Hunde speak Oromo and Amharic in addition to English. If you prefer to discuss your transaction in either language, they're happy to accommodate throughout the entire process.",
   },
 ];
 
@@ -88,23 +142,24 @@ function FaqAccordion({ items }: { items: { q: string; a: string }[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="divide-y divide-[#E8E2D8]">
+    <div className="divide-y divide-[#E0DDD6]">
       {items.map((item, i) => {
         const isOpen = openIndex === i;
         return (
           <div key={i}>
             <button
               onClick={() => setOpenIndex(isOpen ? null : i)}
-              className="flex w-full items-center justify-between py-5 text-left font-heading text-lg font-bold tracking-tight text-[#0A1628] md:text-xl"
+              className="flex w-full items-center justify-between py-6 text-left text-lg font-semibold text-[#141414] md:text-xl"
               aria-expanded={isOpen}
             >
-              {item.q}
-              <span
-                className="ml-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#E8E2D8] text-[#D4A853] transition-transform duration-300"
-                style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)" }}
+              <span className="pr-4">{item.q}</span>
+              <motion.span
+                animate={{ rotate: isOpen ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#C9E83A]/10 text-[#C9E83A]"
               >
-                +
-              </span>
+                <ChevronDown className="h-5 w-5" />
+              </motion.span>
             </button>
             <motion.div
               initial={false}
@@ -112,9 +167,7 @@ function FaqAccordion({ items }: { items: { q: string; a: string }[] }) {
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className="overflow-hidden"
             >
-              <p className="pb-5 font-body text-[#0A1628]/70 leading-relaxed">
-                {item.a}
-              </p>
+              <p className="pb-6 text-[#505050] leading-relaxed">{item.a}</p>
             </motion.div>
           </div>
         );
@@ -127,139 +180,213 @@ function FaqAccordion({ items }: { items: { q: string; a: string }[] }) {
 
 export default function BuyPage() {
   return (
-    <main>
-      {/* ━━ 1. HERO ━━ */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32 overflow-hidden">
+    <main className="overflow-hidden">
+      {/* ━━ HERO — Split Layout ━━ */}
+      <section className="relative bg-[#FFFFFF]">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
-          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+          <div className="grid min-h-[85vh] items-center gap-10 py-20 md:grid-cols-2 md:gap-16 md:py-0">
+            {/* Left — Text */}
             <motion.div
-              className="lg:col-span-3"
-              variants={staggerContainer}
+              variants={stagger}
               initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
+              animate="visible"
             >
-              <motion.p
+              <motion.div
                 variants={fadeUp}
-                className="mb-4 font-body text-sm font-medium uppercase tracking-widest text-[#D4A853]"
+                className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#E0DDD6] bg-white px-4 py-1.5 text-sm font-medium text-[#505050]"
               >
-                Portland Home Buyers
-              </motion.p>
+                <MapPin className="h-4 w-4" />
+                Portland Metro Buyer&apos;s Agent
+              </motion.div>
+
               <motion.h1
                 variants={fadeUp}
-                className="font-heading text-5xl font-bold tracking-tight text-[#0A1628] md:text-7xl"
+                className="text-4xl font-bold leading-[1.1] tracking-tight text-[#141414] sm:text-5xl lg:text-6xl"
               >
-                Buy a Home in Portland — Expert Guidance in Your Language
+                Buy a Home in Portland{" "}
+                <span className="text-[#2A5430]">— Without the Stress</span>
               </motion.h1>
+
               <motion.p
                 variants={fadeUp}
-                className="mt-6 max-w-xl font-body text-lg leading-relaxed text-[#0A1628]/70 md:text-xl"
+                className="mt-6 max-w-lg text-lg leading-relaxed text-[#505050]"
               >
-                Whether you are a first-time buyer or upgrading to your next chapter, Advantage
-                Realty pairs local market expertise with multilingual support to make your purchase
-                smooth and strategic.
+                Your weekends shouldn&apos;t be spent touring homes that were wrong before you
+                walked in. With Advantage Realty, every showing is pre-vetted, every offer is
+                strategic, and every conversation happens in the language you think in.
               </motion.p>
-              <motion.div variants={fadeUp} className="mt-10 flex flex-wrap items-center gap-4">
+
+              <motion.div variants={fadeUp} className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a
                   href="#cta"
-                  className="inline-flex items-center rounded-lg bg-[#D4A853] px-7 py-3.5 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:opacity-90"
+                  className="inline-flex items-center justify-center rounded-lg bg-[#C9E83A] px-8 py-4 text-base font-bold text-[#1D3B22] transition-colors hover:bg-[#B6D82A]"
                 >
-                  Start Your Home Search
+                  Schedule a Free Buyer Consultation
                 </a>
-                <span className="font-body text-sm text-[#0A1628]/50">
-                  No commitment &middot; Free consultation
-                </span>
               </motion.div>
+
+              <motion.p variants={fadeUp} className="mt-3 text-sm text-[#505050]">
+                15 minutes. No obligation. Talk directly with your broker.
+              </motion.p>
             </motion.div>
 
-            {/* Paper cut-out house stack illustration */}
+            {/* Right — Image */}
             <motion.div
-              className="lg:col-span-2 hidden lg:flex flex-col items-center gap-4"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              variants={scaleIn}
+              initial="hidden"
+              animate="visible"
+              className="relative aspect-[4/5] overflow-hidden rounded-[22px] shadow-2xl md:aspect-[3/4]"
             >
-              {[
-                { color: "#2EC4B6", label: "Happy Valley", rotate: "-2deg", delay: 0.1 },
-                { color: "#D4A853", label: "Clackamas", rotate: "1.5deg", delay: 0.2 },
-                { color: "#0A1628", label: "Portland", rotate: "-1deg", delay: 0.3 },
-              ].map((card, i) => (
-                <motion.div
-                  key={card.label}
-                  initial={{ opacity: 0, y: 20, rotate: card.rotate }}
-                  whileInView={{ opacity: 1, y: 0, rotate: card.rotate }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 + card.delay, duration: 0.5 }}
-                  className="w-full max-w-[280px] p-6 rounded-xl relative"
-                  style={{
-                    backgroundColor: card.color,
-                    boxShadow: "6px 6px 0 rgba(10, 22, 40, 0.15)",
-                    transform: `rotate(${card.rotate})`,
-                  }}
-                >
-                  <svg viewBox="0 0 80 50" className="w-16 h-10 mb-3" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M40 5L75 25V45H5V25L40 5Z" fill="white" fillOpacity="0.2" />
-                    <path d="M40 5L75 25V45H5V25L40 5Z" stroke="white" strokeWidth="2" strokeLinejoin="round" />
-                    <rect x="30" y="30" width="12" height="15" rx="1" fill="white" fillOpacity="0.3" />
-                    <rect x="50" y="28" width="10" height="8" rx="1" fill="white" fillOpacity="0.2" />
-                    <rect x="15" y="28" width="10" height="8" rx="1" fill="white" fillOpacity="0.2" />
-                  </svg>
-                  <p className={`font-heading font-bold text-lg tracking-tight ${i === 2 ? "text-[#F5F0E8]" : "text-white"}`}>
-                    {card.label}
-                  </p>
-                  <p className={`font-body text-xs mt-1 ${i === 2 ? "text-[#F5F0E8]/60" : "text-white/60"}`}>
-                    {i === 0 ? "$694K median" : i === 1 ? "$585K median" : "$510K–$549K median"}
-                  </p>
-                </motion.div>
-              ))}
+              <Image
+                src="/images/img-home-exterior.jpg"
+                alt="Portland craftsman home exterior at dusk"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+              <div className="absolute inset-0 rounded-[22px] ring-1 ring-inset ring-black/5" />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ━━ 2. PROCESS STEPS ━━ */}
-      <section className="bg-[#0A1628] py-20 md:py-32">
+      {/* ━━ WHY A LOCAL AGENT — White bg, 4 cards ━━ */}
+      <section className="bg-[#FFFFFF] py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
-            variants={staggerContainer}
+            variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <motion.h2
-              variants={fadeUp}
-              className="font-heading text-3xl font-bold tracking-tight text-[#F5F0E8] md:text-5xl"
-            >
-              Your Home Buying Journey — Simplified
-            </motion.h2>
+            <motion.div variants={fadeUp} className="max-w-2xl">
+              <h2 className="text-3xl font-bold tracking-tight text-[#141414] md:text-5xl">
+                Portland Is 11 Markets in One.{" "}
+                <span className="text-[#2A5430]">You Need a Guide Who Knows Them All.</span>
+              </h2>
+              <p className="mt-6 text-lg leading-relaxed text-[#505050]">
+                Happy Valley&apos;s $694K median is a different world from Gresham&apos;s
+                entry-level market. Lake Oswego buyers compete against cash offers that
+                Milwaukie buyers rarely see. The agent who treats every zip code the same will
+                cost you money — or the right home.
+              </p>
+            </motion.div>
 
-            <div className="mt-16 space-y-0">
-              {steps.map((step, i) => (
+            <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {whyPoints.map((point) => (
                 <motion.div
-                  key={step.num}
+                  key={point.title}
                   variants={fadeUp}
-                  className="relative flex gap-8 pb-12 last:pb-0"
+                  className="group rounded-[22px] border border-[#E0DDD6] bg-[#F8F6F1] p-8 transition-all hover:border-[#C9E83A]/30 hover:shadow-lg"
                 >
-                  {/* Timeline line */}
-                  {i < steps.length - 1 && (
-                    <div className="absolute left-[27px] top-14 h-full w-px bg-[#D4A853]/20" />
-                  )}
-                  {/* Number */}
-                  <span
-                    className={`relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full font-heading text-2xl font-bold ${i % 2 === 0 ? "bg-[#D4A853] text-[#0A1628]" : "bg-[#2EC4B6] text-white"}`}
-                    style={{ boxShadow: "3px 3px 0 rgba(255,255,255,0.15)" }}
+                  <div className="flex h-12 w-12 items-center justify-center rounded-[22px] bg-[#F0F7DC] text-[#C9E83A]">
+                    <point.icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="mt-6 text-lg font-bold text-[#141414]">{point.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-[#505050]">{point.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ━━ 5-STEP PROCESS — Vertical timeline, light bg ━━ */}
+      <section className="bg-[#F2F0EA] py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+          >
+            <motion.div variants={fadeUp} className="text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-[#141414] md:text-5xl">
+                Five Steps From Search to Keys in Hand
+              </h2>
+              <p className="mx-auto mt-4 max-w-xl text-lg text-[#505050]">
+                A proven process that keeps you informed, protected, and in control at every stage.
+              </p>
+            </motion.div>
+
+            <div className="relative mx-auto mt-20 max-w-3xl">
+              {/* Vertical line */}
+              <div className="absolute left-8 top-0 hidden h-full w-px bg-[#C9E83A]/20 md:left-16 md:block" />
+
+              <div className="space-y-12">
+                {steps.map((step, i) => (
+                  <motion.div
+                    key={step.num}
+                    variants={fadeUp}
+                    className="relative flex gap-6 md:gap-10"
                   >
-                    {step.num}
-                  </span>
-                  {/* Content */}
-                  <div className="pt-1">
-                    <h3 className="font-heading text-xl font-bold tracking-tight text-[#F5F0E8]">
-                      {step.title}
-                    </h3>
-                    <p className="mt-2 max-w-lg font-body leading-relaxed text-[#F5F0E8]/60">
-                      {step.desc}
-                    </p>
+                    {/* Oversized step number */}
+                    <div className="relative z-10 flex flex-col items-center">
+                      <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-[22px] bg-[#C9E83A] text-2xl font-bold text-[#1D3B22] md:h-32 md:w-32 md:text-6xl">
+                        {step.num}
+                      </span>
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex-1 pt-1 md:pt-6">
+                      <div className="flex items-center gap-3">
+                        <step.icon className="h-5 w-5 text-[#C9E83A]" />
+                        <h3 className="text-xl font-bold text-[#141414]">{step.title}</h3>
+                      </div>
+                      <p className="mt-2 max-w-md text-[#505050] leading-relaxed">{step.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ━━ NEIGHBORHOODS — Scrollable grid ━━ */}
+      <section className="bg-[#FFFFFF] py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+          >
+            <motion.div variants={fadeUp}>
+              <h2 className="text-3xl font-bold tracking-tight text-[#141414] md:text-5xl">
+                Portland Communities We Know Street by Street
+              </h2>
+              <p className="mt-4 max-w-xl text-lg text-[#505050]">
+                Median prices reflect current Portland metro market data. Each neighborhood has
+                its own rhythm — we help you find the one that fits yours.
+              </p>
+            </motion.div>
+
+            <div className="mt-12 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              {neighborhoods.map((n) => (
+                <motion.div
+                  key={n.name}
+                  variants={fadeUp}
+                  className="group relative rounded-[22px] border-2 border-[#E0DDD6] bg-white p-6 transition-all hover:border-[#C9E83A] hover:shadow-md"
+                >
+                  <div className="absolute right-4 top-4">
+                    <MapPin className="h-4 w-4 text-[#E0DDD6] transition-colors group-hover:text-[#C9E83A]" />
+                  </div>
+                  <h3 className="text-lg font-bold text-[#141414]">{n.name}</h3>
+                  <p className="mt-1 text-sm font-semibold text-[#2A5430]">{n.price}</p>
+                  <div className="mt-3">
+                    <span
+                      className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${
+                        n.tier === "Premium"
+                          ? "bg-[#C9E83A]/10 text-[#B6D82A]"
+                          : n.tier === "Entry-level"
+                          ? "bg-[#F0F7DC] text-[#B6D82A]"
+                          : "bg-[#F2F0EA] text-[#505050]"
+                      }`}
+                    >
+                      {n.tier}
+                    </span>
                   </div>
                 </motion.div>
               ))}
@@ -268,231 +395,122 @@ export default function BuyPage() {
         </div>
       </section>
 
-      {/* ━━ 3. BENEFITS ━━ */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      {/* ━━ TESTIMONIAL — Dark section ━━ */}
+      <section className="bg-[#1D3B22] py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            className="grid items-center gap-12 md:grid-cols-2 md:gap-16"
-          >
-            {/* Left — Benefits */}
-            <div>
-              <motion.h2
-                variants={fadeUp}
-                className="font-heading text-3xl font-bold tracking-tight text-[#0A1628] md:text-5xl"
-              >
-                Why Buyers Choose Advantage Realty
-              </motion.h2>
-              <ul className="mt-10 space-y-5">
-                {benefits.map((b, i) => (
-                  <motion.li key={i} variants={fadeUp} className="flex gap-3">
-                    <svg
-                      className="mt-1 h-5 w-5 shrink-0 text-[#D4A853]"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2.5}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="font-body leading-relaxed text-[#0A1628]/80">{b}</span>
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Right — Image Placeholder */}
-            <motion.div
-              variants={fadeUp}
-              className="relative aspect-[4/5] overflow-hidden rounded-xl border border-[#E8E2D8]"
-            >
-              <Image
-                src="/images/home-exterior-craftsman.webp"
-                alt="Portland home buyer consultation with Advantage Realty"
-                fill
-                className="object-cover object-top"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ━━ 4. AREAS ━━ */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
-        <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
-          >
-            <motion.h2
-              variants={fadeUp}
-              className="font-heading text-3xl font-bold tracking-tight text-[#0A1628] md:text-5xl"
-            >
-              Portland Communities We Know Best
-            </motion.h2>
-            <motion.p
-              variants={fadeUp}
-              className="mt-4 max-w-xl font-body text-lg text-[#0A1628]/60"
-            >
-              Median home prices reflect current Portland metro market data.
-            </motion.p>
-
-            <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {areas.map((area) => (
-                <motion.div
-                  key={area.name}
-                  variants={fadeUp}
-                  className="group rounded-xl border border-[#E8E2D8] bg-white p-6 transition hover:border-[#D4A853]/40 hover:shadow-sm"
-                >
-                  <h3 className="font-heading text-lg font-bold tracking-tight text-[#0A1628]">
-                    {area.name}
-                  </h3>
-                  <p className="mt-1 font-heading text-sm font-bold text-[#D4A853]">
-                    {area.price}
-                  </p>
-                  <p className="mt-2 font-body text-sm leading-relaxed text-[#0A1628]/60">
-                    {area.note}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Visual — Area Photos */}
-      <section className="bg-[#FEFCF8] pb-4">
-        <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
-          <div className="grid md:grid-cols-2 gap-4">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="relative rounded-xl overflow-hidden aspect-[16/9]"
-            >
-              <Image
-                src="/images/happy-valley-residential.webp"
-                alt="Happy Valley residential neighborhood — Portland metro area"
-                fill
-                className="object-cover"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="relative rounded-xl overflow-hidden aspect-[16/9]"
-            >
-              <Image
-                src="/images/lake-oswego-waterfront.webp"
-                alt="Lake Oswego waterfront — premium Portland suburb"
-                fill
-                className="object-cover"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* ━━ 5. TESTIMONIAL ━━ */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
-        <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
-          <motion.div
-            variants={staggerContainer}
+            variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             className="mx-auto max-w-3xl text-center"
           >
-            <motion.span
-              variants={fadeUp}
-              className="mb-6 block font-heading text-5xl text-[#D4A853]"
-            >
-              &ldquo;
-            </motion.span>
+            <motion.div variants={fadeIn} className="mb-8 flex justify-center gap-1">
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} className="h-6 w-6 text-[#C9E83A]" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </motion.div>
+
             <motion.blockquote
               variants={fadeUp}
-              className="font-accent text-2xl leading-snug text-[#0A1628] md:text-3xl"
+              className="text-2xl font-medium leading-relaxed text-white md:text-3xl"
             >
-              They made buying our first home feel effortless. Every step was explained clearly, and
-              we always felt like a priority — not just another transaction.
+              &ldquo;They made buying our first home feel effortless. Every step was explained
+              clearly, and we always felt like a priority — not just another
+              transaction.&rdquo;
             </motion.blockquote>
-            <motion.p variants={fadeUp} className="mt-8 font-heading text-sm font-bold text-[#D4A853]">
-              Tilahun S.
-            </motion.p>
-            <motion.p variants={fadeUp} className="font-body text-sm text-[#0A1628]/50">
-              First-Time Home Buyer, Portland
-            </motion.p>
+
+            <motion.div variants={fadeUp} className="mt-10">
+              <p className="text-base font-bold text-[#C9E83A]">Tilahun S.</p>
+              <p className="mt-1 text-sm text-white/50">First-Time Home Buyer, Portland</p>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* ━━ 6. FAQ ━━ */}
-      <section className="bg-[#FEFCF8] py-20 md:py-32">
+      {/* ━━ FAQ — Accordion ━━ */}
+      <section className="bg-[#FFFFFF] py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
-            variants={staggerContainer}
+            variants={stagger}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.15 }}
           >
-            <motion.h2
-              variants={fadeUp}
-              className="font-heading text-3xl font-bold tracking-tight text-[#0A1628] md:text-5xl"
-            >
-              Common Buyer Questions
-            </motion.h2>
-            <motion.div variants={fadeUp} className="mt-12 max-w-2xl">
+            <motion.div variants={fadeUp} className="grid gap-12 md:grid-cols-[1fr_2fr] md:gap-16">
+              <div>
+                <h2 className="text-3xl font-bold tracking-tight text-[#141414] md:text-4xl">
+                  Common Questions About Buying in Portland
+                </h2>
+                <p className="mt-4 text-[#505050] leading-relaxed">
+                  Don&apos;t see your question? Call us at{" "}
+                  <a href="tel:+15037937520" className="font-medium text-[#2A5430] hover:underline">
+                    (503) 793-7520
+                  </a>{" "}
+                  — your broker picks up, not a junior agent.
+                </p>
+              </div>
               <FaqAccordion items={faqs} />
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* ━━ 7. CTA ━━ */}
-      <section id="cta" className="bg-[#0A1628] py-20 md:py-32">
-        <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
+      {/* ━━ FINAL CTA — Dark rounded block, outline button ━━ */}
+      <section id="cta" className="relative bg-[#F8F6F1] py-24 md:py-32">
+        <div className="relative mx-auto max-w-5xl px-5 md:px-8 lg:px-12">
           <motion.div
-            variants={staggerContainer}
+            variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="mx-auto max-w-2xl text-center"
+            className="rounded-[22px] bg-[#141414] px-8 py-20 text-center md:px-16"
           >
             <motion.h2
               variants={fadeUp}
-              className="font-heading text-3xl font-bold tracking-tight text-[#F5F0E8] md:text-5xl"
+              className="text-3xl font-bold tracking-tight text-white md:text-5xl"
             >
-              Your Portland Home Search Starts Here
+              Your Portland Home Search Starts With One Call
             </motion.h2>
+
             <motion.p
               variants={fadeUp}
-              className="mt-6 font-body text-lg leading-relaxed text-[#F5F0E8]/60"
+              className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/80"
             >
-              Tell us what you are looking for and we will send you personalized listings — no
-              obligation, no pressure.
+              Tell us what you&apos;re looking for and we&apos;ll build a search strategy
+              around it — no obligation, no pressure, no generic auto-alerts.
             </motion.p>
-            <motion.div variants={fadeUp} className="mt-10 flex flex-col items-center gap-4">
+
+            <motion.div variants={fadeUp} className="mt-10 flex flex-col items-center gap-5">
               <a
                 href="/contact"
-                className="inline-flex items-center rounded-lg bg-[#D4A853] px-8 py-4 font-heading text-sm font-bold tracking-tight text-[#0A1628] transition hover:opacity-90"
+                className="inline-flex items-center justify-center rounded-lg border-2 border-white px-10 py-4 text-base font-bold text-white transition-all hover:bg-white hover:text-[#141414]"
               >
-                Start Your Home Search
+                Schedule a Free Buyer Consultation
               </a>
-              <a
-                href="tel:+15035551234"
-                className="font-body text-sm text-[#F5F0E8]/50 transition hover:text-[#D4A853]"
-              >
-                Or call: [CLIENT TO PROVIDE: phone number]
-              </a>
+
+              <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-6">
+                <a
+                  href="tel:+15037937520"
+                  className="flex items-center gap-2 text-sm font-medium text-white/90 transition hover:text-white"
+                >
+                  <Phone className="h-4 w-4" />
+                  (503) 793-7520
+                </a>
+                <a
+                  href="tel:+15034494362"
+                  className="flex items-center gap-2 text-sm font-medium text-white/90 transition hover:text-white"
+                >
+                  <Phone className="h-4 w-4" />
+                  (503) 449-4362
+                </a>
+              </div>
+
+              <p className="text-sm text-white/60">
+                Direct Broker Access &middot; Always
+              </p>
             </motion.div>
           </motion.div>
         </div>
