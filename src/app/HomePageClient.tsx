@@ -333,7 +333,7 @@ function HeroSection() {
           style={{ scale: imageScale }}
           className="relative w-full"
         >
-          <div className="relative aspect-[16/9] w-full lg:aspect-[2.4/1]">
+          <div className="relative aspect-[3/1] w-full sm:aspect-[3.5/1] lg:aspect-[4/1]">
             <Image
               src="/images/img-hero-portland.jpg"
               alt="Portland residential neighborhood at golden hour"
