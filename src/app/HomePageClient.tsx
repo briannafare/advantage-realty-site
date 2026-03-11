@@ -1,26 +1,22 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useInView } from "framer-motion";
 import {
-  Phone,
-  Mail,
-  ChevronDown,
-  ArrowRight,
-  Star,
-  Quote,
-  Globe,
-  ExternalLink,
-} from "lucide-react";
+  motion,
+  useInView,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import { ChevronDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 /* ----------------------------------------------------------------
    Animation helpers
    ---------------------------------------------------------------- */
 function useAnimateOnScroll(threshold = 0.15) {
-  const ref = React.useRef(null);
+  const ref = useRef(null);
   const inView = useInView(ref, { once: true, amount: threshold });
   return { ref, inView };
 }
@@ -60,22 +56,22 @@ const FEATURES = [
   {
     emoji: "\ud83c\udfe1",
     title: "Deep Portland Market Knowledge",
-    body: "We\u2019ve been tracking Portland\u2019s neighborhoods for 20+ years. Not just the listings \u2014 the micro-trends, the streets, the schools, and the shift before it shows up on Zillow. When you work with Advantage, you\u2019re buying local intelligence, not just a licensed signature.",
+    body: "We\u2019ve been tracking Portland\u2019s neighborhoods for 20+ years. Not just the listings \u2014 the micro-trends, the streets, the schools, and the shift before it shows up on Zillow.",
   },
   {
     emoji: "\ud83c\udfe5",
     title: "Care Home Property Specialists",
-    body: "Portland\u2019s only real estate team with dedicated ADA consulting for residential care home properties. Whether you\u2019re buying, converting, or scaling a care portfolio \u2014 we\u2019ve navigated the zoning, the compliance, and the deal structure. Most agents won\u2019t touch this. We built a practice around it.",
+    body: "Portland\u2019s only real estate team with dedicated ADA consulting for residential care home properties. Most agents won\u2019t touch this. We built a practice around it.",
   },
   {
     emoji: "\ud83d\udcca",
     title: "Buy, Sell, and Invest \u2014 One Roof",
-    body: "First-time buyer trying to win in a competitive market. Homeowner who needs to sell without leaving money behind. Investor structuring a 1031 Exchange. Whatever your situation, there\u2019s a specialist on this team who\u2019s handled it. You don\u2019t need three agents. You need one team.",
+    body: "First-time buyer. Homeowner selling. Investor structuring a 1031 Exchange. Whatever your situation, there\u2019s a specialist on this team who\u2019s handled it.",
   },
   {
     emoji: "\ud83c\udf0d",
     title: "We Speak Your Language \u2014 Literally",
-    body: "Real estate is full of fine print. We work with clients in English, Oromo, and Amharic to make sure nothing gets lost in translation. Clear communication isn\u2019t a nice-to-have when you\u2019re signing a 30-year mortgage \u2014 it\u2019s how you protect the biggest investment of your life.",
+    body: "We work with clients in English, Oromo, and Amharic. Clear communication isn\u2019t a nice-to-have when you\u2019re signing a 30-year mortgage.",
   },
 ];
 
@@ -86,7 +82,7 @@ const TEAM = [
     phone: "(503) 793-7520",
     email: "huluka@advantageor.com",
     photo: "/images/team/huluka-abebe.jpg",
-    bio: "Huluka has been working Portland\u2019s real estate market for over 20 years. He built Advantage Realty on a simple idea: clients should leave feeling like they won. His specialty in care home properties and investment real estate makes him one of the most sought-after brokers in the city for buyers with complex needs.",
+    bio: "Huluka has been working Portland\u2019s real estate market for over 20 years. He built Advantage Realty on a simple idea: clients should leave feeling like they won. His specialty in care home properties and investment real estate makes him one of the most sought-after brokers in the city.",
   },
   {
     name: "Hunde Abebe",
@@ -94,7 +90,7 @@ const TEAM = [
     phone: "(503) 449-4362",
     email: "hunde@advantageor.com",
     photo: "/images/team/hunde-abebe.jpg",
-    bio: "Hunde\u2019s clients describe him as the agent who \u201cknows exactly what you want once you consult him.\u201d He works closely with buyers and sellers across Portland\u2019s residential market, with a reputation for patience, precision, and getting deals across the finish line when other agents can\u2019t.",
+    bio: "Hunde\u2019s clients describe him as the agent who \u201cknows exactly what you want once you consult him.\u201d He works closely with buyers and sellers across Portland\u2019s residential market, with a reputation for patience and precision.",
   },
   {
     name: "Jenni Anderson",
@@ -102,14 +98,14 @@ const TEAM = [
     phone: "(503) 508-8779",
     email: "jenni@advantageor.com",
     photo: "/images/team/jenni-anderson.png",
-    bio: "Jenni brings a finance background that goes beyond the transaction \u2014 she helps clients understand what they\u2019re walking into before they sign. Her expertise in 1031 Exchange transactions makes her an essential partner for investors looking to build or optimize a Portland portfolio without the tax hit.",
+    bio: "Jenni brings a finance background that goes beyond the transaction. Her expertise in 1031 Exchange transactions makes her an essential partner for investors looking to build a Portland portfolio without the tax hit.",
   },
 ];
 
 const TESTIMONIALS = [
   {
     quote:
-      "Tadesse Haile Hunde knows exactly what you want once you consult him. He found us a property that we never thought we could own at a price that was perfect for us. I was really advantageous working with him.",
+      "Tadesse Haile Hunde knows exactly what you want once you consult him. He found us a property that we never thought we could own at a price that was perfect for us.",
     name: "Tadesse Haile Hunde",
     source: "Google Review \u00b7 Buyer",
   },
@@ -133,59 +129,56 @@ const TESTIMONIALS = [
   },
 ];
 
-const MARKET_STATS = [
-  { value: "$525K", label: "Median Sale Price" },
-  { value: "28", label: "Avg Days on Market" },
-  { value: "$310", label: "Price per Sq Ft" },
-  { value: "+4.2%", label: "YoY Change" },
-];
-
 const LEAD_MAGNETS = [
   {
     audience: "For Buyers",
     title: "Portland Neighborhood Insider Guide",
-    desc: "Which neighborhoods are actually up-and-coming. Which ones are overpriced. What the data says vs. what the listings say. 20 years of Portland street knowledge \u2014 in a free PDF.",
-    cta: "Get the Free Guide \u2192",
+    desc: "Which neighborhoods are actually up-and-coming. Which ones are overpriced. 20 years of Portland street knowledge \u2014 in a free PDF.",
+    cta: "Get the Free Guide",
   },
   {
     audience: "For Sellers",
-    title: "Free Home Valuation \u2014 What\u2019s Your Home Worth?",
-    desc: "Not a Zestimate. A real comparative market analysis from a Portland broker who knows your neighborhood. Submit your address and we\u2019ll have your CMA in 48 hours.",
-    cta: "Request Free Valuation \u2192",
+    title: "Free Home Valuation",
+    desc: "Not a Zestimate. A real comparative market analysis from a Portland broker who knows your neighborhood.",
+    cta: "Request Free Valuation",
   },
   {
     audience: "For Investors",
     title: "Oregon Care Home Investor Checklist",
-    desc: "ADA requirements. Zoning considerations. Licensing pathways. Deal structure questions most investors don\u2019t know to ask. The only free checklist built specifically for Portland care home investing.",
-    cta: "Get the Free Checklist \u2192",
+    desc: "ADA requirements. Zoning considerations. Licensing pathways. The only free checklist built for Portland care home investing.",
+    cta: "Get the Free Checklist",
   },
 ];
 
 const FAQS = [
   {
-    question: "What\u2019s the best neighborhood to buy a home in Portland in 2026?",
+    question:
+      "What\u2019s the best neighborhood to buy a home in Portland in 2026?",
     answer:
-      "The best Portland neighborhood depends on your budget, commute, and priorities \u2014 but right now, St. Johns, Lents, and Woodstock are showing strong value before they hit mainstream attention. Sellwood and Alberta are more established but still competitive. If you want a neighborhood breakdown based on your specific criteria, download our free Portland Neighborhood Insider Guide or schedule a call and we\u2019ll walk you through it.",
+      "The best Portland neighborhood depends on your budget, commute, and priorities \u2014 but right now, St. Johns, Lents, and Woodstock are showing strong value before they hit mainstream attention. Sellwood and Alberta are more established but still competitive. Download our free Portland Neighborhood Insider Guide or schedule a call and we\u2019ll walk you through it.",
   },
   {
     question: "How long does it take to buy a home in Portland?",
     answer:
-      "From offer accepted to keys in hand, Portland closings typically take 30\u201345 days once you\u2019re under contract. Finding the right home can take anywhere from a few weeks to a few months depending on your criteria and how competitive your price range is. The most important thing is to get pre-approved before you start looking \u2014 in Portland\u2019s market, buyers who aren\u2019t pre-approved often lose out to buyers who are ready to move immediately.",
+      "From offer accepted to keys in hand, Portland closings typically take 30\u201345 days once you\u2019re under contract. Finding the right home can take a few weeks to a few months. The most important thing is to get pre-approved before you start looking.",
   },
   {
-    question: "What makes Advantage Realty different from other Portland real estate agents?",
+    question:
+      "What makes Advantage Realty different from other Portland real estate agents?",
     answer:
-      "Three things. First, 20+ years in this specific market \u2014 we know Portland\u2019s micro-neighborhoods, not just zip codes. Second, genuine specialization: Advantage Realty is the only Portland brokerage with dedicated ADA consulting for care home property transactions. Third, we\u2019re a small team by choice. When you work with us, you deal with the same people from consultation to closing \u2014 not a rotating cast of assistants.",
+      "Three things. First, 20+ years in this specific market. Second, genuine specialization: we\u2019re the only Portland brokerage with dedicated ADA consulting for care home property transactions. Third, we\u2019re a small team by choice \u2014 same people from consultation to closing.",
   },
   {
-    question: "Can Advantage Realty help with care home or adult foster care property investments in Portland?",
+    question:
+      "Can Advantage Realty help with care home or adult foster care property investments?",
     answer:
-      "Yes \u2014 this is one of our core specialties. Advantage Realty works with buyers and investors purchasing, converting, or scaling residential care home properties in Portland and the surrounding metro area. We provide ADA compliance consulting as part of the process, which is something most generalist agents simply cannot offer. If you\u2019re looking at adult foster care real estate in Oregon, the Oregon Care Home Investor Checklist on this page is a good starting point.",
+      "Yes \u2014 this is one of our core specialties. We work with buyers and investors purchasing, converting, or scaling residential care home properties in Portland and the surrounding metro area, including ADA compliance consulting.",
   },
   {
-    question: "Does Advantage Realty work with buyers and sellers who speak Oromo or Amharic?",
+    question:
+      "Does Advantage Realty work with buyers and sellers who speak Oromo or Amharic?",
     answer:
-      "Yes. Our team includes brokers who work fluently in English, Oromo, and Amharic. Real estate transactions involve significant legal and financial detail \u2014 we believe every client deserves to understand exactly what they\u2019re signing, in the language they\u2019re most comfortable with. If you\u2019d like to speak with a broker in Oromo or Amharic, reach out directly and we\u2019ll connect you with the right person on our team.",
+      "Yes. Our team includes brokers who work fluently in English, Oromo, and Amharic. We believe every client deserves to understand exactly what they\u2019re signing, in the language they\u2019re most comfortable with.",
   },
 ];
 
@@ -210,38 +203,38 @@ export default function HomePageClient() {
 }
 
 /* ================================================================
-   01 · HERO — White bg + lime-tint right panel
+   01 · HERO — Centered text + scroll-reveal image (Rillo style)
    ================================================================ */
 function HeroSection() {
-  return (
-    <section className="relative overflow-hidden bg-white">
-      {/* Lime tint panel on right */}
-      <div
-        className="pointer-events-none absolute right-0 top-0 hidden h-full w-[42%] bg-[#F0F7DC] lg:block"
-        style={{ clipPath: "polygon(12% 0, 100% 0, 100% 100%, 0 100%)" }}
-      />
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
 
-      <div className="relative mx-auto flex max-w-7xl flex-col-reverse items-center gap-12 px-6 pb-16 pt-12 lg:flex-row lg:gap-16 lg:pb-24 lg:pt-20">
-        {/* Text column */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={stagger}
-          className="relative z-10 flex-1 text-center lg:text-left"
-        >
+  // Image starts at ~70% width and scales to 100% as user scrolls
+  const imageScale = useTransform(scrollYProgress, [0, 0.5], [0.75, 1]);
+  const imageRadius = useTransform(scrollYProgress, [0, 0.5], [28, 0]);
+  const imageY = useTransform(scrollYProgress, [0, 0.5], [0, -40]);
+
+  return (
+    <section ref={heroRef} className="relative bg-white pb-0">
+      {/* Text block — centered, above fold */}
+      <div className="mx-auto max-w-4xl px-6 pb-12 pt-10 text-center lg:pt-16">
+        <motion.div initial="hidden" animate="visible" variants={stagger}>
           {/* Welcome badge */}
           <motion.div variants={fadeUp} custom={0}>
-            <span className="mb-5 inline-flex items-center gap-[7px] rounded-full border border-[#E0DDD6] bg-white px-[14px] py-[5px] font-body text-xs font-medium text-[#505050]">
-              <span className="h-[7px] w-[7px] rounded-full bg-[#5BB5D8]" />
+            <span className="mb-6 inline-flex items-center gap-[7px] rounded-full border border-[#E0DDD6] bg-white px-[14px] py-[5px] font-body text-xs font-medium text-[#505050]">
+              <span className="h-[7px] w-[7px] rounded-full bg-[#C9E83A]" />
               Portland&rsquo;s Most Trusted Real Estate Team
             </span>
           </motion.div>
 
-          {/* H1 — stagger line by line */}
+          {/* H1 */}
           <motion.h1
             variants={fadeUp}
             custom={1}
-            className="mt-2 font-display text-[clamp(40px,7vw,72px)] font-extrabold leading-[1.0] tracking-[-0.025em] text-[#141414]"
+            className="mt-4 font-display text-[clamp(38px,7vw,72px)] font-extrabold leading-[1.0] tracking-[-0.03em] text-[#141414]"
           >
             Portland Real Estate.
             <br />
@@ -255,11 +248,11 @@ function HeroSection() {
             .
           </motion.h1>
 
-          {/* Subheadline */}
+          {/* Sub */}
           <motion.p
             variants={fadeUp}
             custom={2}
-            className="mx-auto mt-6 max-w-[580px] font-body text-[17px] leading-[1.75] text-[#505050] lg:mx-0"
+            className="mx-auto mt-6 max-w-xl font-body text-[17px] leading-[1.75] text-[#505050]"
           >
             Portland&rsquo;s market doesn&rsquo;t wait. You need a team that
             knows which neighborhoods are moving, what a property is actually
@@ -271,7 +264,7 @@ function HeroSection() {
           <motion.div
             variants={fadeUp}
             custom={3}
-            className="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:items-start"
+            className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
           >
             <Link href="/contact">
               <Button variant="default" size="lg">
@@ -279,16 +272,10 @@ function HeroSection() {
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
-
-            {/* Circle-arrow soft CTA */}
-            <Link
-              href="#lead-magnets"
-              className="inline-flex items-center gap-[10px] font-display text-[13px] font-bold tracking-[-0.01em] text-[#141414] transition-colors"
-            >
-              Get the Portland Neighborhood Guide
-              <span className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-[#141414] text-white text-sm transition-transform hover:translate-x-1">
-                &rarr;
-              </span>
+            <Link href="#lead-magnets">
+              <Button variant="secondary" size="lg">
+                Get the Neighborhood Guide
+              </Button>
             </Link>
           </motion.div>
 
@@ -296,7 +283,7 @@ function HeroSection() {
           <motion.div
             variants={fadeUp}
             custom={4}
-            className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 font-body text-xs text-[#909090] lg:justify-start"
+            className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 font-body text-xs text-[#909090]"
           >
             {HERO_TRUST.map((item, i) => (
               <React.Fragment key={i}>
@@ -306,25 +293,26 @@ function HeroSection() {
             ))}
           </motion.div>
         </motion.div>
+      </div>
 
-        {/* Hero Image — right panel */}
+      {/* Scroll-reveal hero image — top 30% visible above fold */}
+      <div className="relative mx-auto max-w-7xl overflow-hidden px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-          className="relative z-10 flex-1"
+          style={{
+            scale: imageScale,
+            borderRadius: imageRadius,
+            y: imageY,
+          }}
+          className="relative mx-auto aspect-[16/8] w-full overflow-hidden"
         >
-          <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
-            <Image
-              src="/images/team/huluka-abebe.jpg"
-              alt="Huluka Abebe — Principal Broker at Advantage Realty LLC"
-              width={540}
-              height={675}
-              priority
-              className="relative z-10 h-auto w-full rounded-[22px] object-cover object-top"
-              style={{ aspectRatio: "4/5" }}
-            />
-          </div>
+          <Image
+            src="/images/img-hero-portland.jpg"
+            alt="Portland residential neighborhood at golden hour"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
         </motion.div>
       </div>
     </section>
@@ -338,7 +326,7 @@ function StatsBar() {
   const { ref, inView } = useAnimateOnScroll(0.3);
 
   return (
-    <section ref={ref} className="bg-white py-8">
+    <section ref={ref} className="bg-white py-10">
       <div className="mx-auto max-w-5xl px-6">
         <motion.div
           variants={stagger}
@@ -380,7 +368,7 @@ function WhyAdvantage() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="mx-auto max-w-3xl"
+          className="mx-auto max-w-3xl text-center"
         >
           <p className="mb-3 font-body text-[10px] font-semibold uppercase tracking-[0.18em] text-[#7a9000]">
             Why Advantage Realty &middot; Portland, Oregon
@@ -397,7 +385,7 @@ function WhyAdvantage() {
             </em>
             .
           </h2>
-          <p className="mt-5 max-w-[580px] font-body text-[15px] leading-[1.75] text-[#505050]">
+          <p className="mx-auto mt-5 max-w-xl font-body text-[15px] leading-[1.75] text-[#505050]">
             Most agents know how to fill out a contract. Our team knows the
             Sellwood house that didn&rsquo;t list because the owner knew Huluka.
             That&rsquo;s the difference 20 years makes.
@@ -445,7 +433,7 @@ function TeamSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="mx-auto max-w-3xl"
+          className="mx-auto max-w-3xl text-center"
         >
           <p className="mb-3 font-body text-[10px] font-semibold uppercase tracking-[0.18em] text-[#909090]">
             Your Advantage Realty Team &middot; Portland, Oregon
@@ -460,7 +448,7 @@ function TeamSection() {
             </em>
             .
           </h2>
-          <p className="mt-5 max-w-[580px] font-body text-[15px] leading-[1.75] text-[#505050]">
+          <p className="mx-auto mt-5 max-w-xl font-body text-[15px] leading-[1.75] text-[#505050]">
             Not a big-box brokerage. Not a team you get handed off to. Three
             specialists who built their careers in Portland &mdash; and who
             answer when you call.
@@ -480,7 +468,6 @@ function TeamSection() {
               custom={i}
               className="group overflow-hidden rounded-[14px] border border-[#E0DDD6] bg-white"
             >
-              {/* Photo — 4:5 portrait, grayscale → color hover */}
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
                   src={t.photo}
@@ -490,12 +477,11 @@ function TeamSection() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
-
               <div className="p-6">
                 <h3 className="font-display text-[14px] font-extrabold tracking-[-0.01em] text-[#141414]">
                   {t.name}
                 </h3>
-                <p className="mt-1 font-body text-[11px] font-semibold uppercase tracking-[0.04em] text-[#E8622A]">
+                <p className="mt-1 font-body text-[11px] font-semibold uppercase tracking-[0.04em] text-[#2A5430]">
                   {t.role}
                 </p>
                 <p className="mt-3 font-body text-[12px] leading-[1.65] text-[#505050]">
@@ -515,75 +501,96 @@ function TeamSection() {
 }
 
 /* ================================================================
-   05 · WE BELIEVE — Dark green section (#1D3B22)
+   05 · WE BELIEVE — Dark green section + handshake image
    ================================================================ */
 function WeBelieveSection() {
   const { ref, inView } = useAnimateOnScroll();
 
   return (
     <section ref={ref} className="bg-[#1D3B22] py-20 lg:py-28">
-      <div className="mx-auto max-w-3xl px-6">
-        <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={stagger}
-        >
-          <motion.p
-            variants={fadeUp}
-            custom={0}
-            className="mb-3 font-body text-[10px] font-semibold uppercase tracking-[0.18em] text-white/40"
-          >
-            Why It Matters
-          </motion.p>
-
-          <motion.h2
-            variants={fadeUp}
-            custom={1}
-            className="font-display text-[clamp(24px,3.5vw,38px)] font-extrabold leading-[1.1] tracking-[-0.02em] text-white"
-          >
-            We Believe Real Estate
-            <br />
-            Should{" "}
-            <em
-              className="font-accent not-italic text-[#C9E83A]"
-              style={{ fontStyle: "italic", fontWeight: 300 }}
-            >
-              Empower
-            </em>{" "}
-            You.
-          </motion.h2>
-
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-16">
+          {/* Text */}
           <motion.div
-            variants={fadeUp}
-            custom={2}
-            className="mt-6 max-w-[560px] space-y-5 font-body text-[14px] leading-[1.75] text-white/60"
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            variants={stagger}
+            className="flex-1"
           >
-            <p>
-              Not overwhelm you. Not trap you in a process you don&rsquo;t
-              understand, with an agent you can&rsquo;t reach, making a decision
-              you&rsquo;re not confident about.
-            </p>
-            <p>
-              You&rsquo;re buying or selling one of the biggest assets
-              you&rsquo;ll ever own. You deserve straight answers, real
-              expertise, and a team that&rsquo;s rooting for your outcome
-              &mdash; not their commission check.
-            </p>
+            <motion.p
+              variants={fadeUp}
+              custom={0}
+              className="mb-3 font-body text-[10px] font-semibold uppercase tracking-[0.18em] text-white/40"
+            >
+              Why It Matters
+            </motion.p>
+
+            <motion.h2
+              variants={fadeUp}
+              custom={1}
+              className="font-display text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.05] tracking-[-0.02em] text-white"
+            >
+              We Believe Real Estate
+              <br />
+              Should{" "}
+              <em
+                className="font-accent not-italic text-[#C9E83A]"
+                style={{ fontStyle: "italic", fontWeight: 300 }}
+              >
+                Empower
+              </em>{" "}
+              You.
+            </motion.h2>
+
+            <motion.div
+              variants={fadeUp}
+              custom={2}
+              className="mt-6 max-w-[520px] space-y-5 font-body text-[14px] leading-[1.75] text-white/60"
+            >
+              <p>
+                Not overwhelm you. Not trap you in a process you don&rsquo;t
+                understand, with an agent you can&rsquo;t reach, making a
+                decision you&rsquo;re not confident about.
+              </p>
+              <p>
+                You&rsquo;re buying or selling one of the biggest assets
+                you&rsquo;ll ever own. You deserve straight answers, real
+                expertise, and a team that&rsquo;s rooting for your outcome
+                &mdash; not their commission check.
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeUp} custom={3} className="mt-10">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-[10px] font-display text-[13px] font-bold tracking-[-0.01em] text-white transition-colors"
+              >
+                Let&rsquo;s Talk About Your Goals
+                <span className="flex h-[34px] w-[34px] items-center justify-center rounded-full border-[1.5px] border-white/40 text-white text-sm transition-all hover:border-white">
+                  &rarr;
+                </span>
+              </Link>
+            </motion.div>
           </motion.div>
 
-          {/* Ghost circle-arrow CTA */}
-          <motion.div variants={fadeUp} custom={3} className="mt-10">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-[10px] font-display text-[13px] font-bold tracking-[-0.01em] text-white transition-colors"
-            >
-              Let&rsquo;s Talk About Your Goals
-              <span className="flex h-[34px] w-[34px] items-center justify-center rounded-full border-[1.5px] border-white/40 text-white text-sm transition-all hover:border-white">
-                &rarr;
-              </span>
-            </Link>
+          {/* Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex-1"
+          >
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[22px]">
+              <Image
+                src="/images/img-handshake.jpg"
+                alt="Real estate closing handshake"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -602,7 +609,7 @@ function TestimonialsSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="mx-auto max-w-3xl"
+          className="mx-auto max-w-3xl text-center"
         >
           <p className="mb-3 font-body text-[10px] font-semibold uppercase tracking-[0.18em] text-[#909090]">
             What Our Clients Say &middot; Verified Reviews
@@ -634,7 +641,7 @@ function TestimonialsSection() {
               custom={i}
               className="rounded-[14px] border border-[#E0DDD6] bg-[#F2F0EA] p-6"
             >
-              <div className="mb-3 text-[13px] tracking-[2px] text-[#E8622A]">
+              <div className="mb-3 text-[13px] tracking-[2px] text-[#C9E83A]">
                 {"\u2605".repeat(5)}
               </div>
               <p className="font-body text-[13px] italic leading-[1.7] text-[#141414]">
@@ -652,18 +659,17 @@ function TestimonialsSection() {
           ))}
         </motion.div>
 
-        {/* See reviews CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-10"
+          className="mt-10 text-center"
         >
           <a
             href="https://share.google/8FMAL8sX47XtEb0Im"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-[10px] font-display text-[13px] font-bold tracking-[-0.01em] text-[#141414] transition-colors hover:text-[#E8622A]"
+            className="inline-flex items-center gap-[10px] font-display text-[13px] font-bold tracking-[-0.01em] text-[#141414] transition-colors hover:text-[#2A5430]"
           >
             See All Reviews on Google
             <span className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-[#141414] text-white text-sm transition-transform hover:translate-x-1">
@@ -677,7 +683,7 @@ function TestimonialsSection() {
 }
 
 /* ================================================================
-   07 · MARKET DATA — Blue surface (#EBF6FC)
+   07 · MARKET DATA — Blue surface + SVG chart
    ================================================================ */
 function MarketDataSection() {
   const { ref, inView } = useAnimateOnScroll();
@@ -689,7 +695,7 @@ function MarketDataSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="mx-auto max-w-3xl"
+          className="mx-auto max-w-3xl text-center"
         >
           <p className="mb-3 font-body text-[10px] font-semibold uppercase tracking-[0.18em] text-[#5BB5D8]">
             Portland Real Estate Market &middot; Live Data
@@ -706,52 +712,39 @@ function MarketDataSection() {
             </em>
             .
           </h2>
-          <p className="mt-5 max-w-[540px] font-body text-[14px] leading-[1.75] text-[#505050]">
+          <p className="mx-auto mt-5 max-w-xl font-body text-[14px] leading-[1.75] text-[#505050]">
             Portland&rsquo;s real estate market has shifted more in the past
             four years than in the previous decade. Here&rsquo;s where things
-            stand &mdash; and why having a team that reads these trends in real
-            time changes everything.
+            stand.
           </p>
         </motion.div>
 
-        {/* Stats row */}
+        {/* Animated SVG chart */}
         <motion.div
-          variants={stagger}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          className="mt-10 flex flex-col overflow-hidden rounded-[14px] border border-[#C4E4F2] bg-white sm:flex-row"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-12"
         >
-          {MARKET_STATS.map((s, i) => (
-            <motion.div
-              key={i}
-              variants={fadeUp}
-              custom={i}
-              className="flex-1 border-b border-[#C4E4F2] p-5 text-center sm:border-b-0 sm:border-r last:border-0"
-            >
-              <p className="font-display text-[28px] font-extrabold leading-none tracking-[-0.02em] text-[#5BB5D8]">
-                {s.value}
-              </p>
-              <p className="mt-2 font-body text-[11px] text-[#909090]">
-                {s.label}
-              </p>
-            </motion.div>
-          ))}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/chart-market-data.svg"
+            alt="Portland real estate market data chart showing trends from 2020 to 2025"
+            className="w-full rounded-[20px]"
+          />
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-10"
+          className="mt-10 text-center"
         >
-          <Link
-            href="#lead-magnets"
-            className="inline-flex items-center gap-[10px] font-display text-[13px] font-bold tracking-[-0.01em] text-[#141414] transition-colors hover:text-[#5BB5D8]"
-          >
-            Download the Free Portland Neighborhood Guide
-            <span className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-[#141414] text-white text-sm transition-transform hover:translate-x-1">
-              &rarr;
-            </span>
+          <Link href="#lead-magnets">
+            <Button variant="default" size="lg">
+              Download the Free Neighborhood Guide
+              <ArrowRight className="h-4 w-4" />
+            </Button>
           </Link>
         </motion.div>
       </div>
@@ -766,13 +759,17 @@ function LeadMagnetsSection() {
   const { ref, inView } = useAnimateOnScroll();
 
   return (
-    <section id="lead-magnets" ref={ref} className="bg-[#1D3B22] py-20 lg:py-28">
+    <section
+      id="lead-magnets"
+      ref={ref}
+      className="bg-[#1D3B22] py-20 lg:py-28"
+    >
       <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="mx-auto max-w-3xl"
+          className="mx-auto max-w-3xl text-center"
         >
           <p className="mb-3 font-body text-[10px] font-semibold uppercase tracking-[0.18em] text-white/40">
             Free Resources &middot; Start Here
@@ -789,9 +786,9 @@ function LeadMagnetsSection() {
             </em>
             .
           </h2>
-          <p className="mt-5 max-w-[520px] font-body text-[14px] leading-[1.75] text-white/60">
+          <p className="mx-auto mt-5 max-w-lg font-body text-[14px] leading-[1.75] text-white/60">
             Three free resources built for the three most common situations we
-            see. Pick the one that fits and we&rsquo;ll get it to you in minutes.
+            see. Pick the one that fits.
           </p>
         </motion.div>
 
@@ -818,7 +815,7 @@ function LeadMagnetsSection() {
                 {m.desc}
               </p>
               <p className="mt-4 flex items-center gap-2 font-display text-[12px] font-bold text-[#C9E83A]">
-                {m.cta}
+                {m.cta} &rarr;
               </p>
             </motion.div>
           ))}
@@ -842,6 +839,7 @@ function FaqSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
+          className="text-center"
         >
           <p className="mb-3 font-body text-[10px] font-semibold uppercase tracking-[0.18em] text-[#909090]">
             Common Questions &middot; Portland Real Estate
@@ -870,14 +868,14 @@ function FaqSection() {
             <div key={i} className="border-b border-[#E0DDD6] last:border-b-0">
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="flex w-full items-center justify-between py-5 text-left font-display text-[14px] font-bold tracking-[-0.01em] text-[#141414] transition-colors hover:text-[#E8622A]"
+                className="flex w-full items-center justify-between py-5 text-left font-display text-[14px] font-bold tracking-[-0.01em] text-[#141414] transition-colors hover:text-[#2A5430]"
                 aria-expanded={openIndex === i}
               >
                 <span className="pr-4">{faq.question}</span>
                 <motion.span
                   animate={{ rotate: openIndex === i ? 180 : 0 }}
                   transition={{ duration: 0.25, ease: "easeInOut" }}
-                  className="flex-shrink-0 text-[#E8622A]"
+                  className="flex-shrink-0 text-[#C9E83A]"
                 >
                   <ChevronDown className="h-5 w-5" />
                 </motion.span>
@@ -910,14 +908,14 @@ function FinalCtaSection() {
   const { ref, inView } = useAnimateOnScroll();
 
   return (
-    <section ref={ref} className="bg-[#F8F6F1] px-6 py-12">
+    <section ref={ref} className="bg-[#F8F6F1] px-6 py-16">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
         className="relative mx-auto max-w-5xl overflow-hidden rounded-[22px] bg-[#141414] px-8 py-20 text-center lg:px-16"
       >
-        <h2 className="mx-auto max-w-[600px] font-display text-[clamp(26px,4vw,44px)] font-extrabold leading-[1.1] tracking-[-0.02em] text-white">
+        <h2 className="mx-auto max-w-[600px] font-display text-[clamp(26px,4vw,44px)] font-extrabold leading-[1.05] tracking-[-0.02em] text-white">
           Take Control of Your
           <br />
           <em
@@ -936,7 +934,7 @@ function FinalCtaSection() {
 
         <div className="mt-8">
           <Link href="/contact">
-            <Button variant="outlineWhite">
+            <Button variant="outlineWhite" size="lg">
               Schedule a Free Consultation
             </Button>
           </Link>

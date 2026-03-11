@@ -34,7 +34,7 @@ export default function Nav() {
     <>
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-50 h-20 transition-all duration-300",
+          "fixed inset-x-0 top-0 z-50 h-24 transition-all duration-300",
           scrolled
             ? "bg-white/95 shadow-sm shadow-[#E0DDD6]/50 backdrop-blur-md"
             : "bg-white/80 backdrop-blur-sm"
@@ -46,9 +46,10 @@ export default function Nav() {
             <Image
               src="/images/advantage-logo.png"
               alt="Advantage Realty LLC"
-              width={80}
-              height={80}
-              className="h-16 w-16 lg:h-[72px] lg:w-[72px]"
+              width={120}
+              height={120}
+              className="h-[80px] w-[80px] lg:h-[88px] lg:w-[88px]"
+              priority
             />
           </Link>
 
@@ -76,16 +77,9 @@ export default function Nav() {
               {BRAND.phone}
             </a>
 
-            {/* Log In — outlined */}
+            {/* Get Started — lime CTA (Rillo nav style) */}
             <Link href="/contact">
-              <Button variant="secondary" size="sm">
-                Log In
-              </Button>
-            </Link>
-
-            {/* Get Started — dark fill (nav only) */}
-            <Link href="/contact">
-              <Button variant="dark" size="sm">
+              <Button variant="default" size="sm">
                 Get Started
               </Button>
             </Link>
@@ -187,7 +181,7 @@ export default function Nav() {
         )}
       </AnimatePresence>
 
-      <div className="h-20" />
+      <div className="h-24" />
     </>
   );
 }

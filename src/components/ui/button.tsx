@@ -9,9 +9,9 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        /* PRIMARY on light — Orange filled pill */
+        /* PRIMARY — Lime filled pill (Rillo style) */
         default:
-          "rounded-full bg-[#E8622A] text-white text-[13px] px-[22px] py-[11px] hover:bg-[#D4551F] hover:scale-[1.02] active:scale-[0.98]",
+          "rounded-full bg-[#C9E83A] text-[#1D3B22] text-[13px] px-[22px] py-[11px] hover:bg-[#B6D82A] hover:scale-[1.02] active:scale-[0.98]",
         /* SECONDARY on light — Outlined dark */
         secondary:
           "rounded-full bg-transparent text-[#141414] border-[1.5px] border-[#141414] text-[13px] px-[22px] py-[11px] hover:bg-[#141414] hover:text-white active:scale-[0.98]",
@@ -21,9 +21,6 @@ const buttonVariants = cva(
         /* DARK fill — Nav "Get Started" ONLY */
         dark:
           "rounded-full bg-[#141414] text-white text-[13px] px-[22px] py-[11px] hover:bg-[#2a2a2a] hover:scale-[1.01] active:scale-[0.98]",
-        /* LIME fill — CTA inside dark sections */
-        lime:
-          "rounded-full bg-[#C9E83A] text-[#1D3B22] text-[13px] px-[22px] py-[11px] hover:bg-[#B6D82A] hover:scale-[1.02] active:scale-[0.98]",
         /* OUTLINE WHITE — dark CTA block near footer */
         outlineWhite:
           "rounded-full bg-transparent text-white border-[1.5px] border-white/50 text-[13px] px-[22px] py-[11px] hover:border-white hover:bg-white/10 active:scale-[0.98]",

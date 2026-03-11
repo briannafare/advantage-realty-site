@@ -1,0 +1,104 @@
+<svg width="900" height="200" viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="200" fill="#F8F6F1" rx="16"/>
+
+  <!-- Labels row -->
+  <text x="75" y="28" font-size="10" fill="#909090" text-anchor="middle" font-family="sans-serif" font-weight="600" letter-spacing="1">BUY</text>
+  <text x="175" y="28" font-size="10" fill="#909090" text-anchor="middle" font-family="sans-serif" font-weight="600" letter-spacing="1">SELL</text>
+  <text x="275" y="28" font-size="10" fill="#909090" text-anchor="middle" font-family="sans-serif" font-weight="600" letter-spacing="1">INVEST</text>
+  <text x="375" y="28" font-size="10" fill="#909090" text-anchor="middle" font-family="sans-serif" font-weight="600" letter-spacing="1">CARE HOME</text>
+  <text x="475" y="28" font-size="10" fill="#909090" text-anchor="middle" font-family="sans-serif" font-weight="600" letter-spacing="1">1031 EXCHANGE</text>
+  <text x="575" y="28" font-size="10" fill="#909090" text-anchor="middle" font-family="sans-serif" font-weight="600" letter-spacing="1">LANGUAGES</text>
+  <text x="675" y="28" font-size="10" fill="#909090" text-anchor="middle" font-family="sans-serif" font-weight="600" letter-spacing="1">COMMUNITY</text>
+  <text x="775" y="28" font-size="10" fill="#909090" text-anchor="middle" font-family="sans-serif" font-weight="600" letter-spacing="1">NETWORK</text>
+  <text x="862" y="28" font-size="10" fill="#909090" text-anchor="middle" font-family="sans-serif" font-weight="600" letter-spacing="1">YEARS</text>
+
+  <!-- Icon 1: Buy / Home — green -->
+  <rect x="43" y="40" width="64" height="64" rx="16" fill="#EDF7E8"/>
+  <path d="M75 56 L57 70 L57 96 L67 96 L67 82 L83 82 L83 96 L93 96 L93 70 Z" fill="none" stroke="#2A5430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M67 82 L67 96" stroke="#2A5430" stroke-width="2" stroke-linecap="round"/>
+  <!-- Chimney -->
+  <rect x="80" y="56" width="6" height="10" rx="1" fill="none" stroke="#2A5430" stroke-width="2" stroke-linecap="round"/>
+  <text x="75" y="122" font-size="11" fill="#2A5430" text-anchor="middle" font-family="sans-serif" font-weight="600">Buy a Home</text>
+
+  <!-- Icon 2: Sell / Up arrow in house — orange -->
+  <rect x="143" y="40" width="64" height="64" rx="16" fill="#FFF4ED"/>
+  <path d="M175 56 L157 70 L157 96 L167 96 L167 82 L183 82 L183 96 L193 96 L193 70 Z" fill="none" stroke="#E8622A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="175" y1="88" x2="175" y2="76" stroke="#E8622A" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="171,80 175,76 179,80" fill="none" stroke="#E8622A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="175" y="122" font-size="11" fill="#E8622A" text-anchor="middle" font-family="sans-serif" font-weight="600">Sell Your Home</text>
+
+  <!-- Icon 3: Invest / Dollar trend line — blue -->
+  <rect x="243" y="40" width="64" height="64" rx="16" fill="#EBF6FC"/>
+  <polyline points="257,92 267,78 277,84 287,62 297,68" fill="none" stroke="#5BB5D8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="297" cy="68" r="3.5" fill="#5BB5D8"/>
+  <text x="275" y="122" font-size="11" fill="#5BB5D8" text-anchor="middle" font-family="sans-serif" font-weight="600">Invest</text>
+
+  <!-- Icon 4: Care Home / Shield + person — green -->
+  <rect x="343" y="40" width="64" height="64" rx="16" fill="#EDF7E8"/>
+  <!-- Building outline -->
+  <path d="M357 92 L357 66 L375 56 L393 66 L393 92" fill="none" stroke="#2A5430" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Wide door (ADA symbol) -->
+  <rect x="369" y="78" width="12" height="14" rx="2" fill="none" stroke="#2A5430" stroke-width="2"/>
+  <!-- Window -->
+  <rect x="359" y="70" width="8" height="7" rx="1" fill="none" stroke="#2A5430" stroke-width="1.5"/>
+  <rect x="383" y="70" width="8" height="7" rx="1" fill="none" stroke="#2A5430" stroke-width="1.5"/>
+  <!-- ADA accessibility dot -->
+  <circle cx="393" cy="60" r="4" fill="#C9E83A"/>
+  <text x="375" y="122" font-size="11" fill="#2A5430" text-anchor="middle" font-family="sans-serif" font-weight="600">Care Home</text>
+
+  <!-- Icon 5: 1031 Exchange / Two arrows cycling — orange -->
+  <rect x="443" y="40" width="64" height="64" rx="16" fill="#FFF4ED"/>
+  <!-- Circular arrows -->
+  <path d="M471 58 C462 58 455 65 455 74 C455 83 462 90 471 90" fill="none" stroke="#E8622A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M479 90 C488 90 495 83 495 74 C495 65 488 58 479 58" fill="none" stroke="#E8622A" stroke-width="2" stroke-linecap="round"/>
+  <!-- Arrow heads -->
+  <polyline points="468,54 471,58 474,54" fill="none" stroke="#E8622A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="476,94 479,90 482,94" fill="none" stroke="#E8622A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="475" y="122" font-size="11" fill="#E8622A" text-anchor="middle" font-family="sans-serif" font-weight="600">1031 Exchange</text>
+
+  <!-- Icon 6: Languages / Globe with lines — green -->
+  <rect x="543" y="40" width="64" height="64" rx="16" fill="#EDF7E8"/>
+  <circle cx="575" cy="72" r="18" fill="none" stroke="#2A5430" stroke-width="2"/>
+  <ellipse cx="575" cy="72" rx="9" ry="18" fill="none" stroke="#2A5430" stroke-width="1.5"/>
+  <line x1="557" y1="72" x2="593" y2="72" stroke="#2A5430" stroke-width="1.5"/>
+  <line x1="559" y1="62" x2="591" y2="62" stroke="#2A5430" stroke-width="1" opacity="0.5"/>
+  <line x1="559" y1="82" x2="591" y2="82" stroke="#2A5430" stroke-width="1" opacity="0.5"/>
+  <text x="575" y="122" font-size="11" fill="#2A5430" text-anchor="middle" font-family="sans-serif" font-weight="600">Multilingual</text>
+
+  <!-- Icon 7: Community / Heart with people — orange -->
+  <rect x="643" y="40" width="64" height="64" rx="16" fill="#FFF4ED"/>
+  <!-- Three people -->
+  <circle cx="675" cy="62" r="5" fill="none" stroke="#E8622A" stroke-width="2"/>
+  <path d="M665 82 C665 74 670 70 675 70 C680 70 685 74 685 82" fill="none" stroke="#E8622A" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="660" cy="64" r="4" fill="none" stroke="#E8622A" stroke-width="1.5" opacity="0.6"/>
+  <path d="M652 80 C652 74 656 71 660 71" fill="none" stroke="#E8622A" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <circle cx="690" cy="64" r="4" fill="none" stroke="#E8622A" stroke-width="1.5" opacity="0.6"/>
+  <path d="M698 80 C698 74 694 71 690 71" fill="none" stroke="#E8622A" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <text x="675" y="122" font-size="11" fill="#E8622A" text-anchor="middle" font-family="sans-serif" font-weight="600">Community</text>
+
+  <!-- Icon 8: Network / Nodes — blue -->
+  <rect x="743" y="40" width="64" height="64" rx="16" fill="#EBF6FC"/>
+  <!-- Center node -->
+  <circle cx="775" cy="72" r="6" fill="#5BB5D8"/>
+  <!-- Outer nodes -->
+  <circle cx="757" cy="58" r="4" fill="none" stroke="#5BB5D8" stroke-width="2"/>
+  <circle cx="793" cy="58" r="4" fill="none" stroke="#5BB5D8" stroke-width="2"/>
+  <circle cx="757" cy="86" r="4" fill="none" stroke="#5BB5D8" stroke-width="2"/>
+  <circle cx="793" cy="86" r="4" fill="none" stroke="#5BB5D8" stroke-width="2"/>
+  <!-- Connecting lines -->
+  <line x1="761" y1="61" x2="769" y2="67" stroke="#5BB5D8" stroke-width="1.5" opacity="0.6"/>
+  <line x1="789" y1="61" x2="781" y2="67" stroke="#5BB5D8" stroke-width="1.5" opacity="0.6"/>
+  <line x1="761" y1="83" x2="769" y2="77" stroke="#5BB5D8" stroke-width="1.5" opacity="0.6"/>
+  <line x1="789" y1="83" x2="781" y2="77" stroke="#5BB5D8" stroke-width="1.5" opacity="0.6"/>
+  <text x="775" y="122" font-size="11" fill="#5BB5D8" text-anchor="middle" font-family="sans-serif" font-weight="600">Vendor Network</text>
+
+  <!-- Icon 9: 20 Years / Calendar with check — green -->
+  <rect x="830" y="40" width="64" height="64" rx="16" fill="#EDF7E8"/>
+  <rect x="844" y="54" width="36" height="34" rx="4" fill="none" stroke="#2A5430" stroke-width="2"/>
+  <line x1="844" y1="63" x2="880" y2="63" stroke="#2A5430" stroke-width="2"/>
+  <line x1="853" y1="50" x2="853" y2="58" stroke="#2A5430" stroke-width="2" stroke-linecap="round"/>
+  <line x1="871" y1="50" x2="871" y2="58" stroke="#2A5430" stroke-width="2" stroke-linecap="round"/>
+  <!-- Checkmark inside -->
+  <polyline points="855,74 860,79 869,69" fill="none" stroke="#2A5430" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="862" y="122" font-size="11" fill="#2A5430" text-anchor="middle" font-family="sans-serif" font-weight="600">20+ Years</text>
+</svg>
