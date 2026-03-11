@@ -270,7 +270,7 @@ function HeroSection() {
         <motion.div initial="hidden" animate="visible" variants={stagger}>
           {/* Welcome badge */}
           <motion.div variants={fadeUp} custom={0}>
-            <span className="mb-2 inline-flex items-center gap-[7px] rounded-full border border-[#E0DDD6] bg-white px-[14px] py-[5px] font-body text-[10px] font-medium text-[#505050] sm:mb-6 sm:text-xs">
+            <span className="mb-4 inline-flex items-center gap-[7px] rounded-full border border-[#E0DDD6] bg-white px-[14px] py-[5px] font-body text-[10px] font-medium text-[#505050] sm:mb-6 sm:text-xs">
               <span className="h-[7px] w-[7px] rounded-full bg-[#C9E83A]" />
               Portland&rsquo;s Most Trusted Real Estate Team
             </span>
@@ -348,14 +348,16 @@ function HeroSection() {
           }}
           className="relative aspect-[4/3] w-full sm:aspect-[16/9] lg:aspect-[16/7]"
         >
-          <Image
-            src="/images/img-hero-portland.jpg"
-            alt="Portland residential neighborhood at golden hour"
-            fill
-            priority
-            className="object-cover object-center"
-            sizes="100vw"
-          />
+          <div className="relative aspect-[16/9] w-full lg:aspect-[2.4/1]">
+            <Image
+              src="/images/img-hero-portland.jpg"
+              alt="Portland residential neighborhood at golden hour"
+              fill
+              priority
+              className="object-cover object-center"
+              sizes="100vw"
+            />
+          </div>
         </motion.div>
       </div>
     </section>
@@ -475,17 +477,36 @@ function TeamCard({
   t: (typeof TEAM)[number];
   i: number;
 }) {
-  const cardRef = useRef(null);
-  const isInView = useInView(cardRef, { once: true, amount: 0.3 });
-  const [canHover, setCanHover] = useState(true);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
-    setCanHover(window.matchMedia("(hover: hover)").matches);
+    // Detect touch devices reliably
+    const isTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    setIsTouchDevice(isTouch);
   }, []);
 
-  // Desktop: always grayscale, color on hover
-  // Mobile: grayscale → color when scrolled into view
-  const showColor = !canHover && isInView;
+  useEffect(() => {
+    if (!isTouchDevice || !cardRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(cardRef.current);
+    return () => observer.disconnect();
+  }, [isTouchDevice]);
+
+  // Touch/mobile: grayscale → color when scrolled into view
+  // Desktop: grayscale → color on hover
+  const colorOnScroll = isTouchDevice && isVisible;
 
   return (
     <motion.div
@@ -501,7 +522,7 @@ function TeamCard({
           fill
           className={cn(
             "object-cover object-top transition-all duration-700",
-            showColor
+            colorOnScroll
               ? "grayscale-0"
               : "grayscale group-hover:grayscale-0"
           )}
