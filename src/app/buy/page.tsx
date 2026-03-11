@@ -156,7 +156,7 @@ function FaqAccordion({ items }: { items: { q: string; a: string }[] }) {
               <motion.span
                 animate={{ rotate: isOpen ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
-                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#E8622A]/10 text-[#E8622A]"
+                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#C9E83A]/10 text-[#C9E83A]"
               >
                 <ChevronDown className="h-5 w-5" />
               </motion.span>
@@ -204,7 +204,7 @@ export default function BuyPage() {
                 className="text-4xl font-bold leading-[1.1] tracking-tight text-[#141414] sm:text-5xl lg:text-6xl"
               >
                 Buy a Home in Portland{" "}
-                <span className="text-[#E8622A]">— Without the Stress</span>
+                <span className="text-[#2A5430]">— Without the Stress</span>
               </motion.h1>
 
               <motion.p
@@ -219,7 +219,7 @@ export default function BuyPage() {
               <motion.div variants={fadeUp} className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a
                   href="#cta"
-                  className="inline-flex items-center justify-center rounded-lg bg-[#E8622A] px-8 py-4 text-base font-bold text-white transition-colors hover:bg-[#D4551F]"
+                  className="inline-flex items-center justify-center rounded-lg bg-[#C9E83A] px-8 py-4 text-base font-bold text-[#1D3B22] transition-colors hover:bg-[#B6D82A]"
                 >
                   Schedule a Free Buyer Consultation
                 </a>
@@ -238,8 +238,8 @@ export default function BuyPage() {
               className="relative aspect-[4/5] overflow-hidden rounded-[22px] shadow-2xl md:aspect-[3/4]"
             >
               <Image
-                src="/images/paper-cutout-key-handover.png"
-                alt="Illustration of home key handover representing the Portland home buying experience"
+                src="/images/img-home-exterior.jpg"
+                alt="Portland craftsman home exterior at dusk"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -263,7 +263,7 @@ export default function BuyPage() {
             <motion.div variants={fadeUp} className="max-w-2xl">
               <h2 className="text-3xl font-bold tracking-tight text-[#141414] md:text-5xl">
                 Portland Is 11 Markets in One.{" "}
-                <span className="text-[#E8622A]">You Need a Guide Who Knows Them All.</span>
+                <span className="text-[#2A5430]">You Need a Guide Who Knows Them All.</span>
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-[#505050]">
                 Happy Valley&apos;s $694K median is a different world from Gresham&apos;s
@@ -278,9 +278,9 @@ export default function BuyPage() {
                 <motion.div
                   key={point.title}
                   variants={fadeUp}
-                  className="group rounded-[22px] border border-[#E0DDD6] bg-[#F8F6F1] p-8 transition-all hover:border-[#E8622A]/30 hover:shadow-lg"
+                  className="group rounded-[22px] border border-[#E0DDD6] bg-[#F8F6F1] p-8 transition-all hover:border-[#C9E83A]/30 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-[22px] bg-[#FDF0EB] text-[#E8622A]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-[22px] bg-[#F0F7DC] text-[#C9E83A]">
                     <point.icon className="h-6 w-6" />
                   </div>
                   <h3 className="mt-6 text-lg font-bold text-[#141414]">{point.title}</h3>
@@ -312,7 +312,7 @@ export default function BuyPage() {
 
             <div className="relative mx-auto mt-20 max-w-3xl">
               {/* Vertical line */}
-              <div className="absolute left-8 top-0 hidden h-full w-px bg-[#E8622A]/20 md:left-16 md:block" />
+              <div className="absolute left-8 top-0 hidden h-full w-px bg-[#C9E83A]/20 md:left-16 md:block" />
 
               <div className="space-y-12">
                 {steps.map((step, i) => (
@@ -323,7 +323,7 @@ export default function BuyPage() {
                   >
                     {/* Oversized step number */}
                     <div className="relative z-10 flex flex-col items-center">
-                      <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-[22px] bg-[#E8622A] text-2xl font-bold text-white md:h-32 md:w-32 md:text-6xl">
+                      <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-[22px] bg-[#C9E83A] text-2xl font-bold text-[#1D3B22] md:h-32 md:w-32 md:text-6xl">
                         {step.num}
                       </span>
                     </div>
@@ -331,7 +331,7 @@ export default function BuyPage() {
                     {/* Content */}
                     <div className="flex-1 pt-1 md:pt-6">
                       <div className="flex items-center gap-3">
-                        <step.icon className="h-5 w-5 text-[#E8622A]" />
+                        <step.icon className="h-5 w-5 text-[#C9E83A]" />
                         <h3 className="text-xl font-bold text-[#141414]">{step.title}</h3>
                       </div>
                       <p className="mt-2 max-w-md text-[#505050] leading-relaxed">{step.desc}</p>
@@ -368,20 +368,20 @@ export default function BuyPage() {
                 <motion.div
                   key={n.name}
                   variants={fadeUp}
-                  className="group relative rounded-[22px] border-2 border-[#E0DDD6] bg-white p-6 transition-all hover:border-[#E8622A] hover:shadow-md"
+                  className="group relative rounded-[22px] border-2 border-[#E0DDD6] bg-white p-6 transition-all hover:border-[#C9E83A] hover:shadow-md"
                 >
                   <div className="absolute right-4 top-4">
-                    <MapPin className="h-4 w-4 text-[#E0DDD6] transition-colors group-hover:text-[#E8622A]" />
+                    <MapPin className="h-4 w-4 text-[#E0DDD6] transition-colors group-hover:text-[#C9E83A]" />
                   </div>
                   <h3 className="text-lg font-bold text-[#141414]">{n.name}</h3>
-                  <p className="mt-1 text-sm font-semibold text-[#E8622A]">{n.price}</p>
+                  <p className="mt-1 text-sm font-semibold text-[#2A5430]">{n.price}</p>
                   <div className="mt-3">
                     <span
                       className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${
                         n.tier === "Premium"
-                          ? "bg-[#E8622A]/10 text-[#D4551F]"
+                          ? "bg-[#C9E83A]/10 text-[#B6D82A]"
                           : n.tier === "Entry-level"
-                          ? "bg-[#F0F7DC] text-[#D4551F]"
+                          ? "bg-[#F0F7DC] text-[#B6D82A]"
                           : "bg-[#F2F0EA] text-[#505050]"
                       }`}
                     >
@@ -446,7 +446,7 @@ export default function BuyPage() {
                 </h2>
                 <p className="mt-4 text-[#505050] leading-relaxed">
                   Don&apos;t see your question? Call us at{" "}
-                  <a href="tel:+15037937520" className="font-medium text-[#E8622A] hover:underline">
+                  <a href="tel:+15037937520" className="font-medium text-[#2A5430] hover:underline">
                     (503) 793-7520
                   </a>{" "}
                   — your broker picks up, not a junior agent.

@@ -121,18 +121,18 @@ function FloatingInput({
         onChange={(e) => onChange(e.target.value)}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
-        className="peer w-full bg-[#FFFFFF] border border-[#E0DDD6] rounded-lg px-4 pt-6 pb-2 text-[#141414] outline-none focus:border-[#E8622A] focus:ring-2 focus:ring-[#E8622A]/20 transition-all"
+        className="peer w-full bg-[#FFFFFF] border border-[#E0DDD6] rounded-lg px-4 pt-6 pb-2 text-[#141414] outline-none focus:border-[#C9E83A] focus:ring-2 focus:ring-[#C9E83A]/20 transition-all"
       />
       <label
         htmlFor={name}
         className={`absolute left-4 transition-all pointer-events-none ${
           isActive
-            ? "top-2 text-xs text-[#E8622A]"
+            ? "top-2 text-xs text-[#C9E83A]"
             : "top-1/2 -translate-y-1/2 text-sm text-[#505050]"
         }`}
       >
         {label}
-        {required && <span className="text-[#E8622A] ml-0.5">*</span>}
+        {required && <span className="text-[#C9E83A] ml-0.5">*</span>}
       </label>
     </div>
   );
@@ -161,7 +161,7 @@ function FloatingSelect({
         required={required}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="peer w-full bg-[#FFFFFF] border border-[#E0DDD6] rounded-lg px-4 pt-6 pb-2 text-[#141414] outline-none focus:border-[#E8622A] focus:ring-2 focus:ring-[#E8622A]/20 transition-all appearance-none cursor-pointer"
+        className="peer w-full bg-[#FFFFFF] border border-[#E0DDD6] rounded-lg px-4 pt-6 pb-2 text-[#141414] outline-none focus:border-[#C9E83A] focus:ring-2 focus:ring-[#C9E83A]/20 transition-all appearance-none cursor-pointer"
       >
         {options.map((opt) => (
           <option key={opt.value} value={opt.value} disabled={opt.value === ""}>
@@ -171,10 +171,10 @@ function FloatingSelect({
       </select>
       <label
         htmlFor={name}
-        className="absolute left-4 top-2 text-xs text-[#E8622A] pointer-events-none"
+        className="absolute left-4 top-2 text-xs text-[#C9E83A] pointer-events-none"
       >
         {label}
-        {required && <span className="text-[#E8622A] ml-0.5">*</span>}
+        {required && <span className="text-[#C9E83A] ml-0.5">*</span>}
       </label>
       <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
         <svg
@@ -218,18 +218,18 @@ function FloatingTextarea({
         onChange={(e) => onChange(e.target.value)}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
-        className="peer w-full bg-[#FFFFFF] border border-[#E0DDD6] rounded-lg px-4 pt-6 pb-2 text-[#141414] outline-none focus:border-[#E8622A] focus:ring-2 focus:ring-[#E8622A]/20 transition-all resize-none"
+        className="peer w-full bg-[#FFFFFF] border border-[#E0DDD6] rounded-lg px-4 pt-6 pb-2 text-[#141414] outline-none focus:border-[#C9E83A] focus:ring-2 focus:ring-[#C9E83A]/20 transition-all resize-none"
       />
       <label
         htmlFor={name}
         className={`absolute left-4 transition-all pointer-events-none ${
           isActive
-            ? "top-2 text-xs text-[#E8622A]"
+            ? "top-2 text-xs text-[#C9E83A]"
             : "top-4 text-sm text-[#505050]"
         }`}
       >
         {label}
-        {required && <span className="text-[#E8622A] ml-0.5">*</span>}
+        {required && <span className="text-[#C9E83A] ml-0.5">*</span>}
       </label>
     </div>
   );
@@ -267,7 +267,7 @@ export default function ContactPage() {
             <motion.div
               variants={fadeUp}
               custom={0}
-              className="inline-flex items-center gap-2 bg-[#FDF0EB] text-[#E8622A] rounded-full px-4 py-1.5 text-sm font-medium mb-8"
+              className="inline-flex items-center gap-2 bg-[#F0F7DC] text-[#2A5430] rounded-full px-4 py-1.5 text-sm font-medium mb-8"
             >
               <Phone className="w-3.5 h-3.5" />
               Direct broker access
@@ -315,7 +315,7 @@ export default function ContactPage() {
             <motion.div
               variants={fadeUp}
               custom={1}
-              className="w-16 h-1 bg-[#E8622A] rounded-full mx-auto mb-14"
+              className="w-16 h-1 bg-[#C9E83A] rounded-full mx-auto mb-14"
             />
           </motion.div>
 
@@ -331,7 +331,7 @@ export default function ContactPage() {
                 key={member.name}
                 variants={scaleIn}
                 custom={i}
-                className="group bg-[#F8F6F1] rounded-[22px] overflow-hidden border border-[#E0DDD6] hover:border-[#E8622A]/30 hover:shadow-lg hover:shadow-[#E8622A]/5 transition-all duration-300"
+                className="group bg-[#F8F6F1] rounded-[22px] overflow-hidden border border-[#E0DDD6] hover:border-[#C9E83A]/30 hover:shadow-lg hover:shadow-[#C9E83A]/5 transition-all duration-300"
               >
                 {/* Photo */}
                 <div className="relative w-full aspect-[3/4] bg-[#F2F0EA] overflow-hidden">
@@ -348,26 +348,26 @@ export default function ContactPage() {
                   <h3 className="font-bold text-xl text-[#141414] mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-sm text-[#E8622A] font-medium mb-4">
+                  <p className="text-sm text-[#2A5430] font-medium mb-4">
                     {member.role}
                   </p>
 
                   <div className="space-y-2.5">
                     <a
                       href={`tel:${member.phone.replace(/[^\d+]/g, "")}`}
-                      className="flex items-center gap-3 text-[#505050] hover:text-[#D4551F] transition-colors group/link"
+                      className="flex items-center gap-3 text-[#505050] hover:text-[#2A5430] transition-colors group/link"
                     >
-                      <div className="w-8 h-8 rounded-lg bg-[#FDF0EB] flex items-center justify-center group-hover/link:bg-[#E8622A]/20 transition-colors">
-                        <Phone className="w-3.5 h-3.5 text-[#E8622A]" />
+                      <div className="w-8 h-8 rounded-lg bg-[#F0F7DC] flex items-center justify-center group-hover/link:bg-[#C9E83A]/20 transition-colors">
+                        <Phone className="w-3.5 h-3.5 text-[#C9E83A]" />
                       </div>
                       <span className="text-sm font-medium">{member.phone}</span>
                     </a>
                     <a
                       href={`mailto:${member.email}`}
-                      className="flex items-center gap-3 text-[#505050] hover:text-[#D4551F] transition-colors group/link"
+                      className="flex items-center gap-3 text-[#505050] hover:text-[#2A5430] transition-colors group/link"
                     >
-                      <div className="w-8 h-8 rounded-lg bg-[#FDF0EB] flex items-center justify-center group-hover/link:bg-[#E8622A]/20 transition-colors">
-                        <Mail className="w-3.5 h-3.5 text-[#E8622A]" />
+                      <div className="w-8 h-8 rounded-lg bg-[#F0F7DC] flex items-center justify-center group-hover/link:bg-[#C9E83A]/20 transition-colors">
+                        <Mail className="w-3.5 h-3.5 text-[#C9E83A]" />
                       </div>
                       <span className="text-sm font-medium">{member.email}</span>
                     </a>
@@ -396,7 +396,7 @@ export default function ContactPage() {
               variants={fadeUp}
               className="bg-[#FFFFFF] rounded-[22px] p-8 md:p-10 border border-[#E0DDD6] flex flex-col justify-center"
             >
-              <div className="inline-flex items-center gap-2 text-[#E8622A] text-sm font-semibold tracking-wide uppercase mb-6">
+              <div className="inline-flex items-center gap-2 text-[#2A5430] text-sm font-semibold tracking-wide uppercase mb-6">
                 <MapPin className="w-4 h-4" />
                 Our Office
               </div>
@@ -413,8 +413,8 @@ export default function ContactPage() {
                 Located in Sunnyside Marketplace, off I-205 and SE Sunnyside Road.
               </p>
 
-              <div className="flex items-center gap-3 bg-[#FDF0EB] rounded-xl px-5 py-4">
-                <Globe className="w-5 h-5 text-[#E8622A] shrink-0" />
+              <div className="flex items-center gap-3 bg-[#F0F7DC] rounded-xl px-5 py-4">
+                <Globe className="w-5 h-5 text-[#C9E83A] shrink-0" />
                 <div>
                   <p className="text-sm font-semibold text-[#141414]">
                     Languages Spoken
@@ -534,7 +534,7 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 bg-[#E8622A] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#D4551F] transition-colors w-full md:w-auto justify-center text-base"
+                className="inline-flex items-center gap-2 bg-[#C9E83A] text-[#1D3B22] font-semibold px-8 py-4 rounded-full hover:bg-[#B6D82A] transition-colors w-full md:w-auto justify-center text-base"
               >
                 Send Message
                 <Send className="w-4 h-4" />

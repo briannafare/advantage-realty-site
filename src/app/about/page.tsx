@@ -216,7 +216,7 @@ function TeamBios() {
                       className="object-cover object-top"
                       sizes="(max-width: 768px) 100vw, 40vw"
                     />
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#E8622A]" />
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#2A5430]" />
                   </div>
                 </div>
 
@@ -234,7 +234,7 @@ function TeamBios() {
                     {member.languages.map((lang) => (
                       <span
                         key={lang}
-                        className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#FDF0EB] text-xs font-display font-medium text-[#141414]/70"
+                        className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#F0F7DC] text-xs font-display font-medium text-[#141414]/70"
                       >
                         <Globe className="w-3 h-3" />
                         {lang}
@@ -250,14 +250,14 @@ function TeamBios() {
                   <div className="mt-5 flex flex-wrap gap-5 text-sm text-[#505050] font-body">
                     <a
                       href={`tel:${member.phone.replace(/[^+\d]/g, "")}`}
-                      className="flex items-center gap-2 hover:text-[#E8622A] transition-colors"
+                      className="flex items-center gap-2 hover:text-[#2A5430] transition-colors"
                     >
                       <Phone className="w-4 h-4" />
                       {member.phone}
                     </a>
                     <a
                       href={`mailto:${member.email}`}
-                      className="flex items-center gap-2 hover:text-[#E8622A] transition-colors"
+                      className="flex items-center gap-2 hover:text-[#2A5430] transition-colors"
                     >
                       <Mail className="w-4 h-4" />
                       {member.email}
@@ -324,10 +324,10 @@ function Values() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="bg-white rounded-[22px] border border-[#E0DDD6] p-8 text-center hover:shadow-lg hover:border-[#E8622A]/40 transition-all duration-300"
+              className="bg-white rounded-[22px] border border-[#E0DDD6] p-8 text-center hover:shadow-lg hover:border-[#C9E83A]/40 transition-all duration-300"
             >
-              <div className="w-14 h-14 rounded-full bg-[#FDF0EB] flex items-center justify-center mx-auto mb-5">
-                <Icon className="w-7 h-7 text-[#E8622A]" strokeWidth={1.5} />
+              <div className="w-14 h-14 rounded-full bg-[#F0F7DC] flex items-center justify-center mx-auto mb-5">
+                <Icon className="w-7 h-7 text-[#2A5430]" strokeWidth={1.5} />
               </div>
               <h3 className="font-display font-bold text-lg text-[#141414]">
                 {title}

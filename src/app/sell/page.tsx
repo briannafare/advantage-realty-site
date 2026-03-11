@@ -133,7 +133,7 @@ function FaqAccordion({ items }: { items: { q: string; a: string }[] }) {
             >
               {item.q}
               <ChevronDown
-                className={`h-5 w-5 shrink-0 text-[#E8622A] transition-transform duration-300 ${
+                className={`h-5 w-5 shrink-0 text-[#C9E83A] transition-transform duration-300 ${
                   isOpen ? "rotate-180" : ""
                 }`}
               />
@@ -193,7 +193,7 @@ export default function SellPage() {
               <motion.div variants={fadeUp} className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a
                   href="#cta"
-                  className="inline-flex items-center justify-center rounded-lg bg-[#E8622A] px-7 py-3.5 text-sm font-bold text-white transition hover:bg-[#D4551F]"
+                  className="inline-flex items-center justify-center rounded-lg bg-[#C9E83A] px-7 py-3.5 text-sm font-bold text-[#1D3B22] transition hover:bg-[#B6D82A]"
                 >
                   Get Your Free Property Evaluation
                 </a>
@@ -209,8 +209,8 @@ export default function SellPage() {
               className="relative aspect-[4/5] overflow-hidden rounded-[22px]"
             >
               <Image
-                src="/images/paper-cutout-neighborhood.png"
-                alt="Paper cut-out illustration of Portland neighborhood"
+                src="/images/img-neighborhood-aerial.jpg"
+                alt="Aerial view of Portland residential neighborhood"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -264,7 +264,7 @@ export default function SellPage() {
               variants={scaleIn}
               className="flex flex-col items-center rounded-[22px] border border-[#E0DDD6] bg-[#F8F6F1] p-12 text-center md:p-16"
             >
-              <span className="text-8xl font-bold tracking-tight text-[#E8622A] md:text-9xl">
+              <span className="text-8xl font-bold tracking-tight text-[#5BB5D8] md:text-9xl">
                 ~$525K
               </span>
               <span className="mt-3 text-xl font-bold tracking-tight text-[#141414]">
@@ -312,8 +312,8 @@ export default function SellPage() {
                     variants={fadeUp}
                     className="group rounded-[22px] bg-[#FFFFFF] p-6 transition hover:shadow-lg"
                   >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#FDF0EB]">
-                      <Icon className="h-5 w-5 text-[#E8622A]" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#F0F7DC]">
+                      <Icon className="h-5 w-5 text-[#C9E83A]" />
                     </div>
                     <span className="mt-5 block text-4xl font-bold text-[#E0DDD6] group-hover:text-[#C9E83A] transition-colors">
                       {step.num}
@@ -397,7 +397,7 @@ export default function SellPage() {
           >
             <motion.div
               variants={fadeUp}
-              className="rounded-[22px] border-l-4 border-[#E8622A] bg-[#F8F6F1] p-10 md:p-14"
+              className="rounded-[22px] border-l-4 border-[#2A5430] bg-[#F8F6F1] p-10 md:p-14"
             >
               <blockquote className="text-2xl font-medium leading-snug text-[#141414] md:text-3xl">
                 &ldquo;They handled everything — pricing, staging advice, marketing,
@@ -405,7 +405,7 @@ export default function SellPage() {
                 have asked for a better experience.&rdquo;
               </blockquote>
               <div className="mt-8">
-                <p className="text-sm font-bold text-[#E8622A]">Bezu</p>
+                <p className="text-sm font-bold text-[#2A5430]">Bezu</p>
                 <p className="text-sm text-[#505050]">Home Seller, Portland</p>
               </div>
             </motion.div>

@@ -192,7 +192,7 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
           transition={{ duration: 0.25 }}
           className="shrink-0"
         >
-          <ChevronDown className="w-5 h-5 text-[#E8622A]" />
+          <ChevronDown className="w-5 h-5 text-[#C9E83A]" />
         </motion.span>
       </button>
       <AnimatePresence initial={false}>
@@ -237,7 +237,7 @@ export default function CareHomeInvestmentPage() {
               <motion.span
                 variants={fadeUp}
                 custom={0}
-                className="inline-block bg-[#FDF0EB] text-[#E8622A] font-semibold text-xs tracking-widest uppercase px-4 py-1.5 rounded-full mb-6"
+                className="inline-block bg-[#F0F7DC] text-[#2A5430] font-semibold text-xs tracking-widest uppercase px-4 py-1.5 rounded-full mb-6"
               >
                 Portland Care Home Specialists
               </motion.span>
@@ -272,7 +272,7 @@ export default function CareHomeInvestmentPage() {
               <motion.div variants={fadeUp} custom={4} className="flex flex-wrap gap-4">
                 <Link
                   href="/contact?interest=Care+Home"
-                  className="inline-flex items-center gap-2 bg-[#E8622A] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#D4551F] transition-colors shadow-sm"
+                  className="inline-flex items-center gap-2 bg-[#C9E83A] text-[#1D3B22] font-semibold px-8 py-4 rounded-full hover:bg-[#B6D82A] transition-colors shadow-sm"
                 >
                   Schedule a Care Home Consultation
                   <ArrowRight className="w-4 h-4" />
@@ -291,11 +291,11 @@ export default function CareHomeInvestmentPage() {
             <motion.div
               variants={scaleIn}
               custom={2}
-              className="relative aspect-[4/5] rounded-[22px] overflow-hidden shadow-2xl shadow-[#E8622A]/10"
+              className="relative aspect-[4/5] rounded-[22px] overflow-hidden shadow-2xl shadow-[#C9E83A]/10"
             >
               <Image
-                src="/images/paper-cutout-care-home.png"
-                alt="Paper cut-out illustration of an Oregon care home property"
+                src="/images/img-care-home-interior.jpg"
+                alt="Bright, welcoming care home interior with natural light"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -322,7 +322,7 @@ export default function CareHomeInvestmentPage() {
             <motion.p
               variants={fadeUp}
               custom={0}
-              className="text-[#E8622A] font-semibold tracking-widest uppercase text-sm mb-4"
+              className="text-[#2A5430] font-semibold tracking-widest uppercase text-sm mb-4"
             >
               The Problem
             </motion.p>
@@ -373,7 +373,7 @@ export default function CareHomeInvestmentPage() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-[#E8622A] font-semibold tracking-widest uppercase text-sm mb-4"
+              className="text-[#2A5430] font-semibold tracking-widest uppercase text-sm mb-4"
             >
               Compliance Categories
             </motion.p>
@@ -397,10 +397,10 @@ export default function CareHomeInvestmentPage() {
                 key={card.title}
                 variants={fadeUp}
                 custom={i}
-                className="bg-white rounded-[22px] border border-[#E0DDD6] p-8 hover:shadow-lg hover:shadow-[#E8622A]/5 transition-all duration-300"
+                className="bg-white rounded-[22px] border border-[#E0DDD6] p-8 hover:shadow-lg hover:shadow-[#C9E83A]/5 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#FDF0EB] flex items-center justify-center mb-5">
-                  <card.icon className="w-6 h-6 text-[#E8622A]" strokeWidth={1.5} />
+                <div className="w-12 h-12 rounded-xl bg-[#F0F7DC] flex items-center justify-center mb-5">
+                  <card.icon className="w-6 h-6 text-[#C9E83A]" strokeWidth={1.5} />
                 </div>
                 <h3 className="font-bold text-xl text-[#141414] mb-3">
                   {card.title}
@@ -438,7 +438,7 @@ export default function CareHomeInvestmentPage() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-[#E8622A] font-semibold tracking-widest uppercase text-sm mb-4"
+              className="text-[#2A5430] font-semibold tracking-widest uppercase text-sm mb-4"
             >
               Who This Is For
             </motion.p>
@@ -462,11 +462,11 @@ export default function CareHomeInvestmentPage() {
                 key={a.title}
                 variants={fadeUp}
                 custom={i}
-                className="bg-[#F8F6F1] rounded-[22px] border border-[#E0DDD6] p-8 border-l-4 border-l-[#E8622A] hover:shadow-md transition-shadow duration-300"
+                className="bg-[#F8F6F1] rounded-[22px] border border-[#E0DDD6] p-8 border-l-4 border-l-[#C9E83A] hover:shadow-md transition-shadow duration-300"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#FDF0EB] flex items-center justify-center shrink-0 mt-0.5">
-                    <a.icon className="w-5 h-5 text-[#E8622A]" strokeWidth={1.5} />
+                  <div className="w-10 h-10 rounded-lg bg-[#F0F7DC] flex items-center justify-center shrink-0 mt-0.5">
+                    <a.icon className="w-5 h-5 text-[#C9E83A]" strokeWidth={1.5} />
                   </div>
                   <div>
                     <h3 className="font-bold text-xl text-[#141414] mb-2">{a.title}</h3>
@@ -493,7 +493,7 @@ export default function CareHomeInvestmentPage() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-[#C9E83A] font-semibold tracking-widest uppercase text-sm mb-4"
+              className="text-[#2A5430] font-semibold tracking-widest uppercase text-sm mb-4"
             >
               Our 5-Step Process
             </motion.p>
@@ -552,7 +552,7 @@ export default function CareHomeInvestmentPage() {
             variants={stagger}
           >
             <motion.div variants={fadeUp} className="mb-8">
-              <MessageSquareQuote className="w-16 h-16 mx-auto text-[#E8622A]" strokeWidth={1} />
+              <MessageSquareQuote className="w-16 h-16 mx-auto text-[#2A5430]" strokeWidth={1} />
             </motion.div>
 
             <motion.blockquote
@@ -589,7 +589,7 @@ export default function CareHomeInvestmentPage() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-[#E8622A] font-semibold tracking-widest uppercase text-sm mb-4"
+              className="text-[#2A5430] font-semibold tracking-widest uppercase text-sm mb-4"
             >
               Common Questions
             </motion.p>

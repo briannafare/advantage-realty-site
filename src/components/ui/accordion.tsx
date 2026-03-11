@@ -24,14 +24,14 @@ function AccordionItem({
     <div className={cn("border-b border-[#E0DDD6]", className)}>
       <button
         onClick={onToggle}
-        className="flex w-full items-center justify-between py-5 text-left font-display text-lg font-bold text-[#141414] transition-colors hover:text-[#E8622A]"
+        className="flex w-full items-center justify-between py-5 text-left font-display text-lg font-bold text-[#141414] transition-colors hover:text-[#C9E83A]"
         aria-expanded={isOpen}
       >
         <span className="pr-4">{question}</span>
         <motion.span
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.25, ease: "easeInOut" }}
-          className="flex-shrink-0 text-[#E8622A]"
+          className="flex-shrink-0 text-[#C9E83A]"
         >
           <ChevronDown className="h-5 w-5" />
         </motion.span>

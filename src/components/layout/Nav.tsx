@@ -71,7 +71,7 @@ export default function Nav() {
             {/* Phone */}
             <a
               href={`tel:${BRAND.phone.replace(/[^+\d]/g, "")}`}
-              className="flex items-center gap-2 font-body text-sm font-semibold text-[#141414] transition-colors hover:text-[#E8622A]"
+              className="flex items-center gap-2 font-body text-sm font-semibold text-[#141414] transition-colors hover:text-[#2A5430]"
             >
               <Phone className="h-4 w-4" />
               {BRAND.phone}
@@ -151,9 +151,9 @@ export default function Nav() {
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="flex items-center gap-3 rounded-[14px] px-4 py-3 font-body text-base font-semibold text-[#141414] transition-colors hover:text-[#E8622A]"
+                  className="flex items-center gap-3 rounded-[14px] px-4 py-3 font-body text-base font-semibold text-[#141414] transition-colors hover:text-[#2A5430]"
                 >
-                  <Phone className="h-5 w-5 text-[#E8622A]" />
+                  <Phone className="h-5 w-5 text-[#2A5430]" />
                   {BRAND.phone}
                 </motion.a>
 

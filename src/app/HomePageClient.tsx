@@ -52,24 +52,71 @@ const STATS = [
   { value: "3", label: "Specialist Brokers" },
 ];
 
+/* Custom inline SVG icons matching icons-advantage-realty.svg */
+function IconHome() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 8 L6 18 L6 34 L14 34 L14 24 L26 24 L26 34 L34 34 L34 18 Z" stroke="#2A5430" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <rect x="25" y="8" width="5" height="8" rx="1" stroke="#2A5430" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function IconCareHome() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 34 L8 14 L20 6 L32 14 L32 34" stroke="#2A5430" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <rect x="16" y="22" width="8" height="12" rx="1.5" stroke="#2A5430" strokeWidth="2"/>
+      <rect x="10" y="16" width="6" height="5" rx="1" stroke="#2A5430" strokeWidth="1.5"/>
+      <rect x="24" y="16" width="6" height="5" rx="1" stroke="#2A5430" strokeWidth="1.5"/>
+      <circle cx="32" cy="10" r="3.5" fill="#C9E83A"/>
+    </svg>
+  );
+}
+
+function IconInvest() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polyline points="6,32 14,22 22,26 30,10 36,14" stroke="#5BB5D8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="36" cy="14" r="3" fill="#5BB5D8"/>
+    </svg>
+  );
+}
+
+function IconGlobe() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="20" cy="20" r="14" stroke="#2A5430" strokeWidth="2.5"/>
+      <ellipse cx="20" cy="20" rx="7" ry="14" stroke="#2A5430" strokeWidth="1.5"/>
+      <line x1="6" y1="20" x2="34" y2="20" stroke="#2A5430" strokeWidth="1.5"/>
+      <line x1="8" y1="12" x2="32" y2="12" stroke="#2A5430" strokeWidth="1" opacity="0.5"/>
+      <line x1="8" y1="28" x2="32" y2="28" stroke="#2A5430" strokeWidth="1" opacity="0.5"/>
+    </svg>
+  );
+}
+
 const FEATURES = [
   {
-    emoji: "\ud83c\udfe1",
+    icon: IconHome,
+    iconBg: "bg-[#EDF7E8]",
     title: "Deep Portland Market Knowledge",
     body: "We\u2019ve been tracking Portland\u2019s neighborhoods for 20+ years. Not just the listings \u2014 the micro-trends, the streets, the schools, and the shift before it shows up on Zillow.",
   },
   {
-    emoji: "\ud83c\udfe5",
+    icon: IconCareHome,
+    iconBg: "bg-[#EDF7E8]",
     title: "Care Home Property Specialists",
     body: "Portland\u2019s only real estate team with dedicated ADA consulting for residential care home properties. Most agents won\u2019t touch this. We built a practice around it.",
   },
   {
-    emoji: "\ud83d\udcca",
+    icon: IconInvest,
+    iconBg: "bg-[#EBF6FC]",
     title: "Buy, Sell, and Invest \u2014 One Roof",
     body: "First-time buyer. Homeowner selling. Investor structuring a 1031 Exchange. Whatever your situation, there\u2019s a specialist on this team who\u2019s handled it.",
   },
   {
-    emoji: "\ud83c\udf0d",
+    icon: IconGlobe,
+    iconBg: "bg-[#EDF7E8]",
     title: "We Speak Your Language \u2014 Literally",
     body: "We work with clients in English, Oromo, and Amharic. Clear communication isn\u2019t a nice-to-have when you\u2019re signing a 30-year mortgage.",
   },
@@ -405,7 +452,9 @@ function WhyAdvantage() {
               custom={i}
               className="rounded-[14px] border border-[rgba(170,200,40,0.25)] bg-white p-7"
             >
-              <span className="mb-3 block text-[22px]">{f.emoji}</span>
+              <div className={`mb-3 flex h-12 w-12 items-center justify-center rounded-[14px] ${f.iconBg}`}>
+                <f.icon />
+              </div>
               <h3 className="font-display text-[14px] font-bold tracking-[-0.01em] text-[#141414]">
                 {f.title}
               </h3>
