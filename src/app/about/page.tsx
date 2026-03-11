@@ -46,16 +46,16 @@ function AboutHero() {
           <motion.h1
             variants={fadeUp}
             custom={0}
-            className="font-heading font-bold tracking-tight text-4xl md:text-6xl lg:text-7xl text-[#111827] leading-[1.05]"
+            className="font-display font-bold tracking-tight text-4xl md:text-6xl lg:text-7xl text-[#141414] leading-[1.05]"
           >
             Meet the Family Behind{" "}
-            <span className="text-[#84CC16]">Advantage</span>
+            <em className="font-accent not-italic text-[#2A5430]" style={{ fontStyle: "italic", fontWeight: 300 }}>Advantage</em>
           </motion.h1>
 
           <motion.p
             variants={fadeUp}
             custom={1}
-            className="mt-6 text-lg md:text-xl text-[#4B5563] font-body leading-relaxed max-w-2xl"
+            className="mt-6 text-lg md:text-xl text-[#505050] font-body leading-relaxed max-w-2xl"
           >
             We&rsquo;re not a franchise. We&rsquo;re not a call center.
             We&rsquo;re two brothers who built a real estate practice around
@@ -72,7 +72,7 @@ function AboutHero() {
    ─────────────────────────────────────────── */
 function Story() {
   return (
-    <section className="bg-[#F3F4F6] py-20 md:py-28">
+    <section className="bg-[#F2F0EA] py-20 md:py-28">
       <div className="max-w-3xl mx-auto px-5 md:px-8 text-center">
         <motion.div
           initial="hidden"
@@ -83,16 +83,16 @@ function Story() {
           <motion.h2
             variants={fadeUp}
             custom={0}
-            className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-[#111827]"
+            className="font-display font-bold tracking-tight text-3xl md:text-5xl text-[#141414]"
           >
             Two Brothers,{" "}
-            <span className="text-[#84CC16]">One Vision</span>
+            <em className="font-accent not-italic text-[#2A5430]" style={{ fontStyle: "italic", fontWeight: 300 }}>One Vision</em>
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
             custom={1}
-            className="mt-8 text-lg md:text-xl text-[#4B5563] font-body leading-relaxed"
+            className="mt-8 text-lg md:text-xl text-[#505050] font-body leading-relaxed"
           >
             Advantage Realty LLC was born from a simple frustration: watching
             family and friends struggle through real estate transactions with
@@ -105,7 +105,7 @@ function Story() {
           <motion.p
             variants={fadeUp}
             custom={2}
-            className="mt-6 text-lg md:text-xl text-[#4B5563] font-body leading-relaxed"
+            className="mt-6 text-lg md:text-xl text-[#505050] font-body leading-relaxed"
           >
             Over 16 years later, that vision hasn&rsquo;t changed. Every
             transaction we handle — whether it&rsquo;s a first-time buyer in SE
@@ -119,13 +119,13 @@ function Story() {
           <motion.div
             variants={fadeUp}
             custom={3}
-            className="mt-10 p-8 rounded-2xl bg-[#111827] text-[#F3F4F6]"
+            className="mt-10 p-8 rounded-[22px] bg-[#1D3B22] text-[#F2F0EA]"
           >
             <p className="font-accent text-xl md:text-2xl italic leading-relaxed">
               &ldquo;Our mission is simple: make Portland real estate accessible,
               transparent, and personal — for every family.&rdquo;
             </p>
-            <p className="mt-4 font-heading font-bold text-[#84CC16] text-sm tracking-wide uppercase">
+            <p className="mt-4 font-display font-bold text-[#C9E83A] text-sm tracking-wide uppercase">
               — Huluka &amp; Hunde Abebe, Founders
             </p>
           </motion.div>
@@ -186,9 +186,9 @@ function TeamBios() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-[#111827] text-center mb-16"
+          className="font-display font-bold tracking-tight text-3xl md:text-5xl text-[#141414] text-center mb-16"
         >
-          Your <span className="text-[#84CC16]">Team</span>
+          Your <em className="font-accent not-italic text-[#2A5430]" style={{ fontStyle: "italic", fontWeight: 300 }}>Team</em>
         </motion.h2>
 
         <div className="space-y-16 md:space-y-24">
@@ -208,7 +208,7 @@ function TeamBios() {
               >
                 {/* Photo — 40% */}
                 <div className="w-full md:w-[40%] flex-shrink-0">
-                  <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
+                  <div className="relative rounded-[22px] overflow-hidden aspect-[3/4]">
                     <Image
                       src={member.photo}
                       alt={`${member.name} — ${member.role} at Advantage Realty LLC`}
@@ -216,16 +216,16 @@ function TeamBios() {
                       className="object-cover object-top"
                       sizes="(max-width: 768px) 100vw, 40vw"
                     />
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#84CC16]" />
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#2A5430]" />
                   </div>
                 </div>
 
                 {/* Bio — 60% */}
                 <div className="w-full md:w-[60%]">
-                  <h3 className="font-heading font-bold text-2xl md:text-3xl text-[#111827]">
+                  <h3 className="font-display font-bold text-2xl md:text-3xl text-[#141414]">
                     {member.name}
                   </h3>
-                  <p className="mt-1 text-[#4B5563] font-body text-base">
+                  <p className="mt-1 text-[#505050] font-body text-base">
                     {member.role}
                   </p>
 
@@ -234,7 +234,7 @@ function TeamBios() {
                     {member.languages.map((lang) => (
                       <span
                         key={lang}
-                        className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#84CC16]/10 text-xs font-heading font-medium text-[#111827]/70"
+                        className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#F0F7DC] text-xs font-display font-medium text-[#141414]/70"
                       >
                         <Globe className="w-3 h-3" />
                         {lang}
@@ -242,22 +242,22 @@ function TeamBios() {
                     ))}
                   </div>
 
-                  <p className="mt-5 text-[#4B5563] font-body text-[15px] md:text-base leading-relaxed">
+                  <p className="mt-5 text-[#505050] font-body text-[15px] md:text-base leading-relaxed">
                     {member.bio}
                   </p>
 
                   {/* Contact links */}
-                  <div className="mt-5 flex flex-wrap gap-5 text-sm text-[#4B5563] font-body">
+                  <div className="mt-5 flex flex-wrap gap-5 text-sm text-[#505050] font-body">
                     <a
                       href={`tel:${member.phone.replace(/[^+\d]/g, "")}`}
-                      className="flex items-center gap-2 hover:text-[#84CC16] transition-colors"
+                      className="flex items-center gap-2 hover:text-[#2A5430] transition-colors"
                     >
                       <Phone className="w-4 h-4" />
                       {member.phone}
                     </a>
                     <a
                       href={`mailto:${member.email}`}
-                      className="flex items-center gap-2 hover:text-[#84CC16] transition-colors"
+                      className="flex items-center gap-2 hover:text-[#2A5430] transition-colors"
                     >
                       <Mail className="w-4 h-4" />
                       {member.email}
@@ -305,15 +305,15 @@ function Values() {
   ];
 
   return (
-    <section className="bg-[#F3F4F6] py-20 md:py-28">
+    <section className="bg-[#F2F0EA] py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-heading font-bold tracking-tight text-3xl md:text-5xl text-[#111827] text-center mb-16"
+          className="font-display font-bold tracking-tight text-3xl md:text-5xl text-[#141414] text-center mb-16"
         >
-          What We <span className="text-[#84CC16]">Stand For</span>
+          What We <em className="font-accent not-italic text-[#2A5430]" style={{ fontStyle: "italic", fontWeight: 300 }}>Stand For</em>
         </motion.h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
@@ -324,15 +324,15 @@ function Values() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="bg-white rounded-2xl border border-[#E5E7EB] p-8 text-center hover:shadow-lg hover:border-[#84CC16]/40 transition-all duration-300"
+              className="bg-white rounded-[22px] border border-[#E0DDD6] p-8 text-center hover:shadow-lg hover:border-[#C9E83A]/40 transition-all duration-300"
             >
-              <div className="w-14 h-14 rounded-full bg-[#84CC16]/10 flex items-center justify-center mx-auto mb-5">
-                <Icon className="w-7 h-7 text-[#84CC16]" strokeWidth={1.5} />
+              <div className="w-14 h-14 rounded-full bg-[#F0F7DC] flex items-center justify-center mx-auto mb-5">
+                <Icon className="w-7 h-7 text-[#2A5430]" strokeWidth={1.5} />
               </div>
-              <h3 className="font-heading font-bold text-lg text-[#111827]">
+              <h3 className="font-display font-bold text-lg text-[#141414]">
                 {title}
               </h3>
-              <p className="mt-3 text-[#4B5563] font-body text-[15px] leading-relaxed">
+              <p className="mt-3 text-[#505050] font-body text-[15px] leading-relaxed">
                 {description}
               </p>
             </motion.div>
@@ -344,12 +344,12 @@ function Values() {
 }
 
 /* ───────────────────────────────────────────
-   Section 5 — CTA (dark bg)
+   Section 5 — CTA (dark rounded block)
    ─────────────────────────────────────────── */
 function AboutCTA() {
   return (
-    <section className="bg-[#111827] text-[#F3F4F6] py-20 md:py-28">
-      <div className="max-w-3xl mx-auto px-5 md:px-8 text-center">
+    <section className="py-20 md:py-28 px-5 md:px-8">
+      <div className="bg-[#141414] rounded-[22px] max-w-5xl mx-auto px-5 md:px-8 py-20 md:py-28 text-center text-[#F2F0EA]">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -359,16 +359,16 @@ function AboutCTA() {
           <motion.h2
             variants={fadeUp}
             custom={0}
-            className="font-heading font-bold tracking-tight text-3xl md:text-5xl"
+            className="font-display font-bold tracking-tight text-3xl md:text-5xl"
           >
             Let&rsquo;s Talk About{" "}
-            <span className="text-[#84CC16]">Your Goals</span>
+            <em className="font-accent not-italic text-[#C9E83A]" style={{ fontStyle: "italic", fontWeight: 300 }}>Your Goals</em>
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
             custom={1}
-            className="mt-6 text-lg md:text-xl text-[#F3F4F6]/80 font-body leading-relaxed"
+            className="mt-6 text-lg md:text-xl text-[#F2F0EA]/80 font-body leading-relaxed max-w-2xl mx-auto"
           >
             Whether you&rsquo;re ready to buy, thinking about selling, or just
             want to understand what your Portland home is worth — we&rsquo;re
@@ -378,7 +378,7 @@ function AboutCTA() {
           <motion.div variants={fadeUp} custom={2} className="mt-10">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-[#84CC16] px-8 py-4 font-heading font-bold text-[#111827] text-lg hover:bg-[#65A30D] transition-colors"
+              className="inline-flex items-center justify-center rounded-full bg-transparent border-[1.5px] border-white/50 text-white px-8 py-4 font-display font-bold text-lg hover:bg-white/10 transition-colors"
             >
               Schedule Your Free Consultation
             </Link>
@@ -387,7 +387,7 @@ function AboutCTA() {
           <motion.p
             variants={fadeUp}
             custom={3}
-            className="mt-6 text-sm text-[#F3F4F6]/50 font-body"
+            className="mt-6 text-sm text-[#F2F0EA]/50 font-body"
           >
             Direct broker access on every deal
           </motion.p>

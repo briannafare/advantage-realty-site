@@ -180,19 +180,19 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
     <motion.div
       variants={fadeUp}
       custom={index}
-      className="border border-[#E5E7EB] rounded-xl overflow-hidden bg-white"
+      className="border border-[#E0DDD6] rounded-[22px] overflow-hidden bg-white"
     >
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between p-6 text-left"
       >
-        <span className="font-semibold text-[#111827] text-lg pr-4">{question}</span>
+        <span className="font-semibold text-[#141414] text-lg pr-4">{question}</span>
         <motion.span
           animate={{ rotate: open ? 180 : 0 }}
           transition={{ duration: 0.25 }}
           className="shrink-0"
         >
-          <ChevronDown className="w-5 h-5 text-[#2563EB]" />
+          <ChevronDown className="w-5 h-5 text-[#C9E83A]" />
         </motion.span>
       </button>
       <AnimatePresence initial={false}>
@@ -205,7 +205,7 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
             className="overflow-hidden"
           >
             <div className="px-6 pb-6">
-              <p className="text-[#6B7280] leading-relaxed">{answer}</p>
+              <p className="text-[#505050] leading-relaxed">{answer}</p>
             </div>
           </motion.div>
         )}
@@ -237,7 +237,7 @@ export default function CareHomeInvestmentPage() {
               <motion.span
                 variants={fadeUp}
                 custom={0}
-                className="inline-block bg-[#2563EB]/8 text-[#2563EB] font-semibold text-xs tracking-widest uppercase px-4 py-1.5 rounded-full mb-6"
+                className="inline-block bg-[#F0F7DC] text-[#2A5430] font-semibold text-xs tracking-widest uppercase px-4 py-1.5 rounded-full mb-6"
               >
                 Portland Care Home Specialists
               </motion.span>
@@ -245,16 +245,16 @@ export default function CareHomeInvestmentPage() {
               <motion.h1
                 variants={fadeUp}
                 custom={1}
-                className="font-bold tracking-tight text-4xl md:text-5xl lg:text-6xl text-[#111827] mb-6 leading-[1.1]"
+                className="font-bold tracking-tight text-4xl md:text-5xl lg:text-6xl text-[#141414] mb-6 leading-[1.1]"
               >
                 Care Home Investment in Portland —{" "}
-                <span className="text-[#2563EB]">Done Right</span>
+                <span className="italic text-[#2A5430]">Done Right</span>
               </motion.h1>
 
               <motion.p
                 variants={fadeUp}
                 custom={2}
-                className="text-lg md:text-xl text-[#6B7280] mb-4 leading-relaxed"
+                className="text-lg md:text-xl text-[#505050] mb-4 leading-relaxed"
               >
                 Finding a residential care facility property isn&apos;t hard. Finding one that
                 passes Oregon&apos;s licensing inspection on the first try — that&apos;s where
@@ -264,7 +264,7 @@ export default function CareHomeInvestmentPage() {
               <motion.p
                 variants={fadeUp}
                 custom={3}
-                className="text-lg md:text-xl text-[#374151] font-medium mb-10"
+                className="text-lg md:text-xl text-[#505050] font-medium mb-10"
               >
                 You don&apos;t have to.
               </motion.p>
@@ -272,7 +272,7 @@ export default function CareHomeInvestmentPage() {
               <motion.div variants={fadeUp} custom={4} className="flex flex-wrap gap-4">
                 <Link
                   href="/contact?interest=Care+Home"
-                  className="inline-flex items-center gap-2 bg-[#84CC16] text-[#111827] font-semibold px-8 py-4 rounded-lg hover:bg-[#65A30D] transition-colors shadow-sm"
+                  className="inline-flex items-center gap-2 bg-[#C9E83A] text-[#1D3B22] font-semibold px-8 py-4 rounded-full hover:bg-[#B6D82A] transition-colors shadow-sm"
                 >
                   Schedule a Care Home Consultation
                   <ArrowRight className="w-4 h-4" />
@@ -281,7 +281,7 @@ export default function CareHomeInvestmentPage() {
               <motion.p
                 variants={fadeUp}
                 custom={5}
-                className="mt-3 text-sm text-[#6B7280]"
+                className="mt-3 text-sm text-[#505050]"
               >
                 Talk to a specialist — not a generalist.
               </motion.p>
@@ -291,18 +291,18 @@ export default function CareHomeInvestmentPage() {
             <motion.div
               variants={scaleIn}
               custom={2}
-              className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-[#2563EB]/10"
+              className="relative aspect-[4/5] rounded-[22px] overflow-hidden shadow-2xl shadow-[#C9E83A]/10"
             >
               <Image
-                src="/images/paper-cutout-care-home.png"
-                alt="Paper cut-out illustration of an Oregon care home property"
+                src="/images/img-care-home-interior.jpg"
+                alt="Bright, welcoming care home interior with natural light"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />
               {/* Subtle overlay gradient at bottom */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/20 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#141414]/20 via-transparent to-transparent" />
             </motion.div>
           </motion.div>
         </div>
@@ -311,7 +311,7 @@ export default function CareHomeInvestmentPage() {
       {/* ──────────────────────────────────────────────────────────
           PROBLEM — Why "Any Agent" Won't Work
           ────────────────────────────────────────────────────────── */}
-      <section className="bg-[#FFFFFF] py-20 md:py-28 border-t border-[#E5E7EB]">
+      <section className="bg-[#FFFFFF] py-20 md:py-28 border-t border-[#E0DDD6]">
         <div className="max-w-4xl mx-auto px-5 md:px-8 lg:px-12">
           <motion.div
             initial="hidden"
@@ -322,7 +322,7 @@ export default function CareHomeInvestmentPage() {
             <motion.p
               variants={fadeUp}
               custom={0}
-              className="text-[#2563EB] font-semibold tracking-widest uppercase text-sm mb-4"
+              className="text-[#2A5430] font-semibold tracking-widest uppercase text-sm mb-4"
             >
               The Problem
             </motion.p>
@@ -330,26 +330,26 @@ export default function CareHomeInvestmentPage() {
             <motion.h2
               variants={fadeUp}
               custom={1}
-              className="font-bold tracking-tight text-3xl md:text-4xl lg:text-5xl text-[#111827] mb-8"
+              className="font-bold tracking-tight text-3xl md:text-4xl lg:text-5xl text-[#141414] mb-8"
             >
               Why &ldquo;Any Agent&rdquo; Won&apos;t Work for Care Home Investment
             </motion.h2>
 
             <motion.div variants={fadeUp} custom={2} className="space-y-6">
-              <p className="text-lg text-[#374151] leading-relaxed">
+              <p className="text-lg text-[#505050] leading-relaxed">
                 Oregon Administrative Rules OAR 411-054 aren&apos;t suggestions — they&apos;re
                 the line between a licensed care facility and a property you can&apos;t operate.
                 Bedroom square footage minimums. Bathroom-to-resident ratios. Hallway widths down
                 to the inch. Fire suppression zones that differ by occupancy count. ADA accessibility
                 requirements that go far beyond a ramp at the front door.
               </p>
-              <p className="text-lg text-[#374151] leading-relaxed">
+              <p className="text-lg text-[#505050] leading-relaxed">
                 A general residential agent doesn&apos;t know these rules exist — let alone how to
                 evaluate a property against them. The result? Investors buy homes that look perfect
                 on paper, then spend $30,000-$80,000 on retrofits. Or worse: they discover mid-renovation
                 that the property can&apos;t meet code at any cost, and the deal is dead.
               </p>
-              <p className="text-lg text-[#374151] leading-relaxed">
+              <p className="text-lg text-[#505050] leading-relaxed">
                 With 16+ years specializing in care home real estate, we evaluate properties
                 through a compliance lens first, deal terms second. You never waste money on a
                 home that can&apos;t be licensed.
@@ -362,7 +362,7 @@ export default function CareHomeInvestmentPage() {
       {/* ──────────────────────────────────────────────────────────
           COMPLIANCE — Oregon Requirements Cards
           ────────────────────────────────────────────────────────── */}
-      <section className="bg-[#F3F4F6] py-20 md:py-28">
+      <section className="bg-[#F2F0EA] py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
           <motion.div
             initial="hidden"
@@ -373,13 +373,13 @@ export default function CareHomeInvestmentPage() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-[#2563EB] font-semibold tracking-widest uppercase text-sm mb-4"
+              className="text-[#2A5430] font-semibold tracking-widest uppercase text-sm mb-4"
             >
               Compliance Categories
             </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="font-bold tracking-tight text-3xl md:text-4xl lg:text-5xl text-[#111827] mb-4"
+              className="font-bold tracking-tight text-3xl md:text-4xl lg:text-5xl text-[#141414] mb-4"
             >
               Oregon Care Home Requirements We Navigate for You
             </motion.h2>
@@ -397,15 +397,15 @@ export default function CareHomeInvestmentPage() {
                 key={card.title}
                 variants={fadeUp}
                 custom={i}
-                className="bg-white rounded-xl border border-[#E5E7EB] p-8 hover:shadow-lg hover:shadow-[#2563EB]/5 transition-all duration-300"
+                className="bg-white rounded-[22px] border border-[#E0DDD6] p-8 hover:shadow-lg hover:shadow-[#C9E83A]/5 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#2563EB]/8 flex items-center justify-center mb-5">
-                  <card.icon className="w-6 h-6 text-[#2563EB]" strokeWidth={1.5} />
+                <div className="w-12 h-12 rounded-xl bg-[#F0F7DC] flex items-center justify-center mb-5">
+                  <card.icon className="w-6 h-6 text-[#C9E83A]" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-bold text-xl text-[#111827] mb-3">
+                <h3 className="font-bold text-xl text-[#141414] mb-3">
                   {card.title}
                 </h3>
-                <p className="text-[#6B7280] leading-relaxed">
+                <p className="text-[#505050] leading-relaxed">
                   {card.description}
                 </p>
               </motion.div>
@@ -417,7 +417,7 @@ export default function CareHomeInvestmentPage() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
-            className="text-center text-sm text-[#6B7280] mt-8"
+            className="text-center text-sm text-[#505050] mt-8"
           >
             Requirements per Oregon Administrative Rules, OAR 411-054-0200
           </motion.p>
@@ -425,7 +425,7 @@ export default function CareHomeInvestmentPage() {
       </section>
 
       {/* ──────────────────────────────────────────────────────────
-          WHO IT'S FOR — Audience Cards with lime left border
+          WHO IT'S FOR — Audience Cards with orange left border
           ────────────────────────────────────────────────────────── */}
       <section className="bg-[#FFFFFF] py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
@@ -438,13 +438,13 @@ export default function CareHomeInvestmentPage() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-[#84CC16] font-semibold tracking-widest uppercase text-sm mb-4"
+              className="text-[#2A5430] font-semibold tracking-widest uppercase text-sm mb-4"
             >
               Who This Is For
             </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="font-bold tracking-tight text-3xl md:text-4xl lg:text-5xl text-[#111827]"
+              className="font-bold tracking-tight text-3xl md:text-4xl lg:text-5xl text-[#141414]"
             >
               Whether You&apos;re Opening Your First Facility or Your Fifth
             </motion.h2>
@@ -462,15 +462,15 @@ export default function CareHomeInvestmentPage() {
                 key={a.title}
                 variants={fadeUp}
                 custom={i}
-                className="bg-[#F9FAFB] rounded-xl border border-[#E5E7EB] p-8 border-l-4 border-l-[#84CC16] hover:shadow-md transition-shadow duration-300"
+                className="bg-[#F8F6F1] rounded-[22px] border border-[#E0DDD6] p-8 border-l-4 border-l-[#C9E83A] hover:shadow-md transition-shadow duration-300"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#84CC16]/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <a.icon className="w-5 h-5 text-[#65A30D]" strokeWidth={1.5} />
+                  <div className="w-10 h-10 rounded-lg bg-[#F0F7DC] flex items-center justify-center shrink-0 mt-0.5">
+                    <a.icon className="w-5 h-5 text-[#C9E83A]" strokeWidth={1.5} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-xl text-[#111827] mb-2">{a.title}</h3>
-                    <p className="text-[#6B7280] leading-relaxed">{a.description}</p>
+                    <h3 className="font-bold text-xl text-[#141414] mb-2">{a.title}</h3>
+                    <p className="text-[#505050] leading-relaxed">{a.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -482,7 +482,7 @@ export default function CareHomeInvestmentPage() {
       {/* ──────────────────────────────────────────────────────────
           PROCESS — Dark section with numbered timeline
           ────────────────────────────────────────────────────────── */}
-      <section className="bg-[#111827] py-20 md:py-28">
+      <section className="bg-[#1D3B22] py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
           <motion.div
             initial="hidden"
@@ -493,7 +493,7 @@ export default function CareHomeInvestmentPage() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-[#84CC16] font-semibold tracking-widest uppercase text-sm mb-4"
+              className="text-[#2A5430] font-semibold tracking-widest uppercase text-sm mb-4"
             >
               Our 5-Step Process
             </motion.p>
@@ -519,7 +519,7 @@ export default function CareHomeInvestmentPage() {
             className="relative max-w-3xl mx-auto"
           >
             {/* Vertical line */}
-            <div className="absolute left-[27px] top-4 bottom-4 w-px bg-[#374151]" />
+            <div className="absolute left-[27px] top-4 bottom-4 w-px bg-white/10" />
 
             {processSteps.map((step, i) => (
               <motion.div
@@ -529,8 +529,8 @@ export default function CareHomeInvestmentPage() {
                 className="relative pl-20 pb-14 last:pb-0"
               >
                 {/* Number circle */}
-                <div className="absolute left-0 top-0 w-[54px] h-[54px] rounded-full bg-[#1F2937] border-2 border-[#2563EB] flex items-center justify-center z-10">
-                  <span className="font-bold text-sm text-[#93C5FD]">{step.num}</span>
+                <div className="absolute left-0 top-0 w-[54px] h-[54px] rounded-full bg-white/5 border-2 border-[#C9E83A] flex items-center justify-center z-10">
+                  <span className="font-bold text-sm text-[#C9E83A]">{step.num}</span>
                 </div>
                 <h3 className="font-bold text-xl text-white mb-2 pt-3">{step.title}</h3>
                 <p className="text-white/60 leading-relaxed">{step.description}</p>
@@ -541,7 +541,7 @@ export default function CareHomeInvestmentPage() {
       </section>
 
       {/* ──────────────────────────────────────────────────────────
-          TESTIMONIAL — Large lime quotation marks
+          TESTIMONIAL — Large quotation marks
           ────────────────────────────────────────────────────────── */}
       <section className="bg-[#FFFFFF] py-20 md:py-28">
         <div className="max-w-4xl mx-auto px-5 md:px-8 lg:px-12 text-center">
@@ -552,22 +552,22 @@ export default function CareHomeInvestmentPage() {
             variants={stagger}
           >
             <motion.div variants={fadeUp} className="mb-8">
-              <MessageSquareQuote className="w-16 h-16 mx-auto text-[#84CC16]" strokeWidth={1} />
+              <MessageSquareQuote className="w-16 h-16 mx-auto text-[#2A5430]" strokeWidth={1} />
             </motion.div>
 
             <motion.blockquote
               variants={fadeUp}
-              className="text-2xl md:text-3xl lg:text-4xl text-[#111827] leading-snug mb-10 font-medium"
+              className="text-2xl md:text-3xl lg:text-4xl text-[#141414] leading-snug mb-10 font-medium"
             >
               &ldquo;You will be well served with Hunde and Huluka with your real estate needs,
               especially in the adult care business.&rdquo;
             </motion.blockquote>
 
             <motion.div variants={fadeUp}>
-              <p className="font-bold text-[#111827] text-lg">
+              <p className="font-bold text-[#141414] text-lg">
                 Timothy &amp; Tsehay Smith
               </p>
-              <p className="text-sm text-[#6B7280] mt-1">
+              <p className="text-sm text-[#505050] mt-1">
                 Care Home Investors, Portland Metro
               </p>
             </motion.div>
@@ -578,7 +578,7 @@ export default function CareHomeInvestmentPage() {
       {/* ──────────────────────────────────────────────────────────
           FAQ — Accordion
           ────────────────────────────────────────────────────────── */}
-      <section className="bg-[#F3F4F6] py-20 md:py-28">
+      <section className="bg-[#F2F0EA] py-20 md:py-28">
         <div className="max-w-3xl mx-auto px-5 md:px-8 lg:px-12">
           <motion.div
             initial="hidden"
@@ -589,13 +589,13 @@ export default function CareHomeInvestmentPage() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-[#2563EB] font-semibold tracking-widest uppercase text-sm mb-4"
+              className="text-[#2A5430] font-semibold tracking-widest uppercase text-sm mb-4"
             >
               Common Questions
             </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="font-bold tracking-tight text-3xl md:text-4xl lg:text-5xl text-[#111827]"
+              className="font-bold tracking-tight text-3xl md:text-4xl lg:text-5xl text-[#141414]"
             >
               Care Home Investment FAQ
             </motion.h2>
@@ -635,19 +635,20 @@ export default function CareHomeInvestmentPage() {
       </section>
 
       {/* ──────────────────────────────────────────────────────────
-          FINAL CTA — Blue gradient with lime button
+          FINAL CTA — Dark Rounded Block
           ────────────────────────────────────────────────────────── */}
-      <section className="relative bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] py-20 md:py-28 overflow-hidden">
-        {/* Decorative circles */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/3" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/3 -translate-x-1/4" />
+      <section className="py-20 md:py-28 px-5 md:px-8 overflow-hidden">
+        <div className="bg-[#141414] rounded-[22px] max-w-5xl mx-auto px-5 md:px-8 lg:px-12 py-20 md:py-28 text-center relative">
+          {/* Decorative circles */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/3" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/3 -translate-x-1/4" />
 
-        <div className="relative max-w-4xl mx-auto px-5 md:px-8 lg:px-12 text-center">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={stagger}
+            className="relative"
           >
             <motion.h2
               variants={fadeUp}
@@ -671,14 +672,14 @@ export default function CareHomeInvestmentPage() {
             >
               <Link
                 href="/contact?interest=Care+Home"
-                className="inline-flex items-center gap-2 bg-[#84CC16] text-[#111827] font-semibold px-8 py-4 rounded-lg hover:bg-[#65A30D] transition-colors shadow-lg shadow-black/20"
+                className="inline-flex items-center gap-2 bg-transparent border-[1.5px] border-white/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-white/10 transition-colors shadow-lg shadow-black/20"
               >
                 Start Your Care Home Search
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
                 href="tel:+15037937520"
-                className="inline-flex items-center gap-2 text-white font-semibold hover:text-[#D9F99D] transition-colors"
+                className="inline-flex items-center gap-2 text-white font-semibold hover:text-[#F0F7DC] transition-colors"
               >
                 <Phone className="w-4 h-4" />
                 (503) 793-7520

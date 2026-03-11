@@ -1,30 +1,34 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter, DM_Serif_Display } from "next/font/google";
+import { Plus_Jakarta_Sans, Instrument_Sans, Fraunces } from "next/font/google";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import { LOCAL_BUSINESS_SCHEMA } from "@/lib/constants";
 import "./globals.css";
 
 /* ----------------------------------------------------------------
-   Google Fonts — loaded via next/font for zero layout shift
+   Google Fonts — Design System v2
+   Display: Plus Jakarta Sans (headings, nav, buttons)
+   Body: Instrument Sans (body, labels, captions)
+   Accent: Fraunces italic (one word per headline)
    ---------------------------------------------------------------- */
-const spaceGrotesk = Space_Grotesk({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["700"],
-  variable: "--font-heading",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-display",
   display: "swap",
 });
 
-const inter = Inter({
+const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
-  weight: ["400", "600"],
+  weight: ["400", "500", "600"],
   variable: "--font-body",
   display: "swap",
 });
 
-const dmSerifDisplay = DM_Serif_Display({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["300", "400"],
+  style: ["italic"],
   variable: "--font-accent",
   display: "swap",
 });
@@ -61,7 +65,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${inter.variable} ${dmSerifDisplay.variable}`}
+      className={`${plusJakartaSans.variable} ${instrumentSans.variable} ${fraunces.variable}`}
     >
       <head>
         {/* LocalBusiness JSON-LD Schema */}
@@ -84,7 +88,7 @@ export default function RootLayout({
             ></script>
         -------------------------------------------------------- */}
       </head>
-      <body className="min-h-screen bg-background font-body text-foreground antialiased">
+      <body className="min-h-screen bg-bg font-body text-t1 antialiased">
         <Nav />
         <main>{children}</main>
         <Footer />

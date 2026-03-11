@@ -121,19 +121,19 @@ function FaqAccordion({ items }: { items: { q: string; a: string }[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="divide-y divide-[#E5E7EB]">
+    <div className="divide-y divide-[#E0DDD6]">
       {items.map((item, i) => {
         const isOpen = openIndex === i;
         return (
           <div key={i}>
             <button
               onClick={() => setOpenIndex(isOpen ? null : i)}
-              className="flex w-full items-center justify-between gap-4 py-6 text-left text-lg font-semibold text-[#111827] md:text-xl"
+              className="flex w-full items-center justify-between gap-4 py-6 text-left text-lg font-semibold text-[#141414] md:text-xl"
               aria-expanded={isOpen}
             >
               {item.q}
               <ChevronDown
-                className={`h-5 w-5 shrink-0 text-[#2563EB] transition-transform duration-300 ${
+                className={`h-5 w-5 shrink-0 text-[#C9E83A] transition-transform duration-300 ${
                   isOpen ? "rotate-180" : ""
                 }`}
               />
@@ -144,7 +144,7 @@ function FaqAccordion({ items }: { items: { q: string; a: string }[] }) {
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className="overflow-hidden"
             >
-              <p className="pb-6 text-[#6B7280] leading-relaxed">{item.a}</p>
+              <p className="pb-6 text-[#505050] leading-relaxed">{item.a}</p>
             </motion.div>
           </div>
         );
@@ -172,19 +172,19 @@ export default function SellPage() {
             <div>
               <motion.div
                 variants={fadeUp}
-                className="mb-5 inline-flex items-center rounded-full bg-[#D9F99D] px-4 py-1.5 text-sm font-semibold text-[#374151]"
+                className="mb-5 inline-flex items-center rounded-full bg-[#F0F7DC] px-4 py-1.5 text-sm font-semibold text-[#505050]"
               >
                 Portland Home Sellers
               </motion.div>
               <motion.h1
                 variants={fadeUp}
-                className="text-4xl font-bold leading-[1.1] tracking-tight text-[#111827] sm:text-5xl lg:text-6xl"
+                className="text-4xl font-bold leading-[1.1] tracking-tight text-[#141414] sm:text-5xl lg:text-6xl"
               >
                 Sell Your Portland Home for What It&apos;s Actually Worth
               </motion.h1>
               <motion.p
                 variants={fadeUp}
-                className="mt-6 max-w-lg text-lg leading-relaxed text-[#6B7280]"
+                className="mt-6 max-w-lg text-lg leading-relaxed text-[#505050]"
               >
                 Portland listings doubled since December 2025. In a market with more
                 competition, the difference between selling in 30 days and sitting for 90
@@ -193,11 +193,11 @@ export default function SellPage() {
               <motion.div variants={fadeUp} className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a
                   href="#cta"
-                  className="inline-flex items-center justify-center rounded-lg bg-[#84CC16] px-7 py-3.5 text-sm font-bold text-[#111827] transition hover:bg-[#65A30D]"
+                  className="inline-flex items-center justify-center rounded-lg bg-[#C9E83A] px-7 py-3.5 text-sm font-bold text-[#1D3B22] transition hover:bg-[#B6D82A]"
                 >
                   Get Your Free Property Evaluation
                 </a>
-                <span className="text-sm text-[#6B7280]">
+                <span className="text-sm text-[#505050]">
                   Broker-assessed. Data-driven. No obligation.
                 </span>
               </motion.div>
@@ -206,11 +206,11 @@ export default function SellPage() {
             {/* Right — Image */}
             <motion.div
               variants={scaleIn}
-              className="relative aspect-[4/5] overflow-hidden rounded-2xl"
+              className="relative aspect-[4/5] overflow-hidden rounded-[22px]"
             >
               <Image
-                src="/images/paper-cutout-neighborhood.png"
-                alt="Paper cut-out illustration of Portland neighborhood"
+                src="/images/img-neighborhood-aerial.jpg"
+                alt="Aerial view of Portland residential neighborhood"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -235,13 +235,13 @@ export default function SellPage() {
             <div>
               <motion.h2
                 variants={fadeUp}
-                className="text-3xl font-bold tracking-tight text-[#111827] md:text-5xl"
+                className="text-3xl font-bold tracking-tight text-[#141414] md:text-5xl"
               >
                 In Portland&apos;s 2026 Market, Pricing Is the Entire Game
               </motion.h2>
               <motion.p
                 variants={fadeUp}
-                className="mt-6 text-lg leading-relaxed text-[#6B7280]"
+                className="mt-6 text-lg leading-relaxed text-[#505050]"
               >
                 Overprice by even 3–5% and your listing stalls — losing momentum, buyer
                 interest, and ultimately selling for less than it would have at the right
@@ -249,7 +249,7 @@ export default function SellPage() {
               </motion.p>
               <motion.p
                 variants={fadeUp}
-                className="mt-4 leading-relaxed text-[#6B7280]"
+                className="mt-4 leading-relaxed text-[#505050]"
               >
                 Our broker-level comparative market analysis pinpoints the price that
                 generates urgency and attracts the strongest offers in the shortest
@@ -262,15 +262,15 @@ export default function SellPage() {
             {/* Right — Big Stat */}
             <motion.div
               variants={scaleIn}
-              className="flex flex-col items-center rounded-2xl border border-[#E5E7EB] bg-[#F9FAFB] p-12 text-center md:p-16"
+              className="flex flex-col items-center rounded-[22px] border border-[#E0DDD6] bg-[#F8F6F1] p-12 text-center md:p-16"
             >
-              <span className="text-8xl font-bold tracking-tight text-[#2563EB] md:text-9xl">
+              <span className="text-8xl font-bold tracking-tight text-[#5BB5D8] md:text-9xl">
                 ~$525K
               </span>
-              <span className="mt-3 text-xl font-bold tracking-tight text-[#111827]">
+              <span className="mt-3 text-xl font-bold tracking-tight text-[#141414]">
                 Portland Metro Median
               </span>
-              <p className="mt-3 max-w-xs text-sm leading-relaxed text-[#6B7280]">
+              <p className="mt-3 max-w-xs text-sm leading-relaxed text-[#505050]">
                 The median sale price as of early 2026. Where your home falls relative to
                 this number shapes everything — marketing strategy, buyer pool, and
                 timeline.
@@ -281,7 +281,7 @@ export default function SellPage() {
       </section>
 
       {/* ━━ 5-STEP PROCESS ━━ */}
-      <section className="bg-[#F3F4F6] py-20 md:py-32">
+      <section className="bg-[#F2F0EA] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
             variants={stagger}
@@ -291,13 +291,13 @@ export default function SellPage() {
           >
             <motion.h2
               variants={fadeUp}
-              className="text-3xl font-bold tracking-tight text-[#111827] md:text-5xl"
+              className="text-3xl font-bold tracking-tight text-[#141414] md:text-5xl"
             >
               From Evaluation to Closing — 5 Steps
             </motion.h2>
             <motion.p
               variants={fadeUp}
-              className="mt-4 max-w-xl text-lg text-[#6B7280]"
+              className="mt-4 max-w-xl text-lg text-[#505050]"
             >
               A clear, repeatable process designed to maximize your sale price and
               minimize your stress.
@@ -310,18 +310,18 @@ export default function SellPage() {
                   <motion.div
                     key={step.num}
                     variants={fadeUp}
-                    className="group rounded-2xl bg-[#FFFFFF] p-6 transition hover:shadow-lg"
+                    className="group rounded-[22px] bg-[#FFFFFF] p-6 transition hover:shadow-lg"
                   >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#2563EB]/10">
-                      <Icon className="h-5 w-5 text-[#2563EB]" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#F0F7DC]">
+                      <Icon className="h-5 w-5 text-[#C9E83A]" />
                     </div>
-                    <span className="mt-5 block text-4xl font-bold text-[#E5E7EB] group-hover:text-[#93C5FD] transition-colors">
+                    <span className="mt-5 block text-4xl font-bold text-[#E0DDD6] group-hover:text-[#C9E83A] transition-colors">
                       {step.num}
                     </span>
-                    <h3 className="mt-2 text-lg font-bold tracking-tight text-[#111827]">
+                    <h3 className="mt-2 text-lg font-bold tracking-tight text-[#141414]">
                       {step.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-[#6B7280]">
+                    <p className="mt-2 text-sm leading-relaxed text-[#505050]">
                       {step.desc}
                     </p>
                   </motion.div>
@@ -333,7 +333,7 @@ export default function SellPage() {
       </section>
 
       {/* ━━ MARKET CONTEXT — Dark Section ━━ */}
-      <section className="bg-[#111827] py-20 md:py-32">
+      <section className="bg-[#1D3B22] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
             variants={stagger}
@@ -362,11 +362,11 @@ export default function SellPage() {
                   <motion.div
                     key={i}
                     variants={fadeUp}
-                    className="rounded-2xl border border-white/10 bg-white/5 p-8"
+                    className="rounded-[22px] border border-white/10 bg-white/5 p-8"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#84CC16]/15">
-                        <Icon className="h-5 w-5 text-[#84CC16]" />
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#C9E83A]/15">
+                        <Icon className="h-5 w-5 text-[#C9E83A]" />
                       </div>
                       <div>
                         <h3 className="text-lg font-bold tracking-tight text-white">
@@ -397,16 +397,16 @@ export default function SellPage() {
           >
             <motion.div
               variants={fadeUp}
-              className="rounded-2xl border-l-4 border-[#2563EB] bg-[#F9FAFB] p-10 md:p-14"
+              className="rounded-[22px] border-l-4 border-[#2A5430] bg-[#F8F6F1] p-10 md:p-14"
             >
-              <blockquote className="text-2xl font-medium leading-snug text-[#111827] md:text-3xl">
+              <blockquote className="text-2xl font-medium leading-snug text-[#141414] md:text-3xl">
                 &ldquo;They handled everything — pricing, staging advice, marketing,
                 negotiations. We sold above asking and closed in under 30 days. Could not
                 have asked for a better experience.&rdquo;
               </blockquote>
               <div className="mt-8">
-                <p className="text-sm font-bold text-[#2563EB]">Bezu</p>
-                <p className="text-sm text-[#6B7280]">Home Seller, Portland</p>
+                <p className="text-sm font-bold text-[#2A5430]">Bezu</p>
+                <p className="text-sm text-[#505050]">Home Seller, Portland</p>
               </div>
             </motion.div>
           </motion.div>
@@ -414,7 +414,7 @@ export default function SellPage() {
       </section>
 
       {/* ━━ FAQ ━━ */}
-      <section className="bg-[#F9FAFB] py-20 md:py-32">
+      <section className="bg-[#F8F6F1] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
             variants={stagger}
@@ -424,11 +424,11 @@ export default function SellPage() {
           >
             <motion.h2
               variants={fadeUp}
-              className="text-3xl font-bold tracking-tight text-[#111827] md:text-5xl"
+              className="text-3xl font-bold tracking-tight text-[#141414] md:text-5xl"
             >
               Selling in Portland — Your Questions Answered
             </motion.h2>
-            <motion.div variants={fadeUp} className="mt-12 max-w-3xl rounded-2xl bg-[#FFFFFF] p-8 md:p-10">
+            <motion.div variants={fadeUp} className="mt-12 max-w-3xl rounded-[22px] bg-[#FFFFFF] p-8 md:p-10">
               <FaqAccordion items={faqs} />
             </motion.div>
           </motion.div>
@@ -436,14 +436,14 @@ export default function SellPage() {
       </section>
 
       {/* ━━ FINAL CTA ━━ */}
-      <section id="cta" className="bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] py-20 md:py-32">
+      <section id="cta" className="bg-[#FFFFFF] py-20 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
             variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="mx-auto max-w-2xl text-center"
+            className="bg-[#141414] rounded-[22px] max-w-5xl mx-auto px-8 py-20 md:py-24 text-center"
           >
             <motion.h2
               variants={fadeUp}
@@ -453,7 +453,7 @@ export default function SellPage() {
             </motion.h2>
             <motion.p
               variants={fadeUp}
-              className="mt-6 text-lg leading-relaxed text-white/70"
+              className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70"
             >
               Get a free, broker-assessed property evaluation from a team with 16+ years
               of Portland market expertise. No pressure, no obligation — just a clear
@@ -462,7 +462,7 @@ export default function SellPage() {
             <motion.div variants={fadeUp} className="mt-10 flex flex-col items-center gap-4">
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-lg bg-[#84CC16] px-8 py-4 text-sm font-bold text-[#111827] transition hover:bg-[#65A30D]"
+                className="inline-flex items-center justify-center rounded-lg border border-white bg-transparent px-8 py-4 text-sm font-bold text-white transition hover:bg-white hover:text-[#141414]"
               >
                 Get Your Free Evaluation
               </a>

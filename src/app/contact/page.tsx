@@ -121,18 +121,18 @@ function FloatingInput({
         onChange={(e) => onChange(e.target.value)}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
-        className="peer w-full bg-[#FFFFFF] border border-[#E5E7EB] rounded-lg px-4 pt-6 pb-2 text-[#111827] outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/20 transition-all"
+        className="peer w-full bg-[#FFFFFF] border border-[#E0DDD6] rounded-lg px-4 pt-6 pb-2 text-[#141414] outline-none focus:border-[#C9E83A] focus:ring-2 focus:ring-[#C9E83A]/20 transition-all"
       />
       <label
         htmlFor={name}
         className={`absolute left-4 transition-all pointer-events-none ${
           isActive
-            ? "top-2 text-xs text-[#2563EB]"
-            : "top-1/2 -translate-y-1/2 text-sm text-[#6B7280]"
+            ? "top-2 text-xs text-[#C9E83A]"
+            : "top-1/2 -translate-y-1/2 text-sm text-[#505050]"
         }`}
       >
         {label}
-        {required && <span className="text-[#2563EB] ml-0.5">*</span>}
+        {required && <span className="text-[#C9E83A] ml-0.5">*</span>}
       </label>
     </div>
   );
@@ -161,7 +161,7 @@ function FloatingSelect({
         required={required}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="peer w-full bg-[#FFFFFF] border border-[#E5E7EB] rounded-lg px-4 pt-6 pb-2 text-[#111827] outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/20 transition-all appearance-none cursor-pointer"
+        className="peer w-full bg-[#FFFFFF] border border-[#E0DDD6] rounded-lg px-4 pt-6 pb-2 text-[#141414] outline-none focus:border-[#C9E83A] focus:ring-2 focus:ring-[#C9E83A]/20 transition-all appearance-none cursor-pointer"
       >
         {options.map((opt) => (
           <option key={opt.value} value={opt.value} disabled={opt.value === ""}>
@@ -171,14 +171,14 @@ function FloatingSelect({
       </select>
       <label
         htmlFor={name}
-        className="absolute left-4 top-2 text-xs text-[#2563EB] pointer-events-none"
+        className="absolute left-4 top-2 text-xs text-[#C9E83A] pointer-events-none"
       >
         {label}
-        {required && <span className="text-[#2563EB] ml-0.5">*</span>}
+        {required && <span className="text-[#C9E83A] ml-0.5">*</span>}
       </label>
       <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
         <svg
-          className="w-4 h-4 text-[#6B7280]"
+          className="w-4 h-4 text-[#505050]"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -218,18 +218,18 @@ function FloatingTextarea({
         onChange={(e) => onChange(e.target.value)}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
-        className="peer w-full bg-[#FFFFFF] border border-[#E5E7EB] rounded-lg px-4 pt-6 pb-2 text-[#111827] outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/20 transition-all resize-none"
+        className="peer w-full bg-[#FFFFFF] border border-[#E0DDD6] rounded-lg px-4 pt-6 pb-2 text-[#141414] outline-none focus:border-[#C9E83A] focus:ring-2 focus:ring-[#C9E83A]/20 transition-all resize-none"
       />
       <label
         htmlFor={name}
         className={`absolute left-4 transition-all pointer-events-none ${
           isActive
-            ? "top-2 text-xs text-[#2563EB]"
-            : "top-4 text-sm text-[#6B7280]"
+            ? "top-2 text-xs text-[#C9E83A]"
+            : "top-4 text-sm text-[#505050]"
         }`}
       >
         {label}
-        {required && <span className="text-[#2563EB] ml-0.5">*</span>}
+        {required && <span className="text-[#C9E83A] ml-0.5">*</span>}
       </label>
     </div>
   );
@@ -256,7 +256,7 @@ export default function ContactPage() {
       {/* ──────────────────────────────────────────────────────────
           HERO
           ────────────────────────────────────────────────────────── */}
-      <section className="bg-[#F9FAFB] py-24 md:py-36">
+      <section className="bg-[#F8F6F1] py-24 md:py-36">
         <div className="max-w-4xl mx-auto px-5 md:px-8 text-center">
           <motion.div
             initial="hidden"
@@ -267,7 +267,7 @@ export default function ContactPage() {
             <motion.div
               variants={fadeUp}
               custom={0}
-              className="inline-flex items-center gap-2 bg-[#2563EB]/10 text-[#2563EB] rounded-full px-4 py-1.5 text-sm font-medium mb-8"
+              className="inline-flex items-center gap-2 bg-[#F0F7DC] text-[#2A5430] rounded-full px-4 py-1.5 text-sm font-medium mb-8"
             >
               <Phone className="w-3.5 h-3.5" />
               Direct broker access
@@ -276,16 +276,16 @@ export default function ContactPage() {
             <motion.h1
               variants={fadeUp}
               custom={1}
-              className="font-bold tracking-tight text-4xl md:text-6xl lg:text-7xl text-[#111827] mb-6 leading-[1.1]"
+              className="font-bold tracking-tight text-4xl md:text-6xl lg:text-7xl text-[#141414] mb-6 leading-[1.1]"
             >
               Talk to a Portland Broker{" "}
-              <span className="text-[#2563EB]">Who Answers Their Phone</span>
+              <span className="italic text-[#2A5430]">Who Answers Their Phone</span>
             </motion.h1>
 
             <motion.p
               variants={fadeUp}
               custom={2}
-              className="text-lg md:text-xl text-[#6B7280] max-w-2xl mx-auto leading-relaxed"
+              className="text-lg md:text-xl text-[#505050] max-w-2xl mx-auto leading-relaxed"
             >
               No call centers. No automated menus. No junior associates. When you
               reach out to Advantage Realty, you&apos;re talking to the broker
@@ -308,14 +308,14 @@ export default function ContactPage() {
           >
             <motion.h2
               variants={fadeUp}
-              className="font-bold tracking-tight text-3xl md:text-4xl text-[#111827] text-center mb-4"
+              className="font-bold tracking-tight text-3xl md:text-4xl text-[#141414] text-center mb-4"
             >
               Reach Your Broker Directly
             </motion.h2>
             <motion.div
               variants={fadeUp}
               custom={1}
-              className="w-16 h-1 bg-[#84CC16] rounded-full mx-auto mb-14"
+              className="w-16 h-1 bg-[#C9E83A] rounded-full mx-auto mb-14"
             />
           </motion.div>
 
@@ -331,10 +331,10 @@ export default function ContactPage() {
                 key={member.name}
                 variants={scaleIn}
                 custom={i}
-                className="group bg-[#F9FAFB] rounded-2xl overflow-hidden border border-[#E5E7EB] hover:border-[#2563EB]/30 hover:shadow-lg hover:shadow-[#2563EB]/5 transition-all duration-300"
+                className="group bg-[#F8F6F1] rounded-[22px] overflow-hidden border border-[#E0DDD6] hover:border-[#C9E83A]/30 hover:shadow-lg hover:shadow-[#C9E83A]/5 transition-all duration-300"
               >
                 {/* Photo */}
-                <div className="relative w-full aspect-[3/4] bg-[#F3F4F6] overflow-hidden">
+                <div className="relative w-full aspect-[3/4] bg-[#F2F0EA] overflow-hidden">
                   <Image
                     src={member.photo}
                     alt={`${member.name} — ${member.role}`}
@@ -345,29 +345,29 @@ export default function ContactPage() {
 
                 {/* Info */}
                 <div className="p-6">
-                  <h3 className="font-bold text-xl text-[#111827] mb-1">
+                  <h3 className="font-bold text-xl text-[#141414] mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-sm text-[#2563EB] font-medium mb-4">
+                  <p className="text-sm text-[#2A5430] font-medium mb-4">
                     {member.role}
                   </p>
 
                   <div className="space-y-2.5">
                     <a
                       href={`tel:${member.phone.replace(/[^\d+]/g, "")}`}
-                      className="flex items-center gap-3 text-[#374151] hover:text-[#1D4ED8] transition-colors group/link"
+                      className="flex items-center gap-3 text-[#505050] hover:text-[#2A5430] transition-colors group/link"
                     >
-                      <div className="w-8 h-8 rounded-lg bg-[#2563EB]/10 flex items-center justify-center group-hover/link:bg-[#2563EB]/20 transition-colors">
-                        <Phone className="w-3.5 h-3.5 text-[#2563EB]" />
+                      <div className="w-8 h-8 rounded-lg bg-[#F0F7DC] flex items-center justify-center group-hover/link:bg-[#C9E83A]/20 transition-colors">
+                        <Phone className="w-3.5 h-3.5 text-[#C9E83A]" />
                       </div>
                       <span className="text-sm font-medium">{member.phone}</span>
                     </a>
                     <a
                       href={`mailto:${member.email}`}
-                      className="flex items-center gap-3 text-[#374151] hover:text-[#1D4ED8] transition-colors group/link"
+                      className="flex items-center gap-3 text-[#505050] hover:text-[#2A5430] transition-colors group/link"
                     >
-                      <div className="w-8 h-8 rounded-lg bg-[#2563EB]/10 flex items-center justify-center group-hover/link:bg-[#2563EB]/20 transition-colors">
-                        <Mail className="w-3.5 h-3.5 text-[#2563EB]" />
+                      <div className="w-8 h-8 rounded-lg bg-[#F0F7DC] flex items-center justify-center group-hover/link:bg-[#C9E83A]/20 transition-colors">
+                        <Mail className="w-3.5 h-3.5 text-[#C9E83A]" />
                       </div>
                       <span className="text-sm font-medium">{member.email}</span>
                     </a>
@@ -382,7 +382,7 @@ export default function ContactPage() {
       {/* ──────────────────────────────────────────────────────────
           OFFICE + MAP
           ────────────────────────────────────────────────────────── */}
-      <section className="bg-[#F3F4F6] py-20 md:py-28">
+      <section className="bg-[#F2F0EA] py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
           <motion.div
             initial="hidden"
@@ -394,32 +394,32 @@ export default function ContactPage() {
             {/* Office Details */}
             <motion.div
               variants={fadeUp}
-              className="bg-[#FFFFFF] rounded-2xl p-8 md:p-10 border border-[#E5E7EB] flex flex-col justify-center"
+              className="bg-[#FFFFFF] rounded-[22px] p-8 md:p-10 border border-[#E0DDD6] flex flex-col justify-center"
             >
-              <div className="inline-flex items-center gap-2 text-[#2563EB] text-sm font-semibold tracking-wide uppercase mb-6">
+              <div className="inline-flex items-center gap-2 text-[#2A5430] text-sm font-semibold tracking-wide uppercase mb-6">
                 <MapPin className="w-4 h-4" />
                 Our Office
               </div>
 
-              <h2 className="font-bold text-2xl md:text-3xl text-[#111827] mb-2">
+              <h2 className="font-bold text-2xl md:text-3xl text-[#141414] mb-2">
                 Advantage Realty LLC
               </h2>
-              <p className="text-[#374151] text-lg leading-relaxed mb-6">
+              <p className="text-[#505050] text-lg leading-relaxed mb-6">
                 13100 SE Sunnyside Rd Suite B
                 <br />
                 Clackamas, OR 97015
               </p>
-              <p className="text-[#6B7280] mb-8">
+              <p className="text-[#505050] mb-8">
                 Located in Sunnyside Marketplace, off I-205 and SE Sunnyside Road.
               </p>
 
-              <div className="flex items-center gap-3 bg-[#2563EB]/5 rounded-xl px-5 py-4">
-                <Globe className="w-5 h-5 text-[#2563EB] shrink-0" />
+              <div className="flex items-center gap-3 bg-[#F0F7DC] rounded-xl px-5 py-4">
+                <Globe className="w-5 h-5 text-[#C9E83A] shrink-0" />
                 <div>
-                  <p className="text-sm font-semibold text-[#111827]">
+                  <p className="text-sm font-semibold text-[#141414]">
                     Languages Spoken
                   </p>
-                  <p className="text-sm text-[#6B7280]">
+                  <p className="text-sm text-[#505050]">
                     Also available in Oromo &amp; Amharic
                   </p>
                 </div>
@@ -430,7 +430,7 @@ export default function ContactPage() {
             <motion.div
               variants={fadeUp}
               custom={1}
-              className="rounded-2xl overflow-hidden border border-[#E5E7EB] min-h-[400px]"
+              className="rounded-[22px] overflow-hidden border border-[#E0DDD6] min-h-[400px]"
             >
               <iframe
                 title="Advantage Realty LLC Office — Clackamas, Oregon"
@@ -460,14 +460,14 @@ export default function ContactPage() {
           >
             <motion.h2
               variants={fadeUp}
-              className="font-bold tracking-tight text-3xl md:text-4xl text-[#111827] text-center mb-3"
+              className="font-bold tracking-tight text-3xl md:text-4xl text-[#141414] text-center mb-3"
             >
               Send Us a Message
             </motion.h2>
             <motion.p
               variants={fadeUp}
               custom={1}
-              className="text-[#6B7280] text-center text-lg mb-12 max-w-xl mx-auto"
+              className="text-[#505050] text-center text-lg mb-12 max-w-xl mx-auto"
             >
               Tell us what you&apos;re looking for — we&apos;ll respond within 24 hours.
             </motion.p>
@@ -534,7 +534,7 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 bg-[#84CC16] text-[#111827] font-semibold px-8 py-4 rounded-lg hover:bg-[#65A30D] transition-colors w-full md:w-auto justify-center text-base"
+                className="inline-flex items-center gap-2 bg-[#C9E83A] text-[#1D3B22] font-semibold px-8 py-4 rounded-full hover:bg-[#B6D82A] transition-colors w-full md:w-auto justify-center text-base"
               >
                 Send Message
                 <Send className="w-4 h-4" />
@@ -545,10 +545,10 @@ export default function ContactPage() {
       </section>
 
       {/* ──────────────────────────────────────────────────────────
-          FINAL CTA
+          FINAL CTA — Dark Rounded Block
           ────────────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] py-20 md:py-28">
-        <div className="max-w-3xl mx-auto px-5 md:px-8 text-center">
+      <section className="py-20 md:py-28 px-5 md:px-8">
+        <div className="bg-[#141414] rounded-[22px] max-w-5xl mx-auto px-5 md:px-8 lg:px-12 py-20 md:py-28 text-center">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -560,12 +560,12 @@ export default function ContactPage() {
               className="font-bold tracking-tight text-3xl md:text-5xl text-[#FFFFFF] mb-6"
             >
               Prefer to Talk?{" "}
-              <span className="text-[#D9F99D]">Pick Up the Phone.</span>
+              <span className="text-[#F0F7DC]">Pick Up the Phone.</span>
             </motion.h2>
             <motion.p
               variants={fadeUp}
               custom={1}
-              className="text-[#93C5FD] text-lg md:text-xl mb-10 max-w-xl mx-auto leading-relaxed"
+              className="text-white/70 text-lg md:text-xl mb-10 max-w-xl mx-auto leading-relaxed"
             >
               The fastest way to get answers is a five-minute conversation. Call
               Huluka directly — no phone tree, no hold music, no runaround.
@@ -574,7 +574,7 @@ export default function ContactPage() {
               variants={fadeUp}
               custom={2}
               href="tel:5037937520"
-              className="inline-flex items-center gap-3 bg-[#84CC16] text-[#111827] font-bold px-10 py-5 rounded-xl hover:bg-[#65A30D] transition-colors text-lg"
+              className="inline-flex items-center gap-3 bg-transparent border-[1.5px] border-white/50 text-white font-bold px-10 py-5 rounded-full hover:bg-white/10 transition-colors text-lg"
             >
               <Phone className="w-5 h-5" />
               Call (503) 793-7520
