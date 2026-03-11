@@ -119,7 +119,7 @@ function Story() {
           <motion.div
             variants={fadeUp}
             custom={3}
-            className="mt-10 p-8 rounded-2xl bg-[#141414] text-[#F2F0EA]"
+            className="mt-10 p-8 rounded-[22px] bg-[#1D3B22] text-[#F2F0EA]"
           >
             <p className="font-accent text-xl md:text-2xl italic leading-relaxed">
               &ldquo;Our mission is simple: make Portland real estate accessible,
@@ -208,7 +208,7 @@ function TeamBios() {
               >
                 {/* Photo — 40% */}
                 <div className="w-full md:w-[40%] flex-shrink-0">
-                  <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
+                  <div className="relative rounded-[22px] overflow-hidden aspect-[3/4]">
                     <Image
                       src={member.photo}
                       alt={`${member.name} — ${member.role} at Advantage Realty LLC`}
@@ -216,7 +216,7 @@ function TeamBios() {
                       className="object-cover object-top"
                       sizes="(max-width: 768px) 100vw, 40vw"
                     />
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#C9E83A]" />
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#E8622A]" />
                   </div>
                 </div>
 
@@ -234,7 +234,7 @@ function TeamBios() {
                     {member.languages.map((lang) => (
                       <span
                         key={lang}
-                        className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#C9E83A]/10 text-xs font-display font-medium text-[#141414]/70"
+                        className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#FDF0EB] text-xs font-display font-medium text-[#141414]/70"
                       >
                         <Globe className="w-3 h-3" />
                         {lang}
@@ -324,10 +324,10 @@ function Values() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="bg-white rounded-2xl border border-[#E0DDD6] p-8 text-center hover:shadow-lg hover:border-[#E8622A]/30 transition-all duration-300"
+              className="bg-white rounded-[22px] border border-[#E0DDD6] p-8 text-center hover:shadow-lg hover:border-[#E8622A]/40 transition-all duration-300"
             >
-              <div className="w-14 h-14 rounded-full bg-[#C9E83A]/10 flex items-center justify-center mx-auto mb-5">
-                <Icon className="w-7 h-7 text-[#C9E83A]" strokeWidth={1.5} />
+              <div className="w-14 h-14 rounded-full bg-[#FDF0EB] flex items-center justify-center mx-auto mb-5">
+                <Icon className="w-7 h-7 text-[#E8622A]" strokeWidth={1.5} />
               </div>
               <h3 className="font-display font-bold text-lg text-[#141414]">
                 {title}
@@ -344,12 +344,12 @@ function Values() {
 }
 
 /* ───────────────────────────────────────────
-   Section 5 — CTA (dark bg)
+   Section 5 — CTA (dark rounded block)
    ─────────────────────────────────────────── */
 function AboutCTA() {
   return (
-    <section className="bg-[#1D3B22] text-white py-20 md:py-28">
-      <div className="max-w-3xl mx-auto px-5 md:px-8 text-center">
+    <section className="py-20 md:py-28 px-5 md:px-8">
+      <div className="bg-[#141414] rounded-[22px] max-w-5xl mx-auto px-5 md:px-8 py-20 md:py-28 text-center text-[#F2F0EA]">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -368,7 +368,7 @@ function AboutCTA() {
           <motion.p
             variants={fadeUp}
             custom={1}
-            className="mt-6 text-lg md:text-xl text-[#F2F0EA]/80 font-body leading-relaxed"
+            className="mt-6 text-lg md:text-xl text-[#F2F0EA]/80 font-body leading-relaxed max-w-2xl mx-auto"
           >
             Whether you&rsquo;re ready to buy, thinking about selling, or just
             want to understand what your Portland home is worth — we&rsquo;re
@@ -378,7 +378,7 @@ function AboutCTA() {
           <motion.div variants={fadeUp} custom={2} className="mt-10">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-[#C9E83A] px-8 py-4 font-display font-bold text-[#141414] text-lg hover:bg-[#B6D82A] transition-colors"
+              className="inline-flex items-center justify-center rounded-full bg-transparent border-[1.5px] border-white/50 text-white px-8 py-4 font-display font-bold text-lg hover:bg-white/10 transition-colors"
             >
               Schedule Your Free Consultation
             </Link>
