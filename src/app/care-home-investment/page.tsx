@@ -180,7 +180,7 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
     <motion.div
       variants={fadeUp}
       custom={index}
-      className="border border-[#E0DDD6] rounded-xl overflow-hidden bg-white"
+      className="border border-[#E0DDD6] rounded-[22px] overflow-hidden bg-white"
     >
       <button
         onClick={() => setOpen(!open)}
@@ -237,7 +237,7 @@ export default function CareHomeInvestmentPage() {
               <motion.span
                 variants={fadeUp}
                 custom={0}
-                className="inline-block bg-[#E8622A]/8 text-[#E8622A] font-semibold text-xs tracking-widest uppercase px-4 py-1.5 rounded-full mb-6"
+                className="inline-block bg-[#FDF0EB] text-[#E8622A] font-semibold text-xs tracking-widest uppercase px-4 py-1.5 rounded-full mb-6"
               >
                 Portland Care Home Specialists
               </motion.span>
@@ -248,7 +248,7 @@ export default function CareHomeInvestmentPage() {
                 className="font-bold tracking-tight text-4xl md:text-5xl lg:text-6xl text-[#141414] mb-6 leading-[1.1]"
               >
                 Care Home Investment in Portland —{" "}
-                <span className="text-[#E8622A]">Done Right</span>
+                <span className="italic text-[#2A5430]">Done Right</span>
               </motion.h1>
 
               <motion.p
@@ -272,7 +272,7 @@ export default function CareHomeInvestmentPage() {
               <motion.div variants={fadeUp} custom={4} className="flex flex-wrap gap-4">
                 <Link
                   href="/contact?interest=Care+Home"
-                  className="inline-flex items-center gap-2 bg-[#84CC16] text-[#141414] font-semibold px-8 py-4 rounded-lg hover:bg-[#65A30D] transition-colors shadow-sm"
+                  className="inline-flex items-center gap-2 bg-[#E8622A] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#D4551F] transition-colors shadow-sm"
                 >
                   Schedule a Care Home Consultation
                   <ArrowRight className="w-4 h-4" />
@@ -291,7 +291,7 @@ export default function CareHomeInvestmentPage() {
             <motion.div
               variants={scaleIn}
               custom={2}
-              className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-[#E8622A]/10"
+              className="relative aspect-[4/5] rounded-[22px] overflow-hidden shadow-2xl shadow-[#E8622A]/10"
             >
               <Image
                 src="/images/paper-cutout-care-home.png"
@@ -397,9 +397,9 @@ export default function CareHomeInvestmentPage() {
                 key={card.title}
                 variants={fadeUp}
                 custom={i}
-                className="bg-white rounded-xl border border-[#E0DDD6] p-8 hover:shadow-lg hover:shadow-[#E8622A]/5 transition-all duration-300"
+                className="bg-white rounded-[22px] border border-[#E0DDD6] p-8 hover:shadow-lg hover:shadow-[#E8622A]/5 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#E8622A]/8 flex items-center justify-center mb-5">
+                <div className="w-12 h-12 rounded-xl bg-[#FDF0EB] flex items-center justify-center mb-5">
                   <card.icon className="w-6 h-6 text-[#E8622A]" strokeWidth={1.5} />
                 </div>
                 <h3 className="font-bold text-xl text-[#141414] mb-3">
@@ -425,7 +425,7 @@ export default function CareHomeInvestmentPage() {
       </section>
 
       {/* ──────────────────────────────────────────────────────────
-          WHO IT'S FOR — Audience Cards with lime left border
+          WHO IT'S FOR — Audience Cards with orange left border
           ────────────────────────────────────────────────────────── */}
       <section className="bg-[#FFFFFF] py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
@@ -438,7 +438,7 @@ export default function CareHomeInvestmentPage() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-[#84CC16] font-semibold tracking-widest uppercase text-sm mb-4"
+              className="text-[#E8622A] font-semibold tracking-widest uppercase text-sm mb-4"
             >
               Who This Is For
             </motion.p>
@@ -462,11 +462,11 @@ export default function CareHomeInvestmentPage() {
                 key={a.title}
                 variants={fadeUp}
                 custom={i}
-                className="bg-[#F8F6F1] rounded-xl border border-[#E0DDD6] p-8 border-l-4 border-l-[#84CC16] hover:shadow-md transition-shadow duration-300"
+                className="bg-[#F8F6F1] rounded-[22px] border border-[#E0DDD6] p-8 border-l-4 border-l-[#E8622A] hover:shadow-md transition-shadow duration-300"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#84CC16]/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <a.icon className="w-5 h-5 text-[#65A30D]" strokeWidth={1.5} />
+                  <div className="w-10 h-10 rounded-lg bg-[#FDF0EB] flex items-center justify-center shrink-0 mt-0.5">
+                    <a.icon className="w-5 h-5 text-[#E8622A]" strokeWidth={1.5} />
                   </div>
                   <div>
                     <h3 className="font-bold text-xl text-[#141414] mb-2">{a.title}</h3>
@@ -493,7 +493,7 @@ export default function CareHomeInvestmentPage() {
           >
             <motion.p
               variants={fadeUp}
-              className="text-[#84CC16] font-semibold tracking-widest uppercase text-sm mb-4"
+              className="text-[#C9E83A] font-semibold tracking-widest uppercase text-sm mb-4"
             >
               Our 5-Step Process
             </motion.p>
@@ -519,7 +519,7 @@ export default function CareHomeInvestmentPage() {
             className="relative max-w-3xl mx-auto"
           >
             {/* Vertical line */}
-            <div className="absolute left-[27px] top-4 bottom-4 w-px bg-[#505050]" />
+            <div className="absolute left-[27px] top-4 bottom-4 w-px bg-white/10" />
 
             {processSteps.map((step, i) => (
               <motion.div
@@ -529,7 +529,7 @@ export default function CareHomeInvestmentPage() {
                 className="relative pl-20 pb-14 last:pb-0"
               >
                 {/* Number circle */}
-                <div className="absolute left-0 top-0 w-[54px] h-[54px] rounded-full bg-[#1D3B22] border-2 border-[#E8622A] flex items-center justify-center z-10">
+                <div className="absolute left-0 top-0 w-[54px] h-[54px] rounded-full bg-white/5 border-2 border-[#C9E83A] flex items-center justify-center z-10">
                   <span className="font-bold text-sm text-[#C9E83A]">{step.num}</span>
                 </div>
                 <h3 className="font-bold text-xl text-white mb-2 pt-3">{step.title}</h3>
@@ -541,7 +541,7 @@ export default function CareHomeInvestmentPage() {
       </section>
 
       {/* ──────────────────────────────────────────────────────────
-          TESTIMONIAL — Large lime quotation marks
+          TESTIMONIAL — Large quotation marks
           ────────────────────────────────────────────────────────── */}
       <section className="bg-[#FFFFFF] py-20 md:py-28">
         <div className="max-w-4xl mx-auto px-5 md:px-8 lg:px-12 text-center">
@@ -552,7 +552,7 @@ export default function CareHomeInvestmentPage() {
             variants={stagger}
           >
             <motion.div variants={fadeUp} className="mb-8">
-              <MessageSquareQuote className="w-16 h-16 mx-auto text-[#84CC16]" strokeWidth={1} />
+              <MessageSquareQuote className="w-16 h-16 mx-auto text-[#E8622A]" strokeWidth={1} />
             </motion.div>
 
             <motion.blockquote
@@ -635,15 +635,20 @@ export default function CareHomeInvestmentPage() {
       </section>
 
       {/* ──────────────────────────────────────────────────────────
-          FINAL CTA — Blue gradient with lime button
+          FINAL CTA — Dark Rounded Block
           ────────────────────────────────────────────────────────── */}
-      <section className="bg-[#F8F6F1] px-6 py-12">
-        <div className="relative max-w-5xl mx-auto rounded-[22px] bg-[#141414] px-8 py-20 text-center lg:px-16 overflow-hidden">
+      <section className="py-20 md:py-28 px-5 md:px-8 overflow-hidden">
+        <div className="bg-[#141414] rounded-[22px] max-w-5xl mx-auto px-5 md:px-8 lg:px-12 py-20 md:py-28 text-center relative">
+          {/* Decorative circles */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/3" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/3 -translate-x-1/4" />
+
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={stagger}
+            className="relative"
           >
             <motion.h2
               variants={fadeUp}
@@ -667,7 +672,7 @@ export default function CareHomeInvestmentPage() {
             >
               <Link
                 href="/contact?interest=Care+Home"
-                className="inline-flex items-center gap-2 bg-transparent text-white font-semibold px-8 py-4 rounded-full border-[1.5px] border-white/50 hover:border-white hover:bg-white/10 transition-all"
+                className="inline-flex items-center gap-2 bg-transparent border-[1.5px] border-white/50 text-white font-semibold px-8 py-4 rounded-full hover:bg-white/10 transition-colors shadow-lg shadow-black/20"
               >
                 Start Your Care Home Search
                 <ArrowRight className="w-4 h-4" />
