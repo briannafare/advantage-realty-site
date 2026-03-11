@@ -260,15 +260,13 @@ function HeroSection() {
     offset: ["start start", "end start"],
   });
 
-  // Image starts at ~70% width and scales to 100% as user scrolls
-  const imageScale = useTransform(scrollYProgress, [0, 0.5], [0.75, 1]);
-  const imageRadius = useTransform(scrollYProgress, [0, 0.5], [28, 0]);
-  const imageY = useTransform(scrollYProgress, [0, 0.5], [0, -40]);
+  // Image starts at 100% and zooms in as user scrolls
+  const imageScale = useTransform(scrollYProgress, [0, 0.6], [1, 1.15]);
 
   return (
-    <section ref={heroRef} className="relative bg-white pb-0">
+    <section ref={heroRef} className="relative z-0 bg-white pb-0">
       {/* Text block — centered, above fold */}
-      <div className="mx-auto max-w-4xl px-5 pb-4 pt-2 text-center sm:px-6 sm:pb-12 sm:pt-10 lg:pt-16">
+      <div className="mx-auto max-w-4xl px-5 pb-4 pt-2 text-center sm:px-6 sm:pb-8 sm:pt-6 lg:pt-10">
         <motion.div initial="hidden" animate="visible" variants={stagger}>
           {/* Welcome badge */}
           <motion.div variants={fadeUp} custom={0}>
@@ -282,7 +280,7 @@ function HeroSection() {
           <motion.h1
             variants={fadeUp}
             custom={1}
-            className="mt-1 font-display text-[26px] font-extrabold leading-[1.0] tracking-[-0.03em] text-[#141414] sm:mt-4 sm:text-[clamp(38px,7vw,72px)] sm:leading-[1.0]"
+            className="mt-1 font-display text-[26px] font-extrabold leading-[1.0] tracking-[-0.03em] text-[#141414] sm:mt-3 sm:text-[clamp(34px,5.5vw,56px)] sm:leading-[1.0]"
           >
             Portland Home Buyers and Sellers need an{" "}
             <em
@@ -299,7 +297,7 @@ function HeroSection() {
           <motion.p
             variants={fadeUp}
             custom={2}
-            className="mx-auto mt-2 max-w-xl font-body text-[13px] leading-[1.45] text-[#505050] sm:mt-6 sm:text-[17px] sm:leading-[1.75]"
+            className="mx-auto mt-2 max-w-xl font-body text-[13px] leading-[1.45] text-[#505050] sm:mt-4 sm:text-[15px] sm:leading-[1.6]"
           >
             Portland&rsquo;s market doesn&rsquo;t wait. You need a team that
             knows which neighborhoods are moving, what a property is actually
@@ -311,16 +309,16 @@ function HeroSection() {
           <motion.div
             variants={fadeUp}
             custom={3}
-            className="mt-3 flex flex-col items-center gap-2 sm:mt-8 sm:flex-row sm:justify-center sm:gap-4"
+            className="mt-3 flex flex-col items-center gap-2 sm:mt-5 sm:flex-row sm:justify-center sm:gap-3"
           >
             <Link href="/contact" className="w-full sm:w-auto">
-              <Button variant="default" size="lg" className="w-full px-6 py-3 text-[13px] sm:w-auto sm:px-10 sm:py-5 sm:text-base">
+              <Button variant="default" size="default" className="w-full px-6 py-3 text-[13px] sm:w-auto sm:px-7 sm:py-3 sm:text-[13px]">
                 Schedule a Free Consultation
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
             <Link href="#lead-magnets" className="w-full sm:w-auto">
-              <Button variant="secondary" size="lg" className="w-full px-6 py-3 text-[13px] sm:w-auto sm:px-10 sm:py-5 sm:text-base">
+              <Button variant="secondary" size="default" className="w-full px-6 py-3 text-[13px] sm:w-auto sm:px-7 sm:py-3 sm:text-[13px]">
                 Get the Neighborhood Guide
               </Button>
             </Link>
@@ -330,7 +328,7 @@ function HeroSection() {
           <motion.div
             variants={fadeUp}
             custom={4}
-            className="mt-3 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 font-body text-[9px] text-[#909090] sm:mt-8 sm:gap-x-3 sm:text-xs"
+            className="mt-3 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 font-body text-[9px] text-[#909090] sm:mt-4 sm:gap-x-3 sm:text-[11px]"
           >
             {HERO_TRUST.map((item, i) => (
               <React.Fragment key={i}>
@@ -342,15 +340,13 @@ function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Scroll-reveal hero image — top 30% visible above fold */}
-      <div className="relative mx-auto max-w-7xl overflow-hidden px-3 sm:px-6">
+      {/* Edge-to-edge hero image — zooms in on scroll */}
+      <div className="relative w-full overflow-hidden">
         <motion.div
           style={{
             scale: imageScale,
-            borderRadius: imageRadius,
-            y: imageY,
           }}
-          className="relative mx-auto aspect-[4/3] w-full overflow-hidden sm:aspect-[16/9] lg:aspect-[16/8]"
+          className="relative aspect-[4/3] w-full sm:aspect-[16/9] lg:aspect-[16/7]"
         >
           <Image
             src="/images/img-hero-portland.jpg"
@@ -797,29 +793,34 @@ function MarketDataSection() {
           </p>
         </motion.div>
 
-        {/* Animated SVG chart */}
+        {/* Animated SVG chart — scrollable on mobile */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-12"
+          className="mt-8 sm:mt-12"
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/chart-market-data.svg"
-            alt="Portland real estate market data chart showing trends from 2020 to 2025"
-            className="w-full rounded-[20px]"
-          />
+          <div className="-mx-5 overflow-x-auto px-5 sm:mx-0 sm:overflow-x-visible sm:px-0">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/chart-market-data.svg"
+              alt="Portland real estate market data chart showing trends from 2020 to 2025"
+              className="min-w-[640px] rounded-[14px] sm:min-w-0 sm:w-full sm:rounded-[20px]"
+            />
+          </div>
+          <p className="mt-2 text-center font-body text-[10px] text-[#5BB5D8]/60 sm:hidden">
+            Swipe to see full chart &rarr;
+          </p>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-10 text-center"
+          className="mt-6 text-center sm:mt-10"
         >
           <Link href="#lead-magnets">
-            <Button variant="default" size="lg">
+            <Button variant="default" size="default" className="px-6 py-3 text-[13px] sm:px-10 sm:py-5 sm:text-base">
               Download the Free Neighborhood Guide
               <ArrowRight className="h-4 w-4" />
             </Button>
