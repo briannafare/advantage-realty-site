@@ -266,7 +266,7 @@ function HeroSection() {
   return (
     <section ref={heroRef} className="relative z-0 overflow-hidden bg-white">
       {/* Text block — compact, high on page (Rillo-style) */}
-      <div className="relative z-10 mx-auto max-w-4xl px-5 pb-6 pt-4 text-center sm:px-6 sm:pb-8 sm:pt-6 lg:pt-8">
+      <div className="relative z-20 mx-auto max-w-4xl px-5 pb-6 pt-4 text-center sm:px-6 sm:pb-8 sm:pt-6 lg:pt-8">
         <motion.div initial="hidden" animate="visible" variants={stagger}>
           {/* Welcome badge */}
           <motion.div variants={fadeUp} custom={0}>
@@ -328,7 +328,7 @@ function HeroSection() {
 
       {/* Hero image — fades in from content, no hard edges */}
       <div className="relative -mt-20 sm:-mt-28 lg:-mt-32">
-        <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-40 bg-gradient-to-b from-white via-white/60 to-transparent sm:h-56 lg:h-64" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-48 bg-gradient-to-b from-white from-10% via-white/50 via-50% to-transparent sm:h-64 lg:h-72" />
         <motion.div
           style={{ scale: imageScale }}
           className="relative w-full"
