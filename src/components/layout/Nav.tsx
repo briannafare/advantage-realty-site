@@ -46,9 +46,9 @@ export default function Nav() {
             <Image
               src="/images/advantage-logo.png"
               alt="Advantage Realty LLC"
-              width={56}
-              height={56}
-              className="h-14 w-14"
+              width={80}
+              height={80}
+              className="h-16 w-16 lg:h-[72px] lg:w-[72px]"
             />
           </Link>
 
