@@ -83,20 +83,20 @@ export const SERVICES = [
 
 export const TEAM = [
   {
-    name: "Huluka Abebe",
-    role: "Principal Broker / Co-Founder",
-    bio: "16+ years of Portland real estate experience. Huluka is the broker who picks up the phone, walks the property with you, and negotiates like your investment is his own — because that's how he treats every deal.",
-    phone: "(503) 793-7520",
-    email: "huluka@advantageor.com",
-    image: "/images/team/huluka-abebe.jpg",
-  },
-  {
     name: "Hunde Abebe",
-    role: "Broker / Co-Founder",
+    role: "Principal Broker / Co-Founder",
     bio: "Detail-driven and sharp at the negotiation table. Hunde manages listing strategy and contract negotiations — clients say he goes above and beyond because settling for 'good enough' isn't how he operates.",
     phone: "(503) 449-4362",
     email: "hunde@advantageor.com",
     image: "/images/team/hunde-abebe.jpg",
+  },
+  {
+    name: "Huluka Abebe",
+    role: "Broker / Co-Founder",
+    bio: "16+ years of Portland real estate experience. Huluka is the broker who picks up the phone, walks the property with you, and negotiates like your investment is his own — because that's how he treats every deal.",
+    phone: "(503) 793-7520",
+    email: "huluka@advantageor.com",
+    image: "/images/team/huluka-abebe.jpg",
   },
   {
     name: "Jenni Anderson",

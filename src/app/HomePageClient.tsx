@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -11,6 +11,7 @@ import {
 } from "framer-motion";
 import { ChevronDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 /* ----------------------------------------------------------------
    Animation helpers
@@ -124,20 +125,20 @@ const FEATURES = [
 
 const TEAM = [
   {
-    name: "Huluka Abebe",
+    name: "Hunde Abebe",
     role: "Principal Broker",
+    phone: "(503) 449-4362",
+    email: "hunde@advantageor.com",
+    photo: "/images/team/hunde-abebe.jpg",
+    bio: "Hunde\u2019s clients describe him as the agent who \u201cknows exactly what you want once you consult him.\u201d As Principal Broker, he leads the team with patience, precision, and deep knowledge of Portland\u2019s residential market.",
+  },
+  {
+    name: "Huluka Abebe",
+    role: "Broker",
     phone: "(503) 793-7520",
     email: "huluka@advantageor.com",
     photo: "/images/team/huluka-abebe.jpg",
     bio: "Huluka has been working Portland\u2019s real estate market for over 20 years. He built Advantage Realty on a simple idea: clients should leave feeling like they won. His specialty in care home properties and investment real estate makes him one of the most sought-after brokers in the city.",
-  },
-  {
-    name: "Hunde Abebe",
-    role: "Broker",
-    phone: "(503) 449-4362",
-    email: "hunde@advantageor.com",
-    photo: "/images/team/hunde-abebe.jpg",
-    bio: "Hunde\u2019s clients describe him as the agent who \u201cknows exactly what you want once you consult him.\u201d He works closely with buyers and sellers across Portland\u2019s residential market, with a reputation for patience and precision.",
   },
   {
     name: "Jenni Anderson",
@@ -267,11 +268,11 @@ function HeroSection() {
   return (
     <section ref={heroRef} className="relative bg-white pb-0">
       {/* Text block — centered, above fold */}
-      <div className="mx-auto max-w-4xl px-6 pb-12 pt-10 text-center lg:pt-16">
+      <div className="mx-auto max-w-4xl px-5 pb-4 pt-2 text-center sm:px-6 sm:pb-12 sm:pt-10 lg:pt-16">
         <motion.div initial="hidden" animate="visible" variants={stagger}>
           {/* Welcome badge */}
           <motion.div variants={fadeUp} custom={0}>
-            <span className="mb-6 inline-flex items-center gap-[7px] rounded-full border border-[#E0DDD6] bg-white px-[14px] py-[5px] font-body text-xs font-medium text-[#505050]">
+            <span className="mb-2 inline-flex items-center gap-[7px] rounded-full border border-[#E0DDD6] bg-white px-[14px] py-[5px] font-body text-[10px] font-medium text-[#505050] sm:mb-6 sm:text-xs">
               <span className="h-[7px] w-[7px] rounded-full bg-[#C9E83A]" />
               Portland&rsquo;s Most Trusted Real Estate Team
             </span>
@@ -281,7 +282,7 @@ function HeroSection() {
           <motion.h1
             variants={fadeUp}
             custom={1}
-            className="mt-4 font-display text-[clamp(38px,7vw,72px)] font-extrabold leading-[1.0] tracking-[-0.03em] text-[#141414]"
+            className="mt-1 font-display text-[26px] font-extrabold leading-[1.0] tracking-[-0.03em] text-[#141414] sm:mt-4 sm:text-[clamp(38px,7vw,72px)] sm:leading-[1.0]"
           >
             Portland Home Buyers and Sellers need an{" "}
             <em
@@ -298,7 +299,7 @@ function HeroSection() {
           <motion.p
             variants={fadeUp}
             custom={2}
-            className="mx-auto mt-6 max-w-xl font-body text-[17px] leading-[1.75] text-[#505050]"
+            className="mx-auto mt-2 max-w-xl font-body text-[13px] leading-[1.45] text-[#505050] sm:mt-6 sm:text-[17px] sm:leading-[1.75]"
           >
             Portland&rsquo;s market doesn&rsquo;t wait. You need a team that
             knows which neighborhoods are moving, what a property is actually
@@ -310,16 +311,16 @@ function HeroSection() {
           <motion.div
             variants={fadeUp}
             custom={3}
-            className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
+            className="mt-3 flex flex-col items-center gap-2 sm:mt-8 sm:flex-row sm:justify-center sm:gap-4"
           >
-            <Link href="/contact">
-              <Button variant="default" size="lg">
+            <Link href="/contact" className="w-full sm:w-auto">
+              <Button variant="default" size="lg" className="w-full px-6 py-3 text-[13px] sm:w-auto sm:px-10 sm:py-5 sm:text-base">
                 Schedule a Free Consultation
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
-            <Link href="#lead-magnets">
-              <Button variant="secondary" size="lg">
+            <Link href="#lead-magnets" className="w-full sm:w-auto">
+              <Button variant="secondary" size="lg" className="w-full px-6 py-3 text-[13px] sm:w-auto sm:px-10 sm:py-5 sm:text-base">
                 Get the Neighborhood Guide
               </Button>
             </Link>
@@ -329,7 +330,7 @@ function HeroSection() {
           <motion.div
             variants={fadeUp}
             custom={4}
-            className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 font-body text-xs text-[#909090]"
+            className="mt-3 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 font-body text-[9px] text-[#909090] sm:mt-8 sm:gap-x-3 sm:text-xs"
           >
             {HERO_TRUST.map((item, i) => (
               <React.Fragment key={i}>
@@ -342,14 +343,14 @@ function HeroSection() {
       </div>
 
       {/* Scroll-reveal hero image — top 30% visible above fold */}
-      <div className="relative mx-auto max-w-7xl overflow-hidden px-4 sm:px-6">
+      <div className="relative mx-auto max-w-7xl overflow-hidden px-3 sm:px-6">
         <motion.div
           style={{
             scale: imageScale,
             borderRadius: imageRadius,
             y: imageY,
           }}
-          className="relative mx-auto aspect-[16/8] w-full overflow-hidden"
+          className="relative mx-auto aspect-[4/3] w-full overflow-hidden sm:aspect-[16/9] lg:aspect-[16/8]"
         >
           <Image
             src="/images/img-hero-portland.jpg"
@@ -372,8 +373,8 @@ function StatsBar() {
   const { ref, inView } = useAnimateOnScroll(0.3);
 
   return (
-    <section ref={ref} className="bg-white py-10">
-      <div className="mx-auto max-w-5xl px-6">
+    <section ref={ref} className="bg-white py-8 sm:py-10">
+      <div className="mx-auto max-w-5xl px-5 sm:px-6">
         <motion.div
           variants={stagger}
           initial="hidden"
@@ -408,8 +409,8 @@ function WhyAdvantage() {
   const { ref, inView } = useAnimateOnScroll();
 
   return (
-    <section ref={ref} className="bg-[#F0F7DC] py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6">
+    <section ref={ref} className="bg-[#F0F7DC] py-14 sm:py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -471,12 +472,71 @@ function WhyAdvantage() {
 /* ================================================================
    04 · TEAM — White bg, 3-column portrait cards
    ================================================================ */
+function TeamCard({
+  t,
+  i,
+}: {
+  t: (typeof TEAM)[number];
+  i: number;
+}) {
+  const cardRef = useRef(null);
+  const isInView = useInView(cardRef, { once: true, amount: 0.3 });
+  const [canHover, setCanHover] = useState(true);
+
+  useEffect(() => {
+    setCanHover(window.matchMedia("(hover: hover)").matches);
+  }, []);
+
+  // Desktop: always grayscale, color on hover
+  // Mobile: grayscale → color when scrolled into view
+  const showColor = !canHover && isInView;
+
+  return (
+    <motion.div
+      ref={cardRef}
+      variants={fadeUp}
+      custom={i}
+      className="group overflow-hidden rounded-[14px] border border-[#E0DDD6] bg-white"
+    >
+      <div className="relative aspect-[4/5] overflow-hidden">
+        <Image
+          src={t.photo}
+          alt={`${t.name} \u2014 ${t.role} at Advantage Realty LLC`}
+          fill
+          className={cn(
+            "object-cover object-top transition-all duration-700",
+            showColor
+              ? "grayscale-0"
+              : "grayscale group-hover:grayscale-0"
+          )}
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
+      </div>
+      <div className="p-5 sm:p-6">
+        <h3 className="font-display text-[15px] font-extrabold tracking-[-0.01em] text-[#141414]">
+          {t.name}
+        </h3>
+        <p className="mt-1 font-body text-[11px] font-semibold uppercase tracking-[0.04em] text-[#2A5430]">
+          {t.role}
+        </p>
+        <p className="mt-3 font-body text-[13px] leading-[1.65] text-[#505050]">
+          {t.bio}
+        </p>
+        <div className="mt-4 flex flex-col gap-1 font-mono text-[11px] text-[#909090] sm:flex-row sm:gap-4">
+          <a href={`mailto:${t.email}`} className="hover:text-[#2A5430] transition-colors">{t.email}</a>
+          <a href={`tel:${t.phone.replace(/[^+\d]/g, "")}`} className="hover:text-[#2A5430] transition-colors">{t.phone}</a>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 function TeamSection() {
   const { ref, inView } = useAnimateOnScroll();
 
   return (
-    <section ref={ref} className="bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6">
+    <section ref={ref} className="bg-white py-16 lg:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -496,7 +556,7 @@ function TeamSection() {
             </em>
             .
           </h2>
-          <p className="mx-auto mt-5 max-w-xl font-body text-[15px] leading-[1.75] text-[#505050]">
+          <p className="mx-auto mt-4 max-w-xl font-body text-[15px] leading-[1.75] text-[#505050]">
             Not a big-box brokerage. Not a team you get handed off to. Three
             specialists who built their careers in Portland &mdash; and who
             answer when you call.
@@ -507,40 +567,10 @@ function TeamSection() {
           variants={stagger}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-10 grid gap-5 sm:mt-14 sm:grid-cols-2 lg:grid-cols-3"
         >
           {TEAM.map((t, i) => (
-            <motion.div
-              key={i}
-              variants={fadeUp}
-              custom={i}
-              className="group overflow-hidden rounded-[14px] border border-[#E0DDD6] bg-white"
-            >
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <Image
-                  src={t.photo}
-                  alt={`${t.name} \u2014 ${t.role} at Advantage Realty LLC`}
-                  fill
-                  className="object-cover object-top grayscale transition-all duration-300 group-hover:grayscale-0"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="font-display text-[14px] font-extrabold tracking-[-0.01em] text-[#141414]">
-                  {t.name}
-                </h3>
-                <p className="mt-1 font-body text-[11px] font-semibold uppercase tracking-[0.04em] text-[#2A5430]">
-                  {t.role}
-                </p>
-                <p className="mt-3 font-body text-[12px] leading-[1.65] text-[#505050]">
-                  {t.bio}
-                </p>
-                <div className="mt-4 space-y-1 font-mono text-[11px] text-[#909090]">
-                  <p>{t.email}</p>
-                  <p>{t.phone}</p>
-                </div>
-              </div>
-            </motion.div>
+            <TeamCard key={i} t={t} i={i} />
           ))}
         </motion.div>
       </div>
@@ -555,9 +585,9 @@ function WeBelieveSection() {
   const { ref, inView } = useAnimateOnScroll();
 
   return (
-    <section ref={ref} className="bg-[#1D3B22] py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-16">
+    <section ref={ref} className="bg-[#1D3B22] py-14 sm:py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6">
+        <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-16">
           {/* Text */}
           <motion.div
             initial="hidden"
@@ -576,7 +606,7 @@ function WeBelieveSection() {
             <motion.h2
               variants={fadeUp}
               custom={1}
-              className="font-display text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.05] tracking-[-0.02em] text-white"
+              className="font-display text-[28px] font-extrabold leading-[1.1] tracking-[-0.02em] text-white sm:text-[clamp(28px,4vw,44px)] sm:leading-[1.05]"
             >
               We Believe Real Estate
               <br />
@@ -651,8 +681,8 @@ function TestimonialsSection() {
   const { ref, inView } = useAnimateOnScroll();
 
   return (
-    <section ref={ref} className="bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6">
+    <section ref={ref} className="bg-white py-14 sm:py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -737,8 +767,8 @@ function MarketDataSection() {
   const { ref, inView } = useAnimateOnScroll();
 
   return (
-    <section ref={ref} className="bg-[#EBF6FC] py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6">
+    <section ref={ref} className="bg-[#EBF6FC] py-14 sm:py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -810,9 +840,9 @@ function LeadMagnetsSection() {
     <section
       id="lead-magnets"
       ref={ref}
-      className="bg-[#1D3B22] py-20 lg:py-28"
+      className="bg-[#1D3B22] py-14 sm:py-20 lg:py-28"
     >
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -881,8 +911,8 @@ function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section ref={ref} className="bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-3xl px-6">
+    <section ref={ref} className="bg-white py-14 sm:py-20 lg:py-28">
+      <div className="mx-auto max-w-3xl px-5 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -956,12 +986,12 @@ function FinalCtaSection() {
   const { ref, inView } = useAnimateOnScroll();
 
   return (
-    <section ref={ref} className="bg-[#F8F6F1] px-6 py-16">
+    <section ref={ref} className="bg-[#F8F6F1] px-4 py-12 sm:px-6 sm:py-16">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
-        className="relative mx-auto max-w-5xl overflow-hidden rounded-[22px] bg-[#141414] px-8 py-20 text-center lg:px-16"
+        className="relative mx-auto max-w-5xl overflow-hidden rounded-[22px] bg-[#141414] px-6 py-14 text-center sm:px-8 sm:py-20 lg:px-16"
       >
         <h2 className="mx-auto max-w-[600px] font-display text-[clamp(26px,4vw,44px)] font-extrabold leading-[1.05] tracking-[-0.02em] text-white">
           Take Control of Your
