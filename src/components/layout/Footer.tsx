@@ -141,13 +141,29 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href={`mailto:${BRAND.email}`}
-                  className="flex items-start gap-3 font-body text-sm text-white/70 transition-colors hover:text-[#C9E83A]"
-                >
+                <div className="flex items-start gap-3">
                   <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#C9E83A]" />
-                  {BRAND.email}
-                </a>
+                  <div className="flex flex-col gap-1">
+                    <a
+                      href="mailto:hunde@advantageor.com"
+                      className="font-body text-sm text-white/70 transition-colors hover:text-[#C9E83A]"
+                    >
+                      hunde@advantageor.com
+                    </a>
+                    <a
+                      href="mailto:huluka@advantageor.com"
+                      className="font-body text-sm text-white/70 transition-colors hover:text-[#C9E83A]"
+                    >
+                      huluka@advantageor.com
+                    </a>
+                    <a
+                      href="mailto:jenni@advantageor.com"
+                      className="font-body text-sm text-white/70 transition-colors hover:text-[#C9E83A]"
+                    >
+                      jenni@advantageor.com
+                    </a>
+                  </div>
+                </div>
               </li>
               <li>
                 <a
