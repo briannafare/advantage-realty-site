@@ -268,11 +268,11 @@ function HeroSection() {
   return (
     <section ref={heroRef} className="relative bg-white pb-0">
       {/* Text block — centered, above fold */}
-      <div className="mx-auto max-w-4xl px-5 pb-4 pt-2 text-center sm:px-6 sm:pb-12 sm:pt-10 lg:pt-16">
+      <div className="mx-auto max-w-4xl px-5 pb-8 pt-8 text-center sm:px-6 sm:pb-12 sm:pt-10 lg:pt-16">
         <motion.div initial="hidden" animate="visible" variants={stagger}>
           {/* Welcome badge */}
           <motion.div variants={fadeUp} custom={0}>
-            <span className="mb-2 inline-flex items-center gap-[7px] rounded-full border border-[#E0DDD6] bg-white px-[14px] py-[5px] font-body text-[10px] font-medium text-[#505050] sm:mb-6 sm:text-xs">
+            <span className="mb-4 inline-flex items-center gap-[7px] rounded-full border border-[#E0DDD6] bg-white px-[14px] py-[5px] font-body text-[10px] font-medium text-[#505050] sm:mb-6 sm:text-xs">
               <span className="h-[7px] w-[7px] rounded-full bg-[#C9E83A]" />
               Portland&rsquo;s Most Trusted Real Estate Team
             </span>
@@ -282,7 +282,7 @@ function HeroSection() {
           <motion.h1
             variants={fadeUp}
             custom={1}
-            className="mt-1 font-display text-[26px] font-extrabold leading-[1.0] tracking-[-0.03em] text-[#141414] sm:mt-4 sm:text-[clamp(38px,7vw,72px)] sm:leading-[1.0]"
+            className="mt-3 font-display text-[32px] font-extrabold leading-[1.05] tracking-[-0.03em] text-[#141414] sm:mt-4 sm:text-[clamp(38px,7vw,72px)] sm:leading-[1.0]"
           >
             Portland Home Buyers and Sellers need an{" "}
             <em
@@ -299,7 +299,7 @@ function HeroSection() {
           <motion.p
             variants={fadeUp}
             custom={2}
-            className="mx-auto mt-2 max-w-xl font-body text-[13px] leading-[1.45] text-[#505050] sm:mt-6 sm:text-[17px] sm:leading-[1.75]"
+            className="mx-auto mt-5 max-w-xl font-body text-[15px] leading-[1.65] text-[#505050] sm:mt-6 sm:text-[17px] sm:leading-[1.75]"
           >
             Portland&rsquo;s market doesn&rsquo;t wait. You need a team that
             knows which neighborhoods are moving, what a property is actually
@@ -311,16 +311,16 @@ function HeroSection() {
           <motion.div
             variants={fadeUp}
             custom={3}
-            className="mt-3 flex flex-col items-center gap-2 sm:mt-8 sm:flex-row sm:justify-center sm:gap-4"
+            className="mt-6 flex flex-col items-center gap-3 sm:mt-8 sm:flex-row sm:justify-center sm:gap-4"
           >
             <Link href="/contact" className="w-full sm:w-auto">
-              <Button variant="default" size="lg" className="w-full px-6 py-3 text-[13px] sm:w-auto sm:px-10 sm:py-5 sm:text-base">
+              <Button variant="default" size="lg" className="w-full sm:w-auto">
                 Schedule a Free Consultation
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
             <Link href="#lead-magnets" className="w-full sm:w-auto">
-              <Button variant="secondary" size="lg" className="w-full px-6 py-3 text-[13px] sm:w-auto sm:px-10 sm:py-5 sm:text-base">
+              <Button variant="secondary" size="lg" className="w-full sm:w-auto">
                 Get the Neighborhood Guide
               </Button>
             </Link>
@@ -330,7 +330,7 @@ function HeroSection() {
           <motion.div
             variants={fadeUp}
             custom={4}
-            className="mt-3 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 font-body text-[9px] text-[#909090] sm:mt-8 sm:gap-x-3 sm:text-xs"
+            className="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 font-body text-[10px] text-[#909090] sm:mt-8 sm:text-xs"
           >
             {HERO_TRUST.map((item, i) => (
               <React.Fragment key={i}>
@@ -342,24 +342,26 @@ function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Scroll-reveal hero image — top 30% visible above fold */}
-      <div className="relative mx-auto max-w-7xl overflow-hidden px-3 sm:px-6">
+      {/* Scroll-reveal hero image — edge-to-edge, grows on scroll */}
+      <div className="relative w-full overflow-hidden">
         <motion.div
           style={{
             scale: imageScale,
             borderRadius: imageRadius,
             y: imageY,
           }}
-          className="relative mx-auto aspect-[4/3] w-full overflow-hidden sm:aspect-[16/9] lg:aspect-[16/8]"
+          className="relative w-full overflow-hidden"
         >
-          <Image
-            src="/images/img-hero-portland.jpg"
-            alt="Portland residential neighborhood at golden hour"
-            fill
-            priority
-            className="object-cover object-center"
-            sizes="100vw"
-          />
+          <div className="relative aspect-[16/9] w-full lg:aspect-[2.4/1]">
+            <Image
+              src="/images/img-hero-portland.jpg"
+              alt="Portland residential neighborhood at golden hour"
+              fill
+              priority
+              className="object-cover object-center"
+              sizes="100vw"
+            />
+          </div>
         </motion.div>
       </div>
     </section>
@@ -479,17 +481,36 @@ function TeamCard({
   t: (typeof TEAM)[number];
   i: number;
 }) {
-  const cardRef = useRef(null);
-  const isInView = useInView(cardRef, { once: true, amount: 0.3 });
-  const [canHover, setCanHover] = useState(true);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
-    setCanHover(window.matchMedia("(hover: hover)").matches);
+    // Detect touch devices reliably
+    const isTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    setIsTouchDevice(isTouch);
   }, []);
 
-  // Desktop: always grayscale, color on hover
-  // Mobile: grayscale → color when scrolled into view
-  const showColor = !canHover && isInView;
+  useEffect(() => {
+    if (!isTouchDevice || !cardRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(cardRef.current);
+    return () => observer.disconnect();
+  }, [isTouchDevice]);
+
+  // Touch/mobile: grayscale → color when scrolled into view
+  // Desktop: grayscale → color on hover
+  const colorOnScroll = isTouchDevice && isVisible;
 
   return (
     <motion.div
@@ -505,7 +526,7 @@ function TeamCard({
           fill
           className={cn(
             "object-cover object-top transition-all duration-700",
-            showColor
+            colorOnScroll
               ? "grayscale-0"
               : "grayscale group-hover:grayscale-0"
           )}
