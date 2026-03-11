@@ -312,13 +312,13 @@ function HeroSection() {
             className="mt-6 flex flex-col items-center gap-3 sm:mt-7 sm:flex-row sm:justify-center sm:gap-4"
           >
             <Link href="/contact" className="w-full sm:w-auto">
-              <Button variant="default" size="lg" className="w-full sm:w-auto">
+              <Button variant="default" size="lg" className="w-full text-sm sm:w-auto sm:px-6 sm:py-2.5 sm:text-[13px]">
                 Schedule a Free Consultation
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
             <Link href="#lead-magnets" className="w-full sm:w-auto">
-              <Button variant="secondary" size="lg" className="w-full sm:w-auto">
+              <Button variant="secondary" size="lg" className="w-full text-sm sm:w-auto sm:px-6 sm:py-2.5 sm:text-[13px]">
                 Get the Neighborhood Guide
               </Button>
             </Link>
