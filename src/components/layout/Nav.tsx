@@ -34,7 +34,7 @@ export default function Nav() {
     <>
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-[100] h-24 transition-all duration-300",
+          "fixed inset-x-0 top-0 z-[60] h-24 transition-all duration-300",
           scrolled
             ? "bg-white/95 shadow-sm shadow-[#E0DDD6]/50 backdrop-blur-md"
             : "bg-white/80 backdrop-blur-sm"
@@ -88,7 +88,7 @@ export default function Nav() {
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="relative z-10 flex h-10 w-10 items-center justify-center rounded-[14px] text-[#141414] transition-colors hover:bg-[#F2F0EA] lg:hidden"
+            className="relative z-[80] flex h-10 w-10 items-center justify-center rounded-[14px] text-[#141414] transition-colors hover:bg-[#F2F0EA] lg:hidden"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
             {mobileOpen ? (
@@ -109,7 +109,7 @@ export default function Nav() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-[110] bg-[#141414]/60 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-[65] bg-[#141414]/60 backdrop-blur-sm lg:hidden"
               onClick={() => setMobileOpen(false)}
             />
 
@@ -118,7 +118,7 @@ export default function Nav() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed inset-y-0 right-0 z-[120] flex w-80 flex-col bg-white shadow-2xl lg:hidden"
+              className="fixed inset-y-0 right-0 z-[70] flex w-80 flex-col bg-white shadow-2xl lg:hidden"
             >
               <div className="flex flex-1 flex-col gap-2 overflow-y-auto px-6 pb-8 pt-24">
                 <div className="mb-4">

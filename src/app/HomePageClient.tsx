@@ -260,29 +260,27 @@ function HeroSection() {
     offset: ["start start", "end start"],
   });
 
-  // Image starts at ~70% width and scales to 100% as user scrolls
-  const imageScale = useTransform(scrollYProgress, [0, 0.5], [0.75, 1]);
-  const imageRadius = useTransform(scrollYProgress, [0, 0.5], [28, 0]);
-  const imageY = useTransform(scrollYProgress, [0, 0.5], [0, -40]);
+  // Image starts at 100% and zooms in as user scrolls
+  const imageScale = useTransform(scrollYProgress, [0, 0.6], [1, 1.15]);
 
   return (
-    <section ref={heroRef} className="relative bg-white pb-0">
-      {/* Text block — centered, above fold */}
-      <div className="mx-auto max-w-4xl px-5 pb-8 pt-8 text-center sm:px-6 sm:pb-12 sm:pt-10 lg:pt-16">
+    <section ref={heroRef} className="relative z-0 overflow-hidden bg-white">
+      {/* Text block — compact, high on page (Rillo-style) */}
+      <div className="relative z-10 mx-auto max-w-4xl px-5 pb-6 pt-4 text-center sm:px-6 sm:pb-8 sm:pt-6 lg:pt-8">
         <motion.div initial="hidden" animate="visible" variants={stagger}>
           {/* Welcome badge */}
           <motion.div variants={fadeUp} custom={0}>
-            <span className="mb-4 inline-flex items-center gap-[7px] rounded-full border border-[#E0DDD6] bg-white px-[14px] py-[5px] font-body text-[10px] font-medium text-[#505050] sm:mb-6 sm:text-xs">
+            <span className="mb-5 inline-flex items-center gap-[7px] rounded-full border border-[#E0DDD6] bg-white px-[14px] py-[5px] font-body text-[10px] font-medium text-[#505050] sm:mb-6 sm:text-xs">
               <span className="h-[7px] w-[7px] rounded-full bg-[#C9E83A]" />
               Portland&rsquo;s Most Trusted Real Estate Team
             </span>
           </motion.div>
 
-          {/* H1 */}
+          {/* H1 — large, tight leading like Rillo */}
           <motion.h1
             variants={fadeUp}
             custom={1}
-            className="mt-3 font-display text-[32px] font-extrabold leading-[1.05] tracking-[-0.03em] text-[#141414] sm:mt-4 sm:text-[clamp(38px,7vw,72px)] sm:leading-[1.0]"
+            className="font-display text-[36px] font-extrabold leading-[1.0] tracking-[-0.03em] text-[#141414] sm:text-[clamp(48px,7vw,76px)] sm:leading-[0.98]"
           >
             Portland Home Buyers and Sellers need an{" "}
             <em
@@ -295,11 +293,11 @@ function HeroSection() {
             That&rsquo;s us.
           </motion.h1>
 
-          {/* Sub */}
+          {/* Sub — tight line height, moderate gap from H1 */}
           <motion.p
             variants={fadeUp}
             custom={2}
-            className="mx-auto mt-5 max-w-xl font-body text-[15px] leading-[1.65] text-[#505050] sm:mt-6 sm:text-[17px] sm:leading-[1.75]"
+            className="mx-auto mt-5 max-w-md font-body text-[14px] leading-[1.35] text-[#505050] sm:mt-6 sm:max-w-lg sm:text-[16px] sm:leading-[1.4]"
           >
             Portland&rsquo;s market doesn&rsquo;t wait. You need a team that
             knows which neighborhoods are moving, what a property is actually
@@ -311,7 +309,7 @@ function HeroSection() {
           <motion.div
             variants={fadeUp}
             custom={3}
-            className="mt-6 flex flex-col items-center gap-3 sm:mt-8 sm:flex-row sm:justify-center sm:gap-4"
+            className="mt-6 flex flex-col items-center gap-3 sm:mt-7 sm:flex-row sm:justify-center sm:gap-4"
           >
             <Link href="/contact" className="w-full sm:w-auto">
               <Button variant="default" size="lg" className="w-full sm:w-auto">
@@ -325,34 +323,17 @@ function HeroSection() {
               </Button>
             </Link>
           </motion.div>
-
-          {/* Trust strip */}
-          <motion.div
-            variants={fadeUp}
-            custom={4}
-            className="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 font-body text-[10px] text-[#909090] sm:mt-8 sm:text-xs"
-          >
-            {HERO_TRUST.map((item, i) => (
-              <React.Fragment key={i}>
-                {i > 0 && <span className="text-[#E0DDD6]">&middot;</span>}
-                <span>{item}</span>
-              </React.Fragment>
-            ))}
-          </motion.div>
         </motion.div>
       </div>
 
-      {/* Scroll-reveal hero image — edge-to-edge, grows on scroll */}
-      <div className="relative w-full overflow-hidden">
+      {/* Hero image — fades in from content, no hard edges */}
+      <div className="relative -mt-20 sm:-mt-28 lg:-mt-32">
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-40 bg-gradient-to-b from-white via-white/60 to-transparent sm:h-56 lg:h-64" />
         <motion.div
-          style={{
-            scale: imageScale,
-            borderRadius: imageRadius,
-            y: imageY,
-          }}
-          className="relative w-full overflow-hidden"
+          style={{ scale: imageScale }}
+          className="relative w-full"
         >
-          <div className="relative aspect-[16/9] w-full lg:aspect-[2.4/1]">
+          <div className="relative aspect-[2.2/1] w-full sm:aspect-[2.8/1] lg:aspect-[3/1]">
             <Image
               src="/images/img-hero-portland.jpg"
               alt="Portland residential neighborhood at golden hour"
@@ -818,29 +799,34 @@ function MarketDataSection() {
           </p>
         </motion.div>
 
-        {/* Animated SVG chart */}
+        {/* Animated SVG chart — scrollable on mobile */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-12"
+          className="mt-8 sm:mt-12"
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/chart-market-data.svg"
-            alt="Portland real estate market data chart showing trends from 2020 to 2025"
-            className="w-full rounded-[20px]"
-          />
+          <div className="-mx-5 overflow-x-auto px-5 sm:mx-0 sm:overflow-x-visible sm:px-0">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/chart-market-data.svg"
+              alt="Portland real estate market data chart showing trends from 2020 to 2025"
+              className="min-w-[640px] rounded-[14px] sm:min-w-0 sm:w-full sm:rounded-[20px]"
+            />
+          </div>
+          <p className="mt-2 text-center font-body text-[10px] text-[#5BB5D8]/60 sm:hidden">
+            Swipe to see full chart &rarr;
+          </p>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-10 text-center"
+          className="mt-6 text-center sm:mt-10"
         >
           <Link href="#lead-magnets">
-            <Button variant="default" size="lg">
+            <Button variant="default" size="default" className="px-6 py-3 text-[13px] sm:px-10 sm:py-5 sm:text-base">
               Download the Free Neighborhood Guide
               <ArrowRight className="h-4 w-4" />
             </Button>
