@@ -283,16 +283,15 @@ function HeroSection() {
             custom={1}
             className="mt-4 font-display text-[clamp(38px,7vw,72px)] font-extrabold leading-[1.0] tracking-[-0.03em] text-[#141414]"
           >
-            Portland Real Estate.
-            <br />
-            Done to Your{" "}
+            Portland Home Buyers and Sellers need an{" "}
             <em
               className="font-accent not-italic text-[#2A5430]"
               style={{ fontStyle: "italic", fontWeight: 300 }}
             >
               Advantage
             </em>
-            .
+            .<br />
+            That&rsquo;s us.
           </motion.h1>
 
           {/* Sub */}
