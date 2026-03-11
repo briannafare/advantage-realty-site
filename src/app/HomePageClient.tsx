@@ -266,7 +266,7 @@ function HeroSection() {
   return (
     <section ref={heroRef} className="relative z-0 overflow-hidden bg-white">
       {/* Text block — compact, high on page (Rillo-style) */}
-      <div className="relative z-10 mx-auto max-w-4xl px-5 pb-6 pt-4 text-center sm:px-6 sm:pb-8 sm:pt-6 lg:pt-8">
+      <div className="relative z-20 mx-auto max-w-4xl px-5 pb-6 pt-4 text-center sm:px-6 sm:pb-8 sm:pt-6 lg:pt-8">
         <motion.div initial="hidden" animate="visible" variants={stagger}>
           {/* Welcome badge */}
           <motion.div variants={fadeUp} custom={0}>
@@ -312,13 +312,13 @@ function HeroSection() {
             className="mt-6 flex flex-col items-center gap-3 sm:mt-7 sm:flex-row sm:justify-center sm:gap-4"
           >
             <Link href="/contact" className="w-full sm:w-auto">
-              <Button variant="default" size="lg" className="w-full sm:w-auto">
+              <Button variant="default" size="lg" className="w-full sm:w-auto sm:px-7 sm:py-3 sm:text-sm">
                 Schedule a Free Consultation
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
             <Link href="#lead-magnets" className="w-full sm:w-auto">
-              <Button variant="secondary" size="lg" className="w-full sm:w-auto">
+              <Button variant="secondary" size="lg" className="w-full sm:w-auto sm:px-7 sm:py-3 sm:text-sm">
                 Get the Neighborhood Guide
               </Button>
             </Link>
@@ -326,9 +326,8 @@ function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Hero image — fades in from content, no hard edges */}
+      {/* Hero image — fades in from content, gradient covers full image */}
       <div className="relative -mt-20 sm:-mt-28 lg:-mt-32">
-        <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-40 bg-gradient-to-b from-white via-white/60 to-transparent sm:h-56 lg:h-64" />
         <motion.div
           style={{ scale: imageScale }}
           className="relative w-full"
@@ -342,6 +341,8 @@ function HeroSection() {
               className="object-cover object-center"
               sizes="100vw"
             />
+            {/* Full-coverage gradient — no hard line possible */}
+            <div className="absolute inset-0 bg-gradient-to-b from-white from-5% via-white/40 via-45% to-transparent to-85%" />
           </div>
         </motion.div>
       </div>
