@@ -326,14 +326,14 @@ function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Hero image — bleeds up with fade, Rillo-style visual takeover */}
-      <div className="relative -mt-16 sm:-mt-24">
-        <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-32 bg-gradient-to-b from-white to-transparent sm:h-48" />
+      {/* Hero image — fades in from content, no hard edges */}
+      <div className="relative -mt-20 sm:-mt-28 lg:-mt-32">
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-40 bg-gradient-to-b from-white via-white/60 to-transparent sm:h-56 lg:h-64" />
         <motion.div
           style={{ scale: imageScale }}
           className="relative w-full"
         >
-          <div className="relative aspect-[3/1] w-full sm:aspect-[3.5/1] lg:aspect-[4/1]">
+          <div className="relative aspect-[2.2/1] w-full sm:aspect-[2.8/1] lg:aspect-[3/1]">
             <Image
               src="/images/img-hero-portland.jpg"
               alt="Portland residential neighborhood at golden hour"
