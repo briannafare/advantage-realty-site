@@ -142,21 +142,21 @@ function FaqAccordion({ items }: { items: { q: string; a: string }[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="divide-y divide-[#E5E7EB]">
+    <div className="divide-y divide-[#E0DDD6]">
       {items.map((item, i) => {
         const isOpen = openIndex === i;
         return (
           <div key={i}>
             <button
               onClick={() => setOpenIndex(isOpen ? null : i)}
-              className="flex w-full items-center justify-between py-6 text-left text-lg font-semibold text-[#111827] md:text-xl"
+              className="flex w-full items-center justify-between py-6 text-left text-lg font-semibold text-[#141414] md:text-xl"
               aria-expanded={isOpen}
             >
               <span className="pr-4">{item.q}</span>
               <motion.span
                 animate={{ rotate: isOpen ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
-                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#2563EB]/10 text-[#2563EB]"
+                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#E8622A]/10 text-[#E8622A]"
               >
                 <ChevronDown className="h-5 w-5" />
               </motion.span>
@@ -167,7 +167,7 @@ function FaqAccordion({ items }: { items: { q: string; a: string }[] }) {
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className="overflow-hidden"
             >
-              <p className="pb-6 text-[#6B7280] leading-relaxed">{item.a}</p>
+              <p className="pb-6 text-[#505050] leading-relaxed">{item.a}</p>
             </motion.div>
           </div>
         );
@@ -193,7 +193,7 @@ export default function BuyPage() {
             >
               <motion.div
                 variants={fadeUp}
-                className="mb-6 inline-flex items-center gap-2 rounded-full bg-[#2563EB]/10 px-4 py-1.5 text-sm font-medium text-[#2563EB]"
+                className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#E0DDD6] bg-white px-4 py-1.5 text-sm font-medium text-[#505050]"
               >
                 <MapPin className="h-4 w-4" />
                 Portland Metro Buyer&apos;s Agent
@@ -201,15 +201,15 @@ export default function BuyPage() {
 
               <motion.h1
                 variants={fadeUp}
-                className="text-4xl font-bold leading-[1.1] tracking-tight text-[#111827] sm:text-5xl lg:text-6xl"
+                className="text-4xl font-bold leading-[1.1] tracking-tight text-[#141414] sm:text-5xl lg:text-6xl"
               >
                 Buy a Home in Portland{" "}
-                <span className="text-[#2563EB]">— Without the Stress</span>
+                <span className="text-[#E8622A]">— Without the Stress</span>
               </motion.h1>
 
               <motion.p
                 variants={fadeUp}
-                className="mt-6 max-w-lg text-lg leading-relaxed text-[#6B7280]"
+                className="mt-6 max-w-lg text-lg leading-relaxed text-[#505050]"
               >
                 Your weekends shouldn&apos;t be spent touring homes that were wrong before you
                 walked in. With Advantage Realty, every showing is pre-vetted, every offer is
@@ -219,13 +219,13 @@ export default function BuyPage() {
               <motion.div variants={fadeUp} className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a
                   href="#cta"
-                  className="inline-flex items-center justify-center rounded-lg bg-[#84CC16] px-8 py-4 text-base font-bold text-[#111827] transition-colors hover:bg-[#65A30D]"
+                  className="inline-flex items-center justify-center rounded-lg bg-[#E8622A] px-8 py-4 text-base font-bold text-white transition-colors hover:bg-[#D4551F]"
                 >
                   Schedule a Free Buyer Consultation
                 </a>
               </motion.div>
 
-              <motion.p variants={fadeUp} className="mt-3 text-sm text-[#6B7280]">
+              <motion.p variants={fadeUp} className="mt-3 text-sm text-[#505050]">
                 15 minutes. No obligation. Talk directly with your broker.
               </motion.p>
             </motion.div>
@@ -235,7 +235,7 @@ export default function BuyPage() {
               variants={scaleIn}
               initial="hidden"
               animate="visible"
-              className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl md:aspect-[3/4]"
+              className="relative aspect-[4/5] overflow-hidden rounded-[22px] shadow-2xl md:aspect-[3/4]"
             >
               <Image
                 src="/images/paper-cutout-key-handover.png"
@@ -245,7 +245,7 @@ export default function BuyPage() {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
-              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/5" />
+              <div className="absolute inset-0 rounded-[22px] ring-1 ring-inset ring-black/5" />
             </motion.div>
           </div>
         </div>
@@ -261,11 +261,11 @@ export default function BuyPage() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <motion.div variants={fadeUp} className="max-w-2xl">
-              <h2 className="text-3xl font-bold tracking-tight text-[#111827] md:text-5xl">
+              <h2 className="text-3xl font-bold tracking-tight text-[#141414] md:text-5xl">
                 Portland Is 11 Markets in One.{" "}
-                <span className="text-[#2563EB]">You Need a Guide Who Knows Them All.</span>
+                <span className="text-[#E8622A]">You Need a Guide Who Knows Them All.</span>
               </h2>
-              <p className="mt-6 text-lg leading-relaxed text-[#6B7280]">
+              <p className="mt-6 text-lg leading-relaxed text-[#505050]">
                 Happy Valley&apos;s $694K median is a different world from Gresham&apos;s
                 entry-level market. Lake Oswego buyers compete against cash offers that
                 Milwaukie buyers rarely see. The agent who treats every zip code the same will
@@ -278,13 +278,13 @@ export default function BuyPage() {
                 <motion.div
                   key={point.title}
                   variants={fadeUp}
-                  className="group rounded-2xl border border-[#E5E7EB] bg-[#F9FAFB] p-8 transition-all hover:border-[#2563EB]/30 hover:shadow-lg"
+                  className="group rounded-[22px] border border-[#E0DDD6] bg-[#F8F6F1] p-8 transition-all hover:border-[#E8622A]/30 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#2563EB] text-white">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-[22px] bg-[#FDF0EB] text-[#E8622A]">
                     <point.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="mt-6 text-lg font-bold text-[#111827]">{point.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-[#6B7280]">{point.desc}</p>
+                  <h3 className="mt-6 text-lg font-bold text-[#141414]">{point.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-[#505050]">{point.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -293,7 +293,7 @@ export default function BuyPage() {
       </section>
 
       {/* ━━ 5-STEP PROCESS — Vertical timeline, light bg ━━ */}
-      <section className="bg-[#F3F4F6] py-24 md:py-32">
+      <section className="bg-[#F2F0EA] py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
             variants={stagger}
@@ -302,17 +302,17 @@ export default function BuyPage() {
             viewport={{ once: true, amount: 0.15 }}
           >
             <motion.div variants={fadeUp} className="text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-[#111827] md:text-5xl">
+              <h2 className="text-3xl font-bold tracking-tight text-[#141414] md:text-5xl">
                 Five Steps From Search to Keys in Hand
               </h2>
-              <p className="mx-auto mt-4 max-w-xl text-lg text-[#6B7280]">
+              <p className="mx-auto mt-4 max-w-xl text-lg text-[#505050]">
                 A proven process that keeps you informed, protected, and in control at every stage.
               </p>
             </motion.div>
 
             <div className="relative mx-auto mt-20 max-w-3xl">
               {/* Vertical line */}
-              <div className="absolute left-8 top-0 hidden h-full w-px bg-[#2563EB]/20 md:left-16 md:block" />
+              <div className="absolute left-8 top-0 hidden h-full w-px bg-[#E8622A]/20 md:left-16 md:block" />
 
               <div className="space-y-12">
                 {steps.map((step, i) => (
@@ -323,7 +323,7 @@ export default function BuyPage() {
                   >
                     {/* Oversized step number */}
                     <div className="relative z-10 flex flex-col items-center">
-                      <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-[#2563EB] text-2xl font-bold text-white md:h-32 md:w-32 md:text-6xl">
+                      <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-[22px] bg-[#E8622A] text-2xl font-bold text-white md:h-32 md:w-32 md:text-6xl">
                         {step.num}
                       </span>
                     </div>
@@ -331,10 +331,10 @@ export default function BuyPage() {
                     {/* Content */}
                     <div className="flex-1 pt-1 md:pt-6">
                       <div className="flex items-center gap-3">
-                        <step.icon className="h-5 w-5 text-[#2563EB]" />
-                        <h3 className="text-xl font-bold text-[#111827]">{step.title}</h3>
+                        <step.icon className="h-5 w-5 text-[#E8622A]" />
+                        <h3 className="text-xl font-bold text-[#141414]">{step.title}</h3>
                       </div>
-                      <p className="mt-2 max-w-md text-[#6B7280] leading-relaxed">{step.desc}</p>
+                      <p className="mt-2 max-w-md text-[#505050] leading-relaxed">{step.desc}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -344,7 +344,7 @@ export default function BuyPage() {
         </div>
       </section>
 
-      {/* ━━ NEIGHBORHOODS — Scrollable grid, lime accents ━━ */}
+      {/* ━━ NEIGHBORHOODS — Scrollable grid ━━ */}
       <section className="bg-[#FFFFFF] py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
@@ -354,10 +354,10 @@ export default function BuyPage() {
             viewport={{ once: true, amount: 0.15 }}
           >
             <motion.div variants={fadeUp}>
-              <h2 className="text-3xl font-bold tracking-tight text-[#111827] md:text-5xl">
+              <h2 className="text-3xl font-bold tracking-tight text-[#141414] md:text-5xl">
                 Portland Communities We Know Street by Street
               </h2>
-              <p className="mt-4 max-w-xl text-lg text-[#6B7280]">
+              <p className="mt-4 max-w-xl text-lg text-[#505050]">
                 Median prices reflect current Portland metro market data. Each neighborhood has
                 its own rhythm — we help you find the one that fits yours.
               </p>
@@ -368,21 +368,21 @@ export default function BuyPage() {
                 <motion.div
                   key={n.name}
                   variants={fadeUp}
-                  className="group relative rounded-xl border-2 border-[#E5E7EB] bg-white p-6 transition-all hover:border-[#84CC16] hover:shadow-md"
+                  className="group relative rounded-[22px] border-2 border-[#E0DDD6] bg-white p-6 transition-all hover:border-[#E8622A] hover:shadow-md"
                 >
                   <div className="absolute right-4 top-4">
-                    <MapPin className="h-4 w-4 text-[#E5E7EB] transition-colors group-hover:text-[#84CC16]" />
+                    <MapPin className="h-4 w-4 text-[#E0DDD6] transition-colors group-hover:text-[#E8622A]" />
                   </div>
-                  <h3 className="text-lg font-bold text-[#111827]">{n.name}</h3>
-                  <p className="mt-1 text-sm font-semibold text-[#2563EB]">{n.price}</p>
+                  <h3 className="text-lg font-bold text-[#141414]">{n.name}</h3>
+                  <p className="mt-1 text-sm font-semibold text-[#E8622A]">{n.price}</p>
                   <div className="mt-3">
                     <span
                       className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${
                         n.tier === "Premium"
-                          ? "bg-[#2563EB]/10 text-[#1D4ED8]"
+                          ? "bg-[#E8622A]/10 text-[#D4551F]"
                           : n.tier === "Entry-level"
-                          ? "bg-[#D9F99D] text-[#65A30D]"
-                          : "bg-[#F3F4F6] text-[#374151]"
+                          ? "bg-[#F0F7DC] text-[#D4551F]"
+                          : "bg-[#F2F0EA] text-[#505050]"
                       }`}
                     >
                       {n.tier}
@@ -396,7 +396,7 @@ export default function BuyPage() {
       </section>
 
       {/* ━━ TESTIMONIAL — Dark section ━━ */}
-      <section className="bg-[#111827] py-24 md:py-32">
+      <section className="bg-[#1D3B22] py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
           <motion.div
             variants={stagger}
@@ -407,7 +407,7 @@ export default function BuyPage() {
           >
             <motion.div variants={fadeIn} className="mb-8 flex justify-center gap-1">
               {[...Array(5)].map((_, i) => (
-                <svg key={i} className="h-6 w-6 text-[#84CC16]" fill="currentColor" viewBox="0 0 20 20">
+                <svg key={i} className="h-6 w-6 text-[#C9E83A]" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
               ))}
@@ -423,7 +423,7 @@ export default function BuyPage() {
             </motion.blockquote>
 
             <motion.div variants={fadeUp} className="mt-10">
-              <p className="text-base font-bold text-[#84CC16]">Tilahun S.</p>
+              <p className="text-base font-bold text-[#C9E83A]">Tilahun S.</p>
               <p className="mt-1 text-sm text-white/50">First-Time Home Buyer, Portland</p>
             </motion.div>
           </motion.div>
@@ -441,12 +441,12 @@ export default function BuyPage() {
           >
             <motion.div variants={fadeUp} className="grid gap-12 md:grid-cols-[1fr_2fr] md:gap-16">
               <div>
-                <h2 className="text-3xl font-bold tracking-tight text-[#111827] md:text-4xl">
+                <h2 className="text-3xl font-bold tracking-tight text-[#141414] md:text-4xl">
                   Common Questions About Buying in Portland
                 </h2>
-                <p className="mt-4 text-[#6B7280] leading-relaxed">
+                <p className="mt-4 text-[#505050] leading-relaxed">
                   Don&apos;t see your question? Call us at{" "}
-                  <a href="tel:+15037937520" className="font-medium text-[#2563EB] hover:underline">
+                  <a href="tel:+15037937520" className="font-medium text-[#E8622A] hover:underline">
                     (503) 793-7520
                   </a>{" "}
                   — your broker picks up, not a junior agent.
@@ -458,18 +458,15 @@ export default function BuyPage() {
         </div>
       </section>
 
-      {/* ━━ FINAL CTA — Blue gradient, lime button ━━ */}
-      <section id="cta" className="relative bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] py-24 md:py-32">
-        {/* Subtle pattern overlay */}
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "40px 40px" }} />
-
-        <div className="relative mx-auto max-w-7xl px-5 md:px-8 lg:px-12">
+      {/* ━━ FINAL CTA — Dark rounded block, outline button ━━ */}
+      <section id="cta" className="relative bg-[#F8F6F1] py-24 md:py-32">
+        <div className="relative mx-auto max-w-5xl px-5 md:px-8 lg:px-12">
           <motion.div
             variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="mx-auto max-w-2xl text-center"
+            className="rounded-[22px] bg-[#141414] px-8 py-20 text-center md:px-16"
           >
             <motion.h2
               variants={fadeUp}
@@ -480,7 +477,7 @@ export default function BuyPage() {
 
             <motion.p
               variants={fadeUp}
-              className="mt-6 text-lg leading-relaxed text-white/80"
+              className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/80"
             >
               Tell us what you&apos;re looking for and we&apos;ll build a search strategy
               around it — no obligation, no pressure, no generic auto-alerts.
@@ -489,7 +486,7 @@ export default function BuyPage() {
             <motion.div variants={fadeUp} className="mt-10 flex flex-col items-center gap-5">
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-lg bg-[#84CC16] px-10 py-4 text-base font-bold text-[#111827] shadow-lg transition-all hover:bg-[#65A30D] hover:shadow-xl"
+                className="inline-flex items-center justify-center rounded-lg border-2 border-white px-10 py-4 text-base font-bold text-white transition-all hover:bg-white hover:text-[#141414]"
               >
                 Schedule a Free Buyer Consultation
               </a>

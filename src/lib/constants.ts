@@ -1,5 +1,5 @@
 // ============================================================
-// Advantage Realty LLC — Single Source of Truth
+// Advantage Realty LLC — Single Source of Truth (Design System v2)
 // ============================================================
 
 export const BRAND = {
@@ -16,29 +16,30 @@ export const BRAND = {
 } as const;
 
 export const COLORS = {
-  primary: "#2563EB",
-  primaryDark: "#1D4ED8",
-  primaryLight: "#93C5FD",
-  accent: "#84CC16",
-  accentHover: "#65A30D",
-  accentLight: "#D9F99D",
-  background: "#FFFFFF",
-  surface: "#F3F4F6",
-  surfaceAlt: "#F9FAFB",
-  foreground: "#111827",
-  muted: "#374151",
-  mutedLight: "#6B7280",
-  border: "#E5E7EB",
-  dark: "#111827",
-  darkAlt: "#1F2937",
+  green800: "#1D3B22",
+  green700: "#2A5430",
+  lime: "#C9E83A",
+  limeTint: "#F0F7DC",
+  orange: "#E8622A",
+  orangeHover: "#D4551F",
+  orangeTint: "#FDF0EB",
+  blue: "#5BB5D8",
+  blueSurface: "#EBF6FC",
+  blueBorder: "#C4E4F2",
+  bg: "#F8F6F1",
+  surface: "#FFFFFF",
+  surfaceAlt: "#F2F0EA",
+  border: "#E0DDD6",
+  t1: "#141414",
+  t2: "#505050",
+  t3: "#909090",
 } as const;
 
 export const NAV_LINKS = [
   { label: "Buy", href: "/buy" },
   { label: "Sell", href: "/sell" },
   { label: "Invest", href: "/invest" },
-  { label: "Care Homes", href: "/care-home-investment" },
-  { label: "Contact", href: "/contact" },
+  { label: "About", href: "/about" },
 ] as const;
 
 export const SERVICES = [

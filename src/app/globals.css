@@ -3,19 +3,42 @@
 @tailwind utilities;
 
 /* ============================================================
-   Advantage Realty LLC — Global Styles (Blue + Lime)
+   Advantage Realty LLC — Design System v2
+   Light-first. Orange on white. Lime on dark. Blue for data.
    ============================================================ */
+
+:root {
+  --green-800: #1D3B22;
+  --green-700: #2A5430;
+  --lime:      #C9E83A;
+  --lime-tint: #F0F7DC;
+  --orange:    #E8622A;
+  --orange-hover: #D4551F;
+  --orange-tint:  #FDF0EB;
+  --blue:         #5BB5D8;
+  --blue-surface: #EBF6FC;
+  --blue-border:  #C4E4F2;
+  --bg:       #F8F6F1;
+  --surface:  #FFFFFF;
+  --surf2:    #F2F0EA;
+  --border:   #E0DDD6;
+  --t1: #141414;
+  --t2: #505050;
+  --t3: #909090;
+}
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Inter", sans-serif;
-  color: #111827;
-  background-color: #ffffff;
+  font-family: var(--font-body), "Instrument Sans", sans-serif;
+  color: var(--t1);
+  background-color: var(--bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 /* ============================================================
@@ -32,29 +55,37 @@ body {
 }
 
 /* ============================================================
-   Custom Scrollbar — blue + lime accent
+   Custom Scrollbar
    ============================================================ */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: var(--bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #e5e7eb;
+  background: var(--border);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2563eb;
+  background: var(--green-700);
 }
 
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #e5e7eb #ffffff;
+  scrollbar-color: var(--border) var(--bg);
+}
+
+/* ============================================================
+   Selection color — lime highlight
+   ============================================================ */
+::selection {
+  background-color: rgba(201, 232, 58, 0.25);
+  color: var(--t1);
 }
 
 /* ============================================================
@@ -64,26 +95,37 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-
-  .text-gradient-blue {
-    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #2563eb 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .text-gradient-lime {
-    background: linear-gradient(135deg, #84cc16 0%, #65a30d 50%, #84cc16 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
 }
 
 /* ============================================================
-   Selection color — lime highlight
+   SVG Data Viz Animations
    ============================================================ */
-::selection {
-  background-color: #84cc1640;
-  color: #111827;
+.tl-path {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: drawPath 2s cubic-bezier(.4,0,.2,1) forwards .3s;
+}
+
+@keyframes drawPath {
+  to { stroke-dashoffset: 0; }
+}
+
+.tl-dot {
+  fill: #fff;
+  stroke: var(--blue);
+  stroke-width: 2.5;
+  r: 7;
+  opacity: 0;
+  transform-origin: center;
+  animation: popDot .35s ease forwards;
+}
+
+@keyframes popDot {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }

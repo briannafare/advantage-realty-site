@@ -18,7 +18,7 @@ const fadeInUp = {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#111827]">
+    <footer className="relative bg-[#1D3B22]">
       <div className="relative mx-auto max-w-7xl px-5 pb-8 pt-16 lg:px-8">
         {/* Main Grid */}
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -38,9 +38,8 @@ export default function Footer() {
                 height={36}
                 className="h-9 w-9"
               />
-              <span className="font-heading text-xl font-bold tracking-tight text-white">
-                Advantage
-                <span className="text-[#93C5FD]"> Realty</span>
+              <span className="font-display text-xl font-extrabold tracking-tight text-white">
+                Advantage Realty
               </span>
             </Link>
             <p className="mt-4 font-body text-sm leading-relaxed text-white/70">
@@ -54,7 +53,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition-colors hover:bg-[#84CC16] hover:text-[#111827]"
+                className="flex h-10 w-10 items-center justify-center rounded-[14px] bg-white/10 text-white transition-colors hover:bg-[#C9E83A] hover:text-[#1D3B22]"
               >
                 <Facebook className="h-4 w-4" />
               </a>
@@ -63,7 +62,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition-colors hover:bg-[#84CC16] hover:text-[#111827]"
+                className="flex h-10 w-10 items-center justify-center rounded-[14px] bg-white/10 text-white transition-colors hover:bg-[#C9E83A] hover:text-[#1D3B22]"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
@@ -78,7 +77,7 @@ export default function Footer() {
             viewport={{ once: true, margin: "-50px" }}
             variants={fadeInUp}
           >
-            <h4 className="mb-4 font-heading text-sm font-bold uppercase tracking-wider text-[#84CC16]">
+            <h4 className="mb-4 font-display text-sm font-bold uppercase tracking-wider text-[#C9E83A]">
               Quick Links
             </h4>
             <ul className="flex flex-col gap-3">
@@ -86,7 +85,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="font-body text-sm text-white/70 transition-colors hover:text-[#84CC16]"
+                    className="font-body text-sm text-white/70 transition-colors hover:text-[#C9E83A]"
                   >
                     {link.label}
                   </Link>
@@ -103,7 +102,7 @@ export default function Footer() {
             viewport={{ once: true, margin: "-50px" }}
             variants={fadeInUp}
           >
-            <h4 className="mb-4 font-heading text-sm font-bold uppercase tracking-wider text-[#84CC16]">
+            <h4 className="mb-4 font-display text-sm font-bold uppercase tracking-wider text-[#C9E83A]">
               Services
             </h4>
             <ul className="flex flex-col gap-3">
@@ -111,7 +110,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="font-body text-sm text-white/70 transition-colors hover:text-[#84CC16]"
+                    className="font-body text-sm text-white/70 transition-colors hover:text-[#C9E83A]"
                   >
                     {link.label}
                   </Link>
@@ -128,25 +127,25 @@ export default function Footer() {
             viewport={{ once: true, margin: "-50px" }}
             variants={fadeInUp}
           >
-            <h4 className="mb-4 font-heading text-sm font-bold uppercase tracking-wider text-[#84CC16]">
+            <h4 className="mb-4 font-display text-sm font-bold uppercase tracking-wider text-[#C9E83A]">
               Contact
             </h4>
             <ul className="flex flex-col gap-4">
               <li>
                 <a
                   href={`tel:${BRAND.phone.replace(/[^+\d]/g, "")}`}
-                  className="flex items-start gap-3 font-body text-sm text-white/70 transition-colors hover:text-[#84CC16]"
+                  className="flex items-start gap-3 font-body text-sm text-white/70 transition-colors hover:text-[#C9E83A]"
                 >
-                  <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#93C5FD]" />
+                  <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#C9E83A]" />
                   {BRAND.phone}
                 </a>
               </li>
               <li>
                 <a
                   href={`mailto:${BRAND.email}`}
-                  className="flex items-start gap-3 font-body text-sm text-white/70 transition-colors hover:text-[#84CC16]"
+                  className="flex items-start gap-3 font-body text-sm text-white/70 transition-colors hover:text-[#C9E83A]"
                 >
-                  <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#93C5FD]" />
+                  <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#C9E83A]" />
                   {BRAND.email}
                 </a>
               </li>
@@ -155,9 +154,9 @@ export default function Footer() {
                   href="https://maps.google.com/?q=13100+SE+Sunnyside+Rd+Suite+B+Clackamas+OR+97015"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-3 font-body text-sm text-white/70 transition-colors hover:text-[#84CC16]"
+                  className="flex items-start gap-3 font-body text-sm text-white/70 transition-colors hover:text-[#C9E83A]"
                 >
-                  <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#93C5FD]" />
+                  <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#C9E83A]" />
                   {BRAND.address}
                 </a>
               </li>
@@ -180,7 +179,7 @@ export default function Footer() {
               href="https://eighty5labs.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#93C5FD]/60 transition-colors hover:text-[#93C5FD]"
+              className="text-[#C9E83A]/60 transition-colors hover:text-[#C9E83A]"
             >
               eighty5labs
             </a>

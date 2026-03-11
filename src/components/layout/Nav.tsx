@@ -36,24 +36,20 @@ export default function Nav() {
         className={cn(
           "fixed inset-x-0 top-0 z-50 h-20 transition-all duration-300",
           scrolled
-            ? "bg-white/95 shadow-sm shadow-[#E5E7EB]/50 backdrop-blur-md"
+            ? "bg-white/95 shadow-sm shadow-[#E0DDD6]/50 backdrop-blur-md"
             : "bg-white/80 backdrop-blur-sm"
         )}
       >
         <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-5 lg:px-8">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center">
             <Image
               src="/images/advantage-logo.png"
               alt="Advantage Realty LLC"
-              width={44}
-              height={44}
-              className="h-11 w-11"
+              width={56}
+              height={56}
+              className="h-14 w-14"
             />
-            <span className="font-heading text-xl font-bold tracking-tight text-[#111827] lg:text-2xl">
-              Advantage
-              <span className="text-[#2563EB]"> Realty</span>
-            </span>
           </Link>
 
           {/* Desktop Nav Links */}
@@ -62,7 +58,7 @@ export default function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-lg px-4 py-2 font-body text-sm font-medium text-[#374151] transition-colors hover:bg-[#F3F4F6] hover:text-[#2563EB]"
+                className="rounded-[14px] px-4 py-2 font-body text-[13px] font-medium text-[#505050] transition-colors hover:bg-[#F2F0EA] hover:text-[#141414]"
               >
                 {link.label}
               </Link>
@@ -70,29 +66,27 @@ export default function Nav() {
           </nav>
 
           {/* Desktop Right Side */}
-          <div className="hidden items-center gap-4 lg:flex">
-            {/* Languages badge */}
-            <span className="rounded-full bg-[#2563EB]/10 px-3 py-1 font-body text-xs font-medium text-[#2563EB]">
-              EN · OM · AM
-            </span>
-
+          <div className="hidden items-center gap-3 lg:flex">
             {/* Phone */}
             <a
               href={`tel:${BRAND.phone.replace(/[^+\d]/g, "")}`}
-              className="flex items-center gap-2 font-body text-sm font-semibold text-[#111827] transition-colors hover:text-[#2563EB]"
+              className="flex items-center gap-2 font-body text-sm font-semibold text-[#141414] transition-colors hover:text-[#E8622A]"
             >
               <Phone className="h-4 w-4" />
               {BRAND.phone}
             </a>
 
-            {/* CTA */}
+            {/* Log In — outlined */}
             <Link href="/contact">
-              <Button
-                variant="default"
-                size="sm"
-                className="bg-[#84CC16] font-semibold text-[#111827] hover:bg-[#65A30D]"
-              >
-                Free Consultation
+              <Button variant="secondary" size="sm">
+                Log In
+              </Button>
+            </Link>
+
+            {/* Get Started — dark fill (nav only) */}
+            <Link href="/contact">
+              <Button variant="dark" size="sm">
+                Get Started
               </Button>
             </Link>
           </div>
@@ -100,7 +94,7 @@ export default function Nav() {
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="relative z-50 flex h-10 w-10 items-center justify-center rounded-lg text-[#111827] transition-colors hover:bg-[#F3F4F6] lg:hidden"
+            className="relative z-50 flex h-10 w-10 items-center justify-center rounded-[14px] text-[#141414] transition-colors hover:bg-[#F2F0EA] lg:hidden"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
             {mobileOpen ? (
@@ -121,7 +115,7 @@ export default function Nav() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-40 bg-[#111827]/60 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-40 bg-[#141414]/60 backdrop-blur-sm lg:hidden"
               onClick={() => setMobileOpen(false)}
             />
 
@@ -134,7 +128,7 @@ export default function Nav() {
             >
               <div className="flex flex-1 flex-col gap-2 overflow-y-auto px-6 pb-8 pt-24">
                 <div className="mb-4">
-                  <span className="rounded-full bg-[#2563EB]/10 px-3 py-1 font-body text-xs font-medium text-[#2563EB]">
+                  <span className="rounded-full bg-[#F0F7DC] px-3 py-1 font-body text-xs font-medium text-[#5a7000]">
                     EN · OM · AM
                   </span>
                 </div>
@@ -149,23 +143,23 @@ export default function Nav() {
                     <Link
                       href={link.href}
                       onClick={() => setMobileOpen(false)}
-                      className="block rounded-lg px-4 py-3 font-heading text-lg font-bold text-[#111827] transition-colors hover:bg-[#F3F4F6] hover:text-[#2563EB]"
+                      className="block rounded-[14px] px-4 py-3 font-display text-lg font-bold text-[#141414] transition-colors hover:bg-[#F2F0EA]"
                     >
                       {link.label}
                     </Link>
                   </motion.div>
                 ))}
 
-                <div className="my-4 h-px bg-[#E5E7EB]" />
+                <div className="my-4 h-px bg-[#E0DDD6]" />
 
                 <motion.a
                   href={`tel:${BRAND.phone.replace(/[^+\d]/g, "")}`}
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="flex items-center gap-3 rounded-lg px-4 py-3 font-body text-base font-semibold text-[#111827] transition-colors hover:text-[#2563EB]"
+                  className="flex items-center gap-3 rounded-[14px] px-4 py-3 font-body text-base font-semibold text-[#141414] transition-colors hover:text-[#E8622A]"
                 >
-                  <Phone className="h-5 w-5 text-[#2563EB]" />
+                  <Phone className="h-5 w-5 text-[#E8622A]" />
                   {BRAND.phone}
                 </motion.a>
 
@@ -176,18 +170,15 @@ export default function Nav() {
                   className="mt-4"
                 >
                   <Link href="/contact" onClick={() => setMobileOpen(false)}>
-                    <Button
-                      variant="default"
-                      className="w-full bg-[#84CC16] font-semibold text-[#111827] hover:bg-[#65A30D]"
-                    >
-                      Free Consultation
+                    <Button variant="dark" className="w-full justify-center">
+                      Get Started
                     </Button>
                   </Link>
                 </motion.div>
               </div>
 
-              <div className="border-t border-[#E5E7EB] px-6 py-4">
-                <p className="font-body text-xs text-[#6B7280]">
+              <div className="border-t border-[#E0DDD6] px-6 py-4">
+                <p className="font-body text-xs text-[#909090]">
                   {BRAND.address}
                 </p>
               </div>

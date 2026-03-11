@@ -12,15 +12,14 @@ import {
   ArrowRightLeft,
   BarChart3,
   Phone,
-  Mail,
   ChevronDown,
   Quote,
   ArrowRight,
-  CheckCircle2,
-  AlertTriangle,
   Clock,
+  AlertTriangle,
   Globe,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 /* ----------------------------------------------------------------
    Animation helpers
@@ -173,11 +172,10 @@ const TESTIMONIALS = [
 ];
 
 const MARKET_STATS = [
-  { value: "$510K\u2013$549K", label: "Portland Metro Median Home Price" },
-  { value: "4.3 mo", label: "Months of Inventory" },
+  { value: "$525K", label: "Portland Metro Median" },
+  { value: "28", label: "Avg Days on Market" },
   { value: "$694K", label: "Happy Valley Median" },
-  { value: "$585K", label: "Clackamas Median" },
-  { value: "2\u00d7", label: "Listing Growth Since Dec 2025" },
+  { value: "+4.2%", label: "Year-Over-Year Growth" },
 ];
 
 const FAQS = [
@@ -219,81 +217,76 @@ const FAQS = [
 export default function HomePageClient() {
   return (
     <>
-      {/* ── HERO ───────────────────────────────────────────────── */}
       <HeroSection />
-
-      {/* ── SOCIAL PROOF BAR ───────────────────────────────────── */}
       <SocialProofBar />
-
-      {/* ── PROBLEM ────────────────────────────────────────────── */}
       <ProblemSection />
-
-      {/* ── SOLUTION ───────────────────────────────────────────── */}
       <SolutionSection />
-
-      {/* ── SERVICES ───────────────────────────────────────────── */}
       <ServicesSection />
-
-      {/* ── TEAM ───────────────────────────────────────────────── */}
       <TeamSection />
-
-      {/* ── TESTIMONIALS ───────────────────────────────────────── */}
       <TestimonialsSection />
-
-      {/* ── MARKET SNAPSHOT ────────────────────────────────────── */}
       <MarketSection />
-
-      {/* ── FAQ ────────────────────────────────────────────────── */}
       <FaqSection />
-
-      {/* ── FINAL CTA ──────────────────────────────────────────── */}
       <FinalCtaSection />
     </>
   );
 }
 
 /* ================================================================
-   HERO
+   HERO — White background, Rillo-style
    ================================================================ */
 function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-white">
-      <div className="mx-auto flex max-w-7xl flex-col-reverse items-center gap-12 px-6 pb-16 pt-12 lg:flex-row lg:gap-16 lg:pb-24 lg:pt-20">
+      {/* Lime tint panel on right — Rillo style */}
+      <div className="pointer-events-none absolute right-0 top-0 hidden h-full w-[42%] bg-[#F0F7DC] lg:block" style={{ clipPath: "polygon(12% 0, 100% 0, 100% 100%, 0 100%)" }} />
+
+      <div className="relative mx-auto flex max-w-7xl flex-col-reverse items-center gap-12 px-6 pb-16 pt-12 lg:flex-row lg:gap-16 lg:pb-24 lg:pt-20">
         {/* Text */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="flex-1 text-center lg:text-left"
+          className="relative z-10 flex-1 text-center lg:text-left"
         >
-          <span className="mb-4 inline-block rounded-full bg-[#D9F99D] px-4 py-1.5 font-body text-sm font-semibold text-[#111827]">
-            Family-Run &middot; Direct Broker Access &middot; 16+ Years
-          </span>
+          {/* Badge pill — CryptSeekers style */}
+          <div className="mb-5 inline-flex items-center gap-[7px] rounded-full border border-[#E0DDD6] bg-white px-[14px] py-[5px] font-body text-xs font-medium text-[#505050]">
+            <span className="h-[7px] w-[7px] rounded-full bg-[#5BB5D8]" />
+            Portland&rsquo;s Most Trusted Real Estate Team
+          </div>
 
-          <h1 className="mt-4 font-heading text-4xl font-bold leading-[1.1] tracking-tight text-[#111827] sm:text-5xl lg:text-6xl">
-            Portland Real Estate &mdash;{" "}
-            <span className="text-gradient-blue">Broker-Run</span>, Not
-            Corporate-Run
+          <h1 className="font-display text-[clamp(40px,7vw,76px)] font-extrabold leading-[1.0] tracking-[-0.025em] text-[#141414]">
+            The Smarter Way To Buy Portland{" "}
+            <em className="font-accent text-[#2A5430] not-italic" style={{ fontStyle: "italic", fontWeight: 300 }}>
+              Real Estate
+            </em>
+            .
           </h1>
 
-          <p className="mx-auto mt-6 max-w-xl font-body text-lg leading-relaxed text-[#374151] lg:mx-0">
-            At big brokerages, you&rsquo;re a file number passed between junior
-            agents. At Advantage Realty, you work directly with your broker
-            &mdash; every call, every showing, every negotiation. Huluka and
-            Hunde Abebe have spent 16+ years getting Portland families into the
-            right homes at the right price.
+          <p className="mx-auto mt-6 max-w-xl font-body text-lg leading-[1.75] text-[#505050] lg:mx-0">
+            20 years. Hundreds of clients. One team that actually knows this city.
           </p>
 
-          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row lg:items-start">
+          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:items-start">
+            <Link href="/contact">
+              <Button variant="default" size="lg">
+                Schedule a Consultation
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </Link>
+
+            {/* Circle-arrow soft CTA — Rillo signature */}
             <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-[#84CC16] px-7 py-4 font-heading text-base font-semibold text-[#111827] shadow-lg shadow-lime-500/20 transition-all hover:bg-[#65A30D] hover:shadow-xl hover:shadow-lime-500/30"
+              href="/about"
+              className="inline-flex items-center gap-[10px] font-display text-[14px] font-bold tracking-[-0.01em] text-[#141414] transition-colors"
             >
-              Schedule Your Free Consultation
-              <ArrowRight className="h-5 w-5" />
+              See Our Work
+              <span className="flex h-[38px] w-[38px] items-center justify-center rounded-full bg-[#141414] text-white text-sm transition-transform hover:translate-x-1">
+                &rarr;
+              </span>
             </Link>
           </div>
-          <p className="mt-3 text-center font-body text-sm text-[#6B7280] lg:text-left">
+
+          <p className="mt-3 text-center font-body text-sm text-[#909090] lg:text-left">
             No obligation. Just a 15-minute conversation about your goals.
           </p>
         </motion.div>
@@ -303,10 +296,9 @@ function HeroSection() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-          className="relative flex-1"
+          className="relative z-10 flex-1"
         >
           <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
-            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-[#2563EB]/10 to-[#84CC16]/10 blur-2xl" />
             <Image
               src="/images/paper-cutout-hero-home.png"
               alt="Portland neighborhood paper-cutout illustration"
@@ -323,13 +315,13 @@ function HeroSection() {
 }
 
 /* ================================================================
-   SOCIAL PROOF BAR
+   SOCIAL PROOF BAR — White bg with border, not dark blue
    ================================================================ */
 function SocialProofBar() {
   const { ref, inView } = useAnimateOnScroll(0.3);
 
   return (
-    <section ref={ref} className="bg-[#2563EB] py-6">
+    <section ref={ref} className="border-b border-[#E0DDD6] bg-white py-6">
       <motion.div
         variants={stagger}
         initial="hidden"
@@ -343,10 +335,10 @@ function SocialProofBar() {
             custom={i}
             className="text-center"
           >
-            <p className="font-heading text-3xl font-bold text-white md:text-4xl">
+            <p className="font-display text-3xl font-extrabold text-[#141414] md:text-4xl">
               {s.value}
             </p>
-            <p className="mt-1 font-body text-sm text-[#93C5FD]">{s.label}</p>
+            <p className="mt-1 font-body text-sm text-[#909090]">{s.label}</p>
           </motion.div>
         ))}
       </motion.div>
@@ -355,7 +347,7 @@ function SocialProofBar() {
 }
 
 /* ================================================================
-   PROBLEM SECTION
+   PROBLEM SECTION — White bg
    ================================================================ */
 function ProblemSection() {
   const { ref, inView } = useAnimateOnScroll();
@@ -369,17 +361,17 @@ function ProblemSection() {
           transition={{ duration: 0.5 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <h2 className="font-heading text-3xl font-bold text-[#111827] sm:text-4xl lg:text-5xl">
-            Portland&rsquo;s Market Is Shifting.{" "}
-            <span className="text-[#2563EB]">Most Agents Haven&rsquo;t Caught Up.</span>
+          <h2 className="font-display text-[clamp(24px,3.5vw,38px)] font-bold leading-[1.1] tracking-[-0.018em] text-[#141414]">
+            Portland&rsquo;s Market Is{" "}
+            <em className="font-accent not-italic text-[#2A5430]" style={{ fontStyle: "italic", fontWeight: 300 }}>
+              Shifting
+            </em>
+            . Most Agents Haven&rsquo;t Caught Up.
           </h2>
-          <p className="mt-6 font-body text-lg leading-relaxed text-[#374151]">
+          <p className="mt-6 font-body text-lg leading-[1.75] text-[#505050]">
             Inventory doubled since December 2025. Buyers are writing 38% more
             offers. And yet &mdash; most agents are still running the same
-            playbook from 2021. If you&rsquo;ve been handed a generic MLS
-            search, ghosted after your first showing, or told to &ldquo;just be
-            patient&rdquo; while your dream home sells to someone else &mdash;
-            that&rsquo;s not bad luck. That&rsquo;s the wrong agent.
+            playbook from 2021.
           </p>
         </motion.div>
 
@@ -394,15 +386,15 @@ function ProblemSection() {
               key={i}
               variants={fadeUp}
               custom={i + 2}
-              className="rounded-2xl border border-[#E5E7EB] bg-white p-8 shadow-sm transition-shadow hover:shadow-md"
+              className="rounded-[22px] border border-[#E0DDD6] bg-white p-8 transition-shadow hover:shadow-md"
             >
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#2563EB]/10">
-                <p.icon className="h-6 w-6 text-[#2563EB]" />
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-[14px] bg-[#FDF0EB]">
+                <p.icon className="h-6 w-6 text-[#E8622A]" />
               </div>
-              <h3 className="font-heading text-lg font-bold text-[#111827]">
+              <h3 className="font-display text-[clamp(17px,2.2vw,22px)] font-bold leading-[1.2] tracking-[-0.012em] text-[#141414]">
                 {p.title}
               </h3>
-              <p className="mt-3 font-body text-base leading-relaxed text-[#374151]">
+              <p className="mt-3 font-body text-[15px] leading-[1.7] text-[#505050]">
                 {p.body}
               </p>
             </motion.div>
@@ -414,13 +406,13 @@ function ProblemSection() {
 }
 
 /* ================================================================
-   SOLUTION SECTION (3 Steps)
+   SOLUTION SECTION — Lime tint bg (feature area)
    ================================================================ */
 function SolutionSection() {
   const { ref, inView } = useAnimateOnScroll();
 
   return (
-    <section ref={ref} className="bg-[#F3F4F6] py-20 lg:py-28">
+    <section ref={ref} className="bg-[#F0F7DC] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -428,9 +420,12 @@ function SolutionSection() {
           transition={{ duration: 0.5 }}
           className="mx-auto max-w-2xl text-center"
         >
-          <h2 className="font-heading text-3xl font-bold text-[#111827] sm:text-4xl lg:text-5xl">
+          <h2 className="font-display text-[clamp(24px,3.5vw,38px)] font-bold leading-[1.1] tracking-[-0.018em] text-[#141414]">
             Three Steps to{" "}
-            <span className="text-[#2563EB]">Confident Real Estate Decisions</span>
+            <em className="font-accent not-italic text-[#2A5430]" style={{ fontStyle: "italic", fontWeight: 300 }}>
+              Confident
+            </em>{" "}
+            Real Estate Decisions
           </h2>
         </motion.div>
 
@@ -445,19 +440,19 @@ function SolutionSection() {
               key={i}
               variants={fadeUp}
               custom={i}
-              className="relative rounded-2xl bg-white p-8 shadow-sm"
+              className="relative rounded-[22px] bg-white p-8 shadow-sm"
             >
-              <span className="absolute -top-5 left-6 font-heading text-7xl font-bold leading-none text-[#2563EB]/10">
+              <span className="absolute -top-5 left-6 font-display text-7xl font-extrabold leading-none text-[#E8622A]/10">
                 {s.num}
               </span>
               <div className="relative">
-                <span className="mb-2 inline-block rounded-full bg-[#2563EB] px-3 py-1 font-body text-xs font-semibold uppercase tracking-wider text-white">
+                <span className="mb-2 inline-block rounded-full bg-[#E8622A] px-3 py-1 font-body text-xs font-semibold uppercase tracking-wider text-white">
                   Step {s.num}
                 </span>
-                <h3 className="mt-3 font-heading text-xl font-bold text-[#111827]">
+                <h3 className="mt-3 font-display text-[clamp(17px,2.2vw,22px)] font-bold leading-[1.2] tracking-[-0.012em] text-[#141414]">
                   {s.title}
                 </h3>
-                <p className="mt-3 font-body text-base leading-relaxed text-[#374151]">
+                <p className="mt-3 font-body text-[15px] leading-[1.7] text-[#505050]">
                   {s.body}
                 </p>
               </div>
@@ -471,12 +466,11 @@ function SolutionSection() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="mt-12 text-center"
         >
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 rounded-lg bg-[#84CC16] px-7 py-4 font-heading text-base font-semibold text-[#111827] shadow-lg shadow-lime-500/20 transition-all hover:bg-[#65A30D] hover:shadow-xl"
-          >
-            Start With Step One
-            <ArrowRight className="h-5 w-5" />
+          <Link href="/contact">
+            <Button variant="default" size="lg">
+              Start With Step One
+              <ArrowRight className="h-4 w-4" />
+            </Button>
           </Link>
         </motion.div>
       </div>
@@ -485,7 +479,7 @@ function SolutionSection() {
 }
 
 /* ================================================================
-   SERVICES
+   SERVICES — White bg
    ================================================================ */
 function ServicesSection() {
   const { ref, inView } = useAnimateOnScroll();
@@ -499,9 +493,12 @@ function ServicesSection() {
           transition={{ duration: 0.5 }}
           className="mx-auto max-w-2xl text-center"
         >
-          <h2 className="font-heading text-3xl font-bold text-[#111827] sm:text-4xl lg:text-5xl">
-            Six Ways to Win in{" "}
-            <span className="text-[#2563EB]">Portland Real Estate</span>
+          <h2 className="font-display text-[clamp(24px,3.5vw,38px)] font-bold leading-[1.1] tracking-[-0.018em] text-[#141414]">
+            Six Ways to{" "}
+            <em className="font-accent not-italic text-[#2A5430]" style={{ fontStyle: "italic", fontWeight: 300 }}>
+              Win
+            </em>{" "}
+            in Portland Real Estate
           </h2>
         </motion.div>
 
@@ -515,18 +512,18 @@ function ServicesSection() {
             <motion.div key={i} variants={fadeUp} custom={i}>
               <Link
                 href={s.href}
-                className="group flex h-full flex-col rounded-2xl border border-[#E5E7EB] bg-white p-8 transition-all hover:border-[#84CC16] hover:shadow-lg hover:shadow-lime-500/10"
+                className="group flex h-full flex-col rounded-[22px] border border-[#E0DDD6] bg-white p-8 transition-all hover:border-[#E8622A]/30 hover:shadow-lg"
               >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#F3F4F6] transition-colors group-hover:bg-[#D9F99D]">
-                  <s.icon className="h-6 w-6 text-[#2563EB] transition-colors group-hover:text-[#111827]" />
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-[14px] bg-[#F2F0EA] transition-colors group-hover:bg-[#FDF0EB]">
+                  <s.icon className="h-6 w-6 text-[#505050] transition-colors group-hover:text-[#E8622A]" />
                 </div>
-                <h3 className="font-heading text-lg font-bold text-[#111827]">
+                <h3 className="font-display text-[clamp(17px,2.2vw,22px)] font-bold leading-[1.2] tracking-[-0.012em] text-[#141414]">
                   {s.title}
                 </h3>
-                <p className="mt-3 flex-1 font-body text-base leading-relaxed text-[#374151]">
+                <p className="mt-3 flex-1 font-body text-[15px] leading-[1.7] text-[#505050]">
                   {s.desc}
                 </p>
-                <span className="mt-5 inline-flex items-center gap-1 font-body text-sm font-semibold text-[#2563EB] transition-colors group-hover:text-[#84CC16]">
+                <span className="mt-5 inline-flex items-center gap-1 font-body text-sm font-semibold text-[#E8622A]">
                   Learn more
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </span>
@@ -540,13 +537,13 @@ function ServicesSection() {
 }
 
 /* ================================================================
-   TEAM
+   TEAM — White bg
    ================================================================ */
 function TeamSection() {
   const { ref, inView } = useAnimateOnScroll();
 
   return (
-    <section ref={ref} className="bg-[#F3F4F6] py-20 lg:py-28">
+    <section ref={ref} className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -554,11 +551,14 @@ function TeamSection() {
           transition={{ duration: 0.5 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <h2 className="font-heading text-3xl font-bold text-[#111827] sm:text-4xl lg:text-5xl">
-            Three Brokers. Zero Runaround.{" "}
-            <span className="text-[#2563EB]">Zero Runaround.</span>
+          <h2 className="font-display text-[clamp(24px,3.5vw,38px)] font-bold leading-[1.1] tracking-[-0.018em] text-[#141414]">
+            Three Brokers. Zero{" "}
+            <em className="font-accent not-italic text-[#2A5430]" style={{ fontStyle: "italic", fontWeight: 300 }}>
+              Runaround
+            </em>
+            .
           </h2>
-          <p className="mt-5 font-body text-lg text-[#374151]">
+          <p className="mt-5 font-body text-lg leading-[1.75] text-[#505050]">
             When you call, the person who answers is the person handling your
             deal. That&rsquo;s how a family-run brokerage works.
           </p>
@@ -575,7 +575,7 @@ function TeamSection() {
               key={i}
               variants={fadeUp}
               custom={i}
-              className="group overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow hover:shadow-lg"
+              className="group overflow-hidden rounded-[22px] border border-[#E0DDD6] bg-white transition-shadow hover:shadow-lg"
             >
               <div className="relative aspect-[3/4] overflow-hidden">
                 <Image
@@ -587,15 +587,15 @@ function TeamSection() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="font-heading text-xl font-bold text-[#111827]">
+                <h3 className="font-display text-xl font-bold text-[#141414]">
                   {t.name}
                 </h3>
-                <p className="mt-1 font-body text-sm font-semibold text-[#2563EB]">
+                <p className="mt-1 font-body text-sm font-semibold text-[#E8622A]">
                   {t.role}
                 </p>
                 <a
                   href={`tel:${t.phone.replace(/\D/g, "")}`}
-                  className="mt-3 inline-flex items-center gap-2 font-body text-sm text-[#374151] transition-colors hover:text-[#84CC16]"
+                  className="mt-3 inline-flex items-center gap-2 font-body text-sm text-[#505050] transition-colors hover:text-[#E8622A]"
                 >
                   <Phone className="h-4 w-4" />
                   {t.phone}
@@ -610,22 +610,26 @@ function TeamSection() {
 }
 
 /* ================================================================
-   TESTIMONIALS
+   DARK SECTION — "We Believe..." ONE mid-page dark green section
    ================================================================ */
 function TestimonialsSection() {
   const { ref, inView } = useAnimateOnScroll();
 
   return (
-    <section ref={ref} className="bg-[#111827] py-20 lg:py-28">
+    <section ref={ref} className="bg-[#1D3B22] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6">
+        {/* Dark section headline */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="mx-auto max-w-2xl text-center"
+          className="mx-auto mb-14 max-w-2xl text-center"
         >
-          <h2 className="font-heading text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
-            Don&rsquo;t Take Our Word for It
+          <h2 className="font-display text-[clamp(24px,3.5vw,38px)] font-bold leading-[1.1] tracking-[-0.018em] text-white">
+            Don&rsquo;t Take Our Word for{" "}
+            <em className="font-accent not-italic text-[#C9E83A]" style={{ fontStyle: "italic", fontWeight: 300 }}>
+              It
+            </em>
           </h2>
         </motion.div>
 
@@ -633,27 +637,45 @@ function TestimonialsSection() {
           variants={stagger}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="mt-14 grid gap-8 md:grid-cols-3"
+          className="grid gap-8 md:grid-cols-3"
         >
           {TESTIMONIALS.map((t, i) => (
             <motion.div
               key={i}
               variants={fadeUp}
               custom={i}
-              className="relative rounded-2xl border border-[#1F2937] bg-[#1F2937] p-8"
+              className="relative rounded-[22px] border border-white/10 bg-white/5 p-8"
             >
-              <Quote className="mb-4 h-8 w-8 text-[#84CC16]" />
-              <p className="font-body text-base leading-relaxed text-[#E5E7EB]">
+              <Quote className="mb-4 h-8 w-8 text-[#C9E83A]" />
+              <p className="font-body text-[15px] leading-[1.7] text-white/80">
                 &ldquo;{t.quote}&rdquo;
               </p>
-              <div className="mt-6 border-t border-[#374151] pt-4">
-                <p className="font-heading text-sm font-bold text-white">
+              <div className="mt-6 border-t border-white/10 pt-4">
+                <p className="font-display text-sm font-bold text-white">
                   {t.name}
                 </p>
-                <p className="font-body text-xs text-[#6B7280]">{t.detail}</p>
+                <p className="font-body text-xs text-white/50">{t.detail}</p>
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Circle-arrow CTA on dark — Rillo's exact pattern */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-12 text-center"
+        >
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-[10px] font-display text-[14px] font-bold tracking-[-0.01em] text-white transition-colors"
+          >
+            Get Your Free Consultation
+            <span className="flex h-[38px] w-[38px] items-center justify-center rounded-full border-2 border-white/40 text-white text-sm transition-all hover:border-white">
+              &rarr;
+            </span>
+          </Link>
         </motion.div>
       </div>
     </section>
@@ -661,13 +683,13 @@ function TestimonialsSection() {
 }
 
 /* ================================================================
-   MARKET SNAPSHOT
+   MARKET DATA — Blue surface section (CryptSeekers style)
    ================================================================ */
 function MarketSection() {
   const { ref, inView } = useAnimateOnScroll();
 
   return (
-    <section ref={ref} className="bg-white py-20 lg:py-28">
+    <section ref={ref} className="bg-[#EBF6FC] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -675,31 +697,40 @@ function MarketSection() {
           transition={{ duration: 0.5 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <h2 className="font-heading text-3xl font-bold text-[#111827] sm:text-4xl lg:text-5xl">
-            Portland Market &mdash;{" "}
-            <span className="text-[#2563EB]">
-              What Smart Buyers and Sellers Know Right Now
-            </span>
+          {/* Badge pill */}
+          <div className="mb-4 inline-flex items-center gap-[6px] rounded-full border border-[#C4E4F2] bg-white px-3 py-1 font-body text-[11px] font-medium text-[#5BB5D8]">
+            <span className="h-[6px] w-[6px] rounded-full bg-[#5BB5D8]" />
+            Portland Market Data
+          </div>
+
+          <h2 className="font-display text-[clamp(24px,3.5vw,38px)] font-bold leading-[1.1] tracking-[-0.018em] text-[#141414]">
+            The Portland Market, by the{" "}
+            <em className="font-accent not-italic text-[#5BB5D8]" style={{ fontStyle: "italic", fontWeight: 300 }}>
+              Numbers
+            </em>
           </h2>
         </motion.div>
 
+        {/* Stats row — CryptSeekers style */}
         <motion.div
           variants={stagger}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="mt-14 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5"
+          className="mt-10 flex flex-col overflow-hidden rounded-[22px] border border-[#C4E4F2] bg-white sm:flex-row"
         >
           {MARKET_STATS.map((s, i) => (
             <motion.div
               key={i}
               variants={fadeUp}
               custom={i}
-              className="rounded-2xl border border-[#E5E7EB] bg-[#F9FAFB] p-6 text-center"
+              className="flex-1 border-b border-[#C4E4F2] p-6 text-center sm:border-b-0 sm:border-r last:border-0"
             >
-              <p className="font-heading text-2xl font-bold text-[#2563EB] lg:text-3xl">
+              <p className="font-display text-[26px] font-extrabold leading-none tracking-[-0.02em] text-[#5BB5D8]">
                 {s.value}
               </p>
-              <p className="mt-2 font-body text-sm text-[#374151]">{s.label}</p>
+              <p className="mt-2 font-body text-[11px] text-[#909090]">
+                {s.label}
+              </p>
             </motion.div>
           ))}
         </motion.div>
@@ -710,19 +741,19 @@ function MarketSection() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mx-auto mt-12 max-w-2xl text-center"
         >
-          <p className="font-body text-base leading-relaxed text-[#374151]">
+          <p className="font-body text-[15px] leading-[1.7] text-[#505050]">
             The Portland market is shifting fast. Whether you&rsquo;re buying,
             selling, or investing, the difference between a good outcome and a
-            great one comes down to strategy &mdash; not guesswork. Our team
-            tracks these numbers weekly so you don&rsquo;t have to.
+            great one comes down to strategy &mdash; not guesswork.
           </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-[#84CC16] px-7 py-4 font-heading text-base font-semibold text-[#111827] shadow-lg shadow-lime-500/20 transition-all hover:bg-[#65A30D] hover:shadow-xl"
-          >
-            Get Your Personalized Market Brief
-            <ArrowRight className="h-5 w-5" />
-          </Link>
+          <div className="mt-8">
+            <Link href="/contact">
+              <Button variant="default" size="lg">
+                Get Your Personalized Market Brief
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>
@@ -730,14 +761,14 @@ function MarketSection() {
 }
 
 /* ================================================================
-   FAQ
+   FAQ — Off-white bg
    ================================================================ */
 function FaqSection() {
   const { ref, inView } = useAnimateOnScroll();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section ref={ref} className="bg-[#F3F4F6] py-20 lg:py-28">
+    <section ref={ref} className="bg-[#F8F6F1] py-20 lg:py-28">
       <div className="mx-auto max-w-3xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -745,9 +776,12 @@ function FaqSection() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h2 className="font-heading text-3xl font-bold text-[#111827] sm:text-4xl lg:text-5xl">
+          <h2 className="font-display text-[clamp(24px,3.5vw,38px)] font-bold leading-[1.1] tracking-[-0.018em] text-[#141414]">
             Portland Real Estate &mdash;{" "}
-            <span className="text-[#2563EB]">Answers to Your Questions</span>
+            <em className="font-accent not-italic text-[#2A5430]" style={{ fontStyle: "italic", fontWeight: 300 }}>
+              Answers
+            </em>{" "}
+            to Your Questions
           </h2>
         </motion.div>
 
@@ -760,18 +794,18 @@ function FaqSection() {
           {FAQS.map((faq, i) => (
             <div
               key={i}
-              className="border-b border-[#E5E7EB] last:border-b-0"
+              className="border-b border-[#E0DDD6] last:border-b-0"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="flex w-full items-center justify-between py-5 text-left font-heading text-lg font-bold text-[#111827] transition-colors hover:text-[#2563EB]"
+                className="flex w-full items-center justify-between py-5 text-left font-display text-lg font-bold text-[#141414] transition-colors hover:text-[#E8622A]"
                 aria-expanded={openIndex === i}
               >
                 <span className="pr-4">{faq.question}</span>
                 <motion.span
                   animate={{ rotate: openIndex === i ? 180 : 0 }}
                   transition={{ duration: 0.25, ease: "easeInOut" }}
-                  className="flex-shrink-0 text-[#84CC16]"
+                  className="flex-shrink-0 text-[#E8622A]"
                 >
                   <ChevronDown className="h-5 w-5" />
                 </motion.span>
@@ -785,7 +819,7 @@ function FaqSection() {
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="overflow-hidden"
               >
-                <p className="pb-5 font-body text-base leading-relaxed text-[#374151]">
+                <p className="pb-5 font-body text-[15px] leading-[1.7] text-[#505050]">
                   {faq.answer}
                 </p>
               </motion.div>
@@ -798,55 +832,37 @@ function FaqSection() {
 }
 
 /* ================================================================
-   FINAL CTA
+   FINAL CTA — Dark rounded block (#141414), near footer
    ================================================================ */
 function FinalCtaSection() {
   const { ref, inView } = useAnimateOnScroll();
 
   return (
-    <section
-      ref={ref}
-      className="relative overflow-hidden bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] py-20 lg:py-28"
-    >
-      {/* Decorative dots */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="h-full w-full"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, #fff 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
-          }}
-        />
-      </div>
-
+    <section ref={ref} className="bg-[#F8F6F1] px-6 py-12">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
-        className="relative z-10 mx-auto max-w-3xl px-6 text-center"
+        className="relative mx-auto max-w-5xl overflow-hidden rounded-[22px] bg-[#141414] px-8 py-20 text-center lg:px-16"
       >
-        <h2 className="font-heading text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
-          Your Next Move Starts With a Conversation
+        <h2 className="font-display text-[clamp(24px,3.5vw,38px)] font-extrabold leading-[1.1] tracking-[-0.02em] text-white">
+          Take Control Of Your
+          <br />
+          <em className="font-accent not-italic text-[#C9E83A]" style={{ fontStyle: "italic", fontWeight: 300 }}>
+            Portland
+          </em>{" "}
+          Real Estate Future
         </h2>
-        <p className="mx-auto mt-6 max-w-xl font-body text-lg leading-relaxed text-[#93C5FD]">
-          Whether you&rsquo;re buying your first home, selling a property, or
-          exploring investment opportunities &mdash; it starts with 15 minutes.
-          No pitch, no pressure. Just an honest conversation about where you are
-          and where you want to be.
+        <p className="mx-auto mt-4 max-w-xl font-body text-[14px] leading-[1.7] text-white/60">
+          A team that&rsquo;s been doing this for 20+ years, at your service.
         </p>
 
-        <div className="mt-10">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 rounded-lg bg-[#84CC16] px-8 py-4 font-heading text-lg font-semibold text-[#111827] shadow-lg shadow-black/20 transition-all hover:bg-[#65A30D] hover:shadow-xl"
-          >
-            Schedule Your Free Consultation
-            <ArrowRight className="h-5 w-5" />
+        <div className="mt-8">
+          <Link href="/contact">
+            <Button variant="outlineWhite">
+              Schedule a Free Consultation
+            </Button>
           </Link>
-          <p className="mt-4 font-body text-sm text-[#93C5FD]">
-            No obligation. Talk directly to your broker.
-          </p>
         </div>
       </motion.div>
     </section>

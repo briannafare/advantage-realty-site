@@ -21,17 +21,17 @@ function AccordionItem({
   className,
 }: AccordionItemProps) {
   return (
-    <div className={cn("border-b border-border", className)}>
+    <div className={cn("border-b border-[#E0DDD6]", className)}>
       <button
         onClick={onToggle}
-        className="flex w-full items-center justify-between py-5 text-left font-heading text-lg font-bold text-primary transition-colors hover:text-accent"
+        className="flex w-full items-center justify-between py-5 text-left font-display text-lg font-bold text-[#141414] transition-colors hover:text-[#E8622A]"
         aria-expanded={isOpen}
       >
         <span className="pr-4">{question}</span>
         <motion.span
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.25, ease: "easeInOut" }}
-          className="flex-shrink-0 text-accent"
+          className="flex-shrink-0 text-[#E8622A]"
         >
           <ChevronDown className="h-5 w-5" />
         </motion.span>
@@ -45,7 +45,7 @@ function AccordionItem({
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <p className="pb-5 font-body text-base leading-relaxed text-muted">
+            <p className="pb-5 font-body text-[15px] leading-[1.7] text-[#505050]">
               {answer}
             </p>
           </motion.div>

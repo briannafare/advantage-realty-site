@@ -9,37 +9,53 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        /* Brand Blues — derived from Advantage Realty logo */
-        primary: "#2563EB",       // Brand Blue 600 — primary
-        "primary-dark": "#1D4ED8", // Brand Blue 700 — hover
-        "primary-light": "#93C5FD", // Brand Blue 300 — secondary
+        /* Forest Green — brand anchor, sparse */
+        "green-800": "#1D3B22",
+        "green-700": "#2A5430",
 
-        /* Accent Lime — bright, cheerful highlight */
-        accent: {
-          DEFAULT: "#84CC16",     // Lime 500 — CTAs, highlights
-          hover: "#65A30D",       // Lime 600 — hover state
-          light: "#D9F99D",       // Lime 200 — light badges
+        /* Orange — primary CTA on white/light */
+        orange: {
+          DEFAULT: "#E8622A",
+          hover: "#D4551F",
+          tint: "#FDF0EB",
+        },
+
+        /* Lime — on dark only */
+        lime: {
+          DEFAULT: "#C9E83A",
+          tint: "#F0F7DC",
+        },
+
+        /* Blue — data section only */
+        blue: {
+          DEFAULT: "#5BB5D8",
+          surface: "#EBF6FC",
+          border: "#C4E4F2",
         },
 
         /* Neutrals */
-        background: "#FFFFFF",
+        bg: "#F8F6F1",
         surface: {
-          DEFAULT: "#F3F4F6",     // Neutral 100
-          alt: "#F9FAFB",         // Neutral 50
+          DEFAULT: "#FFFFFF",
+          alt: "#F2F0EA",
         },
-        foreground: "#111827",    // Neutral 900
-        muted: "#374151",         // Neutral 700
-        "muted-light": "#6B7280", // Neutral 500
-        border: "#E5E7EB",        // Neutral 200
+        border: "#E0DDD6",
 
-        /* Dark section backgrounds */
-        dark: "#111827",          // Neutral 900
-        "dark-alt": "#1F2937",    // Neutral 800
+        /* Text */
+        t1: "#141414",
+        t2: "#505050",
+        t3: "#909090",
       },
       fontFamily: {
-        heading: ["Space Grotesk", "sans-serif"],
-        body: ["Inter", "sans-serif"],
-        accent: ["DM Serif Display", "serif"],
+        display: ["var(--font-display)", "Plus Jakarta Sans", "sans-serif"],
+        body: ["var(--font-body)", "Instrument Sans", "sans-serif"],
+        accent: ["var(--font-accent)", "Fraunces", "serif"],
+      },
+      borderRadius: {
+        full: "9999px",
+        lg: "22px",
+        md: "14px",
+        sm: "8px",
       },
       keyframes: {
         "fade-in-up": {
@@ -58,12 +74,27 @@ const config: Config = {
           "0%": { transform: "scaleY(0)" },
           "100%": { transform: "scaleY(1)" },
         },
+        "draw-path": {
+          "0%": { strokeDashoffset: "900" },
+          "100%": { strokeDashoffset: "0" },
+        },
+        "pop-dot": {
+          "0%": { transform: "scale(0)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" },
+        },
+        "card-up": {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "fade-in-up": "fade-in-up 0.6s ease-out forwards",
         "slide-in-right": "slide-in-right 0.5s ease-out forwards",
         "count-up": "count-up 0.4s ease-out forwards",
         "bar-grow": "bar-grow 0.8s ease-out forwards",
+        "draw-path": "draw-path 2s cubic-bezier(.4,0,.2,1) forwards 0.3s",
+        "pop-dot": "pop-dot 0.35s ease forwards",
+        "card-up": "card-up 0.4s ease forwards",
       },
     },
   },
